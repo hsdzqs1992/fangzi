@@ -198,7 +198,10 @@
         <activity android:name=".ui.activity.me.MeYiKanActivity" />
         <activity android:name=".ui.activity.me.MeJingJiCenterActivity" />
         <activity android:name=".ui.activity.ChangeMobile1Activity" />
-        <activity android:name=".ui.activity.ChangeMobile2Activity"></activity>
+        <activity android:name=".ui.activity.ChangeMobile2Activity" />
+        <activity android:name=".ui.activity.me.MeFangChanCenterActivity" />
+        <activity android:name=".ui.activity.WenDaDetailActivity" />
+        <activity android:name=".ui.activity.AnswerActivity"></activity>
     </application>
 
 </manifest>

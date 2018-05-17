@@ -13,6 +13,7 @@ import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.GetData;
 import com.zhuye.ershoufang.utils.CheckUtil;
+import com.zhuye.ershoufang.utils.DaojinUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -61,6 +62,7 @@ public class ChangeMobile2Activity extends BaseActivity {
                 finish();
                 break;
             case R.id.huaquyanzhengma:
+                DaojinUtils.daojiShi(ChangeMobile2Activity.this,huaquyanzhengma);
                 fasong();
                 break;
             case R.id.queding:
@@ -70,7 +72,7 @@ public class ChangeMobile2Activity extends BaseActivity {
                     toast("手机号不能为空");
                     return;
                 }
-                if(!CheckUtil.isMobile(mobil)){
+                if(CheckUtil.isMobile(mobil)){
                     toast("手机号格式不正确");
                     return;
                 }
@@ -86,6 +88,7 @@ public class ChangeMobile2Activity extends BaseActivity {
     }
 
     private void fasong() {
+
         String mobile =  shoujihao.getText().toString().trim();
         if(CheckUtil.isMobile(ChangeMobile2Activity.this,mobile)){
             GetData.getCode3(mobile,ChangeMobile2Activity.this, GETCODE);

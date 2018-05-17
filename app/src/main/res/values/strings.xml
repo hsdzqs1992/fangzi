@@ -129,7 +129,14 @@
         <item>委托办证</item>
         <item>委托贷款</item>
     </string-array>
-
+    <string-array name="me_jingjiqit">
+        <item>买房</item>
+        <item>卖房</item>
+        <item>出租</item>
+        <item>求租</item>
+        <item>办证</item>
+        <item>贷款</item>
+    </string-array>
 
     <string-array name="home_xuqiudating">
         <item>买房</item>

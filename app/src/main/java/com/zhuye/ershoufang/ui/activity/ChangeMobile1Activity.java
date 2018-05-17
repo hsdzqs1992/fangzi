@@ -75,7 +75,7 @@ public class ChangeMobile1Activity extends BaseActivity {
                     return;
                 }
 
-                if(!CheckUtil.isMobile(mobi)){
+                if(CheckUtil.isMobile(mobi)){
                     toast("手机号格式不正确");
                     return;
                 }

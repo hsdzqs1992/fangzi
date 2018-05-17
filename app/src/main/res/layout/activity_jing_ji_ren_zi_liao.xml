@@ -24,7 +24,7 @@
                 android:id="@+id/maifangxuanyan"
                 app:title11="卖房宣言"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="67dp">
             </com.zhuye.ershoufang.weidtet.MyLinTv2View>
             <com.zhuye.ershoufang.weidtet.MyLinTv2View
                 app:lines="3"
@@ -50,7 +50,7 @@
                 android:id="@+id/suoshu"
                 app:title11="所属公司"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="67dp">
             </com.zhuye.ershoufang.weidtet.MyLinTv2View>
 
             <com.zhuye.ershoufang.weidtet.MyLinTv2View
@@ -59,10 +59,26 @@
                 android:id="@+id/mendian"
                 app:title11="公司门店"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="67dp">
             </com.zhuye.ershoufang.weidtet.MyLinTv2View>
 
+            <com.zhuye.ershoufang.weidtet.MyTvSelectView
+                android:id="@+id/zhuyingyewu"
+                app:tv1="主营业务"
+                app:tv2="房源类型"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+            </com.zhuye.ershoufang.weidtet.MyTvSelectView>
+            <com.zhuye.ershoufang.weidtet.MyTvSelectView
+                android:id="@+id/fuwunianxian"
+                app:tv1="服务年限"
+                app:tv2="服务年限"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+            </com.zhuye.ershoufang.weidtet.MyTvSelectView>
+
             <com.zhuye.ershoufang.weidtet.MyInputView
+                android:visibility="gone"
                 android:id="@+id/zhuying"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,6 +88,7 @@
             </com.zhuye.ershoufang.weidtet.MyInputView>
 
             <com.zhuye.ershoufang.weidtet.MyInputView
+                android:visibility="gone"
                 android:id="@+id/fuwuyear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,15 +96,100 @@
                 app:tx1="服务年限"
                 >
             </com.zhuye.ershoufang.weidtet.MyInputView>
+            <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:hint="地址"
+                    android:textSize="15sp"
+                    android:textColor="#666"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/dizhi"
+                        android:layout_marginTop="10dp"
+                        android:text="请输入省份"
+                        android:singleLine="true"
+                        android:lines="1"
+                        android:layout_toRightOf="@+id/mingcheng1"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="14sp"
+                        android:textColor="#999"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/dizhi2"
+                        android:layout_marginTop="10dp"
+                        android:text="请输入市"
+                        android:singleLine="true"
+                        android:lines="1"
+                        android:layout_toRightOf="@+id/mingcheng1"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:background="@null"
+                        android:textSize="14sp"
+                        android:textColor="#999"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/dizhi3"
+                        android:layout_marginTop="10dp"
+                        android:text="请输入区"
+                        android:singleLine="true"
+                        android:lines="1"
+                        android:layout_toRightOf="@+id/mingcheng1"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:background="@null"
+                        android:textSize="14sp"
+                        android:textColor="#999"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/dizhi4"
+                        android:layout_marginTop="10dp"
+                        android:text="请输入街道"
+                        android:singleLine="true"
+                        android:lines="1"
+                        android:layout_toRightOf="@+id/mingcheng1"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:background="@null"
+                        android:textSize="14sp"
+                        android:textColor="#999"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <View
+                android:background="@color/linecolor"
+                android:layout_width="match_parent"
+                android:layout_height="1dp">
+            </View>
 
             <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                android:visibility="gone"
                 app:lines="1"
                 app:tishi11="请输入工作范围"
                 android:id="@+id/gongzuo"
                 app:title11="工作范围"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="67dp">
             </com.zhuye.ershoufang.weidtet.MyLinTv2View>
 
 
@@ -97,7 +199,7 @@
                 android:id="@+id/zhuyongxiaoqu"
                 app:title11="主营小区"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="67dp">
             </com.zhuye.ershoufang.weidtet.MyLinTv2View>
 
 
@@ -107,7 +209,7 @@
                 android:id="@+id/fangyuantedian"
                 app:title11="房源特点"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="67dp">
             </com.zhuye.ershoufang.weidtet.MyLinTv2View>
 
             <com.zhuye.ershoufang.weidtet.MyInputView
@@ -129,10 +231,20 @@
                 >
             </com.zhuye.ershoufang.weidtet.MyInputView>
 
-            <android.support.v7.widget.RecyclerView
+            <com.zhuye.ershoufang.weidtet.MyRecycleView2
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/congye"></android.support.v7.widget.RecyclerView>
+                android:id="@+id/congye"></com.zhuye.ershoufang.weidtet.MyRecycleView2>
+
+            <Button
+                android:textSize="@dimen/sp_14"
+                android:textColor="#fff"
+                android:background="@drawable/shape_seek"
+                android:gravity="center"
+                android:id="@+id/add6"
+                android:text="添加"
+                android:layout_width="match_parent"
+                android:layout_height="39dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

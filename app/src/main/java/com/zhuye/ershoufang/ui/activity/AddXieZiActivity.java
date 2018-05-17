@@ -2,7 +2,6 @@ package com.zhuye.ershoufang.ui.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -37,17 +36,18 @@ import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.utils.FilesUtil;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 import com.zhuye.ershoufang.utils.WindowUtils;
+import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
+import com.zhuye.ershoufang.weidtet.UpPhotoCallBack;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.iwf.photopicker.PhotoPicker;
 
-public class AddXieZiActivity extends BaseActivity {
+public class AddXieZiActivity extends BaseActivity  implements UpPhotoCallBack {
 
 
     private static final int PROVINCE = 300;
@@ -55,6 +55,7 @@ public class AddXieZiActivity extends BaseActivity {
     private static final int QU = 302;
     private static final int JIEDAO = 303;
     private static final int TIJIAO = 305;
+    private static final int JIAOTONG = 366;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.ttitle)
@@ -123,6 +124,8 @@ public class AddXieZiActivity extends BaseActivity {
     EditText lianxiren;
     @BindView(R.id.dianhua)
     EditText dianhua;
+    @BindView(R.id.jiaotong)
+    MySelectPhotoView jiaotong;
     private ArrayList<String> photos;
 
     @Override
@@ -202,11 +205,11 @@ public class AddXieZiActivity extends BaseActivity {
                     target.setText(mOptionsItems.get(selectIndex));
                     // 是省的类型  且选中状态
                     if (type == 6) {
-                        CommonApi.getInstance().xiaji(getIndex(cityBean, mOptionsItems.get(selectIndex)), AddXieZiActivity.this, XIAJI,false);
+                        CommonApi.getInstance().xiaji(getIndex(cityBean, mOptionsItems.get(selectIndex)), AddXieZiActivity.this, XIAJI, false);
                     } else if (type == 7) {
-                        CommonApi.getInstance().xiaji(getIndex(xiaji, mOptionsItems.get(selectIndex)), AddXieZiActivity.this, QU,false);
+                        CommonApi.getInstance().xiaji(getIndex(xiaji, mOptionsItems.get(selectIndex)), AddXieZiActivity.this, QU, false);
                     } else if (type == 8) {
-                        CommonApi.getInstance().xiaji(getIndex(qu, mOptionsItems.get(selectIndex)), AddXieZiActivity.this, JIEDAO,false);
+                        CommonApi.getInstance().xiaji(getIndex(qu, mOptionsItems.get(selectIndex)), AddXieZiActivity.this, JIEDAO, false);
 
                     }
                 }
@@ -377,15 +380,16 @@ public class AddXieZiActivity extends BaseActivity {
                         checkEql(fangjia1, "万元", "请输入房价") &&
                         checkEql(yuegong1, "万元", "请输入物业费") &&
                         checkEmpty(maidian, "请输入具体地址") &&
-                        checkEmpty(xintai, "请输入房源描述") && checkArray(photos, "请上传室内图")&&
-                        checkEql(dizhi,"请输入省份","请输入省份")&&
-                        checkEql(dizhi2,"请输入市","请输入市")&&
-                        checkEql(dizhi3,"请输入区","请输入区")&&
-                        checkEmpty(lianxiren,"请输入联系人姓名")&&
-                        checkEmpty(dianhua,"请输入联系人电话")&&
-                        checkEql(dizhi4,"请输入街道","请输入街道")) {
+                        checkEmpty(xintai, "请输入房源描述") && checkArray(photos, "请上传室内图") &&
+                        checkEql(dizhi, "请输入省份", "请输入省份") &&
+                        checkEql(dizhi2, "请输入市", "请输入市") &&
+                        checkEql(dizhi3, "请输入区", "请输入区") &&
+                        checkEmpty(lianxiren, "请输入联系人姓名") &&
+                        checkEmpty(dianhua, "请输入联系人电话") &&
+                        checkEql(dizhi4, "请输入街道", "请输入街道")) {
                     //checkArray(photos,"请上传室内图")&&
-                    handleshiNei();
+                   // handleshiNei();
+                    jiaotong.upimg(AddXieZiActivity.this, JIAOTONG);
                 }
                 break;
             case R.id.weituo:
@@ -438,21 +442,35 @@ public class AddXieZiActivity extends BaseActivity {
 
     private void tijiao() {
         CommonApi.getInstance().fabu(
-                SharedPreferencesUtil.getInstance().getString("token2"), getString(title),
-                6, getIndex(xiaji, dizhi2.getText().toString().trim()),
+                SharedPreferencesUtil.getInstance().getString("token2"),
+                getString(title),
+                6,
+                getIndex(xiaji, dizhi2.getText().toString().trim()),
                 getIndex(qu, dizhi3.getText().toString().trim()),
-                getIndex(jiedao, dizhi4.getText().toString().trim()), getSpData("longitude"),
+                getIndex(jiedao, dizhi4.getText().toString().trim()),
+                getSpData("longitude"),
                 getSpData("latitude"),
                 dizhi.getText().toString().trim() + dizhi2.getText().toString().trim() +
                         dizhi3.getText().toString().trim() + dizhi4.getText().toString().trim(),
                 getString(xiaoqu),
                 getString(lianxiren), getString(dianhua),
-                "", "", "", "", "",
-                "", "", "",
-                "", "", "", "",
-                "", "", "",
+                getString(xiaoqu),
+                "",
+                "", "",
+                getString(shoujia),
+                getString(mianji),
+                getString(yuegong1),
+                getString(fangjia1),
+                getString(fangwuleixing),
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
                 "", getIndex(xiaji, getString(maidian)), getIndex(xiaji, getString(xintai)),
-                arraytoString(imgBeannei.getData().getPhoto()),
+//                arraytoString(imgBeannei.getData().getPhoto()),
+                jiaotong.getPhoto2(),
                 "",
                 "",
                 AddXieZiActivity.this, TIJIAO);
@@ -532,20 +550,20 @@ public class AddXieZiActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                neituimg.clear();
-                neituimg.addAll(photos);
-                neituimg.add("");
-                adapter.addData(neituimg);
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
+//            if (data != null) {
+//                photos =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                neituimg.clear();
+//                neituimg.addAll(photos);
+//                neituimg.add("");
+//                adapter.addData(neituimg);
+//            }
+//        }
+//    }
 
     View input;
     TextView inputtitle;
@@ -581,13 +599,37 @@ public class AddXieZiActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
-        CommonApi.getInstance().province(AddXieZiActivity.this, PROVINCE,false);
+        CommonApi.getInstance().province(AddXieZiActivity.this, PROVINCE, false);
+        jiaotong.REQUESTCODE = 105;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.i("asd", requestCode + "");
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+        }
+        switch (requestCode) {
+            case 105:
+                jiaotong.setPhoto(photos);
+                break;
+        }
+    }
+
+    @Override
+    public void success(ImgBean imgBean, int code) {
+        switch (code){
+            case JIAOTONG:
+                tijiao();
+                break;
+        }
+    }
+
+    @Override
+    public void onError(String msg, int code) {
+
     }
 }

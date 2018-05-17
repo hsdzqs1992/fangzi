@@ -312,9 +312,10 @@
                 </View>
             </RelativeLayout>
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -439,9 +440,10 @@
             </View>
 
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -477,9 +479,10 @@
 
             </View>
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -517,7 +520,6 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
                 <TextView
@@ -553,6 +555,7 @@
 
             </View>
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/diancheliang"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
@@ -584,11 +587,20 @@
             </RelativeLayout>
 
             <android.support.v7.widget.RecyclerView
+                android:visibility="gone"
                 android:id="@+id/neitu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
             </android.support.v7.widget.RecyclerView>
+
+            <com.zhuye.ershoufang.weidtet.MySelectPhotoView
+                app:title = "图片(最多上传6张)"
+                app:addname="添加图片"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jiaotong">
+            </com.zhuye.ershoufang.weidtet.MySelectPhotoView>
+
 
             <LinearLayout
                 android:gravity="center_horizontal"
@@ -605,10 +617,11 @@
                     android:layout_marginTop="43dp"
                     android:text="立即发布"
                     android:layout_width="335dp"
-                    android:layout_height="35dp"
+                    android:layout_height="45dp"
                     android:textSize="15sp"
                     android:textColor="#fff"/>
                 <Button
+                    android:visibility="gone"
                     android:background="@drawable/shape_seek"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"

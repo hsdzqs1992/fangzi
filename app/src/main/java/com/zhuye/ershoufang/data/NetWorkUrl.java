@@ -38,6 +38,15 @@ public class NetWorkUrl {
     public static final String DEL_QUESTION = "index.php/app/question/del_question";
 
 
+    //房产问答  房产问答--详情
+    public static final String QUESTIONDETAIL = "index.php/app/question/detail";
+    //问答模块  房产问答
+    public static final String QUESTIONINDEX= "index.php/app/question/index";
+    //房产问题--回答加载
+    public static final String ANSWER= "index.php/app/question/answer";
+    //提交回答
+    public static final String SUB_ANSWER= "index.php/app/question/sub_answer";
+
 
     //登录注册  忘记密码
     public static final String FORGET = "index.php/app/passport/forget";
@@ -89,8 +98,7 @@ public class NetWorkUrl {
     // 列表
     public static final String CHUZULISTS= "index.php/app/lease/lists";
 
-    //问答模块
-    public static final String QUESTIONINDEX= "index.php/app/question/index";
+
 
 
     //个人中心 委托卖房|出租---列表

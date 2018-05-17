@@ -7,12 +7,14 @@
  import android.support.v4.app.FragmentPagerAdapter;
 
  import com.zhuye.ershoufang.R;
- import com.zhuye.ershoufang.adapter.me.paimai.BaoZhengFragment;
- import com.zhuye.ershoufang.adapter.me.paimai.CanYuFragment;
- import com.zhuye.ershoufang.adapter.me.paimai.MeTiXingFragment;
- import com.zhuye.ershoufang.adapter.me.paimai.YiPaiFragment;
+ import com.zhuye.ershoufang.ui.fragment.me.CommonMeQiTeFragment;
  import com.zhuye.ershoufang.ui.fragment.me.MeChuZuFragment;
- import com.zhuye.ershoufang.ui.fragment.me.MePaiMaiFragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MeMaiFangFragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MeQiTe1Fragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MeQiTe2Fragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MeQiTe3Fragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MeQiTe4Fragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MeQiTe5Fragment;
 
  import java.util.ArrayList;
  import java.util.List;
@@ -25,19 +27,21 @@
 
      Context mContext;
      String[] titles;
-     List<MePaiMaiFragment> fragments = new ArrayList<>();
+     List<CommonMeQiTeFragment> fragments = new ArrayList<>();
      public MePaiMaiAdapter(FragmentManager fm, Context context) {
          super(fm);
          mContext = context;
-         titles = context.getResources().getStringArray(R.array.me_paimai);
+         titles = context.getResources().getStringArray(R.array.me_jingjiqit);
 //         for(int i=0;i<titles.length;i++){
 //             MePaiMaiFragment fragment = new MePaiMaiFragment();
 //             fragments.add(fragment);
 //         }
-         fragments.add(new CanYuFragment());
-         fragments.add(new YiPaiFragment());
-         fragments.add(new BaoZhengFragment());
-         fragments.add(new MeTiXingFragment());
+         fragments.add(new MeQiTe1Fragment());
+         fragments.add(new MeMaiFangFragment());
+         fragments.add(new MeQiTe2Fragment());
+         fragments.add(new MeQiTe3Fragment());
+         fragments.add(new MeQiTe4Fragment());
+         fragments.add(new MeQiTe5Fragment());
      }
      @Override
      public Fragment getItem(int position) {

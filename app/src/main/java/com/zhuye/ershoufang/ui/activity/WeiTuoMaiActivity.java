@@ -3,7 +3,6 @@ package com.zhuye.ershoufang.ui.activity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -26,8 +25,6 @@ public class WeiTuoMaiActivity extends BaseActivity {
     SmartTabLayout tablayout;
     @BindView(R.id.viewpager)
     ViewPager viewpager;
-    @BindView(R.id.refresh)
-    LinearLayout refresh;
 
 //    @BindView(R.id.back)
 //    ImageView back;
@@ -43,15 +40,16 @@ public class WeiTuoMaiActivity extends BaseActivity {
 
     @Override
     protected int getResId() {
-        return R.layout.common2;
+        return R.layout.activity_wei_tuo_mai;
     }
     MePaiMaiAdapter adapter;
     @Override
     protected void initView() {
          super.initView();
-        setText(ttitle,"委托拍卖");
-        setText(subtitle,"我的拍卖");
-       adapter = new MePaiMaiAdapter(getSupportFragmentManager(),this);
+        setText(ttitle,"其他委托");
+       // setText(subtitle,"我的拍卖");
+        hide(subtitle);
+        adapter = new MePaiMaiAdapter(getSupportFragmentManager(),this);
         viewpager.setAdapter(adapter);
         tablayout.setViewPager(viewpager);
     }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/iphone"
+            android:scaleType="centerCrop"
+            android:id="@+id/tou"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:layout_marginTop="3dp"
+            android:id="@+id/name"
+            android:textColor="#333"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部回答"/>
+
+
+        <TextView
+            android:paddingRight="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:background="@drawable/shape_ju"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/jusecolor"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热心网友"/>
+
+        <TextView
+            android:gravity="end"
+            android:layout_marginTop="@dimen/dp_5"
+            android:id="@+id/time"
+            android:textColor="#999"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="全部回答"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="10dp"
+        android:id="@+id/content"
+        android:textColor="#666"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全部回答"/>
+
+    <View
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color"></View>
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.zhuye.ershoufang.data;
 
 
+import com.zhuye.ershoufang.bean.AnswerBean;
+import com.zhuye.ershoufang.bean.AnswerBean2;
 import com.zhuye.ershoufang.bean.AreaBean;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.BidderDetailBean;
@@ -42,6 +44,7 @@ import com.zhuye.ershoufang.bean.QiTeBean;
 import com.zhuye.ershoufang.bean.QuBean;
 import com.zhuye.ershoufang.bean.UploadImgBean;
 import com.zhuye.ershoufang.bean.WenDaBean;
+import com.zhuye.ershoufang.bean.WenDadetailBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean;
 import com.zhuye.ershoufang.bean.XinFangBean;
 import com.zhuye.ershoufang.bean.ZhiDingBean;
@@ -138,6 +141,13 @@ public interface CommonApiService {
             , @Field("page") int page);
 
 
+    @FormUrlEncoded
+    @POST(NetWorkUrl.SUB_ANSWER)
+    Observable<Base>  sub_answer(@Field("question_id") int question_id
+            , @Field("content") String content
+            , @Field("token") String token
+    );
+
     /**
      *
      * @param login_type  1表示微信 2表示qq
@@ -180,6 +190,15 @@ public interface CommonApiService {
     @FormUrlEncoded
     @POST(NetWorkUrl.DEL_QUESTION)
     Observable<Base> del_question(@Field("question_id") int question_id);
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.QUESTIONDETAIL)
+    Observable<CommonObjectBean<WenDadetailBean>> questiondetail(@Field("question_id") int question_id);
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.ANSWER)
+    Observable<CommonObjectBean<AnswerBean<AnswerBean2>>> answer(@Field("question_id") int question_id
+    , @Field("page") int page);
 
     @FormUrlEncoded
     @POST(NetWorkUrl.ZILIAO)
@@ -297,19 +316,29 @@ public interface CommonApiService {
                                   @Field("cate_id") int cate_id,@Field("city_id") String city_id,
                                   @Field("area_id") String area_id,@Field("business_id") String business_id,
                                   @Field("lng") String lng,@Field("lat") String lat,
+
                                   @Field("addr") String addr,@Field("xiaoqu") String xiaoqu,
                                   @Field("contact") String contact,@Field("mobile") String mobile,
+
                                   @Field("text1") String text1,@Field("text2") String text2,
-                                  @Field("text3") String text3,@Field("text4") String text4,
+
+                                  @Field("text3") String text3,@Field("text4") String text4,//
+
                                   @Field("num1") String num1,@Field("num2") String num2,
                                   @Field("num3") String num3,@Field("num4") String num4,
+
                                   @Field("select1") String select1,@Field("select2") String select2,
                                   @Field("select3") String select3,@Field("select4") String select4,
                                   @Field("select5") String select5,@Field("select6") String select6,
+
                                   @Field("fj_select5") String fj_select5,@Field("fj_select6") String fj_select6,
-                                  @Field("detail") String detail,@Field("dd") String dd,
-                                  @Field("photo") String photo,@Field("ph") String ph,
-                                  @Field("pph") String pph);
+
+                                  @Field("detail") String detail,
+                                    @Field("dd") String dd,//
+                                  @Field("photo") String photo,
+                                    @Field("ph") String ph,//
+                                  @Field("pph") String pph//
+    );
 
 
     @POST(NetWorkUrl.ESFABU)
@@ -1232,6 +1261,7 @@ public interface CommonApiService {
             @Field("mobile") String mobile,
             @Field("code") String code);
 
+    @FormUrlEncoded
     @POST(NetWorkUrl.SUB_DATA)
     Observable<Base> sub_data(@Field("token") String token,
                                   @Field("city_id") String city_id,

@@ -132,6 +132,14 @@ public class CommonApi {
         sub(service.del_question(question_id),baseView,requestcode);
     }
 
+
+    public void questiondetail(int question_id,BaseView baseView, int requestcode){
+        sub(service.questiondetail(question_id),baseView,requestcode);
+    }
+    public void answer(int question_id,int page,BaseView baseView, int requestcode,Boolean b){
+        sub(service.answer(question_id,page),baseView,requestcode,b);
+    }
+
     public void area(String city,BaseView baseView, int requestcode){
         sub(service.area(city),baseView,requestcode);
     }
@@ -202,6 +210,13 @@ public class CommonApi {
     public void questionindex(int type,
                            int page,BaseView baseView, int requestcode){
         sub(service.questionindex(type,page),baseView,requestcode);
+    }
+
+
+    public void sub_answer( int question_id
+            ,  String content
+            ,  String token,BaseView baseView, int requestcode){
+        sub(service.sub_answer(question_id,content,token),baseView,requestcode);
     }
 
     public void fabu( String token,  String title,

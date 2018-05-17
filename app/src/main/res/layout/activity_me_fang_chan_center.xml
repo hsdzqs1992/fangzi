@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.me.JiaJuCenterActivity">
+
+    <include layout="@layout/header"/>
+
+
+
+
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/zhanghao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tx1="账号"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/shenfenrenzh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tx1="身份认证"
+        app:show4="true"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/yingyezhizhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tx1="资质证书"
+        app:show4="true"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+
+</LinearLayout>

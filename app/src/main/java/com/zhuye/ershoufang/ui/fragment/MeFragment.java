@@ -33,6 +33,7 @@ import com.zhuye.ershoufang.ui.activity.WeiTuoMaiActivity;
 import com.zhuye.ershoufang.ui.activity.WenDaActivity;
 import com.zhuye.ershoufang.ui.activity.me.ChuZuActivity;
 import com.zhuye.ershoufang.ui.activity.me.JiaJuCenterActivity;
+import com.zhuye.ershoufang.ui.activity.me.MeFangChanCenterActivity;
 import com.zhuye.ershoufang.ui.activity.me.MeJingJiCenterActivity;
 import com.zhuye.ershoufang.ui.activity.me.QiTeWeiTuoActivity;
 import com.zhuye.ershoufang.ui.activity.me.WeiTuoJingMaiActivity;
@@ -277,7 +278,7 @@ CommonObjectBean<JingJiRenBean> jingjiren;
                 intent.setClass(getActivity(), WeiTuoActivity.class);
                 break;
             case 2:
-                intent.setClass(getActivity(), WeiTuoActivity.class);
+                intent.setClass(getActivity(), ChuZuActivity.class);
                 break;
             case 3:
                 intent.setClass(getActivity(), WeiTuoMaiActivity.class);
@@ -411,6 +412,9 @@ CommonObjectBean<JingJiRenBean> jingjiren;
                         startActivity(in);
                         break;
                     case 3:
+                        Intent i = new Intent();
+                        i.setClass(getActivity(), MeFangChanCenterActivity.class);
+                        startActivity(i);
                         break;
                     case 4:
                         Intent inten = new Intent();
@@ -424,7 +428,6 @@ CommonObjectBean<JingJiRenBean> jingjiren;
                         break;
 
                 }
-
                 break;
         }
     }

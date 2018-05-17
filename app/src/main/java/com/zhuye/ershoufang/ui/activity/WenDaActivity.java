@@ -1,5 +1,6 @@
 package com.zhuye.ershoufang.ui.activity;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -168,6 +169,16 @@ public class WenDaActivity extends BaseActivity {
             public void onRefresh(RefreshLayout refreshlayout) {
                 CommonApi.getInstance().my_question(SharedPreferencesUtil.getInstance().getString("token2"),PageUtils.requestPage,
                         WenDaActivity.this, PageUtils.REFRESH);
+            }
+        });
+
+
+        adapter2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(WenDaActivity.this,WenDaDetailActivity.class);
+                intent.putExtra("id",bean.getData().get(position).getQuestion_id());
+                startActivity(intent);
             }
         });
     }
