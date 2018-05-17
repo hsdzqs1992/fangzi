@@ -161,6 +161,9 @@ public class NetWorkUrl {
     //个人中心  经纪人  更换绑定手机号--步骤1
     public static final String CHANGE_MOBILE= "index.php/app/passport/change_mobile";
 
+    //个人中心  经纪人  更换绑定手机号--步骤1
+    public static final String NEW_MOBILE= "index.php/app/passport/new_mobile";
+
     //首页  定位返回定位id
     public static final String DINGWEI= "index.php/app/index/dingwei";
     //首页  二手房|租房

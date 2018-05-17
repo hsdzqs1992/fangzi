@@ -1225,6 +1225,13 @@ public interface CommonApiService {
             @Field("mobile") String mobile,
             @Field("code") String code);
 
+    @FormUrlEncoded
+    @POST(NetWorkUrl.NEW_MOBILE)
+    Observable<Base> new_mobile(
+            @Field("token") String token,
+            @Field("mobile") String mobile,
+            @Field("code") String code);
+
     @POST(NetWorkUrl.SUB_DATA)
     Observable<Base> sub_data(@Field("token") String token,
                                   @Field("city_id") String city_id,

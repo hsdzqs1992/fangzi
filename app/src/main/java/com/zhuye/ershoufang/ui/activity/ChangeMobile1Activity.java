@@ -92,7 +92,7 @@ public class ChangeMobile1Activity extends BaseActivity {
                 toast(base.getMessage());
                 break;
             case CHECK:
-                start(ChangeMobile2Activity.class);
+                start(ChangeMobile2Activity.class,true);
                 break;
         }
     }

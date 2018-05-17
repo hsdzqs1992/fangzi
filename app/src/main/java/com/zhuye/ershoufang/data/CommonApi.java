@@ -1042,5 +1042,8 @@ public class CommonApi {
                                String code,BaseView baseView,int requestcode){
         sub(service.change_mobile(mobile,code),baseView,requestcode);
     }
-
+    public void new_mobile(String token, String mobile,
+                               String code,BaseView baseView,int requestcode){
+        sub(service.new_mobile(token,mobile,code),baseView,requestcode);
+    }
 }
