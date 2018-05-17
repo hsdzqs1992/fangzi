@@ -169,8 +169,9 @@ public class MeJingJiCenterActivity extends BaseActivity {
         zhanghao.itemClick(new MyInputView.OnClick() {
             @Override
             public void onClick(View view) {
-                toast("asdfasdf");
-                start(ChangeMobile1Activity.class);
+                Intent intent = new Intent(MeJingJiCenterActivity.this,ChangeMobile1Activity.class);
+                intent.putExtra("mobile",bean.getData().getMobile());
+                startActivity(intent);
             }
         });
         xingming.itemClick(new MyInputView.OnClick() {

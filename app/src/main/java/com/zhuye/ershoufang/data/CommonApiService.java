@@ -1219,7 +1219,11 @@ public interface CommonApiService {
     Observable<CommonObjectBean<PersonBean>> renzheng(
             @Field("token") String token);
 
-
+    @FormUrlEncoded
+    @POST(NetWorkUrl.CHANGE_MOBILE)
+    Observable<Base> change_mobile(
+            @Field("mobile") String mobile,
+            @Field("code") String code);
 
     @POST(NetWorkUrl.SUB_DATA)
     Observable<Base> sub_data(@Field("token") String token,

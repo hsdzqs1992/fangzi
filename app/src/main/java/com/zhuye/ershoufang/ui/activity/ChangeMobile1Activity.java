@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.base.BaseActivity;
 import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.GetData;
 import com.zhuye.ershoufang.utils.CheckUtil;
 import com.zhuye.ershoufang.utils.DaojinUtils;
@@ -21,6 +22,7 @@ public class ChangeMobile1Activity extends BaseActivity {
 
 
     private static final int GETCODE = 999;
+    private static final int CHECK = 1000;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.tou)
@@ -77,7 +79,7 @@ public class ChangeMobile1Activity extends BaseActivity {
                     toast("手机号格式不正确");
                     return;
                 }
-
+                CommonApi.getInstance().change_mobile(mobi,yanzheng,ChangeMobile1Activity.this,CHECK);
                 break;
         }
     }
@@ -88,6 +90,9 @@ public class ChangeMobile1Activity extends BaseActivity {
         switch (requestcode){
             case GETCODE:
                 toast(base.getMessage());
+                break;
+            case CHECK:
+                start(ChangeMobile2Activity.class);
                 break;
         }
     }

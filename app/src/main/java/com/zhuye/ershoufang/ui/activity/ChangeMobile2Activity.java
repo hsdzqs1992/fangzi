@@ -1,15 +1,12 @@
 package com.zhuye.ershoufang.ui.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
 import com.zhuye.ershoufang.R;
+import com.zhuye.ershoufang.base.BaseActivity;
 
-public class ChangeMobile2Activity extends AppCompatActivity {
+public class ChangeMobile2Activity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_mobile2);
+    protected int getResId() {
+        return R.layout.activity_change_mobile2;
     }
 }

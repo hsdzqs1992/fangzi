@@ -1036,4 +1036,11 @@ public class CommonApi {
                  yjbi,
                  jingli),baseView,requestcode,b);
     }
+
+
+    public void change_mobile( String mobile,
+                               String code,BaseView baseView,int requestcode){
+        sub(service.change_mobile(mobile,code),baseView,requestcode);
+    }
+
 }
