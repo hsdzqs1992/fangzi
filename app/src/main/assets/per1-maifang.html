@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-maifang.css" />
+	</head>
+	<style type="text/css">
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+			font-size: 0.32rem;
+			line-height: 38px;
+			border-bottom: 1px solid #00A2E9;
+			color: #00A2E9 !important;
+		}
+		
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+			font-size: 0.32rem;
+			line-height: 40px;
+			color: #999999;
+		}
+		
+		.mui-slider-group {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+		}
+		
+		.mui-scroll .mui-control-item {
+			padding: 0 0.75rem !important;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">卖房</h1>
+			<a class="mui-pull-right news_btn">新增房源</a>
+		</header>
+		<div class="mui-content">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted b-f">
+				<div class="mui-scroll">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						二手房
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						写字楼
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						商铺
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						工业厂房
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="type b-f">
+			<div class="pullrefresh mui-scroll-wrapper b-f">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="ershou-detail.html">
+							<div class="lists clear">
+								<div class="lsts_images f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="f-r lists_right">
+									<div class="lists_right_text1 clear">
+										<p class="f-l">郑州市管城区紫金小区1...</p>
+									</div>
+									<div class="lists_right_text2 clear">
+										<span class="f-l">99<em>万元</em></span>
+
+									</div>
+									<div class="lists_right_text3 clear">
+										<span class="f-l">三室两厅<em>116m²</em></span>
+										<span class="f-r">二手房</span>
+									</div>
+									<div class="lists_right_text4 clear">
+										<span class="f-r">删除</span>
+										<span class="f-r">编辑</span>
+										<span class="f-r zhiding">置顶</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--2-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="" class="">
+							<div class="lists clear">
+								<div class="lsts_images f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="f-r lists_right">
+									<div class="lists_right_text1 clear">
+										<p class="f-l">郑州市管城区紫金小区2...</p>
+									</div>
+									<div class="lists_right_text2 clear">
+										<span class="f-l">99<em>万元</em></span>
+
+									</div>
+									<div class="lists_right_text3 clear">
+										<span class="f-l">三室两厅<em>116m²</em></span>
+										<span class="f-r">二手房</span>
+									</div>
+									<div class="lists_right_text4 clear">
+										<span class="f-r">删除</span>
+										<span class="f-r">编辑</span>
+										<span class="f-r">置顶</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--3-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="" class="">
+							<div class="lists clear">
+								<div class="lsts_images f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="f-r lists_right">
+									<div class="lists_right_text1 clear">
+										<p class="f-l">郑州市管城区紫金小区3...</p>
+									</div>
+									<div class="lists_right_text2 clear">
+										<span class="f-l">99<em>万元</em></span>
+
+									</div>
+									<div class="lists_right_text3 clear">
+										<span class="f-l">三室两厅<em>116m²</em></span>
+										<span class="f-r">二手房</span>
+									</div>
+									<div class="lists_right_text4 clear">
+										<span class="f-r">删除</span>
+										<span class="f-r">编辑</span>
+										<span class="f-r">置顶</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--4-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="" class="">
+							<div class="lists clear">
+								<div class="lsts_images f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="f-r lists_right">
+									<div class="lists_right_text1 clear">
+										<p class="f-l">郑州市管城区紫金小区4...</p>
+									</div>
+									<div class="lists_right_text2 clear">
+										<span class="f-l">99<em>万元</em></span>
+
+									</div>
+									<div class="lists_right_text3 clear">
+										<span class="f-l">三室两厅<em>116m²</em></span>
+										<span class="f-r">二手房</span>
+									</div>
+									<div class="lists_right_text4 clear">
+										<span class="f-r">删除</span>
+										<span class="f-r">编辑</span>
+										<span class="f-r">置顶</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--置顶-->
+		<div class="pay_wrap">
+			<div class="pay">
+				<div class="pay_title">
+					<span>置顶信息</span>
+					<img src="images/cuohao.png" class="pay_close" />
+				</div>
+				<div class="pay1">
+					<p>本次置顶需支付置顶费用</p>
+					<p><span>¥</span>2.00</p>
+					<p class="pay1_btn">确认支付</p>
+				</div>
+			</div>
+		</div>
+		<!--支付弹窗-->
+		<div class="payment_wrap">
+			<div class="payment">
+				<div class="payment_title">
+					<span class="mui-icon mui-icon-closeempty mui-pull-left close"></span>
+					<h1 class="mui-title">支付</h1>
+				</div>
+				<div class="payment_money">
+					<span>¥282.00</span>
+				</div>
+				<div class="mui-card">
+					<p>支付方式</p>
+					<form class="mui-input-group">
+						<div class="mui-input-row mui-radio">
+							<label><img src="images/zhifubao.png"/>支付宝</label>
+							<input name="radio1" type="radio">
+						</div>
+						<div class="mui-input-row mui-radio">
+							<label><img src="images/weixin.png"/>微信支付</label>
+							<input name="radio1" type="radio" checked>
+						</div>
+					</form>
+				</div>
+				<div class="payment_btn">
+					<button>确认支付</button>
+				</div>
+			</div>
+		</div>
+		<!--新增房源-->
+		<div class="newly_wrap">
+			<div class="newly">
+				<div class="newly_title">
+					<span>新增房源</span>
+					<img src="images/cuohao.png" class="news_colse" />
+				</div>
+				<div class="news_type">
+					<button class="news_type_color"onclick="window.location.href='per1-maifang-er.html'">二手房</button>
+					<button onclick="window.location.href='per1-maifang-xie.html'">写字楼</button>
+					<button onclick="window.location.href='per1-maifang-shang.html'">商铺</button>
+					<button onclick="window.location.href='per1-maifang-gong.html'">工业厂房</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		(function($) {
+			//阻尼系数
+			var deceleration = mui.os.ios ? 0.003 : 0.0009;
+			$('.mui-scroll-wrapper').scroll({
+				bounce: false,
+				indicators: true, //是否显示滚动条
+				deceleration: deceleration
+			});
+			$.ready(function() {
+				//循环初始化所有下拉刷新，上拉加载。
+				$.each(document.querySelectorAll('.pullrefresh .mui-scroll'), function(index, pullRefreshEl) {
+					$(pullRefreshEl).pullToRefresh({
+						up: {
+							callback: function() {
+								var self = this;
+								console.log(index);
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									var html = '<a href="" class=""><div class="lists clear"><div class="lsts_images f-l"><img src="images/42.png" /></div><div class="f-r lists_right"><div class="lists_right_text1 clear"><p class="f-l">郑州市管城区紫金小区...</p></div><div class="lists_right_text2 clear"><span class="f-l">99<em>万元</em></span></div><div class="lists_right_text3 clear"><span class="f-l">三室两厅<em>116m²</em></span><span class="f-r">二手房</span></div><div class="lists_right_text4 clear"><span class="f-r">删除</span><span class="f-r">编辑</span><span class="f-r zhiding">置顶</span></div></div></div></a>';
+									jQuery(ul).append(html);
+									self.endPullUpToRefresh();
+								}, 1000);
+							}
+						},
+						down: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									window.location.reload();
+								}, 1000);
+							}
+						}
+					});
+				});
+			});
+		})(mui);
+		//a标签href跳转
+		mui('.a-href').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+		$(".mui-control-item").click(function() {
+			var index = $(this).index();
+			console.log(index)
+			$(this).addClass("mui-active").siblings().removeClass("mui-active");
+			$(".pullrefresh").eq(index).show().siblings().hide();
+		});
+		//置顶
+		mui(".news").on("tap", ".zhiding", function(event) {
+			$(".pay_wrap").show();
+			$(".payment_wrap").hide();
+			event.stopPropagation()
+		});
+		$(".pay_close").click(function() {
+			$(".pay_wrap").hide();
+		});
+		$(".pay1_btn").click(function() {
+			$(".payment_wrap").show();
+			$(".pay_wrap").hide();
+		});
+		$(".payment_title").click(function() {
+			$(".payment_wrap").hide();
+		})
+		//点击新增房源
+		mui(".mui-bar-nav").on("tap",".news_btn",function(){
+			$(".newly_wrap").show();
+		});
+		$(".news_colse").click(function(){
+			$(".newly_wrap").hide();
+		})
+	</script>
+
+</html>

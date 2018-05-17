@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="inputtext">
+        <!--输入框的提示    必须填写 -->
+        <attr name="hint" format="string"></attr>
+        <!--左侧textview的文字-->
+        <attr name="tx1" format="string"></attr>
+        <!--右侧textview的文字-->
+        <attr name="tx2" format="string"></attr>
+        <!--控制输入矿的显示-->
+        <attr name="show2" format="boolean"></attr>
+        <!--自定义的布局-->
+        <attr name="resid" format="reference"></attr>
+        <!--显示箭头隐藏文字-->
+        <attr name="show4" format="boolean"></attr>
+
+        <attr name="hideyou" format="boolean"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="selectview">
+        <!--左侧的文字-->
+        <attr name="name" format="string"></attr>
+        <!--右侧的文字-->
+        <attr name="name1" format="string"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="myDongTaiView">
+        <!--自定义的布局-->
+        <attr name="reid" format="reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="MySelectPhotoView">
+        <attr name="resids" format="reference"></attr>
+        <attr name="title" format="string"></attr>
+        <attr name="addname" format="string"></attr>
+
+        <attr name="gaodu" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyTvSelectView">
+        <attr name="tv1"  format="string"/>
+        <attr name="tv2" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyLinTv2View">
+        <attr name="title11"  format="string"></attr>
+        <attr name="tishi11" format="string"/>
+        <attr name="lines" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>委托房源</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-maifang-er.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">新增商铺</h1>
+		</header>
+		<div class="center mui-content b-f">
+
+			<!--标题 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">标题</span>
+				<input type="text" placeholder="请输入标题" class="" />
+			</div>
+			<!--售价-->
+			<div class="type4 clear">
+				<span class="f-l">售价</span>
+				<span class="f-r">元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<!--面积-->
+			<div class="type4 clear">
+				<span class="f-l">面积</span>
+				<span class="f-r">m²</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<div class="type10 clear">
+				<p class="">配置</p>
+				<div class="clear">
+					<div class="tianjia_span f-l">
+
+					</div>
+					<input type="text" class="f-l tianjia_input" />
+					<div class="span_tianjia f-l">
+						<img src="images/tianjia.png" />
+						<span>添加更多</span>
+					</div>
+				</div>
+			</div>
+			<div class="type10 clear">
+				<p class="">人群</p>
+				<div class="clear">
+					<div class="tianjia_span f-l">
+
+					</div>
+					<input type="text" class="f-l tianjia_input" />
+					<div class="span_tianjia f-l">
+						<img src="images/tianjia.png" />
+						<span>添加更多</span>
+					</div>
+				</div>
+			</div>
+
+			<!--年代-->
+			<div class="import clear">
+				<span class="f-l">年代</span>
+				<input type="text" placeholder="年代" class="kind-3 f-r" readonly="readonly" />
+			</div>
+			<!--朝向-->
+			<div class="import clear">
+				<span class="f-l">朝向</span>
+				<input type="text" placeholder="南" class="kind-4 f-r" readonly="readonly" />
+			</div>
+			<div class="type2 clear ">
+				<span class="f-l">楼盘名称</span>
+				<input type="text" placeholder="请输入楼盘名称" class="" />
+			</div>
+			<!--楼层 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l">楼层</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>层/共</span>
+					<input type="text" />
+					<span>层</span>
+				</div>
+			</div>
+			<!--单位房价-->
+			<div class="type4 clear">
+				<span class="f-l">单位房价</span>
+				<span class="f-r">万元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<!--月供-->
+			<div class="type4 clear">
+				<span class="f-l">物业费</span>
+				<span class="f-r">万元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+
+			<!--类型 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">地址</span>
+				<input type="text" placeholder="请输入具体地址" class="" />
+			</div>
+			<div class="type2 clear ">
+				<span class="f-l">房源描述</span>
+				<input type="text" placeholder="请输入房源描述" class="" />
+			</div>
+
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p>室内图 <em>(最多可上传6张)</em></p>
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+		</div>
+		<button class="new_btn">立即发布</button>
+		<button class="new_btn">立即委托</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房屋种类
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".kind").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker1 = new mui.PopPicker();
+		picker1.setData([{
+				value: '01',
+				text: '3居室'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-2").click(function() {
+			picker1.show(function(selectItems) {
+				$(".kind-2").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker2 = new mui.PopPicker();
+		picker2.setData([{
+				value: '01',
+				text: '精装修'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-3").click(function() {
+			picker2.show(function(selectItems) {
+				$(".kind-3").val(selectItems[0].text);
+
+			})
+		});
+		//朝向
+		var picker3 = new mui.PopPicker();
+		picker3.setData([{
+				value: '01',
+				text: '南'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-4").click(function() {
+			picker3.show(function(selectItems) {
+				$(".kind-4").val(selectItems[0].text);
+
+			})
+		});
+		//点击添加更多
+		$(".span_tianjia").click(function() {
+			var vals = $(".tianjia_input").val();
+			console.log(vals)
+			if(vals != "") {
+				var spans = '<span>' + vals + '</span>';
+				$(".tianjia_span").append(spans);
+				$(".tianjia_input").val("");
+			} else {
+
+			}
+		})
+	</script>
+
+</html>

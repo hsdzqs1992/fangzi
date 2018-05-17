@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>委托竞卖</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/jingmai.css" />
+	</head>
+	<style type="text/css">
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+			font-size: 0.32rem;
+			line-height: 38px;
+			border-bottom: 1px solid #00A2E9;
+			color: #00A2E9 !important;
+		}
+		
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+			font-size: 0.32rem;
+			line-height: 40px;
+			color: #999999;
+		}
+		
+		.mui-slider-group {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+		}
+		
+		.nav {
+			padding: 0 0.3rem;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">委托竞卖</h1>
+		</header>
+		<div class="mui-content">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted b-f">
+				<div class="mui-scroll nav">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						新房
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						二手房
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						商铺写字楼
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						工业厂房
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="type b-f">
+			<!--1-->
+			<div class="pullrefresh mui-scroll-wrapper b-f">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="jingmai-detail.html">
+							<div class="lists clear">
+								<div class="lists_left f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="lists_right f-r">
+									<div class="lists_right_text1">
+										<p>新房西湖春天 电梯小高层电梯小高层电梯小高层...</p>
+									</div>
+									<div class="lists_right_bom clear">
+										<p class="f-l">当前价<em>99</em><em></em></p>
+										<p class="f-r">出价<em>1</em></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--2-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="jingjiren-detail.html">
+							<div class="lists clear">
+								<div class="lists_left f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="lists_right f-r">
+									<div class="lists_right_text1">
+										<p>二手房西湖春天 电梯小高层电梯小高层电梯小高层...</p>
+									</div>
+									<div class="lists_right_bom clear">
+										<p class="f-l">当前价<em>99</em><em></em></p>
+										<p class="f-r">出价<em>2</em></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--3-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="jingmai-detail.html">
+							<div class="lists clear">
+								<div class="lists_left f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="lists_right f-r">
+									<div class="lists_right_text1">
+										<p>商铺写字楼西湖春天 电梯小高层电梯小高层电梯小高层...</p>
+									</div>
+									<div class="lists_right_bom clear">
+										<p class="f-l">当前价<em>99</em><em></em></p>
+										<p class="f-r">出价<em>3</em></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--4-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="jingmai-detail.html">
+							<div class="lists clear">
+								<div class="lists_left f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="lists_right f-r">
+									<div class="lists_right_text1">
+										<p>工业厂房西湖春天 电梯小高层电梯小高层电梯小高层...</p>
+									</div>
+									<div class="lists_right_bom clear">
+										<p class="f-l">当前价<em>99</em><em></em></p>
+										<p class="f-r">出价<em>4</em></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		(function($) {
+			//阻尼系数
+			var deceleration = mui.os.ios ? 0.003 : 0.0009;
+			$('.mui-scroll-wrapper').scroll({
+				bounce: false,
+				indicators: true, //是否显示滚动条
+				deceleration: deceleration
+			});
+			$.ready(function() {
+				//循环初始化所有下拉刷新，上拉加载。
+				$.each(document.querySelectorAll('.pullrefresh .mui-scroll'), function(index, pullRefreshEl) {
+					$(pullRefreshEl).pullToRefresh({
+						up: {
+							callback: function() {
+								var self = this;
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									var html = '<a href="jingmai-detail.html"><div class="lists clear"><div class="lists_left f-l"><img src="images/42.png" /></div><div class="lists_right f-r"><div class="lists_right_text1"><p>西湖春天 电梯小高层电梯小高层电梯小高层...</p></div><div class="lists_right_bom clear"><p class="f-l">当前价<em>99</em><em></em></p><p class="f-r">出价<em>4</em></p></div></div></div></a>';
+									jQuery(ul).append(html);
+									self.endPullUpToRefresh();
+								}, 1000);
+
+							}
+						}
+					});
+				});
+			});
+		})(mui);
+		//a标签href跳转
+		mui('.a-href').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+		$(".mui-control-item").click(function() {
+			var index = $(this).index();
+			console.log(index)
+			$(this).addClass("mui-active").siblings().removeClass("mui-active");
+			$(".pullrefresh").eq(index).show().siblings().hide();
+		});
+	</script>
+
+</html>

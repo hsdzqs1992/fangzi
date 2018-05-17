@@ -1,0 +1,47 @@
+.record_title{
+	background: #f5f5f5;
+	padding: 0.2rem 0.5rem;
+	width: 100%;
+	overflow: hidden;
+}
+
+.record_title span{
+	color: #999999;
+	font-size: 0.32rem;
+	display: inline-block;
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+.record_wrap{
+
+}
+.record_lists{
+	padding: 0.2rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.record_lists:last-child{
+	border: none;
+}
+.record_lists span{
+	float: left;
+	font-size: 0.37333333rem;
+	color: #666666;
+	width: 25%;
+	text-align: center;
+	margin-top: 0.15rem;
+}
+.record_lists_color{
+	color: #FEB630 !important; 
+}
+.record_lists_color span{
+	color: #FEB630 !important; 
+}
+.record_lists_date{
+	font-size: 0.32rem !important;
+	text-align: center !important;
+	margin-top: 0rem !important; 
+}
+.record_lists_date em{
+	display: block;
+}

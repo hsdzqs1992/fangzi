@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.home.QuShiActivity">
+
+    <include layout="@layout/header"/>
+
+    <RelativeLayout
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/ll"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#333"
+                android:id="@+id/location"
+                android:text="郑州"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_15"/>
+            <TextView
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#666"
+                android:text="最新均价"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_below="@+id/ll"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="25dp">
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:textColor="#666"
+                android:text="2017-12-12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"/>
+            <TextView
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/jusecolor"
+                android:layout_marginTop="3dp"
+                android:text="2017"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"/>
+        </RelativeLayout>
+
+
+
+        <!--<LinearLayout-->
+            <!--android:visibility="gone"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<TextView-->
+                <!--android:textColor="#666"-->
+                <!--android:text="2017-12-12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="13sp"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_marginLeft="250dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<TextView-->
+                <!--android:textColor="#666"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="最新均价"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="13sp"/>-->
+
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<TextView-->
+                    <!--android:textColor="@color/jusecolor"-->
+                    <!--android:layout_marginTop="3dp"-->
+                    <!--android:text="2017"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="17sp"/>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color"></View>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"></RelativeLayout>
+
+
+</LinearLayout>

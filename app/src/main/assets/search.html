@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/search.css" />
+	</head>
+
+	<body class="b-f">
+		<div class="header clear">
+			<div class="type_input f-l">
+				<input type="" name="" id="" value="二手车" class="" readonly="readonly" />
+			</div>
+			<div class="search_input f-l">
+				<input type="text" name="" id="" value="" placeholder="搜索" />
+			</div>
+			<div class="mui-action-back f-r">
+				<span>取消</span>
+			</div>
+		</div>
+		<!--下拉框-->
+		<div class="cover">
+			<div class="rows">
+				<p class="rows_lists">二七区</p>
+				<p class="rows_lists">惠济区</p>
+				<p class="rows_lists">惠济区</p>
+				<p class="rows_lists">惠济区</p>
+			</div>
+		</div>
+		<!--热门搜索-->
+		<div class="hot">
+			<p class="hot_title">热门搜索</p>
+			<div class="hot_span clear">
+				<a href=""><span class="f-l">碧沙岗</span></a>
+				<a href=""><span class="f-l">正宏小区</span></a>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var ints = 0;
+		$(".header").on("click", ".type_input", function() {
+			ints++;
+			console.log(ints)
+			if(ints % 2 == 1) {
+				$(".cover").animate({
+					opacity: 1
+				}, 200, function() {
+					$(this).show()
+				});
+			} else {
+				$(".cover").animate({
+					opacity: 0
+				}, 200, function() {
+					$(this).hide()
+				});
+			}
+
+		});
+		$(".cover").click(function() {
+			$(".cover").animate({
+				opacity: 0
+			}, 200, function() {
+				$(this).hide();
+				ints = 0;
+			});
+		});
+		$(".rows").on("click", ".rows_lists", function() {
+			$(".type_input").find("input").val($(this).text());
+		})
+	</script>
+
+</html>

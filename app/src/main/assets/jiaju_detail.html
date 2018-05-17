@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>家居详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jiaju_detail.css" />
+	</head>
+	<style type="text/css">
+
+	</style>
+
+	<body>
+		<div class="banner">
+			<div class="bann-s swiper-container">
+				<div class="swiper-wrapper mui-content-padded m-0">
+					<a class="swiper-slide" href="javascript:;">
+						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+					</a>
+					<a class="swiper-slide" href="javascript:;">
+						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+					</a>
+					<a class="swiper-slide" href="javascript:;">
+						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+					</a>
+				</div>
+				<span class="fenye c-f font-15"><span class="slide-active">1</span>/<span class="slide-num">4</span></span>
+			</div>
+			<div class="fanhui mui-action-back">
+				<img src="images/jiantou.png" />
+			</div>
+		</div>
+		<div class="detail_mess b-f">
+			<div class="detail_mess_title">
+				<p>胡桃木全实木双人床 现代中式实木家具1.5/1.8米 大床</p>
+			</div>
+			<div class="detail_mess_text">
+				<p class="detail_mess_text_title">服务详情</p>
+				<div class="detail_mess_lists">
+					<p>1.所有产品都可根据房屋装修风格进行专业定制，包括 尺寸、颜色、材质等 </p>
+					<p>2.所有产品都可根据房屋装修风格进行专业定制，包括 尺寸、颜色、材质等</p>
+					<p>3.所有产品都可根据房屋装修风格进行专业定制，包括 </p>
+				</div>
+			</div>
+		</div>
+		<div class="b-f clear dianpu" onclick="window.location.href='jiaju_dianpu.html'">
+			<div class="mui-pull-left dianpu_images">
+				<img src="images/dianpu.png"/>
+				<span>ailvju旗舰店</span>
+			</div>
+			<div class="mui-pull-right mui-icon mui-icon-arrowright">
+				
+			</div>
+		</div>
+		<div class="detail_bottom">
+			<div class="detail_shou f-l" data_id="1">
+				<img src="images/shou99.png"/>
+				<span>收藏</span>
+			</div>
+			<div class="detail_gou f-l" onclick="window.location.href=''">
+				<img src="images/xiaoxi.png"/>
+				<span>立即沟通</span>
+			</div>
+		</div>
+	</body>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.zoom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.previewimage.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.bann-s', {
+			pagination: '.bann-s .swiper-pagination',
+			paginationClickable: true,
+			onInit: function(swiper) {
+				$(".slide-num").html(swiper.slides.length);
+			},
+			onSlideChangeEnd: function(swiper) {
+				$(".slide-active").html(swiper.activeIndex + 1);
+			}
+		});
+		mui.previewImage();
+		$(".detail_shou").click(function(){
+			var type = $(this).attr("data_id");
+			if (type==1) {
+				$(this).find("img").attr("src","images/shouf9.png");
+				$(this).find("span").text("已收藏").css("color","#FEB630");
+				$(this).attr("data_id","2");
+			} else{
+				$(this).find("img").attr("src","images/shou99.png");
+				$(this).find("span").text("收藏").css("color","#999999");
+				$(this).attr("data_id","1");
+			}
+		});
+	</script>
+
+</html>

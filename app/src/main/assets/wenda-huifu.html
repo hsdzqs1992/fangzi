@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问题详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-wenda-detail.css" />
+	</head>
+	<style type="text/css">
+		.center{
+			padding: 0.2rem 0.5rem;
+		}
+		.article_title{
+			padding-top: 0.2rem;
+			margin-bottom:0.3rem;
+		}
+		.article_title p{
+			font-size: 0.4rem;
+			color: #333333;
+			line-height: 0.5rem;
+		}
+		.article_huifu textarea{
+			font-size: 0.373333333rem;
+			padding:0.2rem 0.25rem;
+			width: 100%;
+			height: 3rem;
+		}
+	</style>
+	<body class="b-f">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">问题详情</h1>
+		</header>
+		<div class="center mui-content b-f">
+			<div class="article_title">
+				<p>交了定金，发现没有购房资格，定金还能退么？</p>
+			</div>
+			<div class="article_huifu">
+				<textarea name="" rows="" cols=""placeholder="添加回答"></textarea>
+			</div>
+		</div>
+		<button class="new_btn">提交</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".new_btn").click(function(){
+			window.history.back();
+		})
+	</script>
+</html>

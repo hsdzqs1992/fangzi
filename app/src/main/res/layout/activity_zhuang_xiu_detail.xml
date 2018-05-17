@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.home.ZhuangXiuDetailActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:scaleType="centerCrop"/>
+
+    
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/shoucang"
+                android:gravity="center"
+                android:text="收藏"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_15"
+                android:layout_width="115dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/goutomg"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="立即沟通"
+                android:textColor="#fff"
+                android:textSize="@dimen/sp_15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

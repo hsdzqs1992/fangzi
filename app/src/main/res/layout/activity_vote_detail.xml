@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.VoteActivity">
+
+<include layout="@layout/header"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:drawablePadding="@dimen/dp_4"
+                android:drawableRight="@drawable/fire"
+                android:textColor="#f39900"
+                android:textSize="@dimen/sp_15"
+                android:text="111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_12"
+                android:text="报名人数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:textColor="#f39900"
+                android:textSize="@dimen/sp_15"
+                android:text="111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_12"
+                android:text="累计票数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#f39900"
+                android:textSize="@dimen/sp_15"
+                android:text="111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_12"
+                android:text="累计访问数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingBottom="@dimen/dp_4"
+            android:paddingTop="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_10"
+            android:id="@+id/zuixin"
+            android:background="#f39900"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_15"
+            android:text="50号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/zongpaiming"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:textColor="#666"
+            android:textSize="@dimen/sp_15"
+            android:text="总排名"
+            android:layout_width="85dp"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="345dp"
+            android:layout_height="160dp" />
+        <ImageView
+            android:visibility="gone"
+            android:layout_below="@+id/img1"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="345dp"
+            android:layout_height="160dp" />
+    </RelativeLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"/>
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+        
+        <TextView
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/sp_12"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:text="奖品"
+            android:background="@drawable/shape_sell"
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/sp_12"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:text="比赛\n规则"
+            android:background="@drawable/shape_home"
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/shape_biankuang"
+            android:layout_width="345dp"
+            android:layout_height="110dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#f39900"
+                        android:textSize="@dimen/sp_15"
+                        android:text="111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#f39900"
+                        android:textSize="@dimen/sp_15"
+                        android:text="111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#999"
+                    android:textSize="@dimen/sp_12"
+                    android:text="户型"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="#666"
+                    android:textSize="@dimen/sp_14"
+                    android:text="报名人数"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#999"
+                    android:textSize="@dimen/sp_12"
+                    android:text="面积"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="#666"
+                    android:textSize="@dimen/sp_14"
+                    android:text="报名人数"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#999"
+                    android:textSize="@dimen/sp_12"
+                    android:text="参赛寄语"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginLeft="7dp"
+                    android:textColor="#666"
+                    android:textSize="@dimen/sp_14"
+                    android:text="报名人数"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/baoming"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:background="@drawable/shape_btn_home"
+            android:text="投TA一票"
+            android:layout_width="100dp"
+            android:layout_height="30dp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

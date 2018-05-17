@@ -1,0 +1,25 @@
+
+.center .input_lists{
+	padding: 0.05rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.center input{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+ p{
+	font-size: 0.32rem;
+	color: #999999;
+	padding:0.2rem 0.5rem;
+}
+.new_btn {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00A2E9;
+    color: white;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    z-index: 10;
+}

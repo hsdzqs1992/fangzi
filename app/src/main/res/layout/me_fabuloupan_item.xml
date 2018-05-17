@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="95dp">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/pics"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="100dp"
+        android:layout_height="75dp" />
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/pics"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          >
+          <TextView
+              android:id="@+id/title"
+              android:text="@string/app_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="15sp"
+              android:textColor="#333"/>
+          <TextView
+              android:id="@+id/jiage"
+              android:layout_marginRight="22dp"
+              android:layout_alignParentRight="true"
+              android:text="@string/app_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="@dimen/sp_12"
+              android:textColor="#666"/>
+      </RelativeLayout>
+
+        <TextView
+            android:id="@+id/diqu"
+            android:layout_marginTop="9dp"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#999"/>
+        <TextView
+            android:id="@+id/mianjiaa"
+            android:layout_marginTop="5dp"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#999"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tese"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_toLeftOf="@+id/zhiding"
+        android:gravity="center"
+        android:background="@color/jusecolor"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_alignParentBottom="true"
+        android:text="编辑"
+        android:layout_width="55dp"
+        android:layout_height="25dp"
+        android:textSize="12sp"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/zhiding"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="置顶"
+        android:layout_width="55dp"
+        android:layout_height="25dp"
+        android:textSize="12sp"
+        android:textColor="#fff"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ccc"
+        ></View>
+</RelativeLayout>

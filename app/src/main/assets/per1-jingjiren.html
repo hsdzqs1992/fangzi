@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>经纪人资料</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-jingjiren.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">经纪人资料</h1>
+			<span class="mui-pull-right c-f compile">编辑</span>
+		</header>
+		<div class="center mui-content">
+			<div class="material_title b-f">
+				<div class="material_title_manifesto">
+					<p>卖房宣言</p>
+					<div id="textarea" contenteditable="true">用真诚、行动为客户服务，让顾客体验更有价值的服务！</div>
+				</div>
+				<div class="material_title_jianli">
+					<p>个人简介</p>
+					<div id="jianjie" contenteditable="true">用真诚、行动为客户服务，让顾客体验更有价值的服务！用真诚、行动为客户服务，让顾客体验更有价值的服务</div>
+				</div>
+			</div>
+			<div class="message b-f">
+				<div class="message_title">
+					<p>职业信息</p>
+				</div>
+				<div class="message_lists">
+					<div class="message_lists_title">
+						<p>公司门店</p>
+					</div>
+					<div class="clear message_lists_input">
+						<input type="text" class="f-l" value="" placeholder="请输入公司门店" />
+						<img src="images/tianjia.png" class="f-r" />
+					</div>
+					<div class="message_lists_new">
+						<!--<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>
+						<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>-->
+					</div>
+				</div>
+				<div class="message_lists1 clear">
+					<p class="f-l">服务年限</p>
+					<span class="f-r">年</span>
+					<input type="text" class="f-r" />
+				</div>
+				<div class="message_lists">
+					<div class="message_lists_title">
+						<p>主营板块</p>
+					</div>
+					<div class="clear message_lists2_input">
+						<input type="text" class="f-l" value="" placeholder="请输入主营板块" />
+						<img src="images/tianjia.png" class="f-r" />
+					</div>
+					<div class="message_lists2_new">
+						<!--<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>
+						<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>-->
+					</div>
+				</div>
+				<div class="message_lists">
+					<div class="message_lists_title">
+						<p>主营小区</p>
+					</div>
+					<div class="clear message_lists3_input">
+						<input type="text" class="f-l" value="" placeholder="请输入主营小区" />
+						<img src="images/tianjia.png" class="f-r" />
+					</div>
+					<div class="message_lists3_new">
+						<!--<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>
+						<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>-->
+					</div>
+				</div>
+				<div class="message_lists">
+					<div class="message_lists_title">
+						<p>房源特点</p>
+					</div>
+					<div class="clear message_lists4_input">
+						<input type="text" class="f-l" value="" placeholder="请输入房源特点" />
+						<img src="images/tianjia.png" class="f-r" />
+					</div>
+					<div class="message_lists4_new">
+						<!--<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>
+						<div class="message_lists_input_new clear">
+							<input type="text" class="f-l"value=""placeholder="请输入公司门店"/>
+						<img src="images/tianjia.png" class="f-r"/>
+						</div>-->
+					</div>
+				</div>
+				<div class="message_lists1 clear">
+					<p class="f-l">佣金比</p>
+					<div class="f-r message_lists5_right">
+						<input type="text" />
+						<span>≤</span>
+						<input type="text" />
+						<span>%</span>
+					</div>
+				</div>
+				<div class="message_lists">
+					<div class="message_lists_title">
+						<p>从业经历</p>
+					</div>
+					<div class="clear message_lists6_input">
+						<input type="text" class="f-l" value="" placeholder="请输入开始时间与结束时间" />
+						<div class="f-r message_lists6_input_right">
+							
+							<input type="text" class="" value="" placeholder="请输入从业经历" />
+<img src="images/tianjia.png" class="" />
+						</div>
+					</div>
+					<div class="message_lists6_new">
+						<!--<div class="clear message_lists6_input">
+							<input type="text" class="f-l" value="" placeholder="请输入开始时间与结束时间" />
+							<div class="f-r message_lists6_input_right">
+								<img src="images/tianjia.png" class="f-r" />
+								<input type="text" class="f-r" value="" placeholder="请输入从业经历" />
+
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".message_lists_input img").click(function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入公司门店"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists_new").append(lists);
+			$(this).hide();
+		});
+		$(".message_lists_new").on("click", ".tianjia", function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入公司门店"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists_new").append(lists);
+			$(this).hide();
+		});
+		//主营板块
+		$(".message_lists2_input img").click(function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入主营板块"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists2_new").append(lists);
+			$(this).hide();
+		});
+		$(".message_lists2_new").on("click", ".tianjia", function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入主营板块"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists2_new").append(lists);
+			$(this).hide();
+		});
+		//主营小区
+		$(".message_lists3_input img").click(function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入主营小区"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists3_new").append(lists);
+			$(this).hide();
+		});
+		$(".message_lists3_new").on("click", ".tianjia", function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入主营小区"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists3_new").append(lists);
+			$(this).hide();
+		});
+		//房源特点
+		$(".message_lists4_input img").click(function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入房源特点"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists4_new").append(lists);
+			$(this).hide();
+		});
+		$(".message_lists4_new").on("click", ".tianjia", function() {
+			var lists = '<div class="message_lists_input_new clear"><input type="text" class="f-l"value=""placeholder="请输入房源特点"/><img src="images/tianjia.png" class="f-r tianjia"/></div>';
+			$(".message_lists4_new").append(lists);
+			$(this).hide();
+		});
+		//从业经历
+		$(".message_lists6_input img").click(function() {
+			var lists = '<div class="clear message_lists6_input"><input type="text" class="f-l" value="" placeholder="请输入开始时间与结束时间" /><div class="f-r message_lists6_input_right"><input type="text" class="" value="" placeholder="请输入从业经历" /><img src="images/tianjia.png" class="tianjia" /></div></div>';
+			$(".message_lists6_new").append(lists);
+			$(this).hide();
+		});
+		$(".message_lists6_new").on("click", ".tianjia", function() {
+
+			var lists = '<div class="clear message_lists6_input"><input type="text" class="f-l" value="" placeholder="请输入开始时间与结束时间" /><div class="f-r message_lists6_input_right"><input type="text" class="" value="" placeholder="请输入从业经历" /><img src="images/tianjia.png" class="tianjia" /></div></div>';
+			$(".message_lists6_new").append(lists);
+			$(this).hide();
+		});
+	</script>
+
+</html>

@@ -1,0 +1,308 @@
+.banner {
+	position: relative;
+}
+
+.swiper-wrapper img {
+	width: 100%;
+	height:5.333333333rem;
+}
+
+.fanhui {
+	width: 100%;
+	position: absolute;
+	top: 0.3rem;
+	z-index: 10;
+	padding: 0 0.4rem;
+}
+
+.fanhui img {
+	width: 0.8rem;
+	height: 0.8rem;
+}
+.fanhui img:nth-child(2){
+	margin-left: 0.4rem;
+}
+.bofang{
+	position: absolute;
+	width: 1.6rem !important;
+	height: 1.6rem !important;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin:auto;
+}
+
+/*详情name*/
+.detail_name{
+	padding: 0.2rem 0.5rem 0.4rem 0.5rem;
+}
+.detail_name_left{
+	width: 80%;
+}
+.detail_name_title p{
+	font-size: 0.4rem;
+	color: #333333;
+	margin-bottom: 0.3rem;
+}
+.detail_name_type div{
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+}
+.detail_name_type div p:nth-child(1){
+	color: #FEB630;
+	font-size: 0.373333333rem;
+	margin-bottom: 0.1rem;
+}
+.detail_name_type div p:nth-child(2){
+	color: #999999;
+	font-size: 0.373333333rem;
+}
+.detail_name_type span{
+	width: 1px;
+	height: 0.6rem;
+	background: #E4E4E4;
+	margin-top: 0.15rem;
+}
+.detail_name_type div:nth-child(2){
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+}
+.detail_name_right{
+	width: 15%;
+	text-align: center;
+}
+.detail_name_right img{
+	width: 0.64rem;
+	height: 0.64rem;
+	margin-left:0.35rem;
+	margin-bottom: 0.15rem;
+}
+.detail_name_right p{
+	color: #999999;
+	font-size: 0.32rem;
+}
+/*详情内容*/
+.detail_mess{
+	padding: 0.2rem 0.5rem;
+	margin-top: 0.27rem;
+}
+.detail_mess p{
+	display: inline-block;
+	width: 49%;
+	font-size:0.32rem;
+	color: #999999;
+	margin-bottom: 0.1rem;
+}
+.detail_mess p em{
+	font-size:0.32rem;
+	color: #333333;
+}
+.detail_mess_money em{
+	color: #FEB630 !important;
+	font-size: 0.4rem !important;
+}
+.detail_mess_type2{
+	margin-top: 0.1rem;
+}
+.detail_mess_type2 span:nth-child(1){
+	font-size:0.32rem;
+	color: #999999;
+	display: inline-block;
+	line-height:0.64rem;
+}
+.detail_mess_type2 span em{
+	font-size:0.32rem;
+	color: #333333;
+}
+.detail_mess_type2 img{
+	width: 0.32rem;
+	height: 0.32rem;
+	margin-top: 0.1rem;
+}
+.detail_mess_type2 span:nth-child(2){
+	font-size: 0.6rem;
+	color: #999999;
+}
+/*房源概况*/
+.detail_gaikuo{
+	padding: 0.2rem 0.5rem;
+	margin-top: 0.27rem;
+	margin-bottom: 1.3rem;
+}
+.detail_gaikuo_title{
+	color: #999999;
+	font-size: 0.32rem;
+}
+.detail_gaikuo_images{
+	margin-top: 0.2rem;
+	margin-bottom: 0.22rem;
+}
+.detail_gaikuo_images_left img{
+	width:1.3333333rem;
+	height: 1.3333333rem;
+	border-radius: 50%;
+}
+.detail_gaikuo_images_right{
+	margin-top: 0.2rem;
+	margin-left: 0.2rem;
+}
+.detail_gaikuo_images_right p{
+	font-size:0.4rem;
+	color: #333333;
+	margin-bottom: 0.1rem;
+}
+.detail_gaikuo_images_right p em{
+	font-size:0.32rem;
+	color: #999999;
+	display: inline-block;
+	margin-left: 0.1rem;
+}
+.lists_left_star{
+	margin-bottom: 0.2rem;
+}
+.lists_left_star div{
+	margin-right: 0.07rem;
+}
+.star_lists{
+	width:0.4rem;
+	height: 0.35rem;
+	background: url(../images/kong-xin.png)no-repeat;
+	background-size: 0.4rem 0.35rem;
+}
+.star_lists_shi{
+	width:0.4rem;
+	height: 0.35rem;
+	background: url(../images/shi-xin.png)no-repeat;
+	background-size: 0.4rem 0.35rem;
+}
+.detail_gaikuo_referral{
+	margin-bottom:0.267rem;
+}
+.detail_gaikuo_referral p:nth-child(1){
+	color: #999999;
+	font-size: 0.32rem;
+	margin-bottom: 0.2rem;
+}
+.detail_gaikuo_referral p:nth-child(2){
+	color: #666666;
+	font-size: 0.37333333rem;
+	line-height: 0.55rem;
+}
+/*底部按钮*/
+.detail_bottom{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 10;
+}
+.detail_shou,.detail_gou,.detail_wei{
+	display: inline-block;
+	font-size:0.373333rem;
+	padding: 0.43rem 0;
+	
+}
+.detail_gou{
+	padding: 0.26rem;
+
+}
+.detail_gou{
+	width: 33.5%;
+	text-align: center;
+	background: white;
+	font-size: 0.3733333rem;
+	color: #333333;
+}
+.detail_gou div{
+	display: inline-block;
+	vertical-align:middle;
+}
+.detail_gou span{
+	display: block;
+}
+.detail_gou span:nth-child(2){
+	color: #666666;
+	font-size: 0.32rem;
+}
+.detail_gou div p{
+	font-size: 0.32rem;
+	color: white;
+}
+.detail_wei{
+	width: 32%;
+	background: #FEB630;
+	text-align: center;
+	color: white;
+}
+.detail_shou{
+	width: 34.5%;
+	text-align: center;
+	background: #00A2E9;
+	color:white;
+}
+.detail_shou img{
+	display: inline-block;
+	width: 0.4rem;
+	height: 0.4rem;
+}
+.detail_gou img{
+	display: inline-block;
+	width: 0.8rem;
+	height: 0.8rem;
+}
+.detail_wei img{
+	display: inline-block;
+	width: 0.4rem;
+	height: 0.4rem;
+}
+/*举报*/
+.report_cover{
+	 display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+}
+.report_wrap{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: white;
+}
+.report_title{
+	text-align: center;
+	padding: 0 0.5rem;
+	line-height: 1.05rem;
+}
+.report_title p{
+	display: inline-block;
+	color: #999999;
+}
+.report_title img{
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0.34rem;
+}
+.report_lists p{
+	border-bottom: 1px solid #E4E4E4;
+	color: #666666;
+	line-height: 1.05rem;
+	text-align: center;
+}
+.report_lists p:last-child{
+	border: none;
+}
+.report_lists_color{
+	background: rgba(0,0,0,0.3);
+	color: white !important;
+}
+.report_btn button{
+	width: 100%;
+	text-align: center;
+	background: #00A2E9;
+	color: white;
+	line-height: 1.05rem;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/flexible.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/gusuan-result.css" />
+	</head>
+
+	<body class="b-f">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">估算结果</h1>
+		</header>
+		<div class="mui-content">
+			<div class="result_title b-f">
+				<p>我的房价总价</p>
+				<p>正商小区<em>2室1厅1卫</em><em>100m²</em></p>
+			</div>
+			<div class="result_money">
+				<p>120万</p>
+			</div>
+			<div class="charts b-f">
+				<div class="charts_wrap_title b-f">
+					<p>均价走势</p>
+				</div>
+				<div class="charts_wrap">
+					<div id="container">
+
+					</div>
+					<div class="charts_wrap_p">
+						<p>房子的楼层、朝向、装修等会使您的房子与小区其他房子价格不同</p>
+					</div>
+				</div>
+			</div>
+			<div class="result_type b-f">
+				<div class="result_type_title">
+					<p>该房源受欢迎程度</p>
+				</div>
+				<div class="result_type_span clear">
+					<span class="f-l result_type_span_color">一般</span>
+					<span class="f-l">较高</span>
+					<span class="f-l">非常高</span>
+				</div>
+				<div class="result_type_bom">
+					<p>恭喜您，这套房子如果出售</p>
+				</div>
+			</div>
+		</div>
+		<button class="new_btn">发布房源</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var chart = Highcharts.chart('container', {
+			chart: {
+				type: 'line'
+			},
+			title: {
+				text: null
+			},
+			subtitle: {
+				text: null
+			},
+			xAxis: {
+				categories: ['一月', '二月', '三月', '四月', '五月']
+			},
+			yAxis: {
+				title: {
+					text: null
+				}
+			},
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled: true // 开启数据标签
+					},
+					enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+				},
+				series: {
+					events: {
+						legendItemClick: function(e) {
+							return false; // 直接 return false 即可禁用图例点击事件
+						}
+					}
+				}
+			},
+			series: [{
+				name: '东京',
+				data: [0.8, 6.9, 9.5, 11, 9.0],
+				showInLegend: false
+			}],
+			credits: {
+				enabled: false // 禁用版权信息
+			}
+		});
+	</script>
+
+</html>

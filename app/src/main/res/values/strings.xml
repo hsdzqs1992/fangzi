@@ -1,0 +1,189 @@
+<resources>
+    <string name="app_name">建德房产</string>
+
+
+    <string-array name="bottom_title">
+        <item>首页</item>
+        <item>微聊</item>
+        <item>发布</item>
+        <item>推荐</item>
+        <item>我的</item>
+    </string-array>
+
+    <string-array name="me_home">
+        <item>消息</item>
+        <item>委托竞卖</item>
+        <item>卖房</item>
+        <item>出租</item>
+        <item>委托卖房</item>
+        <item>其他委托</item>
+
+        <item>问答</item>
+        <item>我的收藏</item>
+        <item>看房记录</item>
+        <item>设置</item>
+    </string-array>
+
+    <string-array name="me_home_jingjiren">
+        <item>消息</item>
+        <item>卖房</item>
+        <item>出租</item>
+        <item>委托卖房</item>
+        <item>问答</item>
+        <item>我的收藏</item>
+        <item>看房记录</item>
+        <item>经纪人资料</item>
+        <item>设置</item>
+    </string-array>
+
+    <string-array name="me_home_zhuangxiushang2">
+        <item>消息</item>
+        <item>卖房</item>
+        <item>出租</item>
+        <item>委托卖房</item>
+        <item>问答</item>
+        <item>我的收藏</item>
+        <item>看房记录</item>
+        <item>经纪人资料</item>
+    </string-array>
+    <string-array name="me_home_zhuangxiushang">
+
+        <item>消息</item>
+        <item>问答</item>
+        <item>查看记录</item>
+        <item>账户充值</item>
+        <item>设置</item>
+
+    </string-array>
+
+    <string-array name="me_home_jiaju">
+        <item>消息</item>
+        <item>产品</item>
+        <item>问答</item>
+        <!--<item>查看记录</item>-->
+        <item>账户充值</item>
+        <item>设置</item>
+    </string-array>
+
+    <string-array name="me_home_chanshang">
+        <item>发布楼盘</item>
+        <item>免费看房</item>
+        <item>问答</item>
+        <item>消息</item>
+        <item>设置</item>
+    </string-array>
+
+    <string-array name="home_feilei">
+        <item>新房</item>
+        <item>二手房</item>
+        <item>租房</item>
+        <item>商铺写字楼</item>
+        <item>工业厂房</item>
+        <item>家居</item>
+        <item>装修</item>
+        <item>委托竞卖</item>
+        <item>免费看房</item>
+        <item>需求大厅</item>
+    </string-array>
+
+    <string-array name="me_maifang">
+        <item>二手房</item>
+        <item>写字楼</item>
+        <item>商铺</item>
+        <item>工业厂房</item>
+    </string-array>
+
+    <string-array name="me_chuzu">
+        <item>住宅</item>
+        <item>商铺</item>
+        <item>工厂</item>
+        <item>写字楼</item>
+    </string-array>
+
+
+    <string-array name="home_wenda">
+        <item>精选问答</item>
+        <item>热门问答</item>
+        <item>常见问题</item>
+        <item>待解决问题</item>
+    </string-array>
+
+    <string-array name="me_paimai">
+        <item>参与宝贝</item>
+        <item>已拍下</item>
+        <item>保证金</item>
+        <item>我的提醒</item>
+    </string-array>
+
+    <string-array name="me_paimai2">
+        <item>审核中</item>
+        <item>进行中</item>
+        <item>已拍出</item>
+        <item>流拍</item>
+    </string-array>
+    <string-array name="home_fabu">
+        <item>委托买房</item>
+        <item>委托卖房</item>
+        <item>委托出租</item>
+        <item>委托求租</item>
+        <item>委托办证</item>
+        <item>委托贷款</item>
+    </string-array>
+
+
+    <string-array name="home_xuqiudating">
+        <item>买房</item>
+        <item>卖房</item>
+        <item>出租</item>
+        <item>求租</item>
+        <item>代办证件</item>
+    </string-array>
+
+
+    <string-array name="me_qite">
+        <item>买房</item>
+        <item>出租</item>
+        <item>求租</item>
+        <item>办证</item>
+        <item>贷款</item>
+    </string-array>
+
+    <string-array name="home_jingmai">
+        <item>新房</item>
+        <item>二手房</item>
+        <item>商铺写字楼</item>
+        <item>工业厂房</item>
+    </string-array>
+
+
+    <string-array name="home_map">
+        <item>二手房</item>
+        <item>新房</item>
+        <item>租房</item>
+    </string-array>
+
+
+    <string-array name="home_xiezilou">
+        <item>商铺新盘</item>
+        <item>商铺出租</item>
+        <item>商铺出售</item>
+        <item>写字楼新盘</item>
+        <item>写字楼出租</item>
+        <item>写字楼出售</item>
+    </string-array>
+
+    <string name="shangpu">商铺</string>
+    <string name="xiezilou">写字楼</string>
+    <string-array name="home_xiezilou_tab">
+        <item>商铺</item>
+        <item>写字楼</item>
+    </string-array>
+    <!--<string-array name="home_xiezilou">-->
+    <!--<item>商铺新盘</item>-->
+    <!--<item>商铺出租</item>-->
+    <!--<item>商铺出售</item>-->
+    <!--<item>写字楼新盘</item>-->
+    <!--<item>写字楼出租</item>-->
+    <!--<item>写字楼出售</item>-->
+    <!--</string-array>-->
+</resources>

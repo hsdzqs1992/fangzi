@@ -1,0 +1,96 @@
+.mui-bar .search-input input {
+	margin-bottom: 0;
+	width: 85%;
+	font-size: 0.32rem !important;
+	border-radius: 0.1rem !important;
+	border: 1px solid #00A2E9 !important;
+	background: url(../images/21.png) 0.34666667rem center no-repeat;
+	background-size: 0.42666667rem;
+	background-position-x: 40%;
+	padding: 0 0.26666667rem;
+	padding-left: 0.5rem;
+	background-color: #4dbef0;
+	height: 0.9rem !important;
+	text-align: center;
+}
+
+::-webkit-input-placeholder {
+	color: white !important;
+}
+
+:-moz-placeholder {
+	color: white !important;
+}
+
+::-moz-placeholder {
+	color: white !important;
+}
+
+:-ms-input-placeholder {
+	color: white !important;
+	text-align: center;
+}
+
+.mui-pull-right {
+	font-size: 0.32rem;
+	color: white;
+	background: #4DBEF0;
+	width: 12%;
+	text-align: center;
+	height: 0.82rem;
+	line-height: 0.82rem;
+	border-radius: 0.1rem;
+	margin-top: 0.2rem;
+}
+
+.pullrefresh {
+	top: 2.21rem;
+	padding-bottom: 1rem;
+}
+
+.news {
+	padding: 0 0.5rem;
+}
+.type{
+}
+.lists {
+	padding: 0.2rem 0;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.lists_text {
+	font-size: 0.4rem;
+	color: #333333;
+	margin-bottom: 0.2rem;
+}
+
+.huifu {
+	margin-bottom: 0.2rem;
+}
+
+.huifu p {
+	line-height: 20px;
+	font-size: 0.3733333rem;
+	color: #666666;
+}
+
+.lists_bom {
+	color: #999999;
+	font-size: 0.32rem;
+}
+
+.lists_bom_images img {
+	width: 12px;
+	height: 12px;
+	margin-right: 0.1rem;
+}
+.new_btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #00A2E9;
+    color: white;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    z-index: 10;
+}

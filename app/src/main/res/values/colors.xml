@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00a1e9</color>
+    <color name="colorPrimaryDark">#00a1e9</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+
+
+    <color name="alpha_80_black">#CC000000</color>
+    <color name="tans">#00a1e9</color>
+    <color name="gray">#999</color>
+    <color name="white">#fff</color>
+    <color name="line_color">#ddd</color>
+    <color name="qianse">#4dbef0</color>
+    <color name="translate">#999</color>
+    <color name="linecolor">#ddd</color>
+    <color name="jusecolor">#f39900</color>
+    <color name="three">#333</color>
+</resources>

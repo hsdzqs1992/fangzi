@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="82dp">
+
+    <TextView
+        android:id="@+id/tvs"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="户型描述"
+        android:textSize="@dimen/sp_15"
+        android:textColor="#999"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/tvs2"
+        android:lines="2"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@null"
+        android:hint="描述内容"
+        android:textSize="@dimen/sp_15"
+        android:textColor="#666"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color"></View>
+</LinearLayout>

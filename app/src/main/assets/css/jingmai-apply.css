@@ -1,0 +1,94 @@
+.lists{
+	padding: 0 0.5rem;
+	border-bottom:1px solid #E4E4E4 ;
+}
+.lists span{
+	font-size:0.4rem;
+	color: #666666;
+	margin-top: 0.31rem;
+}
+.lists input{
+	width: 80%;
+	border: none;
+	margin: 0;
+	text-align: right;
+}
+.lists_type span{
+	margin-top: 0.15rem;
+}
+.lists_type{
+	padding: 0.13rem 0.5rem;
+}
+.lists_type input{
+	border: 1px solid #FEB630;
+	width: 2.53333333rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	background: url(../images/sanjao.png) no-repeat center right;
+	background-size: 0.2133333rem 0.16rem;
+	background-position-x: 90%;
+	text-align: left;
+	padding-left: 0.25rem;
+}
+.tishi{
+	margin: 0.2rem 0.5rem 0 0.5rem;
+}
+.tishi p{
+	font-size: 0.32rem;
+	color: #666666;
+	margin-bottom: 0.05rem;
+}
+/*底部按钮*/
+.new_btn {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #00A2E9;
+	color: white;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	z-index: 10;
+}
+/*付款账号*/
+.pay_num{
+	padding: 0.2rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.pay_num span:nth-child(1){
+	color: #666666;
+	font-size: 0.32rem;
+	margin-top: 0.13rem;
+}
+.pay_num span:nth-child(2){
+	color: #999999;
+	font-size: 0.6rem;
+}
+.pay_num span:nth-child(3){
+	color: #666666;
+	font-size: 0.32rem;
+	margin-top: 0.13rem;
+}
+.pay_money{
+	margin: 0 0.5rem;
+	padding: 0.3rem 0 1rem 0;
+}
+.pay_money p:nth-child(1){
+	color: #666666;
+	font-size: 0.32rem;
+	margin-bottom: 0.3rem;
+}
+.pay_money{
+	color:#666666;
+	font-size: 0.32rem;
+}
+.pay_money_num{
+	border-bottom: 1px solid #E4E4E4;
+}
+.pay_money em:nth-child(1){
+	margin-right: 0.2rem;
+}
+.pay_money em:nth-child(2){
+	color:#FEB630 !important;
+	font-size: 0.66666667rem !important;
+}

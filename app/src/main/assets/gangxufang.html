@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>刚需房</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/huodong.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title"> 刚需房</h1>
+		</header>
+		<div class="center mui-content">
+			<div class="lists b-f">
+				<a href="">
+					<div class="lists_images">
+						<img src="images/42.png" />
+						<div class="cover">
+							<p>惠济-惠济区 正商家河家</p>
+						</div>
+					</div>
+					<div class="lists_text clear">
+						<div class="lists_text_left f-l">
+							<p>期房在售</p>
+							<p>300人已报名</p>
+						</div>
+						<div class="lists_text_right f-r">
+							<p>12500元/m²</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="lists b-f">
+				<a href="">
+					<div class="lists_images">
+						<img src="images/42.png" />
+						<div class="cover">
+							<p>惠济-惠济区 正商家河家</p>
+						</div>
+					</div>
+					<div class="lists_text clear">
+						<div class="lists_text_left f-l">
+							<p>期房在售</p>
+							<p>300人已报名</p>
+						</div>
+						<div class="lists_text_right f-r">
+							<p>12500元/m²</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--获取弹窗-->
+		<div class="pay_wrap">
+			<div class="pay">
+				<div class="pay_title">
+					<span>获取优惠</span>
+					<img src="images/cuohao.png" class="pay_close" />
+				</div>
+				<div class="pay1">
+					<input type="text" placeholder="请输入您的手机号" />
+					<p class="pay1_btn">确定</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".center").on("click", ".huo_btn", function() {
+			$(".pay_wrap").show();
+		});
+		$(".pay_close").click(function() {
+			$(".pay_wrap").hide();
+		})
+	</script>
+
+</html>

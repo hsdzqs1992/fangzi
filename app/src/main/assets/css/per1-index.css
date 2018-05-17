@@ -1,0 +1,138 @@
+/*用户头像*/
+
+.personal {
+	width: 100%;
+	height: 4.66666667rem;
+	background: #00a2e9;
+	position: relative;
+}
+
+.personal_images {
+	height: 3.2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.personal_images img {
+	display: inline-block;
+	width: 1.86666667rem;
+	height: 1.86666667rem;
+	border-radius: 50%;
+}
+
+.personal_images p {
+	color: white;
+	font-size: 0.42666667rem;
+	margin-top: 0.6rem;
+}
+.rukou-list{
+	margin-top: 0.5rem;
+}
+.rukou-list ul {
+	overflow: hidden;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.rukou-list ul li {
+	width: 30%;
+	float: left;
+	text-align: center;
+	font-size: 0.37333333rem;
+	margin-bottom: 1rem;
+}
+.rukou-list ul li a{
+	color: #999999;
+}
+.rukou-list ul li:nth-child(3n-1){
+	margin: 0 5%;
+}
+.rukou-list ul li a img {
+	width: 1.06666667rem;
+	height: 1.06666667rem;
+	margin: 0 0.3rem;
+	display: inline-block;
+	margin-bottom: 0.15rem;
+}
+
+
+/*底部菜单*/
+
+.menu-bar {
+	z-index: 10;
+	background-color: #f5f5f5;
+	border-top: 10px solid #e4e4e4;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	height: 50px;
+}
+
+.menu-bar a {
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	float: left;
+	color: #666;
+	position: relative;
+	padding-bottom: 3px;
+}
+
+.menu-bar a span {
+	display: block;
+	font-size: 13px;
+}
+
+.menu-bar a img {
+	margin: 4px auto;
+	width: 23px;
+}
+
+.menu-bar a .fabubtn {
+	border-radius: 100%;
+	margin-top: -23px;
+}
+
+.menu-bar a .fabubtn img {
+	width: 48px;
+	margin-bottom: 10px;
+}
+
+.menu-bar .menu-item-active {
+	color: #00a2e9;
+}
+
+.font-sign {
+	color: #fff;
+	background-color: #00a2e9;
+	border-radius: 7px 0 7px 0;
+	font-size: 12px;
+	padding: 0 6px;
+}
+
+.shop-photos {
+	flex-wrap: wrap;
+}
+
+.shop-photos li {
+	width: 32%;
+	padding-bottom: 32%;
+	/* padding百分比相对父元素宽度计算 */
+	height: 0;
+	background-size: cover;
+	position: relative;
+}
+
+.shop-photos li img {
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.shop-photos li:nth-child(3n-1) {
+	margin: 0 2%;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/huxing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="请输入户型"
+        app:tx1="户型"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+    <TextView
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:textSize="@dimen/sp_12"
+        android:textColor="#999"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"/>
+
+    <com.zhuye.ershoufang.weidtet.MySelectPhotoView
+        android:layout_marginTop="10dp"
+        app:title = "户型图"
+        app:addname="添加户型图"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/xiaoguo">
+    </com.zhuye.ershoufang.weidtet.MySelectPhotoView>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="户型描述"
+        android:textSize="@dimen/sp_15"
+        android:textColor="#999"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        android:id="@+id/miaoshu"
+        android:lines="2"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@null"
+        android:hint="描述内容"
+        android:textSize="@dimen/sp_15"
+        android:textColor="#666"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color"></View>
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/mianjinn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="请输入建筑面积"
+        app:tx1="建筑面积"
+        app:tx2="m²">
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+</LinearLayout>

@@ -1,0 +1,48 @@
+.lists{
+	padding: 0 0.5rem;
+	border-bottom:1px solid #E4E4E4 ;
+}
+.lists span{
+	font-size:0.4rem;
+	color: #666666;
+	margin-top: 0.31rem;
+}
+.lists input{
+	width: 75%;
+	border: none;
+	margin: 0;
+	text-align: right;
+}
+.lists_code{
+	padding: 0 0.5rem;
+	border-bottom:1px solid #E4E4E4 ;
+}
+.lists_code input{
+	width: 50%;
+	border: none;
+	margin: 0;
+	text-align: left;
+	padding: 0;
+}
+.lists_code button{
+	width: 30%;
+	background: #FEB630;
+	color: white;
+	height:0.8rem;
+	line-height: 0.8rem;
+	font-size: 0.32rem;
+	text-align: center;
+	margin-top: 0.13rem;
+}
+
+/*底部按钮*/
+.new_btn {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #00A2E9;
+	color: white;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	z-index: 10;
+}

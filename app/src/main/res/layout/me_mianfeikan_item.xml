@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="335dp"
+        android:layout_height="188dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toRightOf="@+id/pics"
+                android:text="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#333"/>
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toRightOf="@+id/pics"
+                android:text="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#666"/>
+        </RelativeLayout>
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="70dp">
+          <android.support.v7.widget.RecyclerView
+              android:id="@+id/tese"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+          </android.support.v7.widget.RecyclerView>
+          <TextView
+              android:layout_below="@+id/tese"
+              android:layout_marginLeft="@dimen/dp_10"
+              android:layout_marginTop="@dimen/dp_10"
+              android:layout_toRightOf="@+id/pics"
+              android:text="@string/app_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="12sp"
+              android:textColor="#999"/>
+          <TextView
+              android:id="@+id/zhiding"
+              android:layout_toLeftOf="@+id/edit"
+              android:gravity="center"
+              android:background="@color/colorPrimary"
+              android:layout_marginRight="15dp"
+              android:layout_marginBottom="@dimen/dp_10"
+              android:layout_alignParentBottom="true"
+              android:text="置顶"
+              android:layout_width="55dp"
+              android:layout_height="25dp"
+              android:textSize="12sp"
+              android:textColor="#fff"/>
+
+          <TextView
+              android:id="@+id/edit"
+              android:gravity="center"
+              android:background="@color/jusecolor"
+              android:layout_marginRight="15dp"
+              android:layout_marginBottom="@dimen/dp_10"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentBottom="true"
+              android:text="编辑"
+              android:layout_width="55dp"
+              android:layout_height="25dp"
+              android:textSize="12sp"
+              android:textColor="#fff"/>
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_alignParentBottom="true"
+              android:background="#ccc"
+              ></View>
+      </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

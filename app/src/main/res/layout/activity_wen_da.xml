@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.WenDaActivity">
+
+    <include layout="@layout/common"/>
+    <Button
+            android:id="@+id/tiwen"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:text="我要提问"
+            android:layout_width="match_parent"
+            android:layout_height="39dp" />
+</RelativeLayout>

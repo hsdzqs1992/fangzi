@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.ReGeistActivity">
+
+
+    <include layout="@layout/header"/>
+
+    <!--<RelativeLayout-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/back"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/arrow"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:textSize="17sp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:text="选择身份"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</RelativeLayout>-->
+
+
+    <RelativeLayout
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <RelativeLayout
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/huiyuana"
+                    android:layout_alignParentLeft="true"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:background="@drawable/huiyuan"
+                    android:layout_width="81dp"
+                    android:layout_height="80dp" />
+                <ImageView
+                    android:id="@+id/jingjirenga"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/jingjirengray"
+                    android:layout_width="81dp"
+                    android:layout_height="80dp" />
+                <ImageView
+                    android:id="@+id/fangchanshanga"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/fangchanshang"
+                    android:layout_width="81dp"
+                    android:layout_height="80dp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/jiajua"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/jiaju"
+                    android:layout_width="81dp"
+                    android:layout_height="80dp" />
+                <ImageView
+                    android:id="@+id/zhuangxiua"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/zhuangxiu"
+                    android:layout_width="81dp"
+                    android:layout_height="80dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <Button
+           android:id="@+id/next"
+           android:textColor="#fff"
+           android:textSize="14sp"
+           android:background="@color/colorPrimary"
+           android:text="下一步"
+           android:layout_alignParentBottom="true"
+           android:layout_width="match_parent"
+           android:layout_height="50dp" />
+   </RelativeLayout>
+</LinearLayout>

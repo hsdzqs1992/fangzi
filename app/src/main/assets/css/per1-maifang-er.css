@@ -1,0 +1,382 @@
+.center {
+	margin-bottom: 2rem;
+}
+
+input {
+	margin-bottom: 0 !important;
+}
+
+.import {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.import span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 5px;
+}
+
+.import input {
+	border: 1px solid #FEB630;
+	width: 2.53333333rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	background: url(../images/sanjao.png) no-repeat center right;
+	background-size: 0.2133333rem 0.16rem;
+	background-position-x: 90%;
+	text-align: center;
+}
+
+.imports {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.imports span:nth-child(1) {
+	font-size: 0.37333333rem !important;
+	color: #999999;
+	margin-top: 6px;
+}
+
+.imports input {
+	border: 1px solid #FEB630;
+	width: 4rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	background: url(../images/sanjao.png) no-repeat center right;
+	background-size: 0.2133333rem 0.16rem;
+	background-position-x: 90%;
+}
+
+.type_span em:nth-child(1) {
+	color: red !important;
+}
+
+.type2 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type2 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 5px;
+}
+
+.type2 input {
+	border: none;
+	width: 100%;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0;
+	margin-top: 0.1rem;
+}
+
+.type3 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type3 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 5px;
+}
+
+.type3_right input {
+	border: none;
+	width: 1rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0.1rem;
+	padding-right: 0;
+}
+
+.type3_right span {
+	font-size: 0.4rem;
+	color: #666666;
+}
+
+.type4 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+	box-sizing: border-box;
+}
+
+.type4 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 5px;
+}
+
+.type4 span:nth-child(2) {
+	font-size: 0.37333333rem !important;
+	color: #333333;
+	margin-top: 6px;
+}
+
+.type4 input {
+	border: none;
+	width: 5rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0;
+	text-align: right;
+	padding-right: 0;
+	margin-right: 0.05rem;
+}
+
+.type5 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type5 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 5px;
+}
+
+.type5 input {
+	border: none;
+	width: 5rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0;
+	text-align: right;
+	padding-right: 0;
+	font-size: 0.32rem;
+}
+
+.type5 p {
+	font-size: 0.32rem;
+	color: #3333333;
+	line-height: 0.74666667rem;
+}
+
+.type6 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type6 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 5px;
+}
+
+.type6 input {
+	border: none;
+	width: 5rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0;
+	text-align: left;
+	padding-right: 0;
+}
+
+.type6 button {
+	border-left: 1px solid #E4E4E4;
+	width: 4rem;
+	text-align: center;
+	font-size: 0.37333333rem;
+	line-height: 0.74666667rem !important;
+	color: #FEB630;
+}
+
+.type7 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type7 p {
+	font-size: 0.4rem;
+	color: #666666;
+	margin-bottom: 0.3rem;
+}
+
+.type7 p em {
+	font-size: 0.37333333rem;
+	color: #999999;
+}
+
+.file_images {}
+
+.file_images img {
+	float: left;
+	width: 0.93333333rem;
+	height: 0.93333333rem;
+	border-radius: 5px;
+	margin-right: 0.1rem;
+}
+
+.file_images,
+.file_btn {
+	display: inline-block;
+}
+
+.file_btn {
+	position: relative;
+	vertical-align: top;
+}
+
+.file_btn_opct {
+	width: 3.2rem;
+	height: 1.06666667rem;
+	z-index: 1;
+}
+
+.file_btn input {
+	width: 3.2rem;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	z-index: 20;
+}
+
+.file_btn_opct img:nth-child(1) {
+	width: 0.93333333rem;
+	height: 0.93333333rem;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.file_btn_opct img:nth-child(2) {
+	width: 0.43333333rem;
+	height: 0.43333333rem;
+	display: inline-block;
+}
+
+.file_btn_opct span:nth-child(3) {
+	font-size: 0.32rem;
+	color: #FEB630;
+}
+
+.file_btn1 {
+	position: relative;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.file_btn_opct1 {
+	width: 0.93333333rem;
+	height: 0.93333333rem;
+	z-index: 1;
+}
+
+.file_btn1 input {
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	z-index: 20;
+}
+
+.file_btn_opct1 img:nth-child(1) {
+	width: 0.93333333rem;
+	height: 0.93333333rem;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.video_images {
+	width: 90%;
+	margin: 0 auto;
+	height: 3rem;
+	padding-bottom: 0.2rem;
+}
+
+.video_images img {
+	width: 100%;
+	height: 100%;
+}
+
+.type8 {
+	padding: 0.2rem 0.5rem;
+}
+
+.type8 p {
+	color: #999999;
+}
+
+.type8 textarea {
+	border: none;
+	font-size: 0.32rem;
+	padding: 0;
+	height: 2rem;
+	margin-top: 0.2rem;
+	margin-bottom: 0;
+}
+
+
+/*添加更多*/
+
+.type10 {
+	padding: 0.2rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type10 p {
+	color: #666;
+	font-size: 0.4rem;
+	margin-bottom: 0.1rem;
+}
+.tianjia_span{
+	margin-right: 0.2rem;
+	overflow: hidden;
+}
+.tianjia_span span{
+	display: inline-block;
+	border: 1px solid #FEB630;
+	color: #FEB630;
+	font-size: 0.32rem;
+	padding: 0.16rem 0.3rem;
+	border-radius: 4px;
+	margin-bottom: 0.1rem;
+	float: left;
+	margin-right: 0.1rem;
+}
+.type10 input {
+	margin: 0;
+	padding: 0;
+	width: 2rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.32rem !important;
+	border: 1px solid #FEB630;
+}
+.span_tianjia{
+	margin-top: 0.08rem;
+	margin-left: 0.1rem;
+}
+.span_tianjia img{
+	    width: 0.43333333rem;
+    height: 0.43333333rem;
+    display: inline-block;
+}
+.span_tianjia span{
+	color: #FEB630;
+	font-size: 0.32rem;
+}
+.new_btn {
+	width:90%;
+	margin-left: 5%;
+	margin-top: 0.3rem;
+	background: #00A2E9;
+	color: white;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	z-index: 10;
+}

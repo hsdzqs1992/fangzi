@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>投票</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/toupiao.css" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="search-box mui-title text-center search-input">
+   				 <input type="text" placeholder="搜索" class="search_input"></a>
+  			</h1>
+			<span class="mui-pull-right search_btn">搜索</span>
+		</header>
+		<div class="title mui-content b-f">
+			<div class="pep_num">
+				<p>312 <img src="images/huo.png" /></p>
+				<p>报名人数</p>
+			</div>
+			<div class="ticket_num">
+				<p>312</p>
+				<p>累计票数</p>
+			</div>
+			<div class="visit_num">
+				<p>312</p>
+				<p>累计访问量</p>
+			</div>
+		</div>
+		<div class="nav_btn b-f">
+			<button class="btn_0a">最新</button>
+			<button class="">总排名</button>
+		</div>
+			<div class="type b-f">
+			<div class="pullrefresh mui-scroll-wrapper b-f">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<div class="lists_wrap f-l">
+							<a href="toupiap_detail.html">
+								<div class="lists_wrap_img">
+									<div class="lists_wrap_img_bgm" style="background-image: url(images/toupiao.png);">
+
+									</div>
+									<div class="lists_wrap_cover">
+										<span>中原区</span>
+										<span>编号 : <em>200</em></span>
+									</div>
+								</div>
+							</a>
+							<p>173票</p>
+							<div class="lists_wrap_btn">
+								<button class="default">投TA一票</button>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+			<!--2-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<div class="lists_wrap f-l">
+							<a href="toupiap_detail.html">
+								<div class="lists_wrap_img">
+									<div class="lists_wrap_img_bgm" style="background-image: url(images/toupiao.png);">
+
+									</div>
+									<div class="lists_wrap_cover">
+										<span>中原区</span>
+										<span>编号 : <em>201</em></span>
+									</div>
+								</div>
+							</a>
+							<p>173票</p>
+							<div class="lists_wrap_btn">
+								<button class="default">投他一票</button>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="search_result clear b-f">
+			<div class="lists_wrap f-l">
+				<a href="toupiap_detail.html">
+					<div class="lists_wrap_img">
+						<div class="lists_wrap_img_bgm" style="background-image: url(images/toupiao.png);">
+
+						</div>
+						<div class="lists_wrap_cover">
+							<span>中原区</span>
+							<span>编号 : <em>200</em></span>
+						</div>
+					</div>
+				</a>
+				<p>1123票</p>
+				<div class="lists_wrap_btn">
+					<button class="default">投TA一票</button>
+				</div>
+			</div>
+		</div>
+		<button class="new_btn" onclick="window.location.href='toupiao_new.html'">我要报名</button>	
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		(function($) {
+			//阻尼系数
+			var deceleration = mui.os.ios ? 0.003 : 0.0009;
+			$('.mui-scroll-wrapper').scroll({
+				bounce: false,
+				indicators: true, //是否显示滚动条
+				deceleration: deceleration
+			});
+			$.ready(function() {
+				//循环初始化所有下拉刷新，上拉加载。
+				$.each(document.querySelectorAll('.pullrefresh .mui-scroll'), function(index, pullRefreshEl) {
+					$(pullRefreshEl).pullToRefresh({
+						up: {
+							callback: function() {
+								var self = this;
+								console.log(index)
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									var html = '<div class="lists_wrap f-l"><a href="toupiap_detail.html"><div class="lists_wrap_img"><div class="lists_wrap_img_bgm" style="background-image: url(images/toupiao.png);"></div><div class="lists_wrap_cover"><span>中原区</span><span>编号 : <em>201</em></span></div></div></a><p>173票</p><div class="lists_wrap_btn"><button class="default">投TA一票</button></div></div>'
+									jQuery(ul).append(html);
+									self.endPullUpToRefresh();
+								}, 1000);
+							}
+						}
+					});
+				});
+			});
+		})(mui);
+		//a标签href跳转
+		mui('.a-href').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+		$(".nav_btn button").click(function() {
+			var index = $(this).index();
+			$(this).addClass("btn_0a").siblings().removeClass("btn_0a");
+			$(".pullrefresh").eq(index).show().siblings().hide();
+		});
+
+		$(".search_btn").click(function() {
+			var texts = $(".search_input").val();
+			if(texts != "") {
+				$(".type").hide();
+				$(".search_result").show()
+			} else {
+
+			}
+		});
+		$(".search_input").keyup(function() {
+			
+			if($(this).val() == "") {
+				$(".type").show();
+				$(".search_result").hide()
+			}
+		})
+	</script>
+
+</html>

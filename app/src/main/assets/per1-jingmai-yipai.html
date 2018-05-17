@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>委托竞卖</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-jingmai.css" />
+	</head>
+
+	<body class="">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left c-f" onclick="window.location.href='per1-index.html'"></a>
+			<h1 class="mui-title">委托竞卖</h1>
+			<a href="per1-jingmai-me.html" class="mui-pull-right c-f">我的拍卖</a>
+		</header>
+		<!--导航-->
+		<div class="tab mui-content b-f">
+			<a href="per1-jingmai.html">
+				<div class="huiguan_tab">
+					<span class="">参与宝贝</span>
+					<!--<p>10</p>-->
+				</div>
+			</a>
+			<a href="per1-jingmai-yipai.html" class="huiguan_tab">
+				<div>
+					<span class="border_b">已拍下</span>
+					<!--<p>10</p>-->
+				</div>
+			</a>
+			<a href="per1-jingmai-baozheng.html" class="huiguan_tab">
+				<div>
+					<span>保证金</span>
+					<!--<p>10</p>-->
+				</div>
+			</a>
+			<a href="per1-jingmai-tixing.html" class="huiguan_tab">
+				<div>
+					<span>我的提醒</span>
+					<!--<p>10</p>-->
+				</div>
+			</a>
+
+		</div>
+		<!--下拉菜单-->
+		<div class="type_wrap">
+			<div class="pullrefresh mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="huikuan mui-table-view a-href">
+						<li>
+							<a href="" class="clear">
+								<div class="lsts_images f-l">
+									<img src="images/42.png" />
+								</div>
+								<div class="f-r lists_right">
+									<div class="lists_right_text1">
+										<p>郑州市管城区紫金小区271号...</p>
+									</div>
+									<div class="lists_bom">
+									<div class="lists_right_text3 m-1">
+										<span>拍卖时间</span>
+										<span>￥120,00</span>
+									</div>
+									<div class="lists_right_text4">
+										<span>拍卖时间</span>
+										<span>2017-11-03</span>
+										<span>10:00:00</span>
+									</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<button class="new_btn" onclick="window.location.href='per1-jingmai-xinzeng.html'">新增</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//  上拉加载
+		var $fuwuitem = $('.pullrefresh .huikuan');
+		mui.init({
+			swipeBack: false,
+			pullRefresh: {
+				container: '.pullrefresh',
+				up: {
+					height: 50,
+					contentrefresh: "正在加载...",
+					contentnomore: '没有更多数据了',
+					callback: pullupRefresh
+				},
+				down: {
+					height: 50,
+					callback: load
+				}
+			}
+		});
+
+		function load() {
+			setTimeout(function() {
+				window.location.reload();
+			}, 500)
+
+		};
+
+		function pullupRefresh() {
+			setTimeout(function() {
+				mui('.pullrefresh').pullRefresh().endPullupToRefresh(true); //参数为true代表没有更多数据了。
+				var $elem = '<li><a href="" class="clear"><div class="lsts_images f-l"><img src="images/42.png"/></div><div class="f-r lists_right"><div class="lists_right_text1"><p>郑州市管城区紫金小区271号...</p></div><div class="lists_bom"><div class="lists_right_text3 m-1"><span>拍卖时间</span><span>￥120,00</span></div><div class="lists_right_text4"><span>拍卖时间</span><span>2017-11-03</span><span>10:00:00</span></div></div></div></a></li>';
+				$fuwuitem.append($elem);
+				loading = true;
+			}, 2000);
+		};
+		//a标签href跳转
+		mui('.a-href').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+	</script>
+
+</html>

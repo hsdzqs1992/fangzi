@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/xuqiu-detail.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">详情</h1>
+		</header>
+		
+		<div class="detail b-f mui-content">
+			<div class="detail_list clear">
+				<span class="f-l">类型</span>
+				<span class="f-r">证件</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">联系人</span>
+				<span class="f-r">张先生</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">联系电话</span>
+				<span class="f-r">15012345678</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">发布时间</span>
+				<span class="f-r">2018-03-03</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">需求</span>
+				<p class="f-l">需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求需求</p>
+			</div>
+			
+		</div>
+		<button class="new_btn">立即接单</button>
+	</body>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.zoom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.previewimage.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.bann-s', {
+			pagination: '.bann-s .swiper-pagination',
+			paginationClickable: true,
+			onInit: function(swiper) {
+				$(".slide-num").html(swiper.slides.length);
+			},
+			onSlideChangeEnd: function(swiper) {
+				$(".slide-active").html(swiper.activeIndex + 1);
+			}
+		});
+		mui.previewImage();
+	</script>
+</html>

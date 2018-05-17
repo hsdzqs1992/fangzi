@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-data.css" />
+	</head>
+
+	<body class="b-f">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">个人资料</h1>
+			<a href="" class="mui-pull-right">完成</a>
+		</header>
+		<div class="center mui-content b-f">
+			<div class="lists clear">
+				<span class="f-l">头像</span>
+				<div class="f-r file_input">
+					<img src="images/45.png" />
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+			<div class="lists2 clear">
+				<span class="f-l">昵称</span>
+				<input type="text" value="想要一台法拉利" class="f-r" />
+			</div>
+			<div class="lists3 clear">
+				<span class="f-l">性别</span>
+				<div class="f-r sex">
+					<span class="">男</span>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+				</div>
+			</div>
+			<div class="lists3 clear">
+				<span class="f-l">账号</span>
+				<div class="f-r"onclick="window.location.href='per1-data-phone.html'">
+					<span class="">未绑定</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房屋种类
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '男'
+			},
+			{
+				value: '02',
+				text: '女'
+			}
+		]);
+		$(".sex").click(function() {
+			picker.show(function(selectItems) {
+				$(".sex span").eq(0).text(selectItems[0].text);
+
+			})
+		});
+	</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>充值</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-chongzhi.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">充值</h1>
+			<a href="per1-chongzhi-record.html" class="mui-pull-right">充值记录</a>
+		</header>
+		<div class="mui-content b-f recharge clear">
+			<div class="recharge_lists f-l">
+				<p class="recharge_lists_code"><em>5</em>次置顶劵</p>
+				<p class="recharge_lists_money">售价 : ¥<em>10</em></p>
+				<img src="images/duihao.png" class="xuan" />
+			</div>
+			<div class="recharge_lists f-l">
+				<p class="recharge_lists_code"><em>10</em>次置顶劵</p>
+				<p class="recharge_lists_money">售价 : ¥<em>15</em></p>
+				<img src="images/duihao.png" class="xuan" />
+			</div>
+			<div class="recharge_lists f-l">
+				<p class="recharge_lists_code"><em>15</em>次置顶劵</p>
+				<p class="recharge_lists_money">售价 : ¥<em>20</em></p>
+				<img src="images/duihao.png" class="xuan" />
+			</div>
+			<div class="recharge_lists f-l">
+				<p class="recharge_lists_code"><em>15</em>次置顶劵</p>
+				<p class="recharge_lists_money">售价 : ¥<em>20</em></p>
+				<img src="images/duihao.png" class="xuan" />
+			</div>
+		</div>
+		<div class="pay_type b-f">
+			<div class="mui-card">
+				<p>支付方式</p>
+				<form class="mui-input-group">
+					<div class="mui-input-row mui-radio">
+						<label><img src="images/zhifubao.png"/>支付宝</label>
+						<input name="radio1" type="radio">
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label><img src="images/weixin.png"/>微信支付</label>
+						<input name="radio1" type="radio" checked>
+					</div>
+				</form>
+			</div>
+		</div>
+			<button class="new_btn">立即支付</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".recharge").on("click",".recharge_lists",function(){
+			$(this).find("img").show();
+			$(this).siblings().find("img").hide();
+			console.log($(this).index())
+		})
+	</script>
+</html>

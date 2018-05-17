@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>经纪人</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/jingjiren.css" />
+	</head>
+	<style type="text/css">
+		/*.star {
+			width: 240px;
+			height: 48px;
+			margin: 20px auto;
+		}
+		
+		.rating-item {
+			float: left;
+			width: 47px;
+			height: 47px;
+			background: url(images/icon.png) no-repeat;
+			cursor: pointer;
+		}*/
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">经纪人</h1>
+			<a class="mui-pull-right">区域选择</a>
+		</header>
+		<!--下拉弹窗-->
+		<!--<div class="rows">
+			<p class="rows_lists">中原区</p>
+			<p class="rows_lists">二七区</p>
+			<p class="rows_lists">二七区</p>
+		</div>-->
+		<!--下拉框-->
+		<div class="cover mui-content">
+			<div class="rows">
+				<p class="rows_lists">二七区</p>
+				<p class="rows_lists">惠济区</p>
+				<p class="rows_lists">惠济区</p>
+				<p class="rows_lists">惠济区</p>
+			</div>
+		</div>
+		<div class="center mui-content b-f">
+			<div class="lists clear">
+				<a href="jingjiren-detail.html">
+					<div class="lists_images f-l">
+						<img src="images/45.png" />
+					</div>
+					<div class="lists_left f-l">
+						<div class="lists_left_user">
+							<p>石小勇</p>
+						</div>
+						<div class="lists_left_star clear">
+							<div class="star_lists_shi f-l">
+
+							</div>
+							<div class="star_lists_shi f-l">
+
+							</div>
+							<div class="star_lists_shi f-l">
+
+							</div>
+							<div class="star_lists f-l">
+
+							</div>
+							<div class="star_lists f-l">
+
+							</div>
+						</div>
+						<div class="lists_left_referral">
+							<p>电厂路 我爱我家中介</p>
+						</div>
+						<div class="lists_left_span">
+							<span>置换服务</span>
+							<span>全称代办</span>
+						</div>
+					</div>
+				</a>
+				<div class="lists_right f-r">
+					<button>微聊</button>
+				</div>
+			</div>
+			<div class="lists clear">
+				<a href="jingjiren-detail.html">
+					<div class="lists_images f-l">
+						<img src="images/45.png" />
+					</div>
+					<div class="lists_left f-l">
+						<div class="lists_left_user">
+							<p>石小勇</p>
+						</div>
+						<div class="lists_left_star clear">
+							<div class="star_lists_shi f-l">
+
+							</div>
+							<div class="star_lists_shi f-l">
+
+							</div>
+							<div class="star_lists_shi f-l">
+
+							</div>
+							<div class="star_lists f-l">
+
+							</div>
+							<div class="star_lists f-l">
+
+							</div>
+						</div>
+						<div class="lists_left_referral">
+							<p>电厂路 我爱我家中介</p>
+						</div>
+						<div class="lists_left_span">
+							<span>置换服务</span>
+							<span>全称代办</span>
+						</div>
+					</div>
+				</a>
+				<div class="lists_right f-r">
+					<button>微聊</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".mui-pull-right").click(function() {
+			$(".cover").animate({
+				opacity: 1
+			}, 200, function() {
+				$(this).show()
+			});
+		});
+		$(".cover").click(function() {
+			$(".cover").animate({
+				opacity: 0
+			}, 200, function() {
+				$(this).hide()
+			});
+		});
+		$(".rows").on("click", ".rows_lists", function() {
+			$(".mui-pull-right").text($(this).text());
+			$(this).parent().parent().hide();
+		});
+	</script>
+</html>

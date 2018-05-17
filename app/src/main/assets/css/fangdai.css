@@ -1,0 +1,167 @@
+.months_money {
+	height: 6.3rem;
+	width: 100%;
+}
+.type{
+	margin-top: 0.27rem;
+}
+.type_mess{
+	padding: 0 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.type_mess_left{
+	color: #666666;
+	font-size: 0.4rem;
+	line-height: 1.173333rem;
+}
+.mui-card {
+	background: none;
+	box-shadow: none;
+	margin: 0;
+}
+
+.mui-input-row {
+	clear: none;
+}
+
+.mui-input-group .mui-input-row:after {
+	display: none;
+}
+
+.mui-checkbox input[type=checkbox]:before,
+.mui-radio input[type=radio]:before {
+	font-size: 14px;
+}
+.mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio]{
+	top:0.28rem;
+}
+.mui-checkbox.mui-left label,
+.mui-radio.mui-left label {
+	padding-right: 0rem;
+	padding-left: 1.5rem;
+	/*vertical-align: top;*/
+	height: 1.173333rem;
+	line-height: 0.613333333rem;
+	font-size: 0.3733333rem;
+	
+}
+.type_mess_right{
+	line-height: 1.173333rem;
+}
+.mui-card{
+	line-height: 1.173333rem;
+}
+.mui-input-row{
+	height: 1.173333rem !important;
+	line-height: 1.173333rem;
+}
+input{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.type4 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+	box-sizing: border-box;
+}
+
+.type4 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 6px;
+}
+
+.type4 span:nth-child(2) {
+	font-size: 0.37333333rem !important;
+	color: #333333;
+	margin-top:0.16rem;
+}
+
+.type4 input {
+	border: none;
+	width: 5rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0;
+	text-align: right;
+	padding-right: 0;
+	margin-right: 0.05rem;
+	color: #FEB630 !important;
+	margin-right: 0.1rem !important;
+}
+.type3 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.type3 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 6px;
+}
+
+.type3_right input {
+	border: none;
+	width: 1rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0.1rem;
+	padding-right: 0;
+	text-align:right;
+	margin-left: 1rem !important;
+	color: #FEB630;	
+	font-size: 0.37333333rem !important;
+	margin-right: 0.1rem !important;
+}
+.type3 span{
+	font-size: 0.373333333rem !important;
+	color: #333333;
+	margin-top: 6px;
+}
+/*商业贷款*/
+.business{
+	margin-top: 0.27rem;
+	margin-bottom: 0.27rem;
+}
+.business_type1{
+	padding: 0 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.business_type1:last-child{
+	border-bottom: none;
+}
+.business_type1 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	line-height: 1.173333rem;
+}
+.business_type1 span:nth-child(2) {
+	font-size: 0.6rem !important;
+	color: #666666;
+	line-height: 1.173333rem;
+}
+.business_type1 input:nth-child(3) {
+	text-align: right;
+	margin-right: 0.1rem;
+}
+/*公积金*/
+.reserved{
+	display: none;
+}
+.more {
+    text-align: center;
+    font-size: 0.3733333rem;
+    color: #FEB630;
+    padding: 0.1rem 0;
+}
+.new_btn {
+	margin-top: 1rem;
+    width: 100%;
+    background: #00A2E9;
+    color: white;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    z-index: 10;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>发布</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/fabu.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-weituo-new.css" />
+	</head>
+	<style type="text/css">
+		.center {}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">我要卖房</h1>
+		</header>
+		
+		<div class="center b-f mui-content">
+			<!--户型 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l type_span"><em>*</em>楼栋门牌</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>栋(号)</span>
+					<input type="text" />
+					<span>单元</span>
+					<input type="text" />
+					<span>室</span>
+				</div>
+			</div>
+			<!--户型 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l type_span"><em>*</em>楼层</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>层／共</span>
+					<input type="text" />
+					<span>层</span>
+				</div>
+			</div>
+			<!--售价-->
+			<div class="type4 clear">
+				<span class="f-l type_span"><em>*</em>房屋类型</span>
+				<input type="text" placeholder="请输入您栋房屋类型" class="f-r xiaoqu" />
+			</div>
+			<!--房屋种类-->
+			<div class="import clear">
+				<span class="f-l type_span"><em>*</em>装修</span>
+				<input type="text" placeholder="简装" class="kind f-r" readonly="readonly" />
+			</div>
+
+			<!--房型类型-->
+			<div class="import clear">
+				<span class="f-l type_span"><em>*</em>朝向</span>
+				<input type="text" placeholder="南" class="kind-2 f-r" readonly="readonly" />
+			</div>
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p class="type_span"><em>*</em>房源图<em>(最多可上传6张)</em></p>
+				<!--图片展示-->
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>	
+			</div>
+			
+			<!--视频-->
+			<div class="type4 clear">
+				<span class="f-l">视频</span>
+				<div class="file_btn1 f-r">
+					<div class="file_btn_opct1">
+						<img src="images/tupian.png" />
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+			<!--上传展示-->
+			<!--<div class="video_images">
+				<img src="images/39.png" />
+			</div>-->
+		</div>
+		<div class="btn">
+			<button class="tijiao">委托竞卖</button>
+			<button class="tijiao">委托发布</button>
+			<button class="tijiao">提交委托</button>
+		</div>
+
+		
+
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房屋种类
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".kind").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker1 = new mui.PopPicker();
+		picker1.setData([{
+				value: '01',
+				text: '3居室'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-2").click(function() {
+			picker1.show(function(selectItems) {
+				$(".kind-2").val(selectItems[0].text);
+
+			})
+		});
+	</script>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>竞买人身份确认</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/jingmai-apply.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">竞买人身份确认</h1>
+		</header>
+		<div class="mui-content b-f center">
+			<div class="lists clear">
+				<span class="f-l">姓名</span>
+				<input type="text" placeholder="请输入您的姓名" class="f-r" />
+			</div>
+			<div class="lists clear">
+				<span class="f-l">手机号</span>
+				<input type="text" placeholder="请输入您的手机号" class="f-r" />
+			</div>
+			<div class="lists clear lists_type">
+				<span class="f-l">证件类型</span>
+				<input type="text" value="身份证号" class="kind f-r" readonly="readonly" />
+			</div>
+			<div class="lists clear">
+				<span class="f-l">手机号</span>
+				<input type="text" placeholder="请输入您的证件号" class="f-r" />
+			</div>
+		</div>
+		<div class="tishi">
+			<p>温馨提示 :</p>
+			<p>此身份即为有效竞买人资料，请保证其真是有效，标的物交接时将核实此资料</p>
+		</div>
+		<button class="new_btn"onclick="window.location.href='jingmai-apply2.html'">下一步</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房屋种类
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".kind").val(selectItems[0].text);
+
+			})
+		});
+	</script>
+
+</html>

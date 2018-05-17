@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/flexible.js"></script>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/fangdai.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">房贷计算</h1>
+		</header>
+		<!--图表-->
+		<div class="mui-content months_money b-f">
+
+		</div>
+		<!--内容还款-->
+		<div class="type b-f">
+			<div class="type_mess clear">
+				<div class="type_mess_left f-l">
+					<span>还款方式</span>
+				</div>
+				<div class="type_mess_right f-r">
+					<div class="mui-card clear">
+						<form class="mui-input-group ">
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label class="f-l">等额本息</label>
+								<input name="radio1" type="radio" class="f-l">
+							</div>
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label>等额本息</label>
+								<input name="radio1" type="radio" checked>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="type4 clear">
+				<span class="f-l">房款总额</span>
+				<span class="f-r">万</span>
+				<input type="text" placeholder="" class="f-r mianji" />
+			</div>
+			<div class="type3 clear ">
+				<span class="f-l">首付金额</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>%</span>
+					<input type="text" />
+					<span>万</span>
+				</div>
+			</div>
+			<div class="type4 clear">
+				<span class="f-l">贷款总额</span>
+				<span class="f-r">万</span>
+				<input type="text" placeholder="" class="f-r mianji" />
+			</div>
+		</div>
+		<!--商业贷款-->
+		<div class="business b-f">
+			<div class="type4 clear">
+				<span class="f-l">商业贷款</span>
+				<span class="f-r">万</span>
+				<input type="text" placeholder="" class="f-r mianji" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">商业贷款利率</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind"></span>
+				<input type="" name="" id="" value="" placeholder="最新基准利率（4.90%）" class="f-r business_type1_input" readonly="" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">商业贷款年限</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind2"></span>
+				<input type="" name="" id="" value="" placeholder="20年" class="f-r business_type2_input" readonly="" />
+			</div>
+		</div>
+		<!--公积金贷款-->
+		<div class="reserved b-f">
+			<div class="type4 clear">
+				<span class="f-l">公积金贷款</span>
+				<span class="f-r">万</span>
+				<input type="text" placeholder="" class="f-r mianji" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">公积金利率</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind"></span>
+				<input type="" name="" id="" value="" placeholder="最新基准利率（4.90%）" class="f-r business_type1_input" readonly="" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">公积金贷款年限</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind2"></span>
+				<input type="" name="" id="" value="" placeholder="20年" class="f-r business_type2_input" readonly="" />
+			</div>
+		</div>
+		<div class="more b-f" data_id="1">
+			<span>使用公积金贷款</span>
+			<span class="mui-icon mui-icon-arrowdown"></span>
+		</div>
+		<button class="new_btn">开始计算</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//商业贷款利率
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".business_type1_input").val(selectItems[0].text);
+
+			})
+		});
+		//商业贷款年限
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind2").click(function() {
+			picker.show(function(selectItems) {
+				$(".business_type2_input").val(selectItems[0].text);
+
+			})
+		});
+		//点击查看更多
+		$(".more").click(function() {
+			var data_id = $(this).attr("data_id");
+			if(data_id == "1") {
+				$(this).find("span").eq(0).text("不使用公积金贷款");
+				$(this).find("span").eq(1).removeClass();
+				$(this).find("span").eq(1).addClass("mui-icon mui-icon-arrowup");
+				$(".reserved").show();
+				$(this).attr("data_id", "2");
+			} else {
+				$(this).find("span").eq(0).text("使用公积金贷款");
+				$(this).find("span").eq(1).removeClass();
+				$(this).find("span").eq(1).addClass("mui-icon mui-icon-arrowdown");
+				$(".reserved").hide();
+				$(this).attr("data_id", "1");
+			}
+		});
+	</script>
+
+</html>

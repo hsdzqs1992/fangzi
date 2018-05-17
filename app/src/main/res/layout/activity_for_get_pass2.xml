@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.ForgetPass1Activity">
+
+
+    <include layout="@layout/header"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:textColor="#333"
+        android:text="新密码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="26dp">
+            <EditText
+                android:inputType="number"
+                android:textColor="#666"
+                android:id="@+id/loginname"
+                android:background="@null"
+                android:hint="请输入您的新密码"
+                android:textColorHint="#999"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/ll1"
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="再次输入密码"
+        android:textColor="#333"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ppp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="26dp">
+            <EditText
+                android:inputType="number"
+                android:textColor="#666"
+                android:id="@+id/reloginname"
+                android:background="@null"
+                android:hint="请再次输入您的新密码"
+                android:textColorHint="#999"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/ppp"
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/next"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:background="@color/colorPrimary"
+            android:text="完成"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="39dp" />
+    </RelativeLayout>
+</LinearLayout>

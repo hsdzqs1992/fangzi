@@ -1,0 +1,45 @@
+.center{
+	padding: 0 0.5rem;
+}
+.center li{
+	border-bottom: 1px solid #E4E4E4;
+	padding: 0.3rem 0;
+}
+.center li a .lists_top{
+	margin-bottom: 0.1rem;
+}
+.center li a .lists_top span:nth-child(1){
+	font-size:0.4rem;
+}
+.center li a .lists_top span:nth-child(2){
+	font-size:0.32rem;
+	color: #999999;
+}
+.center li a .lists_text p{
+	font-size:0.37333333rem;
+	color: #666666;
+	line-height:0.53rem;
+}
+
+/*详情内容*/
+.mess_detail{
+	padding:0 0.5rem;
+	margin-top: 0.2rem;
+}
+.mess_detail .mess_detail_top span:nth-child(1){
+	font-size:0.4rem;
+	color: #666666;
+}
+.mess_detail .mess_detail_top span:nth-child(2){
+	font-size:0.32rem;
+	color: #999999;
+	margin-top: 0.1rem;
+}
+.mess_detail .mess_detail_text{
+	margin-top: 0.15rem;
+}
+.mess_detail .mess_detail_text p{
+	font-size: 0.3733333rem;
+	color: #666666;
+	line-height:0.55rem;
+}

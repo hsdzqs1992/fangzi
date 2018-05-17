@@ -1,0 +1,26 @@
+.issue {
+	border-bottom: 1px solid #E4E4E4;
+	padding-top: 0.1rem;
+}
+
+.issue textarea {
+	border: none;
+	padding-left: 0.5rem;
+	font-size: 0.37333333rem;
+}
+
+.issue_describe {
+	border: none;
+	padding-left: 0.5rem;
+	font-size: 0.37333333rem;
+}
+.new_btn {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00A2E9;
+    color: white;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    z-index: 10;
+}

@@ -1,0 +1,252 @@
+.swiper-wrapper img {
+	width: 100%;
+	height: 5.3333333333rem;
+}
+
+.auction_mess {
+	padding: 0.2rem 0.5rem;
+}
+
+.auction_mess_top {
+	border-bottom: 1px solid #E4E4E4;
+	padding-bottom: 0.2rem;
+}
+
+.auction_mess_top p:nth-child(1) {
+	font-size: 0.4rem;
+	color: #333333;
+	margin-bottom: 0.1rem;
+}
+
+.auction_mess_top_money {
+	color: #999999;
+	font-size: 0.37333333rem;
+}
+
+.auction_mess_top_money em {
+	color: #FEB630;
+	font-size: 0.453333333rem;
+}
+
+.auction_mess_top_money em:nth-child(1) {
+	font-size: 0.4rem;
+	display: inline-block;
+	margin-left: 0.266rem;
+}
+
+.auction_mess_top_pep {
+	color: #999999;
+	font-size: 0.32rem;
+	margin-top: 0.1rem;
+}
+
+.auction_mess_top_pep em {
+	display: inline-block;
+	margin-right: 0.4rem;
+}
+
+.auction_mess_bom {
+	display: block;
+	margin-top: 0.2rem;
+}
+
+.auction_mess_bom span {
+	display: inline-block;
+	width: 48%;
+	font-size: 0.32rem;
+	color: #999999;
+}
+
+.auction_mess_bom span em {
+	display: inline-block;
+	color: #666666;
+	margin-left: 0.3rem;
+}
+
+
+/*竞买记录*/
+
+.auction_record {
+	padding: 0.2rem 0.5rem;
+	margin-top: 0.267rem;
+}
+
+.auction_record_title {}
+
+.auction_record_title span:nth-child(1) {
+	color: #999999;
+	font-size: 0.37333333rem;
+	margin-top: 0.13rem;
+}
+
+.auction_record_title span:nth-child(3) {
+	color: #999999;
+	font-size: 0.37333333rem;
+	margin-top: 0.13rem;
+}
+
+.auction_record_title span:nth-child(2) {
+	color: #999999;
+	font-size: 0.8rem;
+}
+
+.auction_record_lists {
+	background: #f5f5f5;
+	width: 30%;
+	border: 1px solid #E4E4E4;
+	padding: 0.1rem 0.2rem 0.2rem 0.1rem;
+}
+
+.auction_record_lists:nth-child(2) {
+	margin: 0 5%;
+}
+
+.auction_record_lists span {
+	font-size: 0.32rem;
+	color: #999999;
+}
+
+.auction_record_lists_top {
+	margin-bottom: 0.1rem;
+}
+
+.auction_record_lists_color {
+	color: #FEB630 !important;
+}
+
+
+/*起拍价*/
+
+.auction_money {
+	margin-top: 0.267rem;
+	padding: 0.2rem 0.5rem;
+}
+
+.auction_money p {
+	width: 48%;
+	display: inline-block;
+	font-size: 0.32rem;
+	color: #999999;
+}
+
+.auction_money p em {
+	color: #666666;
+	display: inline-block;
+	margin-left: 0.2rem;
+}
+
+.auction_money_qi em {
+	display: inline-block;
+	margin-left: 0.52rem !important;
+}
+
+.auction_money p:last-child {
+	width: 100%;
+	word-wrap: break-word;
+}
+
+
+/*竞买须知*/
+
+.auction_notice {
+	padding: 0.2rem 0.5rem;
+	margin-top: 0.267rem;
+}
+
+.auction_notice span:nth-child(1) {
+	color: #666666;
+	font-size: 0.37333333rem;
+	margin-top: 0.18rem;
+}
+
+.auction_notice span:nth-child(2) {
+	color: #999999;
+	font-size: 0.8rem;
+}
+
+
+/*标的物介绍*/
+
+.auction_images {
+	padding: 0.2rem 0.5rem;
+	margin-top: 0.267rem;
+}
+
+.auction_images_title p {
+	color: #999999;
+	font-size: 0.32rem;
+	margin-bottom: 0.2rem;
+}
+
+.auction_images_lists {
+	padding-left: 0.1rem;
+}
+
+.auction_images_lists img {
+	width: 48%;
+	height: 3.2rem;
+	margin-bottom: 3%;
+}
+
+.auction_images_lists img:nth-child(2n-1) {
+	margin-right: 4%;
+}
+
+
+/*所在地点*/
+
+.auction_address {
+	padding: 0rem 0.5rem 1.2rem 0.5rem;
+}
+
+.auction_images_title p:nth-child(1) {
+	color: #999999;
+	font-size: 0.32rem;
+	margin-bottom: 0.2rem;
+}
+
+.auction_images_title p:nth-child(2) {
+	color: #666666;
+	font-size: 0.32rem;
+	margin-bottom: 0.2rem;
+}
+/*地图*/
+#baiduMap {
+	width: 100%;
+	height: 6rem;
+}
+/*底部按钮*/
+.new_btn {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #00A2E9;
+	color: white;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	z-index: 10;
+}
+/*提醒*/
+.dianhua {
+    width: 1.43333333rem;
+    height: 1.43333333rem;
+    border-radius: 100%;
+    position: fixed;
+    right: 0.4rem;
+    bottom: 1.73333333rem;
+    z-index: 5;
+    background-color: #f39900;
+}
+.dianhua img{
+	display: inline-block;
+	width: 0.5rem !important;
+	height: 0.5rem !important;
+	margin:0.18666667rem 0 0 0.45666667rem;
+}
+.dianhua span{
+	display: block;
+	font-size: 0.32rem;
+	color: white;
+	text-align: center;
+	margin-top: 0.1rem;
+}

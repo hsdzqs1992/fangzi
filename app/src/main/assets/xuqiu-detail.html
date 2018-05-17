@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/xuqiu-detail.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">详情</h1>
+		</header>
+		<div class="banner mui-content">
+			<div class="bann-s swiper-container">
+				<div class="swiper-wrapper mui-content-padded m-0">
+					<a class="swiper-slide" href="javascript:;">
+						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+					</a>
+					<a class="swiper-slide" href="javascript:;">
+						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+					</a>
+					<a class="swiper-slide" href="javascript:;">
+						<img src="images/chanping.png" data-preview-src="" data-preview-group="1">
+					</a>
+				</div>
+				<span class="fenye c-f font-15"><span class="slide-active">1</span>/<span class="slide-num">4</span></span>
+			</div>
+		</div>
+		<div class="detail b-f">
+			<div class="detail_list clear">
+				<span class="f-l">面积</span>
+				<span class="f-r">150m²</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">户型</span>
+				<span class="f-r">3层/2厅／1卫</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">售价</span>
+				<span class="f-r">100，000元</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">楼层</span>
+				<span class="f-r">3层/共20层</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">房屋类型</span>
+				<span class="f-r">别墅</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">装修</span>
+				<span class="f-r">精装版</span>
+			</div>
+			<div class="detail_list clear">
+				<span class="f-l">朝向</span>
+				<span class="f-r">南</span>
+			</div>
+		</div>
+		<button class="new_btn">立即接单</button>
+	</body>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.zoom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.previewimage.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.bann-s', {
+			pagination: '.bann-s .swiper-pagination',
+			paginationClickable: true,
+			onInit: function(swiper) {
+				$(".slide-num").html(swiper.slides.length);
+			},
+			onSlideChangeEnd: function(swiper) {
+				$(".slide-active").html(swiper.activeIndex + 1);
+			}
+		});
+		mui.previewImage();
+	</script>
+</html>

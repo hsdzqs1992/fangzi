@@ -1,0 +1,133 @@
+#container {
+	width: 100%;
+	height: 100%;
+	background: #eee;
+	position:absolute;
+}
+
+.footer {
+	width: 100%;
+	height: 1.066666667rem;
+	background: #f5f5f5;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #E4E4E4;
+	padding: 0 0.5rem;
+}
+
+.footer input {
+	width: 70%;
+	height: 0.7rem !important;
+	outline: none;
+	border-radius: 0.16rem;
+	margin: 0;
+	padding-left: 0.2rem;
+	font-size: 0.37333333rem !important;
+	margin-top: 0.17rem;
+}
+
+.footer span {
+	display: inline-block;
+	width: 20%;
+	height: 0.7rem !important;
+	background: #00A2E9;
+	font-weight: 900;
+	line-height: 0.7rem !important;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 0.16rem;
+	font-size: 0.32rem;
+	color: white;
+	margin-top: 0.17rem;
+}
+
+/*#user_face_icon {
+	display: inline-block;
+	background: red;
+width: 1.066666667rem;
+	height: 1.066666667rem;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 6px;
+	left: 14px;
+	cursor: pointer;
+	overflow: hidden;
+}*/
+
+img {
+	width: 1.066666667rem;
+	height: 1.066666667rem;
+	border-radius: 50%;
+}
+
+.content {
+	font-size: 0.3733333rem;
+	width: 100%;
+	height: 90%;
+	overflow: auto;
+	padding: 0 0.5rem;
+}
+
+.content li {
+	margin-top: 0.34666667rem;
+	width: 100%;
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+
+.content li img {
+	float: left;
+}
+
+.content li span {
+	background: #7cfc00;
+	padding: 0.26666667rem;
+	border-radius: 0.26666667rem;
+	float: left;
+	margin: 0.16rem 0.26666667rem 0 0.26666667rem;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 0.08rem #ccc;
+	max-width: 70%;
+}
+
+.content li img.imgleft {
+	float: left !important;
+}
+
+.content li img.imgright {
+	float: right !important;
+}
+
+.content li span.spanleft {
+	float: left !important;
+	background: #fff;
+}
+
+.content li span.spanright {
+	float: right !important;
+	background: #7cfc00;
+}
+
+.mess_date {
+	text-align: center !important;
+	font-size: 0.32rem !important;
+	color: #999999 !important;
+	background: none !important;
+	width: 100% !important;
+	margin-top: 0.3rem !important;
+}
+
+.mess_date span {
+	display: inline-block;
+	text-align: center !important;
+	font-size: 0.32rem !important;
+	color: #999999 !important;
+	background: none !important;
+	width: 100% !important;
+	border: none !important;
+	box-shadow: none !important;
+	max-width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}

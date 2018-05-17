@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.VoteActivity">
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back"
+            android:padding="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow"/>
+        <TextView
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableLeft="@drawable/search"
+            android:layout_toLeftOf="@+id/search"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@+id/back"
+            android:background="#4dbef0"
+            android:padding="@dimen/dp_10"
+           android:layout_marginRight="@dimen/dp_10"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_12"
+            android:text="搜索"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/search"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="#4dbef0"
+            android:padding="@dimen/dp_10"
+            android:layout_alignParentRight="true"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_12"
+            android:text="搜索"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:drawablePadding="@dimen/dp_4"
+                android:drawableRight="@drawable/fire"
+                android:textColor="#f39900"
+                android:textSize="@dimen/sp_15"
+                android:text="111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_12"
+                android:text="报名人数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:textColor="#f39900"
+                android:textSize="@dimen/sp_15"
+                android:text="111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_12"
+                android:text="累计票数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#f39900"
+                android:textSize="@dimen/sp_15"
+                android:text="111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:textColor="#999"
+                android:textSize="@dimen/sp_12"
+                android:text="累计访问数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:id="@+id/zuixin"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_12"
+            android:text="最新"
+            android:layout_width="85dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/zongpaiming"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:textColor="#999"
+            android:textSize="@dimen/sp_12"
+            android:text="总排名"
+            android:layout_width="85dp"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/body"/>
+    <Button
+        android:id="@+id/baoming"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        android:background="@color/colorPrimary"
+        android:text="我要报名"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</RelativeLayout>
+
+
+</LinearLayout>

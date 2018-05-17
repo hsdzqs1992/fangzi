@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-weituo-new.css" />
+		<link rel="stylesheet" type="text/css" href="css/toupiao_new.css" />
+		<style type="text/css">
+			.mui-content-padded {
+				margin: 0;
+			}
+			
+			.title {
+				padding-left: 0.8rem;
+				padding-right: 0.8rem;
+				padding-bottom: 0.4rem !important;
+				margin-top: 0.3rem;
+				border-bottom: 1px solid #E4E4E4;
+				margin-bottom: 0.25rem;
+			}
+			
+			.visit_num {
+				width: 30%;
+				margin: 0 auto;
+				text-align: center;
+			}
+			
+			.visit_num p:nth-child(1) {
+				font-size: 0.4rem;
+				color: #FEB630;
+			}
+			
+			.visit_num p:nth-child(2) {
+				font-size: 0.32rem;
+				color: #999999;
+			}
+			input{
+				color: #666666 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left c-f"onclick="window.location.href='toupiao.html'"></a>
+			<h1 class="mui-title">我的信息</h1>
+		</header>
+		<div class="title mui-content b-f">
+			<div class="visit_num">
+				<p>312</p>
+				<p>当前排名</p>
+			</div>
+		</div>
+		<div class="center b-f">
+			<!--地区 类型5-->
+			<div class="type5 clear ">
+				<span class="f-l">地区</span>
+				<input type="text" class="f-r" value="中原区／电厂路"readonly="readonly"/>
+			</div>
+			<!--具体位置 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">具体地址</span>
+				<input type="text" class="" value="大学科技园东区"readonly="readonly"/>
+			</div>
+			<!--户型 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l">户型</span>
+				<div class="type3_right f-r">
+					<input type="text" value="4"readonly="readonly"style="text-align: center;"/>
+					<span>室/</span>
+					<input type="text" value="2"readonly="readonly"style="text-align: center;"/>
+					<span>卫</span>
+				</div>
+			</div>
+			<!--面积-->
+			<div class="type4 clear">
+				<span class="f-l">面积</span>
+				<span class="f-r">m²</span>
+				<input type="text" placeholder="" class="f-r" value="140"readonly="readonly"/>
+			</div>
+			<!--联系人 类型5-->
+			<div class="type5 clear ">
+				<span class="f-l">联系人</span>
+				<input type="text" placeholder="请输入联系人" class="f-r" value="王某"readonly="readonly"/>
+			</div>
+			<!--联系电话 类型5-->
+			<div class="type5 clear ">
+				<span class="f-l">联系电话</span>
+				<input type="text" placeholder="请输入联系电话" class="f-r" value="15512345678"readonly="readonly"/>
+			</div>
+			<!--参赛寄语 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">参赛寄语</span>
+				<input type="text" placeholder="请输入您的参赛寄语" class=""value="感谢大家给我投票！"readonly="readonly" />
+			</div>
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p>房源图 <em>(最多可上传4张)</em></p>
+				<div class="file_images clear mui-content-padded">
+					<img src="images/toupiao.png" data-preview-src="" data-preview-group="1" />
+					<img src="images/toupiao.png" data-preview-src="" data-preview-group="1" />
+					<img src="images/toupiao.png" data-preview-src="" data-preview-group="1" />
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.zoom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.previewimage.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.previewImage();
+	</script>
+
+</html>

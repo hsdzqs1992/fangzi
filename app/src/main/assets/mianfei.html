@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>免费看房</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mianfei.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">免费看房</h1>
+		</header>
+		<div class="mui-content">
+			<div class="lists b-f">
+				<div class="lists_title">
+					<p>郑东新区-英协生生银河居</p>
+				</div>
+				<div class="lists_date clear">
+					<div class="lists_images_left ">
+						<img src="images/shijian.png" />
+						<span>4天7小时32分54秒</span>
+					</div>
+					<div class="lists_images_rigth ">
+						<img src="images/wode.png" />
+						<span>300人报名</span>
+					</div>
+				</div>
+				<div class="lists_images">
+					<img src="images/42.png" />
+				</div>
+				<div class="lists_text clear">
+					<div class="lists_text_left f-l">
+						<p>期房在售</p>
+						<div class="lists_text_left_span">
+							<span>银行</span>
+							<span>品牌开发商</span>
+						</div>
+						<p>熊儿河路与相济路交叉口东南角</p>
+					</div>
+					<div class="lists_text_right f-r">
+						<p>12500元/m²</p>
+					</div>
+				</div>
+				<div class="lists_btn clear">
+					<button onclick="window.location.href='tel:10086'" class="f-l lists_btn_border">咨询电话</button>
+					<button class="f-r"onclick="window.location.href='mianfei-detail.html'">参与报名</button>
+				</div>
+			</div>
+			<div class="lists b-f">
+				<div class="lists_title">
+					<p>郑东新区-英协生生银河居</p>
+				</div>
+				<div class="lists_date clear">
+					<div class="lists_images_left ">
+						<img src="images/shijian.png" />
+						<span id="countdown">4天7小时32分54秒</span>
+					</div>
+					<div class="lists_images_rigth ">
+						<img src="images/wode.png" />
+						<span>300人报名</span>
+					</div>
+				</div>
+				<div class="lists_images">
+					<img src="images/42.png" />
+				</div>
+				<div class="lists_text clear">
+					<div class="lists_text_left f-l">
+						<p>期房在售</p>
+						<div class="lists_text_left_span">
+							<span>银行</span>
+							<span>品牌开发商</span>
+						</div>
+						<p>熊儿河路与相济路交叉口东南角</p>
+					</div>
+					<div class="lists_text_right f-r">
+						<p>12500元/m²</p>
+					</div>
+				</div>
+				<div class="lists_btn clear">
+					<button onclick="window.location.href='tel:10086'" class="f-l lists_btn_border">咨询电话</button>
+					<button class="f-r" onclick="window.location.href='mianfei-detail.html'">参与报名</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function FreshTime() {
+			var endtime = new Date("2018/3/28"); //结束时间
+			var nowtime = new Date(); //当前时间
+			var lefttime = parseInt((endtime.getTime() - nowtime.getTime()) / 1000); // 剩余时间
+			d = parseInt(lefttime / 3600 / 24);
+			h = parseInt((lefttime / 3600) % 24);
+			m = parseInt((lefttime / 60) % 60);
+			s = parseInt(lefttime % 60);
+
+			document.getElementById("countdown").innerHTML = "剩余" + d + "天" + h + "小时" +
+				m + "分" + s + "秒";
+			//当时间结束时
+			if(lefttime <= 0) {
+				document.getElementById("countdown").innerHTML = "已结束";
+				clearInterval(sh);
+			}
+		}
+		FreshTime()
+		var sh;
+		sh = setInterval(FreshTime, 1000); 
+	</script>
+
+</html>

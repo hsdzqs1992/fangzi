@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>经纪人注册</title>
+		<script src="js/flexible.js"></script>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/mui.picker.min.css">
+		<link rel="stylesheet" href="css/css.css">
+	</head>
+
+	<body class="b-f">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">经纪人注册</h1>
+		</header>
+		<div class="mui-content p-b-50 b-f">
+			<div class="jindubox">
+				<ul class="jindu-pro flex">
+					<li class="on"><i class="dian"></i></li>
+					<li class="on"><i class="dian"></i><i class="xian"></i></li>
+					<li><i class="dian"></i><i class="xian"></i></li>
+				</ul>
+				<ul class="jindu flex m-t-5">
+					<li class="on">填写手机号 <i class="dian"></i></li>
+					<li class="on">完善个人信息</li>
+					<li>完成注册</li>
+				</ul>
+			</div>
+			<ul class="fogectbox p-15">
+				<li class="inputitem m-b-20">
+					<p class="font-w-b c-6">真实姓名</p>
+					<p class="inputbox">
+						<input class="p-l-0 m-b-0" type="text" placeholder="请输入真实姓名否则无法通过">
+					</p>
+				</li>
+				<li class="inputitem m-b-20">
+					<p class="font-w-b c-6">所属公司</p>
+					<p class="inputbox">
+						<input class="p-l-0 m-b-0" type="text" placeholder="请填写所属公司">
+					</p>
+				</li>
+				<li class="inputitem m-b-20">
+					<p class="font-w-b c-6">工作范围</p>
+					<p class="inputbox fanweibox">
+						<input class="fanweiinp p-l-0 m-b-0" type="text" placeholder="请选择工作范围" readonly>
+						<!--工作范围value值-->
+						<input class="fanweival" type="hidden">
+
+						<i class="icon-xia mui-icon mui-icon-arrowdown c-6"></i>
+					</p>
+				</li>
+				<li class="inputitem m-b-20">
+					<p class="font-w-b c-6">请选择主营业务</p>
+					<p class="checkyewu inputbox m-t-10">
+						<span class="yewuitem base-btn on" data-id="1">住宅</span>
+						<span class="yewuitem base-btn" data-id="2">商业地产</span>
+					</p>
+					<!--主营业务id-->
+					<input class="yewuid" type="text" value="1">
+				</li>
+			</ul>
+			<div class="shop-nav flex">
+				<button class="base-btn base-btn-big border-r-0" onclick="window.location.href='register2-3.html'">下一步</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			//选择工作范围
+			var picker = new mui.PopPicker();
+			picker.setData([{
+					value: '01',
+					text: '工作范围01'
+				},
+				{
+					value: '02',
+					text: '工作范围02'
+				},
+				{
+					value: '03',
+					text: '工作范围03'
+				},
+				{
+					value: '04',
+					text: '工作范围04'
+				}
+			]);
+			$(".fanweibox").click(function() {
+				picker.show(function(selectItems) {
+					$(".fanweiinp").val(selectItems[0].text);
+					$(".fanweival").val(selectItems[0].value);
+				})
+			});
+
+			//选择主营业务
+			$(".checkyewu").on("click", ".yewuitem", function() {
+				$(this).addClass("on").siblings().removeClass("on");
+				$(".yewuid").val($(this).attr("data-id"));
+			});
+		</script>
+	</body>
+
+</html>

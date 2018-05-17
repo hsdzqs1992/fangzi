@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/flexible.js"></script>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/gusuan.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">估算房价</h1>
+		</header>
+		<div class="type b-f mui-content">
+			<div class="business b-f">
+			<div class="type4 clear">
+				<span class="f-l">您的小区</span>
+				<span class="f-r">万</span>
+				<input type="text" placeholder="请输入小区名" class="f-r mianji" />
+			</div>
+			<div class="type4 clear">
+				<span class="f-l">建筑面积</span>
+				<span class="f-r">万</span>
+				<input type="text" placeholder="请输入面积(m/²)" class="f-r mianji" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">户型</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind"></span>
+				<input type="" name="" id="" value="" placeholder="请选择户型" class="f-r business_type1_input" readonly="" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">朝向</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind2"></span>
+				<input type="" name="" id="" value="" placeholder="请选择朝向" class="f-r business_type2_input" readonly="" />
+			</div>
+			<div class="clear business_type1">
+				<span class="f-l">楼层</span>
+				<span class="mui-icon mui-icon-arrowdown mui-pull-right kind3"></span>
+				<input type="" name="" id="" value="" placeholder="请选择楼层" class="f-r business_type3_input" readonly="" />
+			</div>
+		</div>
+		</div>
+		<button class="new_btn"onclick="window.location.href='gusuan-result.html'">查看估价</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//商业贷款利率
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".business_type1_input").val(selectItems[0].text);
+
+			})
+		});
+		//商业贷款年限
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind2").click(function() {
+			picker.show(function(selectItems) {
+				$(".business_type2_input").val(selectItems[0].text);
+
+			})
+		});
+		//商业贷款年限
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind3").click(function() {
+			picker.show(function(selectItems) {
+				$(".business_type3_input").val(selectItems[0].text);
+
+			})
+		});
+	</script>
+</html>

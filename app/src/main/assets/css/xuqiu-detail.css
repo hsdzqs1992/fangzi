@@ -1,0 +1,39 @@
+.swiper-wrapper img {
+	width: 100%;
+	height: 5.6rem;
+}
+
+.detail {}
+
+.detail_list {
+	border-bottom: 1px solid #E4E4E4;
+	padding: 0.38rem 0.5rem;
+}
+
+.detail_list span:nth-child(1) {
+	color: #999999;
+	font-size: 0.32rem;
+}
+
+.detail_list span:nth-child(2) {
+	color: #666666;
+	font-size: 0.37333333rem;
+}
+.detail_list p{
+	width: 100%;
+	margin-top: 0.1rem;
+	font-size: 0.3733333rem;
+	color: #666666;
+	letter-spacing: 1px;
+	line-height: 0.45rem;
+}
+.new_btn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #00A2E9;
+	color: white;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	z-index: 10;
+}

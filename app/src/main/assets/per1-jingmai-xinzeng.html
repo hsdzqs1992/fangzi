@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>委托房源</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-weituo-new.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">委托房源</h1>
+		</header>
+		<div class="center mui-content b-f">
+			<!--资产所在地-->
+			<div class="type5 clear ">
+				<span class="f-l">资产所在地</span>
+				<input type="text" placeholder="请输入所在城市即区域" class="f-r" />
+			</div>
+			<!--楼栋门牌 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">楼栋门牌</span>
+				<input type="text" placeholder="请输入具体位置" class="" />
+			</div>
+
+			<!--面积-->
+			<div class="type4 clear">
+				<span class="f-l">面积</span>
+				<span class="f-r">m²</span>
+				<input type="text" placeholder="请输入房屋面积" class="f-r" />
+			</div>
+			<!--保证金-->
+			<div class="type4 clear">
+				<span class="f-l">保证金</span>
+				<span class="f-r">元</span>
+				<input type="text" placeholder="请输入保证金金额" class="f-r" />
+			</div>
+			<!--加价幅度-->
+			<div class="type4 clear">
+				<span class="f-l">加价幅度</span>
+				<span class="f-r">元</span>
+				<input type="text" placeholder="请输入加价幅度" class="f-r" />
+			</div>
+			<!--评估价格-->
+			<div class="type4 clear">
+				<span class="f-l">评估价格</span>
+				<span class="f-r">元</span>
+				<input type="text" placeholder="请输入评估价格" class="f-r" />
+			</div>
+			<!--起拍价-->
+			<div class="type4 clear">
+				<span class="f-l">起拍价</span>
+				<span class="f-r">元</span>
+				<input type="text" placeholder="起拍价" class="f-r" />
+			</div>
+			<!--延时周期-->
+			<div class="import clear">
+				<span class="f-l">延时周期</span>
+				<input type="text" class="kind-2 f-r" readonly="readonly" value="5分钟" />
+			</div>
+			<!--竞拍周期-->
+			<div class="import clear">
+				<span class="f-l">竞拍周期</span>
+				<input type="text" class="kind-3 f-r" readonly="readonly" value="1天" />
+			</div>
+			<!--竞价规则-->
+			<div class="type5 clear ">
+				<span class="f-l">竞价规则</span>
+				<p class="f-r">至少一人报名且出价不低于起拍价，方可成交</p>
+			</div>
+			<!--竞拍周期-->
+			<div class="imports clear">
+				<span class="f-l">竞拍周期</span>
+				<input type="text" class="kind-4 f-r" readonly="readonly" placeholder="年/月/日/时/分/秒" />
+			</div>
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p>房源图 <em>(最多可上传6张)</em></p>
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+			<!--竞买须知-->
+			<div class="type8">
+				<p>竞买须知</p>
+				<textarea name="" rows="" cols=""></textarea>
+			</div>
+		</div>
+		<button class="new_btn">立即委托</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房型类型
+		var picker1 = new mui.PopPicker();
+		picker1.setData([{
+				value: '01',
+				text: '3居室'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-2").click(function() {
+			picker1.show(function(selectItems) {
+				$(".kind-2").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker2 = new mui.PopPicker();
+		picker2.setData([{
+				value: '01',
+				text: '精装修'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-3").click(function() {
+			picker2.show(function(selectItems) {
+				$(".kind-3").val(selectItems[0].text);
+
+			})
+		});
+
+		var picker4 = new mui.DtPicker({
+			beginDate: new Date(), //设置开始日期 
+		});
+
+		$(".kind-4").click(function() {
+			picker4.show(function(selectItems) {
+				$(".kind-4").val(selectItems.text)
+
+			})
+		})
+	</script>
+
+</html>

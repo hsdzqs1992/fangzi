@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.EditPassActivity">
+
+    <include layout="@layout/header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <EditText
+            android:id="@+id/oldpass"
+            android:paddingLeft="@dimen/dp_20"
+            android:inputType="textPassword"
+            android:textColor="#666"
+            android:textSize="@dimen/sp_15"
+            android:hint="请输入旧密码"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1dp"
+            android:background="@color/linecolor"></View>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <EditText
+            android:id="@+id/pass"
+            android:paddingLeft="@dimen/dp_20"
+            android:inputType="textPassword"
+            android:textColor="#666"
+            android:textSize="@dimen/sp_15"
+            android:hint="请输入新密码"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1dp"
+            android:background="@color/linecolor"></View>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <EditText
+            android:id="@+id/repass"
+            android:paddingLeft="@dimen/dp_20"
+            android:inputType="textPassword"
+            android:textColor="#666"
+            android:textSize="@dimen/sp_15"
+            android:hint="请再次输入新密码"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1dp"
+            android:background="@color/linecolor"></View>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/forget"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/sp_12"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/next"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:background="@color/colorPrimary"
+            android:text="确定"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="39dp" />
+    </RelativeLayout>
+</LinearLayout>

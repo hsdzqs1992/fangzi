@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rootview"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/dianshifa"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/shifa1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:background="@null"
+            android:hint="面积"
+            android:textSize="15sp"
+            android:textColor="#999"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_marginTop="2dp"
+            android:hint="请输入"
+            android:singleLine="true"
+            android:lines="1"
+            android:id="@+id/mianji"
+            android:layout_toRightOf="@+id/shifa1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:textSize="14sp"
+           android:textColor="#999"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_marginRight="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#999"
+                android:text="M"
+                android:gravity="center_vertical|end"
+                android:id="@+id/leixing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:visibility="gone"
+                android:scaleType="centerCrop"
+                android:id="@+id/go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/you"/>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="@color/line_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+</LinearLayout>

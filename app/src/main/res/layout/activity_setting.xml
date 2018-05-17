@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.SettingActivity">
+
+    <include layout="@layout/header"/>
+
+    <RelativeLayout
+        android:id="@+id/lianxi"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:gravity="center_vertical"
+            android:text="允许经纪人跟我打招呼"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#666"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textSize="@dimen/sp_15"/>
+
+        <ImageView
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/on"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/linecolor"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/editpass"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:gravity="center_vertical"
+            android:text="修改密码"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#666"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textSize="@dimen/sp_15"/>
+
+        <ImageView
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/you"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/linecolor"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/guanyu"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:gravity="center_vertical"
+            android:text="关于平台"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#666"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textSize="@dimen/sp_15"/>
+
+        <ImageView
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/you"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/linecolor"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tuichu"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:gravity="center_vertical"
+            android:text="退出登录"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#666"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:textSize="@dimen/sp_15"/>
+
+        <ImageView
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/you"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/linecolor"/>
+    </RelativeLayout>
+
+</LinearLayout>

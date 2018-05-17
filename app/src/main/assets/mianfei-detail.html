@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>免费看房详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mianfei-detail.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">银河生生银河居</h1>
+		</header>
+		<!--详情内容-->
+		<div class="detail_mess mui-content b-f">
+			<p>银河生生银河居</p>
+			<p>详情咨询售楼部</p>
+			<p>郑东腹地，四区合围</p>
+			<div class="detail_mess_span">
+				<div class="detail_mess_span1">
+					<img src="images/quereng.png" />
+					<span>免费看车</span>
+				</div>
+				<div class="detail_mess_span1">
+					<img src="images/quereng.png" />
+					<span>免费看车</span>
+				</div>
+				<div class="detail_mess_span1">
+					<img src="images/quereng.png" />
+					<span>免费看车</span>
+				</div>
+			</div>
+			<div class="detail_mess_date clear">
+				<div class="lists_images_left f-l">
+					<img src="images/shijian.png" />
+					<span id="countdown">4天7小时32分54秒</span>
+				</div>
+				<div class="lists_images_rigth f-r">
+					<img src="images/wode.png" />
+					<span>300人报名</span>
+				</div>
+			</div>
+			<div class="detail_mess_address">
+				<span>楼盘位置 :</span>
+				<span>河南省大学科技园</span>
+			</div>
+		</div>
+		<!--电话-->
+		<div class="detail_phone clear b-f">
+			<div class="detail_phone_left f-l">
+				<p>400-800-6565</p>
+				<p>最新政策，更多优惠详情，请致电售楼处</p>
+			</div>
+			<div class="detail_phone_right f-r" onclick="window.location.href='tel:10086'">
+				<img src="images/dianhua.png" />
+			</div>
+		</div>
+		<!--活动楼盘-->
+		<div class="house b-f">
+			<div class="house_title">
+				<p>活动楼盘</p>
+			</div>
+			<div class="house_wrap">
+				<a href="">
+					<div class="lists clear">
+						<div class="lists_left f-l">
+							<img src="images/42.png" />
+						</div>
+						<div class="lists_right f-r">
+							<div class="lists_right_text1">
+								<p>西湖春天 电梯小高层 1楼 南...</p>
+							</div>
+							<div class="lists_right_text2 clear">
+								<span class="f-l">慧济-慧济区</span>
+								<span class="f-r"><em>9900</em>元/m²</span>
+							</div>
+							<div class="lists_right_text3">
+								<span>三室两厅<em>116m²</em></span>
+							</div>
+							<div class="lists_right_text4 clear">
+								<span class="f-l">品质小区</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--活动规则-->
+		<div class="rule b-f">
+			<div class="rule_title">
+				<p>活动规则</p>
+			</div>
+			<div class="rule_wrap">
+				<p>1.报名成功后48小时内会接到工作人员的电话</p>
+				<p>2.工作人员根据确认的上车时间、上车地点、随行人数进行约车，目的地默认为报名的楼盘，不可更改</p>
+				<p>3.约车成功后会收到通知信息</p>
+				<p>4.专车在约车时间约定地点上门接人看房</p>
+				<p>5.看房结束后乘坐专车返回上车地点</p>
+				<p>6.若行车有变更，请及时联系工作人员</p>
+			</div>
+			<div class="rule_title2">
+				<p>免责申明</p>
+				<p class="more_mess">报名成功后48小时内会接到工作人员的电约车成功后会收到通知信息看房结束后乘坐专车返回上车地点看房结束后乘坐专车返回上车地点</p>
+			</div>
+			<div class="more" data_id="1">
+				<span>查看更多</span>
+				<span class="mui-icon mui-icon-arrowdown"></span>
+			</div>
+		</div>
+		<!--底部按钮-->
+		<div class="detail_bottom">
+			<div class="detail_shou f-l" data_id="1" onclick="window.location.href='tel:10086'">
+				<img src="images/dianhua2.png" />
+				<span>电话咨询</span>
+			</div>
+			<div class="detail_gou f-l">
+
+				<span>免费预约看车</span>
+			</div>
+		</div>
+		<!--获取弹窗-->
+		<div class="pay_wrap">
+			<div class="pay">
+				<div class="pay_title">
+					<span>获取优惠</span>
+					<img src="images/cuohao.png" class="pay_close" />
+				</div>
+				<div class="pay1">
+					<input type="text" placeholder="请输入您的手机号" class="phone" />
+					<div class="clear code_wrap">
+						<input type="text" placeholder="请输入验证码" class="code f-l" />
+						<button class="code_btn f-r">获取验证码</button>
+					</div>
+					<p class="pay1_btn">确定</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".more").click(function() {
+			var data_id = $(this).attr("data_id");
+			if(data_id == "1") {
+				$(this).find("span").eq(0).text("收起");
+				$(this).find("span").eq(1).removeClass();
+				$(this).find("span").eq(1).addClass("mui-icon mui-icon-arrowup");
+				$(this).attr("data_id", "2");
+			} else {
+				$(this).find("span").eq(0).text("查看更多");
+				$(this).find("span").eq(1).removeClass();
+				$(this).find("span").eq(1).addClass("mui-icon mui-icon-arrowdown");
+				$(this).attr("data_id", "1");
+			}
+		});
+		//点击预约看车
+		$(".detail_gou").click(function() {
+			$(".pay_wrap").show();
+		});
+		//点击关闭
+		$(".pay_close").click(function(){
+			$(".pay_wrap").hide()
+		});
+	</script>
+
+</html>

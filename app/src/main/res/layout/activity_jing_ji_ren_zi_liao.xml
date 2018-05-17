@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.JingJiRenZiLiaoActivity">
+
+    <include layout="@layout/header"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="1"
+                app:tishi11="请输入卖房宣言"
+                android:id="@+id/maifangxuanyan"
+                app:title11="卖房宣言"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="3"
+                app:tishi11="请输入个人简介"
+                android:id="@+id/ferenjianjie"
+                app:title11="个人简介"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/jusecolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="职业信息"/>
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="1"
+                app:tishi11="请输入所属公司"
+                android:id="@+id/suoshu"
+                app:title11="所属公司"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="1"
+                app:tishi11="请输入公司门店"
+                android:id="@+id/mendian"
+                app:title11="公司门店"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/zhuying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tx1="主营业务"
+                app:tx2="商业地产"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/fuwuyear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tx2="11年"
+                app:tx1="服务年限"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="1"
+                app:tishi11="请输入工作范围"
+                android:id="@+id/gongzuo"
+                app:title11="工作范围"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="1"
+                app:tishi11="请输入主营小区"
+                android:id="@+id/zhuyongxiaoqu"
+                app:title11="主营小区"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:lines="1"
+                app:tishi11="请输入房源特点"
+                android:id="@+id/fangyuantedian"
+                app:title11="房源特点"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:visibility="gone"
+                android:id="@+id/shujufenxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tx2="11年"
+                app:tx1="数据分析"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/yongjinbi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tx2=""
+                app:tx1="佣金币"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/congye"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

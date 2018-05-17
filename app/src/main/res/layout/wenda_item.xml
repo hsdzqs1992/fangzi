@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:padding="@dimen/dp_20"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/titless"
+        android:textSize="@dimen/sp_14"
+        android:textColor="#666"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tex"/>
+    <TextView
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/mianshua"
+        android:textSize="@dimen/sp_12"
+        android:textColor="#999"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tex"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/time"
+            android:textSize="@dimen/sp_12"
+            android:textColor="#666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tex"/>
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/pinglun"
+            android:textSize="@dimen/sp_12"
+            android:textColor="#666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tex"/>
+    </RelativeLayout>
+</LinearLayout>

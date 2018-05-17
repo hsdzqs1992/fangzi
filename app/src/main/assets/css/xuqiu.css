@@ -1,0 +1,101 @@
+
+.pullrefresh {
+	top: 2.21rem;
+	padding-bottom: 1rem;
+}
+
+.news {
+	padding: 0 0.5rem;
+}
+.type{
+}
+.lists{
+	padding: 0.25rem 0;
+	border-bottom: 1px solid #E4E4E4;
+}
+.lists_left {
+	width: 29.7%;
+	height: 2rem;
+}
+
+.lists_left img {
+	width: 100%; 
+    height: 2rem;
+    display: block;
+}
+.lists_right{
+	width: 67%;
+	height: 2rem;
+}
+.lists_right_text1{
+	font-size: 0.4rem;
+}
+.lists_right_text2{
+	font-size: 0.32rem;
+	color: #666666;
+	margin-bottom: 0.12rem;
+}
+.lists_right_text2 span:nth-child(1){
+	margin-top: 0.05rem;
+}
+.lists_right_text2 span em{
+	color: #FEB630;
+	font-size: 0.4rem;
+}
+.lists_right_text3{
+	font-size: 0.32rem;
+	color: #666666;
+
+}
+.lists_right_text3 span em{
+	display: inline-block;
+	margin-left: 0.1rem;
+}
+.lists_right_text3 .f-l span:nth-child(1){
+	display: block;
+	margin-bottom: 0.15rem;
+}
+.lists_right_text3 .f-r button{
+	width:2rem;
+	background: #FEB630;
+	color: white;
+	line-height:0.7rem;
+	height: 0.7rem;
+	font-size: 0.32rem;
+	margin-top: 0.2rem;
+}
+.lists_right_text4 span{
+	border: 1px solid #FEB630;
+	color: #FEB630;
+	font-size: 0.32rem;
+	padding: 0.05rem 0.1rem;
+	text-align: center;
+	border-radius: 2px;
+}
+/*委托办证*/
+.lists_dai{
+	padding: 0.25rem 0;
+	border-bottom: 1px solid #E4E4E4;
+}
+.lists_dai_title p{
+	font-size: 0.32rem;
+	color: #666666;
+	margin-bottom: 0.15rem;
+}
+.lists_dai .f-l p{
+	font-size: 0.32rem;
+	color: #999999;
+}
+.lists_dai .f-l p:nth-child(1){
+	margin-bottom: 0.05rem;
+	margin-top: 0.1rem;
+}
+.lists_dai .f-r button{
+	width:2rem;
+	background: #FEB630;
+	color: white;
+	line-height:0.7rem;
+	height: 0.7rem;
+	font-size: 0.32rem;
+	margin-top: 0.1rem;
+}

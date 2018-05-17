@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>问答</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/wenda.css" />
+
+	</head>
+	<style type="text/css">
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+			font-size: 0.32rem;
+			line-height: 38px;
+			border-bottom: 1px solid #00A2E9;
+			color: #00A2E9 !important;
+		}
+		
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+			font-size: 0.32rem;
+			line-height: 40px;
+			color: #999999;
+		}
+		
+		.mui-slider-group {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="search-box mui-title text-center search-input">
+   				 <input type="text" placeholder="搜索" class="search_input"></a>
+  		</h1>
+		</header>
+		<div class="mui-content">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted b-f">
+				<div class="mui-scroll">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						精选问答
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						热门回答
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						常见问题
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						待解决问题
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="type b-f">
+			<div class="pullrefresh mui-scroll-wrapper b-f">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="wenda-detail.html ">
+							<div class="lists b-f">
+								<p class="lists_text">交了定金，发现没有购房资格，定金还能退吗？</p>
+								<div class="huifu">
+									<p>如果你无法简洁的表达你的想法，那只说明你还不 够了解它。</p>
+								</div>
+								<div class="lists_bom clear">
+									<span class="f-l">2017-12-03</span>
+									<div class="lists_bom_images clear f-r">
+										<img src="images/liuyan.png" class="f-l" />
+										<span class="f-l">1</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--2-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="wenda-detail.html ">
+							<div class="lists b-f">
+								<p class="lists_text">交了定金，发现没有购房资格，定金还能退吗？</p>
+								<div class="huifu">
+									<p>如果你无法简洁的表达你的想法，那只说明你还不 够了解它。</p>
+								</div>
+								<div class="lists_bom clear">
+									<span class="f-l">2018-12-03</span>
+									<div class="lists_bom_images clear f-r">
+										<img src="images/liuyan.png" class="f-l" />
+										<span class="f-l">1</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--3-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="wenda-detail.html ">
+							<div class="lists b-f">
+								<p class="lists_text">交了定金，发现没有购房资格，定金还能退吗？</p>
+								<div class="huifu">
+									<p>如果你无法简洁的表达你的想法，那只说明你还不 够了解它。</p>
+								</div>
+								<div class="lists_bom clear">
+									<span class="f-l">2019-12-03</span>
+									<div class="lists_bom_images clear f-r">
+										<img src="images/liuyan.png" class="f-l" />
+										<span class="f-l">1</span>
+									</div>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+			<!--4-->
+			<div class="pullrefresh mui-scroll-wrapper b-f hide">
+				<div class="mui-scroll">
+					<div class="news mui-table-view a-href overflow-h">
+						<a href="wenda-detail.html ">
+							<div class="lists b-f">
+								<p class="lists_text">交了定金，发现没有购房资格，定金还能退吗？</p>
+								<div class="huifu">
+									<p>如果你无法简洁的表达你的想法，那只说明你还不 够了解它。</p>
+								</div>
+								<div class="lists_bom clear">
+									<span class="f-l">2020-12-03</span>
+									<div class="lists_bom_images clear f-r">
+										<img src="images/liuyan.png" class="f-l" />
+										<span class="f-l">1</span>
+									</div>
+								</div>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="new_btn" onclick="window.location.href='per1-wenda-new.html'">我要提问</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init();
+		(function($) {
+			//阻尼系数
+			var deceleration = mui.os.ios ? 0.003 : 0.0009;
+			$('.mui-scroll-wrapper').scroll({
+				bounce: false,
+				indicators: true, //是否显示滚动条
+				deceleration: deceleration
+			});
+			$.ready(function() {
+				//循环初始化所有下拉刷新，上拉加载。
+				$.each(document.querySelectorAll('.pullrefresh .mui-scroll'), function(index, pullRefreshEl) {
+					$(pullRefreshEl).pullToRefresh({
+						up: {
+							callback: function() {
+								var self = this;
+								console.log(index);
+								setTimeout(function() {
+									var ul = self.element.querySelector('.mui-table-view');
+									var html = '<a href="wenda-detail.html "><div class="lists b-f"><p class="lists_text">交了定金，发现没有购房资格，定金还能退吗？</p><div class="huifu"><p>如果你无法简洁的表达你的想法，那只说明你还不 够了解它。</p></div><div class="lists_bom clear"><span class="f-l">2017-12-03</span><div class="lists_bom_images clear f-r"><img src="images/liuyan.png" class="f-l" /><span class="f-l">1</span></div></div></div></a>';
+									jQuery(ul).append(html);
+									self.endPullUpToRefresh();
+								}, 1000);
+							}
+						}
+					});
+				});
+			});
+		})(mui);
+		//a标签href跳转
+		mui('.a-href').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+		$(".mui-control-item").click(function() {
+			var index = $(this).index();
+			console.log(index)
+			$(this).addClass("mui-active").siblings().removeClass("mui-active");
+			$(".pullrefresh").eq(index).show().siblings().hide();
+		});
+	</script>
+
+</html>

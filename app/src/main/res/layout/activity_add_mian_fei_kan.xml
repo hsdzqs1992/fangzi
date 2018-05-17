@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/header"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint="请输入标题"
+                app:tx1="标题"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+            <com.zhuye.ershoufang.weidtet.MySelectTvView
+                android:id="@+id/youshi"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title="优势"
+                app:addname="添加更多"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.zhuye.ershoufang.weidtet.MySelectTvView>
+
+            <com.zhuye.ershoufang.weidtet.MyTvSelectView
+                android:id="@+id/suozailoupan"
+                app:tv1="所在楼盘"
+                app:tv2="所在楼盘"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+            </com.zhuye.ershoufang.weidtet.MyTvSelectView>
+
+            <com.zhuye.ershoufang.weidtet.MySelectTvView
+                android:id="@+id/loupanleixing"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title="楼盘类型"
+                app:addname="添加更多"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.zhuye.ershoufang.weidtet.MySelectTvView>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/rexian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint="请输入咨询热线"
+                app:tx1="咨询热线"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/youhui"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint="请输入看房优惠"
+                app:tx1="看房优惠"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+            <com.zhuye.ershoufang.weidtet.MyInputView
+                android:id="@+id/kaishishijian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:show4="true"
+                app:hint="请输入开始时间"
+                app:tx1="开始时间"
+                app:show2="true"
+                >
+            </com.zhuye.ershoufang.weidtet.MyInputView>
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:tishi11="请输入活动规则"
+                android:id="@+id/huodongguize"
+                app:title11="活动规则"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:tishi11="请输入免责声明"
+                android:id="@+id/mianze"
+                app:title11="免责声明"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <com.zhuye.ershoufang.weidtet.MyLinTv2View
+                app:tishi11="请输入地址"
+                android:id="@+id/dizhi"
+                app:title11="地址"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+            </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+            <RelativeLayout
+                android:layout_marginTop="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/fabu"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:background="@color/colorPrimary"
+                    android:text="发布"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

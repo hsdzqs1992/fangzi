@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商铺写字楼</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="css/changfang.css" />
+	</head>
+	<style type="text/css">
+		.mui-scroll-wrapper {
+			position: absolute;
+			z-index: 2;
+			top: 2.4rem;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
+			width: 100%;
+		}
+		
+		.mui-bar-nav~.mui-content .mui-pull-top-pocket {
+			top: 0px;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">工业厂房</h1>
+		</header>
+		
+		<!--类型1-->
+		<div class="shangpu b-f">
+			<!--筛选-->
+			<div class="screen">
+				<span class="screen_color">新盘</span>
+				<span>二手</span>
+				<span>租凭</span>
+			</div>
+			<!--筛选地区-->
+			<div class="screen2 clear">
+				<span class="f-l">区域</span>
+				<span class="f-r">价格</span>
+			</div>
+			<!--下拉框-->
+			<div class="cover">
+				<div class="rows">
+					<p class="rows_lists">二七区</p>
+					<p class="rows_lists">惠济区</p>
+					<p class="rows_lists">惠济区</p>
+					<p class="rows_lists">惠济区</p>
+				</div>
+			</div>
+			<!--列表-->
+			<div class="type_wrap">
+				<div class="pullrefresh mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="huikuan mui-table-view a-href">
+							<a href="xiezi-detail.html">
+								<div class="lists clear">
+									<div class="lists_left f-l">
+										<img src="images/42.png" />
+
+									</div>
+									<div class="lists_right f-r">
+										<div class="lists_right_text1">
+											<p>西湖春天 电梯小高层 1楼 南...</p>
+										</div>
+										<div class="lists_right_text2 clear">
+											<span class="f-l">慧济-慧济区</span>
+											<span class="f-r"><em>9900</em>元/m²</span>
+										</div>
+										<div class="lists_right_text3">
+											<span>三室两厅<em>116m²</em></span>
+										</div>
+										<div class="lists_right_text4 clear">
+											<span class="f-l">品质小区</span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.pullToRefresh.material.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(".nav").on("click", ".nav_lists", function() {
+
+		});
+		$(".screen2 span").click(function() {
+			$(this).addClass("screen2_color").siblings().removeClass("screen2_color");
+			$(".cover").animate({
+				opacity: 1
+			}, 200, function() {
+				$(this).show()
+			});
+		})
+		$(".cover").click(function() {
+			$(".cover").animate({
+				opacity: 0
+			}, 200, function() {
+				$(this).hide()
+			});
+		});
+		//  上拉加载
+		var $fuwuitem = $('.pullrefresh .huikuan');
+		mui.init({
+			swipeBack: false,
+			pullRefresh: {
+				container: '.pullrefresh',
+				up: {
+					height: 50,
+					contentrefresh: "正在加载...",
+					contentnomore: '没有更多数据了',
+					callback: pullupRefresh
+				},
+				down: {
+					height: 50,
+					callback: load
+				}
+			}
+		});
+
+		function load() {
+			setTimeout(function() {
+				window.location.reload();
+			}, 500)
+
+		};
+		var cont = 0;
+
+		function pullupRefresh() {
+			cont++;
+			//添加AJAX后要删除定时器
+
+			mui('.pullrefresh').pullRefresh().endPullupToRefresh((cont == 2)); //参数为true代表没有更多数据了。
+			var $elem = '<a href="xiezi-detail.html"><div class="lists clear"><div class="lists_left f-l"><img src="images/42.png" /></div><div class="lists_right f-r"><div class="lists_right_text1"><p>西湖春天 电梯小高层 1楼 南...</p></div><div class="lists_right_text2 clear"><span class="f-l">慧济-慧济区</span><span class="f-r"><em>9900</em>元/m²</span></div><div class="lists_right_text3"><span>三室两厅<em>116m²</em></span></div><div class="lists_right_text4 clear"><span class="f-l">品质小区</span></div></div></div></a>';
+			$fuwuitem.append($elem);
+			loading = true;
+
+		}
+		//a标签href跳转
+		mui('.a-href').on('tap', 'a', function() {
+			window.top.location.href = this.href;
+		});
+	</script>
+
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:scaleType="centerInside"
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:src="@drawable/arrow"/>
+
+        <TextView
+            android:id="@+id/ttitle"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textSize="17sp"
+            android:textColor="#fff"
+            android:text="选择身份"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginRight="@dimen/dp_15"
+            android:id="@+id/subtitle"
+            android:layout_marginTop="3dp"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:textColor="#fff"
+            android:text="选择身份"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

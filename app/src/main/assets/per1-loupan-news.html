@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>委托房源</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-maifang-er.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-loupan-news.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">发布楼盘</h1>
+		</header>
+		<div class="center mui-content b-f">
+
+			<!--标题 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">标题</span>
+				<input type="text" placeholder="请输入标题" class="" />
+			</div>
+			<!--房源类型-->
+			<div class="type11 clear">
+				<span class="f-l">房源类型</span>
+				<div class="type_mess_right f-r">
+					<div class="mui-card clear">
+						<form class="mui-input-group ">
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label class="f-l">期房在售</label>
+								<input name="radio1" type="radio" class="f-l">
+							</div>
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label>预售</label>
+								<input name="radio1" type="radio" checked>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="type11 clear">
+				<span class="">房源类型</span>
+				<div class="type_mess_right">
+					<div class="mui-card clear">
+						<form class="mui-input-group ">
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label class="f-l">住宅</label>
+								<input name="radio1" type="radio" class="f-l">
+							</div>
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label>别墅</label>
+								<input name="radio1" type="radio" checked>
+							</div>
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label>商住</label>
+								<input name="radio1" type="radio" checked>
+							</div>
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label>商铺</label>
+								<input name="radio1" type="radio" checked>
+							</div>
+							<div class="mui-input-row mui-radio mui-left f-l">
+								<label>写字楼</label>
+								<input name="radio1" type="radio" checked>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="type10 clear">
+				<p class="">房源优势</p>
+				<div class="clear">
+					<div class="tianjia_span f-l">
+
+					</div>
+					<input type="text" class="f-l tianjia_input" />
+					<div class="span_tianjia f-l">
+						<img src="images/tianjia.png" />
+						<span>添加更多</span>
+					</div>
+				</div>
+			</div>
+			<!--单价-->
+			<div class="type4 clear">
+				<span class="f-l">单价</span>
+				<span class="f-r">元/m²</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<div class="type2 clear ">
+				<span class="f-l">优惠折扣</span>
+				<input type="text" placeholder="请输入优惠折扣" class="" />
+			</div>
+			<!--优惠时间-->
+			<div class="type12 clear">
+				<span class=" type12_span">优惠时间</span>
+				<div class="">
+					<div class="start_date">
+						<span></span>年
+						<span></span>月
+						<span></span>日
+					</div>
+					<span class="type12_division">至</span>
+					<div class="over_date">
+						<span></span>年
+						<span></span>月
+						<span></span>日
+					</div>
+				</div>
+			</div>
+			<div class="type12 clear">
+				<span class=" type12_span">开盘时间</span>
+				<div class="">
+					<div class="start_date">
+						<span></span>年
+						<span></span>月
+						<span></span>日
+					</div>
+					<span class="type12_division">至</span>
+					<div class="over_date">
+						<span></span>年
+						<span></span>月
+						<span></span>日
+					</div>
+				</div>
+			</div>
+			<!--小区名称 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">小区名称</span>
+				<input type="text" placeholder="请输入小区名称" class="" />
+			</div>
+			<!--房屋类型-->
+			<div class="import clear">
+				<span class="f-l">房屋类型</span>
+				<input type="text" placeholder="房屋类型" class="kind f-r" readonly="readonly" />
+			</div>
+			<!--装修类型-->
+			<div class="import clear">
+				<span class="f-l">装修类型</span>
+				<input type="text" placeholder="装修类型" class="kind-2 f-r" readonly="readonly" />
+			</div>
+			<!--年代-->
+			<div class="import clear">
+				<span class="f-l">年代</span>
+				<input type="text" placeholder="年代" class="kind-3 f-r" readonly="readonly" />
+			</div>
+			<!--朝向-->
+			<div class="import clear">
+				<span class="f-l">朝向</span>
+				<input type="text" placeholder="南" class="kind-4 f-r" readonly="readonly" />
+			</div>
+			<!--楼层 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l">楼层</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>层/共</span>
+					<input type="text" />
+					<span>层</span>
+				</div>
+			</div>
+			<!--首付-->
+			<div class="type4 clear">
+				<span class="f-l">首付</span>
+				<span class="f-r">万元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<!--单位房价-->
+			<div class="type4 clear">
+				<span class="f-l">单位房价</span>
+				<span class="f-r">万元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<!--月供-->
+			<div class="type4 clear">
+				<span class="f-l">月供</span>
+				<span class="f-r">万元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<div class="type10 clear">
+				<p class="">房源优势</p>
+				<div class="clear">
+					<div class="tianjia_span f-l">
+
+					</div>
+					<input type="text" class="f-l tianjia_input" />
+					<div class="span_tianjia f-l">
+						<img src="images/tianjia.png" />
+						<span>添加更多</span>
+					</div>
+				</div>
+			</div>
+			<!--类型 类型2多行-->
+			<div class="type2 clear ">
+				<span class="f-l">地址</span>
+				<input type="text" placeholder="请输入具体地址" class="" />
+			</div>
+			<div class="type2 clear ">
+				<span class="f-l">核心卖点</span>
+				<input type="text" placeholder="请输入核心卖点" class="" />
+			</div>
+			<div class="type2 clear ">
+				<span class="f-l">业主心态</span>
+				<input type="text" placeholder="请输入业主心态" class="" />
+			</div>
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p>室内图 <em>(最多可上传6张)</em></p>
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p>户型图 <em>(最多可上传6张)</em></p>
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p>环境图 <em>(最多可上传6张)</em></p>
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+		</div>
+		<button class="new_btn">立即发布</button>
+		<button class="new_btn">立即委托</button>
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房屋种类
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".kind").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker1 = new mui.PopPicker();
+		picker1.setData([{
+				value: '01',
+				text: '3居室'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-2").click(function() {
+			picker1.show(function(selectItems) {
+				$(".kind-2").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker2 = new mui.PopPicker();
+		picker2.setData([{
+				value: '01',
+				text: '精装修'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-3").click(function() {
+			picker2.show(function(selectItems) {
+				$(".kind-3").val(selectItems[0].text);
+
+			})
+		});
+		//朝向
+		var picker3 = new mui.PopPicker();
+		picker3.setData([{
+				value: '01',
+				text: '南'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-4").click(function() {
+			picker3.show(function(selectItems) {
+				$(".kind-4").val(selectItems[0].text);
+
+			})
+		});
+		//点击添加更多
+		$(".span_tianjia").click(function() {
+			var vals = $(".tianjia_input").val();
+			console.log(vals)
+			if(vals != "") {
+				var spans = '<span>' + vals + '</span>';
+				$(".tianjia_span").append(spans);
+				$(".tianjia_input").val("");
+			} else {
+
+			}
+		});
+		var picker4 = new mui.DtPicker({
+			type:'date',
+			beginDate: new Date(), //设置开始日期 
+		});
+		$(".start_date").click(function(){
+			picker4.show(function(selectItems){
+				console.log(selectItems);
+				$(".start_date span").eq(0).text(selectItems.y.value);
+				$(".start_date span").eq(1).text(selectItems.m.value);
+				$(".start_date span").eq(2).text(selectItems.d.value);
+			})
+		});
+		var picker5 = new mui.DtPicker({
+			type:'date',
+			beginDate: new Date(), //设置开始日期 
+		});
+		$(".over_date").click(function(){
+			picker5.show(function(selectItems){
+				console.log(selectItems);
+				$(".over_date span").eq(0).text(selectItems.y.value);
+				$(".over_date span").eq(1).text(selectItems.m.value);
+				$(".over_date span").eq(2).text(selectItems.d.value);
+			})
+		});
+	</script>
+
+</html>

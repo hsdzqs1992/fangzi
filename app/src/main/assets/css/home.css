@@ -1,0 +1,317 @@
+	.mui-bar .mui-title a input {
+		margin-bottom: 0;
+		width: 85%;
+		font-size: 0.32rem !important;
+		border-radius: 0.1rem !important;
+		border: 1px solid #00A2E9 !important;
+		background: url(../images/21.png) no-repeat 0.34666667rem center;
+		background-size: 0.42666667rem;
+		background-position-x: 40%;
+		padding: 0 0.26666667rem;
+		padding-left: 0.5rem;
+		background-color: #4dbef0;
+		height: 0.9rem !important;
+		text-align: center;
+	}
+	
+	::-webkit-input-placeholder {
+		color: white !important;
+	}
+	
+	:-moz-placeholder {
+		color: white !important;
+	}
+	
+	::-moz-placeholder {
+		color: white !important;
+	}
+	
+	:-ms-input-placeholder {
+		color: white !important;
+		text-align: center;
+	}
+	
+	.mui-bar .mui-pull-left {
+		padding-left: 0.1rem;
+	}
+	
+	.mui-bar .mui-pull-left img {
+		width: 0.586rem;
+		height: 0.586rem;
+		margin-top: 0.29rem;
+		display: inline-block;
+	}
+	
+	.mui-bar .navright {}
+	
+	.navright {
+		margin-right: 0.08rem !important;
+		position: relative;
+	}
+	
+	.navright .mui-icon {
+		font-size: 0.8rem;
+		display: inline-block;
+		margin-right: 0.2rem !important;
+	}
+	
+	.navright span {
+		display: inline-block;
+		position: absolute;
+		top: 0.2rem;
+		right: 0;
+		font-size: 0.32rem;
+		color: white;
+		background: #FEB630;
+		width: 0.4rem;
+		height: 0.4rem;
+		border-radius: 50%;
+		text-align: center;
+		z-index: 100;
+	}
+	/*新房列表*/
+	
+	.lists_index {
+		width: 100%;
+		padding-bottom: 0.26666667rem;
+	}
+	
+	.lists_title {
+		padding: 0.2rem 0.26666667rem;
+		border-bottom: 1px solid #E4E4E4;
+		position: relative;
+	}
+	
+	.lists_title img {
+		width: 0.41rem;
+		height: 0.533333333rem;
+		position: absolute;
+		top: 0;
+	}
+	
+	.lists_title p {
+		color: #999999;
+		font-size: 0.37333333rem;
+		margin-left: 0.7rem;
+	}
+	/*列表*/
+	
+	.lists_wrap {
+		padding: 0 0.26666667rem;
+	}
+	
+	.lists {
+		padding: 0.25rem 0;
+		border-bottom: 1px solid #E4E4E4 !important;
+	}
+	
+	.lists:last-child {
+		border: none;
+	}
+	
+	.lists_left {
+		width: 29.7%;
+		height: 2rem;
+	}
+	
+	.lists_left img {
+		width: 100%;
+		height: 2rem;
+		display: block;
+	}
+	
+	.lists_right {
+		width: 68%;
+		height: 2rem;
+	}
+	
+	.lists_right_text1 {
+		font-size: 0.4rem;
+		margin-bottom: 0.12rem;
+	}
+	
+	.lists_right_text2 {
+		font-size: 0.32rem;
+		color: #666666;
+		margin-bottom: 0.02rem;
+	}
+	
+	.lists_right_text2 span:nth-child(1) {
+		margin-top: 0.06rem;
+	}
+	
+	.lists_right_text2 span em {
+		color: #FEB630;
+		font-size: 0.4rem;
+	}
+	
+	.lists_right_text3 {
+		font-size: 0.32rem;
+		color: #666666;
+		margin-bottom: 0.1rem;
+	}
+	
+	.lists_right_text3 span em {
+		display: inline-block;
+		margin-left: 0.1rem;
+	}
+	
+	.lists_right_text4 span {
+		border: 1px solid #FEB630;
+		color: #FEB630;
+		font-size: 0.32rem;
+		padding: 0.02rem 0.2rem;
+		text-align: center;
+		border-radius: 2px;
+		margin-right: 0.1rem;
+	}
+	/*查看更多*/
+	
+	.more {
+		width: 94%;
+		margin: 0 auto;
+	}
+	
+	.more button {
+		width: 100%;
+		border: 1px solid #FEB630;
+		color: #FEB630;
+		text-align: center;
+		height: 0.8rem;
+		line-height: 0.8rem;
+		font-size: 0.32rem;
+	}
+	/*类型2*/
+	
+	.lists2 {
+		padding: 0.25rem 0;
+	}
+	
+	.lists2_top span:nth-child(1) {
+		font-size: 0.4rem;
+	}
+	
+	.lists2_top span:nth-child(2) {
+		font-size: 0.32rem;
+		color: #666666;
+		margin-top: 0.05rem;
+		margin-left: 0.2rem;
+	}
+	
+	.lists2_top span:nth-child(3) {
+		font-size: 0.32rem;
+		color: #666666;
+	}
+	
+	.lists2_top span em {
+		color: #FEB630;
+		font-size: 0.4rem;
+	}
+	
+	.lists2_cen {
+		margin: 0.2rem 0;
+	}
+	
+	.lists2_cen img {
+		width: 32%;
+		height: 2.1333333333rem;
+	}
+	
+	.lists2_cen img:nth-child(2) {
+		margin: 0 2%;
+	}
+	
+	.lists2_bom p {
+		font-size: 0.37333333rem;
+		color: #666666;
+	}
+	
+	.lists2_bom p em {
+		display: inline-block;
+		margin-left: 0.1rem;
+	}
+	/*优秀经纪人*/
+	
+	.jing_lists {
+		width: 100%;
+		/*padding-bottom: 0.26666667rem;*/
+	}
+	
+	.jing_lists_title {
+		padding: 0.2rem 0.26666667rem;
+		border-bottom: 1px solid #E4E4E4;
+	}
+	
+	.jing_lists_title_left {
+		position: relative;
+	}
+	
+	.jing_lists_title_left img {
+		width: 0.41rem;
+		height: 0.533333333rem;
+		position: absolute;
+		top: 0;
+	}
+	
+	.jing_lists_title_left span {
+		color: #999999;
+		font-size: 0.37333333rem;
+		margin-left: 0.7rem;
+	}
+	
+	.jing_lists_title_right a span{
+		color: #999999;
+		font-size: 0.37333333rem;
+	}
+	
+/*经纪人banner*/
+.building{
+	padding: 0.2rem 0.26666667rem;
+}
+.buil_wrap_slide{
+	border: 1px solid #FEB630;
+	padding:0.2rem 0.1rem;
+	width: 5.866666667rem;
+}
+.buil_wrap_slide_left img{
+	width: 1.33333333rem;
+	height: 1.3333333rem;
+	border-radius: 50%;
+}
+.buil_wrap_slide_right{
+	margin-top: 0.1rem;
+	margin-left: 0.2rem;
+}
+.jing_name{
+	color: #333333;
+	font-size: 0.4rem;
+}
+.lists_left_user{
+	display: inline-block;
+	/*margin-top: 0.15rem;*/
+	/*margin-bottom:0.2rem;*/
+}
+.lists_left_star{
+
+	display: inline-block;
+}
+.lists_left_star div{
+	margin-right: 0.07rem;
+}
+.star_lists{
+	width:0.4rem;
+	height: 0.35rem;
+	background: url(../images/kong-xin.png)no-repeat;
+	background-size: 0.4rem 0.35rem;
+}
+.star_lists_shi{
+	width:0.4rem;
+	height: 0.35rem;
+	background: url(../images/shi-xin.png)no-repeat;
+	background-size: 0.4rem 0.35rem;
+}
+.buil_wrap_slide_right p{
+	color: #666666;
+	font-size: 0.37333333rem;
+	margin-top: 0.1rem;
+}

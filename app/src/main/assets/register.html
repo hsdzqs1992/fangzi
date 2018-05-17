@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>选择身份</title>
+		<script src="js/flexible.js"></script>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/css.css">
+	</head>
+
+	<body class="b-f">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">选择身份</h1>
+		</header>
+		<div class="mui-content p-b-50 b-f text-center">
+			<ul class="checkshenfen flex m-t-30">
+				<li class="on" data-url="register1.html">
+					<div>
+						<i class="icon icon-sf01"></i>
+						<p class="font-12 m-t-10">普通会员</p>
+					</div>
+				</li>
+				<li data-url="register2-1.html">
+					<div>
+						<i class="icon icon-sf02"></i>
+						<p class="font-12 m-t-10">经纪人</p>
+					</div>
+				</li>
+				<li data-url="register3-1.html">
+					<div>
+						<i class="icon icon-sf03"></i>
+						<p class="font-12 m-t-10">房产商</p>
+					</div>
+				</li>
+				<li data-url="register4-1.html">
+					<div>
+						<i class="icon icon-sf04"></i>
+						<p class="font-12 m-t-10">家居商</p>
+					</div>
+				</li>
+				<li data-url="register5-1.html">
+					<div>
+						<i class="icon icon-sf05"></i>
+						<p class="font-12 m-t-10">装修公司</p>
+					</div>
+				</li>
+			</ul>
+			<div class="shop-nav flex">
+				<button class="nextbtn base-btn base-btn-big border-r-0" type="button" data-url="register1.html">下一步</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			//选择身份
+			$(".checkshenfen").on("click", "li", function() {
+				$(this).addClass("on").siblings().removeClass("on");
+				$(".nextbtn").attr("data-url", $(this).attr("data-url"))
+			});
+
+			//下一步
+			$(".nextbtn").click(function() {
+				window.location.href = $(this).attr("data-url");
+			})
+		</script>
+	</body>
+
+</html>

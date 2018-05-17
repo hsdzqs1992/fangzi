@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhuye.ershoufang.ui.activity.me.JiaJuCenterActivity">
+
+    <include layout="@layout/header"/>
+
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:hint="店铺头像"
+            android:textSize="15sp"
+            android:textColor="#666"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" />
+
+        <com.zhuye.ershoufang.weidtet.RoundedCornerImageView
+            android:clickable="false"
+            android:textSize="15sp"
+            android:textColor="#666"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|end"
+            android:layout_marginRight="18dp"
+            android:id="@+id/touxing"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="#ddd"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/xingxiang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:show4="true"
+        app:tx1="店铺形象"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/mingcheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="请输入店铺名称"
+        app:tx1="店铺名称"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+    <com.zhuye.ershoufang.weidtet.MyLinTv2View
+        app:tishi11="请输入商家简介"
+        android:id="@+id/shangjiajianjie"
+        app:title11="商家简介"
+        android:layout_width="match_parent"
+        android:layout_height="82dp">
+    </com.zhuye.ershoufang.weidtet.MyLinTv2View>
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/zhanghao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tx1="账号"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/shenfenrenzh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tx1="身份认证"
+        app:show4="true"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+
+    <com.zhuye.ershoufang.weidtet.MyInputView
+        android:id="@+id/yingyezhizhao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tx1="营业执照"
+        app:show4="true"
+        >
+    </com.zhuye.ershoufang.weidtet.MyInputView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:id="@+id/edit"
+            android:text="编辑"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:textColor="#fff"/>
+    </RelativeLayout>
+</LinearLayout>

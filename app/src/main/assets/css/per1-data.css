@@ -1,0 +1,66 @@
+.mui-pull-right{
+	color: white;
+	font-size: 0.32rem;
+	margin-top: 0.4rem;
+}
+.lists{
+	padding: 0.2rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.lists span:nth-child(1){
+	color: #666666;
+	font-size: 0.4rem;
+	line-height:1.33333333rem ;
+}
+.file_input{
+	position: relative;
+}
+.file_input img{
+	width: 1.33333333rem;
+	height: 1.33333333rem;
+	border-radius:50%;
+}
+.file_input input{
+	width: 1.33333333rem;
+	height: 1.33333333rem !important;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	opacity: 0;
+}
+.lists2{
+	padding: 0.2rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+.lists2 span:nth-child(1){
+	color: #666666;
+	font-size: 0.4rem;
+	line-height:1.1rem;
+}
+.lists2 input{
+	width: 80%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-align: right;
+	color: #666666;
+	font-size: 0.37333333rem;
+}
+.lists3{
+	padding: 0.2rem 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+	line-height: 1rem;
+}
+.lists3 .f-l{
+	color: #666666;
+	font-size: 0.4rem;
+	
+}
+.lists3 .f-r{
+	color: #999999;
+	font-size: 0.4rem;
+}
+.lists3 .f-r .mui-icon{
+	font-size: 0.6rem !important;
+}

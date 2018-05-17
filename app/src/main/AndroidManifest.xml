@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhuye.ershoufang">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name=".Applaion"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan|stateVisible|stateHidden" />
+        <activity android:name=".base.BaseActivity" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:theme="@style/ThemeGuide">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="me.iwf.photopicker.PhotoPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".ui.activity.ReGeistActivity" />
+        <activity android:name=".ui.activity.JingJiResActivity" />
+        <activity android:name=".ui.activity.JingJIRes2Activity" />
+        <activity android:name=".ui.activity.JingJiRes3Activity" />
+        <activity android:name=".ui.activity.SplashActivity" />
+        <activity android:name=".ui.activity.ForgetPass1Activity" />
+        <activity android:name=".ui.activity.ForGetPass2Activity" />
+        <activity android:name=".ui.activity.SearchActivity" />
+        <activity android:name=".ui.activity.VoteActivity" />
+        <activity android:name=".ui.activity.TuiJianActivity" />
+        <activity android:name=".ui.activity.MessageActivity" />
+        <activity android:name=".ui.activity.WeiTuoMaiActivity" />
+        <activity android:name=".ui.activity.WeiTuoActivity" />
+        <activity android:name=".ui.activity.WenDaActivity" />
+        <activity android:name=".ui.activity.ShouCangActivity" />
+        <activity android:name=".ui.activity.KanFangJiluActivity" />
+        <activity android:name=".ui.activity.ChongZhiActivity" />
+        <activity android:name=".ui.activity.SettingActivity" />
+        <activity android:name=".ui.activity.PersonInfoActivity" />
+        <activity android:name=".ui.activity.AddShangPuActivity" />
+        <activity android:name=".ui.activity.AddGongChangActivity" />
+        <activity android:name=".ui.activity.MeChanPinActivity" />
+        <activity android:name=".ui.activity.ChaKanJiluActivity" />
+        <activity android:name=".ui.activity.FuBuLouPanActivity" />
+        <activity android:name=".ui.activity.MianFeiKanActivity" />
+        <activity android:name=".ui.activity.FaBuMaiFangActivity" />
+        <activity android:name=".ui.activity.ChongZhiJilvActivity" />
+        <activity android:name=".ui.activity.JingJiRenZiLiaoActivity" />
+        <activity android:name=".ui.activity.home.XinFangActivity" />
+        <activity android:name=".ui.activity.home.ErShouFangActivity" />
+        <activity android:name=".ui.activity.home.XinFangDetailActivity" />
+        <activity android:name=".ui.activity.home.PingLunActivity" />
+        <activity android:name=".ui.activity.home.ErShouFangDetailActivity" />
+        <activity android:name=".ui.activity.home.FangDaiJiSuanActivity" />
+        <activity android:name=".ui.activity.home.ZuFangActivity" />
+        <activity android:name=".ui.activity.home.XieZiLouActivity" />
+        <activity android:name=".ui.activity.home.GongYechangFangActivity" />
+        <activity android:name=".ui.activity.home.JiaJuActivity" />
+        <activity android:name=".ui.activity.home.ZhuangXiuActivity" />
+        <activity android:name=".ui.activity.home.JingMaiActivity" />
+        <activity android:name=".ui.activity.home.KanFangActivity" />
+        <activity android:name=".ui.activity.home.XuQiuDaTingActivity" />
+        <activity android:name=".ui.activity.home.MapZhaoFangActivity" />
+        <activity android:name=".ui.activity.me.WeiTuoJingMaiActivity" />
+        <activity android:name=".ui.activity.common.CommonActivity" />
+
+        <!-- <activity -->
+        <!-- android:name="com.tencent.bugly.beta.ui.BetaActivity" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize|locale" -->
+        <!-- android:theme="@android:style/Theme.Translucent" /> -->
+        <activity android:name=".ui.activity.home.GangXuActivity" />
+        <activity android:name=".ui.activity.home.JingJiRenActivity" />
+        <activity android:name=".ui.activity.home.LookXiaoQuActivity" />
+        <activity android:name=".ui.activity.home.QuShiActivity" />
+        <activity android:name=".ui.activity.home.GuJiaActivity" />
+        <activity android:name=".ui.fragment.home.BaoMingActivity" />
+        <activity android:name=".ui.activity.home.VoteDetailActivity" />
+        <activity android:name=".ui.activity.home.BaoJiaActivity" />
+        <activity android:name=".ui.activity.home.BaoJia2Activity" />
+        <activity android:name=".ui.activity.home.ZhuangXiuDetailActivity" />
+        <activity android:name=".ui.activity.home.JingMaiDetailActivity" />
+        <activity android:name=".ui.activity.HuiYuanResgeistActivity" />
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".ui.activity.JingJiRes4Activity" />
+        <activity android:name=".ui.activity.OthersRes3Activity" />
+        <activity android:name=".ui.activity.EditInfoActivity" />
+        <activity android:name=".ui.activity.BangDingActivity" />
+        <activity android:name=".ui.activity.EditPassActivity" />
+
+        <!-- //qq -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".wxapi.WXEntryActivity" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5abb7120b27b0a16de000198" />
+
+        <activity android:name=".ui.activity.me.TiWen2Activity" />
+        <activity android:name=".ui.activity.me.AboutActivity" />
+        <activity android:name=".ui.activity.AddErShouActivity" />
+        <activity android:name=".ui.activity.AddXieZiActivity" />
+
+        <!-- 百度 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="2ysT4Eu4Rc6SPx2kd1bo0HWtBUdXuBwO" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity android:name=".ui.activity.me.EditErShouActivity" />
+        <activity android:name=".ui.activity.me.ChuZuActivity" />
+        <activity android:name=".ui.activity.me.ChuZuShangPuDetailActivity" />
+        <activity android:name=".ui.activity.AddChuZuActivity" />
+        <activity android:name=".ui.activity.me.AddChuZu2Activity" />
+        <activity android:name=".ui.activity.me.AddChuZu3Activity" />
+        <activity android:name=".ui.activity.me.AddChuZu4Activity" />
+        <activity android:name=".ui.activity.home.HomeWenDaActivity" />
+        <activity android:name=".adapter.me.MyPaiMaiActivity" />
+        <activity android:name=".ui.activity.me.AddWeiTuoActivity" />
+        <activity android:name=".ui.activity.home.YouHuiActivity" />
+        <activity android:name=".ui.activity.home.QuYuSelectActivity" />
+        <activity android:name=".ui.activity.home.SearchActivity" />
+        <activity android:name=".ui.activity.me.AddPaiMaiActivity" />
+        <activity android:name=".ui.activity.me.PaiMaiDetailActivity" />
+        <activity android:name=".ui.activity.me.QiTeWeiTuoActivity" />
+        <activity android:name=".ui.fragment.fabu.MaiFang2Activity" />
+        <activity android:name=".ui.activity.me.JingJiSetteingActivity" />
+        <activity android:name=".ui.activity.me.ChuAddXieZiActivity" />
+        <activity android:name=".ui.activity.me.ChuAddGongChangActivity" />
+        <activity android:name=".ui.activity.SelectCityActivity" />
+        <activity android:name=".ui.activity.HomeWindowActivity" />
+        <activity android:name=".ui.activity.me.MaiFangDetailActivity" />
+        <activity android:name=".ui.activity.me.ChuZuDetailActivity" />
+        <activity android:name=".ui.activity.me.MaiFAngDetalActivity" />
+        <activity android:name=".ui.activity.me.BaoZhengDetailActivity" />
+        <activity android:name=".ui.activity.me.DaiKuaiDetailActivity" />
+        <activity android:name=".ui.activity.me.ZhuangXiuKanActivity" />
+        <activity android:name=".ui.activity.me.ChongZhiActivity" />
+        <activity android:name=".ui.activity.me.AddChanPinActivity" />
+        <activity android:name=".ui.activity.common.Common2Activity" />
+        <activity android:name=".ui.activity.me.AddLouPanActivity" />
+        <activity android:name=".ui.activity.me.AddMianFeiKanActivity" />
+        <activity android:name=".ui.activity.me.EditMianFeiActivity" />
+        <activity android:name=".ui.activity.home.EditLouPanActivity" />
+        <activity android:name=".ui.activity.me.JiaJuCenterActivity" />
+        <activity android:name=".ui.activity.me.MeLookShenFenActivity" />
+        <activity android:name=".ui.activity.me.MeYiKanActivity" />
+        <activity android:name=".ui.activity.me.MeJingJiCenterActivity" />
+        <activity android:name=".ui.activity.ChangeMobile1Activity" />
+        <activity android:name=".ui.activity.ChangeMobile2Activity"></activity>
+    </application>
+
+</manifest>

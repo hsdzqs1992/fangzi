@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/weiliao-lists.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
+			<h1 class="mui-title">打不死的小强</h1>
+		</header>
+		<div id="container" class="mui-content">
+
+			<ul class="content">
+				<li><img src="images/45.png" class="imgleft"><span class="spanleft">您好的</span></li>
+				<li class="mess_date">
+					<span>12:30</span>
+				</li>
+				<li><img src="images/45.png" class="imgright"><span class="spanright">您好的</span></li>
+				<li class="mess_date">
+					<span>12:30</span>
+				</li>
+				<li><img src="images/45.png" class="imgright"><span class="spanright">您好的</span></li>
+			</ul>
+			<div class="footer clear">
+				<!--<div id="user_face_icon">
+					<img src="http://www.xttblog.com/icons/favicon.ico" alt="">
+				</div>-->
+				<input id="text" type="text" placeholder="" class="f-l">
+				<span id="btn" class="f-r">发送</span>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		var arr = '';
+		window.onload = function() {
+			$("#btn").click(function() {
+				var texts = $("#text").val();
+				if(texts == "") {
+
+				} else {
+					arr = '<li><img src="images/45.png" class="imgright"><span class="spanright">' + texts + '</span></li>';
+					$(".content").append(arr);
+					$("#text").val("");
+				}
+				$(".content").scrollTop($(".content")[0].scrollHeight)
+			});
+		}
+	</script>
+
+</html>

@@ -1,0 +1,306 @@
+.mui-pull-right {
+	font-size: 0.32rem;
+	color: white;
+	margin-top: 0.4rem;
+}
+
+.pullrefresh {
+	top: 2.21rem;
+	padding-bottom: 1rem;
+}
+.news{
+	padding: 0 0.5rem;
+}
+
+.lists{
+	padding: 0.2rem 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+
+.lists .lsts_images {
+	width: 29.7%;
+	height: 2rem;
+}
+.lists .lsts_images img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.lists_right {
+	width: 67%;
+	position: relative;
+}
+
+.lists_right_text1 {
+	font-size: 0.4rem;
+	margin-bottom: 0.7rem;
+}
+
+.lists_right_text2 {
+	font-size: 0.32rem;
+	color: #666666;
+	margin-bottom: 0.1rem;
+}
+
+.lists_right_text2 span:nth-child(1) {
+	color: #FEB630;
+	font-size: 0.32rem;
+}
+
+.lists_right_text3 {
+	font-size: 0.32rem;
+	color: #666666;
+}
+
+.lists_right_text3 span em {
+	display: inline-block;
+	margin-left: 0.1rem;
+}
+.lists_right_text4{
+	margin-top: 0.15rem;
+}
+.lists_right_text4 span{
+	display: inline-block;
+	width: 1.87rem;
+	height:0.67rem;
+	font-size: 0.32rem;
+	color: white;
+	line-height: 0.67rem;
+	text-align: center;
+	background: #FEB630;
+	border-radius: 4px;
+	margin-left: 0.12rem;
+}
+.lists_right_text4 span:nth-child(1){
+	background: #f30000 !important;
+}
+/*置顶弹窗*/
+.pay_wrap {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+}
+
+.pay {
+	width:75%;
+	height: 4.46666667rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -37.5%;
+	margin-top: -2.23333334rem;
+	background: white;
+	border-radius: 6px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.pay_title {
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.pay_title {
+	font-size:0.32rem;
+	color: #00a2e9;
+	overflow: hidden;
+	padding:0.2rem 0;
+}
+
+.pay_title span {
+	float: left;
+	margin-top: 0.05rem;
+}
+
+.pay_title img {
+	float: right;
+	cursor: pointer;
+	width:0.32rem;
+	height: 0.3rem;
+	margin-top: 0.05rem;
+}
+
+.pay1 p:nth-child(1) {
+	margin-top:0.4rem;
+	color: #999999;
+	font-size: 0.32rem;
+
+}
+
+.pay1 p:nth-child(2) {
+	text-align: center;
+	color: #FEB630;
+	font-size:0.45333333rem;
+	margin: 0.5rem 0 0.5rem 0;
+}
+
+.pay1 p span {
+	text-align: center;
+	color: #999999;
+	font-size: 0.32rem;
+	display: inline-block;
+	margin-right: 0.05rem;
+}
+
+.pay1 p:nth-child(3) {
+	width:100%;
+	margin: 0 auto;
+	height: 0.8rem;
+	line-height:0.8rem;
+	text-align: center;
+	background: #00A2E9;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+/*支付弹窗*/
+.payment_wrap {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+}
+
+.payment {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: white;
+}
+.payment_title .mui-icon{
+	font-size: 30px
+}
+.payment_title .mui-title{
+	color: #666666;
+	margin: 0;
+}
+.payment_money{
+	width: 100%;
+	border-top: 1px solid #E4E4E4;
+	margin-top:1rem;
+	text-align: center;
+}
+.payment_money span{
+	display: inline-block;
+	line-height:1.6rem;
+	font-size:0.666666667rem;
+}
+.mui-card{
+	border-radius: 0;
+	box-shadow:none;	
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.mui-card p{
+	font-size: 0.3733333rem;
+	color: #999999;
+}
+.mui-input-group:before{
+	display: none;
+}
+.mui-input-group:after{
+	display: none;
+}
+.mui-input-group .mui-input-row:after{
+	display: none;
+}
+.payment .mui-card .mui-input-group .mui-input-row{
+	border-bottom: 1px solid #E4E4E4;
+}
+.payment .mui-card .mui-input-group .mui-input-row img{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	margin-right: 0.1rem;
+	
+}
+.payment .mui-card .mui-input-group .mui-input-row label{
+	padding-left:0rem;
+}
+.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+	font-size: 18px;
+}
+.mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{
+	margin-top: 0.15rem;
+}
+.payment_btn button{
+    width: 100%;
+    background: #00A2E9;
+    color: white;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    z-index: 10;
+}
+
+/*新增房源*/
+.newly_wrap {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+}
+
+.newly {
+	width:75%;
+	height: 4.46666667rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -37.5%;
+	margin-top: -2.23333334rem;
+	background: white;
+	border-radius: 6px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+.newly_title {
+	font-size:0.32rem;
+	color: #00a2e9;
+	overflow: hidden;
+	padding:0.2rem 0;
+}
+
+.newly_title span {
+	float: left;
+	margin-top: 0.05rem;
+}
+
+.newly_title img {
+	float: right;
+	cursor: pointer;
+	width:0.32rem;
+	height: 0.3rem;
+	margin-top: 0.05rem;
+}
+.news_type{
+	margin-top: 0.2rem;
+}
+.news_type button:nth-child(2n-1){
+	margin-right: 2.5%;
+}
+.news_type button{
+	width:47%;
+	height:1.2rem;
+	line-height:1.2rem;
+	text-align: center;
+	border: 1px solid #00A2E9;
+	color: #00A2E9;
+	margin-bottom: 0.3rem;
+}
+.news_type_color{
+	border: none !important;
+	background: #00A2E9 !important;
+	color: white !important;
+}

@@ -1,0 +1,67 @@
+input{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.type4 {
+	padding: 7px 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+	box-sizing: border-box;
+}
+
+.type4 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	margin-top: 6px;
+}
+
+.type4 span:nth-child(2) {
+	font-size: 0.37333333rem !important;
+	color: #333333;
+	margin-top:0.16rem;
+}
+
+.type4 input {
+	border: none;
+	width: 5rem;
+	height: 0.74666667rem !important;
+	line-height: 0.74666667rem !important;
+	font-size: 0.37333333rem !important;
+	padding-left: 0;
+	text-align: right;
+	padding-right: 0;
+	margin-right: 0.05rem;
+	color: #FEB630 !important;
+	margin-right: 0.1rem !important;
+}
+.business{
+	
+}
+.business_type1{
+	padding: 0 0.5rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.business_type1 span:nth-child(1) {
+	font-size: 0.4rem !important;
+	color: #666666;
+	line-height: 1.173333rem;
+}
+.business_type1 span:nth-child(2) {
+	font-size: 0.6rem !important;
+	color: #666666;
+	line-height: 1.173333rem;
+}
+.business_type1 input:nth-child(3) {
+	text-align: right;
+	margin-right: 0.1rem;
+}
+.new_btn {
+	position: absolute;
+	bottom: 0;
+    width: 100%;
+    background: #00A2E9;
+    color: white;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    z-index: 10;
+}

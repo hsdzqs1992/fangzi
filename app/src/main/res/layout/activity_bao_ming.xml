@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <include layout="@layout/header"/>
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="地区"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_marginRight="20dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:lines="1"
+                android:layout_toLeftOf="@+id/go"
+                android:gravity="center_vertical"
+                android:background="@null"
+                android:hint="区/街道"
+                android:textSize="14sp"
+                android:textColorHint="#999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:id="@+id/go"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/you"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+            <TextView
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="20dp"
+                android:hint="具体地址"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:textColor="#999"
+                android:text="请输入具体地址"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dianzhongliang"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <TextView
+                android:id="@+id/zhongliang1"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="户型"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_marginRight="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:lines="1"
+                android:id="@+id/zhongliang2"
+                android:layout_toLeftOf="@+id/zhongliangwu"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入房屋面积"
+                android:textSize="14sp"
+                android:textColorHint="#999"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:text="m"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|end"
+                android:layout_marginRight="18dp"
+                android:id="@+id/zhongliangwu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+
+
+
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="面积"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_marginRight="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:lines="1"
+                android:layout_toLeftOf="@+id/zhongliang"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入房屋面积"
+                android:textSize="14sp"
+                android:textColorHint="#999"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:text="m"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|end"
+                android:layout_marginRight="18dp"
+                android:id="@+id/zhongliang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+
+
+
+
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="联系人"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_marginRight="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:lines="1"
+                android:layout_toLeftOf="@+id/zhongliangwu1"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入房屋面积"
+                android:textSize="14sp"
+                android:textColorHint="#999"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:text="m"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|end"
+                android:layout_marginRight="18dp"
+                android:id="@+id/zhongliangwu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="联系方式"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_marginRight="20dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:lines="1"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入您的房屋类型"
+                android:textSize="14sp"
+                android:textColorHint="#999"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+            <TextView
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="20dp"
+                android:hint="参赛寄语"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:textColor="#999"
+                android:text="请输入您的参赛寄语"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/yuan"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="房源图"
+                android:textSize="15sp"
+                android:textColor="#666"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:visibility="invisible"
+                android:layout_marginRight="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:lines="1"
+                android:layout_toLeftOf="@+id/zhongliangw"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:hint="请输入售价"
+                android:textSize="14sp"
+                android:textColorHint="#999"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/nima"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/yuan"
+                android:src="@drawable/tupian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_toRightOf="@+id/nima"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/yuan"
+                android:src="@drawable/tianjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="#ddd"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </RelativeLayout>
+
+
+
+        <include layout="@layout/bottom_btn"/>
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/baoming"-->
+                <!--android:textColor="#fff"-->
+                <!--android:textSize="14sp"-->
+                <!--android:background="@color/colorPrimary"-->
+                <!--android:text="我要报名"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp" />-->
+        <!--</RelativeLayout>-->
+
+    </LinearLayout>
+</ScrollView>

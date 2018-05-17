@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>发布</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/fabu.css" />
+		<link rel="stylesheet" type="text/css" href="css/per1-weituo-new.css" />
+	</head>
+	<style type="text/css">
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+			font-size: 0.32rem;
+			line-height: 38px;
+			border-bottom: 1px solid #00A2E9;
+			color: #00A2E9 !important;
+		}
+		
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+			font-size: 0.32rem;
+			line-height: 40px;
+			color: #999999;
+		}
+		
+		.mui-slider-group {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+		}
+		
+		.nav {
+			padding: 0 0.4rem;
+		}
+		
+		.mui-content {
+			border-bottom: 1px solid #E4E4E4;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">新增委托</h1>
+		</header>
+		<!--导航-->
+			<div class="mui-content">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted b-f">
+				<div class="mui-scroll nav">
+					<a class="mui-control-item " href="fabu.html"onclick="window.location.href='fabu.html'">
+						委托买房
+					</a>
+					<a class="mui-control-item" href="fabu2.html"onclick="window.location.href='fabu2.html'">
+						委托卖房
+					</a>
+					<a class="mui-control-item  mui-active" href=""onclick="window.location.href='fabu3.html'">
+						委托出租
+					</a>
+					<a class="mui-control-item" href="fabu4.html"onclick="window.location.href='fabu4.html'">
+						委托求租
+					</a>
+					<a class="mui-control-item" href="fabu5.html"onclick="window.location.href='fabu5.html'">
+						委托证件
+					</a>
+					<a class="mui-control-item" href="fabu6.html"onclick="window.location.href='fabu6.html'">
+						委托贷款
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="center b-f">
+			<!--期望小区-->
+			<div class="type4 clear">
+				<span class="f-l type_span"><em>*</em>期望小区</span>
+				<input type="text" placeholder="请输入小区名称" class="f-r xiaoqu" />
+			</div>
+			<!--面积-->
+			<div class="type4 clear">
+				<span class="f-l type_span"><em>*</em>面积</span>
+				<span class="f-r">m²</span>
+				<input type="text" placeholder="请输入房屋面积" class="f-r" />
+			</div>
+			<!--楼栋门牌 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l type_span"><em>*</em>楼栋门牌</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>栋(号)</span>
+					<input type="text" />
+					<span>单元</span>
+					<input type="text" />
+					<span>室</span>
+				</div>
+			</div>
+			<!--楼层 类型3单行多个-->
+			<div class="type3 clear ">
+				<span class="f-l type_span"><em>*</em>楼层</span>
+				<div class="type3_right f-r">
+					<input type="text" />
+					<span>层／共</span>
+					<input type="text" />
+					<span>层</span>
+				</div>
+			</div>
+			<!--装修情况-->
+			<div class="import clear">
+				<span class="f-l type_span"><em>*</em>装修情况</span>
+				<input type="text" placeholder="简装" class="kind f-r" readonly="readonly" />
+			</div>
+			<!--售价-->
+			<div class="type4 clear">
+				<span class="f-l type_span"><em>*</em>租金</span>
+				<span class="f-r">元</span>
+				<input type="text" placeholder="" class="f-r" />
+			</div>
+			<!--付款方式-->
+			<div class="import clear">
+				<span class="f-l type_span"><em>*</em>付款方式</span>
+				<input type="text" placeholder="现金" class="kind-2 f-r" readonly="readonly" />
+			</div>
+
+			<!--出租方式-->
+			<div class="import clear">
+				<span class="f-l type_span"><em>*</em>出租方式</span>
+				<input type="text" placeholder="3个月" class="kind-3 f-r" readonly="readonly" />
+			</div>
+
+			<!--上传图片  类型7-->
+			<div class="type7 clear">
+				<p class="type_span"><em>*</em>房源图<em>(最多可上传6张)</em></p>
+				<!--图片展示-->
+				<div class="file_images clear">
+
+				</div>
+				<div class="file_btn">
+					<div class="file_btn_opct">
+						<img src="images/tupian.png" />
+						<img src="images/tianjia.png" />
+						<span>添加图片</span>
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+
+			<!--视频-->
+			<div class="type4 clear">
+				<span class="f-l">视频</span>
+				<div class="file_btn1 f-r">
+					<div class="file_btn_opct1">
+						<img src="images/tupian.png" />
+					</div>
+					<input type="file" name="" id="" value="" />
+				</div>
+			</div>
+			<!--上传展示-->
+			<!--<div class="video_images">
+				<img src="images/39.png" />
+			</div>-->
+		</div>
+		<div class="btns">
+			<button>委托发布</button>
+			<button>提交委托</button>
+		</div>
+
+		<!--底部导航-->
+		<nav class="menu-bar a-href">
+			<a class="menu-item " href="index.html">
+				<img src="images/47.png">
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="menu-item" href="weiliao.html">
+				<img src="images/49.png">
+				<span class="mui-tab-label">微聊</span>
+			</a>
+			<a class="menu-item menu-item-active" href="fabu.html">
+				<span class="fabubtn">
+    				  <img src="images/56.png">
+   				 </span>
+				<span class="mui-tab-label">发布</span>
+			</a>
+			<a class="menu-item" href="tuijian.html">
+				<img src="images/51.png">
+				<span class="mui-tab-label">推荐</span>
+			</a>
+			<a class="menu-item " href="per1-index.html">
+				<img src="images/53.png">
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+
+	</body>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//房屋种类
+		var picker = new mui.PopPicker();
+		picker.setData([{
+				value: '01',
+				text: '二手房'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind").click(function() {
+			picker.show(function(selectItems) {
+				$(".kind").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker1 = new mui.PopPicker();
+		picker1.setData([{
+				value: '01',
+				text: '3居室'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-2").click(function() {
+			picker1.show(function(selectItems) {
+				$(".kind-2").val(selectItems[0].text);
+
+			})
+		});
+		//房型类型
+		var picker2 = new mui.PopPicker();
+		picker2.setData([{
+				value: '01',
+				text: '精装修'
+			},
+			{
+				value: '02',
+				text: '新房'
+			},
+			{
+				value: '03',
+				text: '工业厂房'
+			},
+			{
+				value: '04',
+				text: '工作范围04'
+			}
+		]);
+		$(".kind-3").click(function() {
+			picker2.show(function(selectItems) {
+				$(".kind-3").val(selectItems[0].text);
+
+			})
+		});
+	</script>
+
+</html>

@@ -1,0 +1,191 @@
+.compile {
+	font-size: 0.3733333rem;
+	margin-top: 0.4rem;
+}
+
+.material_title_manifesto {
+	padding: 0.3rem 0.5rem;
+	padding-bottom: 0.15rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.material_title_manifesto p {
+	font-size: 0.32rem;
+	color: #999999;
+}
+
+#textarea {
+	margin-top: 0.2rem;
+	width: 100%;
+	min-height: 20px;
+	max-height: 300px;
+	_height: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	outline: 0;
+	color: #666666;
+	font-size: 0.32rem;
+	line-height: 0.45rem;
+	-webkit-user-select: auto;
+	letter-spacing: 0.5px;
+}
+
+.material_title_jianli {
+	padding: 0.3rem 0.5rem;
+	padding-bottom: 0.15rem;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.material_title_jianli p {
+	font-size: 0.32rem;
+	color: #999999;
+}
+#jianjie {
+	margin-top: 0.2rem;
+	width: 100%;
+	min-height: 20px;
+	max-height: 300px;
+	_height: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	outline: 0;
+	color: #666666;
+	font-size: 0.32rem;
+	line-height: 0.45rem;
+	-webkit-user-select: auto;
+	letter-spacing: 0.5px;
+}
+/*职业信息*/
+.message{
+	margin-top: 0.3rem;
+
+}
+.message input{
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.message_lists{
+	padding: 0.2rem 0.5rem;
+	padding-bottom: 0;
+	border-bottom: 1px solid #E4E4E4;
+}
+.message_title{
+	padding: 0.2rem 0.5rem;
+
+}
+.message_title p{
+	color: #FEB630;
+	font-size: 0.32rem;
+}
+.message_lists_title p{
+	color: #999999;
+	font-size: 0.32rem;
+}
+.message_lists_input input{
+	width: 80%;
+	font-size: 0.32rem !important;
+}
+.message_lists_input img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists_input_new{
+	border-top: 1px solid #E4E4E4;
+}
+.message_lists_input_new input{
+	width: 80%;
+	font-size: 0.32rem !important;
+}
+.message_lists_input_new img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists2_input input{
+	width: 80%;
+	font-size: 0.32rem !important;
+}
+.message_lists2_input img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists2_input_new img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists3_input input{
+	width: 80%;
+	font-size: 0.32rem !important;
+}
+.message_lists3_input img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists3_input_new img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists4_input input{
+	width: 80%;
+	font-size: 0.32rem !important;
+}
+.message_lists4_input img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists4_input_new img{
+	width:18px;
+	height:18px;
+	margin-top: 0.3rem;
+}
+.message_lists1{
+	padding: 0.2rem 0.5rem;
+	padding-bottom: 0;
+	border-bottom: 1px solid #E4E4E4;
+}
+.message_lists1 p{
+	color: #999999;
+	font-size: 0.32rem;
+	margin-top: 0.15rem;
+}
+.message_lists1 span{
+	font-size: 0.3733333rem;
+	color: #666666;
+	margin-top: 0.1rem;
+}
+.message_lists1 input{
+	width:20%;
+	font-size: 0.32rem !important;
+	margin-top: -0.2rem;
+	text-align: right;
+}
+.message_lists5_right{
+	width: 50%;
+	text-align: right;
+}
+.message_lists6_input input{
+	width: 50%;
+	font-size: 0.32rem !important;
+}
+.message_lists6_input_right{
+	width: 50%;
+	text-align: right;
+}
+.message_lists6_input_right input{
+	width: 65%;
+	text-align: right;
+	margin-right: 0.1rem;
+}
+.message_lists6_input_right img{
+	width:18px;
+	height:18px;
+
+	display: inline-block;
+}

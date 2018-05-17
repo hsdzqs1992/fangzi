@@ -1,0 +1,237 @@
+.user_bgm {
+	background: #00A2E9 !important;
+	padding: 0.2rem 0.5rem;
+}
+
+
+.lists_images {
+	width: 15%;
+	height: 1.33333333rem;
+	margin-right: 2%;
+}
+
+.lists_images img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.lists_lefts {
+	width: 68%;
+}
+
+.lists_left_user {
+	margin-top: 0.15rem;
+	margin-bottom: 0.2rem;
+}
+
+.lists_left_star {
+	margin-bottom: 0.2rem;
+}
+
+.lists_left_star div {
+	margin-right: 0.07rem;
+}
+
+.star_lists {
+	width: 0.4rem;
+	height: 0.35rem;
+	background: url(../images/kong-xin.png)no-repeat;
+	background-size: 0.4rem 0.35rem;
+}
+
+.star_lists_shi {
+	width: 0.4rem;
+	height: 0.35rem;
+	background: url(../images/shi-xin.png)no-repeat;
+	background-size: 0.4rem 0.35rem;
+}
+
+.lists_left_user p {
+	font-size: 0.4rem;
+	color: white;
+}
+
+.lists_left_referral {
+	margin-bottom: 0.2rem;
+}
+
+.lists_left_referral p {
+	font-size: 0.3733333rem;
+	color: white;
+}
+
+.lists_left_span span {
+	display: inline-block;
+	font-size: 0.32rem;
+	color: #FEB630;
+	border: 1px solid #FEB630;
+	padding: 0.01rem 0.1rem;
+}
+
+.lists_rights {
+	width: 10%;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+
+.lists_rights img {
+	width: 0.4rem;
+	height: 0.45rem;
+	margin-left: 0.2rem;
+	margin-bottom: 0.1rem;
+}
+
+.lists_rights p {
+	color: white;
+	font-size: 0.32rem;
+}
+
+.detail_type {
+	padding: 0.4rem 0;
+}
+
+.detail_type_left {
+	width: 49%;
+	border-right: 1px solid #E4E4E4;
+	text-align: center;
+}
+
+.detail_type_left p:nth-child(1) {
+	font-size: 0.453333333rem;
+	color: #333333;
+	margin-bottom: 0.1rem;
+}
+
+.detail_type_left p:nth-child(2) {
+	font-size: 0.32rem;
+	color: #999999;
+}
+
+.detail_type_right {
+	width: 50%;
+	text-align: center;
+}
+
+.detail_type_right p:nth-child(1) {
+	font-size: 0.453333333rem;
+	color: #333333;
+	margin-bottom: 0.1rem;
+}
+
+.detail_type_right p:nth-child(2) {
+	font-size: 0.32rem;
+	color: #999999;
+}
+
+
+/*经纪人介绍*/
+
+.detail_referral {
+	margin-top: 0.27rem;
+	padding: 0 0.5rem;
+}
+
+.detail_referral_top {
+	border-bottom: 1px solid #E4E4E4;
+	padding: 0.2rem 0;
+}
+
+.detail_referral_top_range span {
+	color: #999999;
+	font-size: 0.32rem;
+}
+
+.detail_referral_top_ranges span {
+	font-size: 0.4rem;
+	color: #333333;
+}
+
+.detail_referral_bom {
+	padding: 0.2rem 0;
+}
+
+.detail_referral_bom_plot span {
+	color: #999999;
+	font-size: 0.32rem;
+}
+
+.detail_referral_bom_plots p {
+	font-size: 0.4rem;
+	color: #333333;
+	line-height: 0.6rem;
+}
+
+
+/*ta 的房源*/
+.detail_house{
+	padding: 0 0.5rem;
+	margin-top: 0.27rem;
+}
+.detail_house_title{
+	padding-top: 0.2rem;
+}
+.detail_house_title p{
+	margin-left: 0.1rem;
+	color: #999999;
+	font-size: 0.32rem;
+}
+.lists {
+	padding: 0.25rem 0;
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.lists_left {
+	width: 29.7%;
+	height: 2rem;
+}
+
+.lists_left img {
+	width: 100%;
+	height: 2rem;
+	display: block;
+}
+
+.lists_right {
+	width: 67%;
+	height: 2rem;
+}
+
+.lists_right_text1 {
+	font-size: 0.4rem;
+	margin-bottom: 0.12rem;
+}
+
+.lists_right_text2 {
+	font-size: 0.32rem;
+	color: #666666;
+}
+
+.lists_right_text2 span:nth-child(1) {
+	margin-top: 0.05rem;
+}
+
+.lists_right_text2 span em {
+	color: #FEB630;
+	font-size: 0.4rem;
+}
+
+.lists_right_text3 {
+	font-size: 0.32rem;
+	color: #666666;
+	margin-bottom: 0.07rem;
+}
+
+.lists_right_text3 span em {
+	display: inline-block;
+	margin-left: 0.1rem;
+}
+
+.lists_right_text4 span {
+	border: 1px solid #FEB630;
+	color: #FEB630;
+	font-size: 0.32rem;
+	padding: 0.05rem 0.1rem;
+	text-align: center;
+	border-radius: 2px;
+}
