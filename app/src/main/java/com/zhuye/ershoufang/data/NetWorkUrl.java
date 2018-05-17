@@ -158,7 +158,8 @@ public class NetWorkUrl {
 
         //个人中心  经纪人  设置--身份认证
     public static final String RENZHENG= "index.php/app/agent/renzheng";
-
+    //个人中心  经纪人  更换绑定手机号--步骤1
+    public static final String CHANGE_MOBILE= "index.php/app/passport/change_mobile";
 
     //首页  定位返回定位id
     public static final String DINGWEI= "index.php/app/index/dingwei";
