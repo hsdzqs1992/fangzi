@@ -201,7 +201,8 @@
         <activity android:name=".ui.activity.ChangeMobile2Activity" />
         <activity android:name=".ui.activity.me.MeFangChanCenterActivity" />
         <activity android:name=".ui.activity.WenDaDetailActivity" />
-        <activity android:name=".ui.activity.AnswerActivity"></activity>
+        <activity android:name=".ui.activity.AnswerActivity" />
+        <activity android:name=".ui.activity.me.AddChuZ1Activity"></activity>
     </application>
 
 </manifest>

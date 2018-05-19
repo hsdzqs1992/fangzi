@@ -16,6 +16,12 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.baidu.mapapi.search.core.SearchResult;
+import com.baidu.mapapi.search.geocode.GeoCodeOption;
+import com.baidu.mapapi.search.geocode.GeoCodeResult;
+import com.baidu.mapapi.search.geocode.GeoCoder;
+import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.bigkoo.pickerview.adapter.ArrayWheelAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.contrarywind.listener.OnItemSelectedListener;
@@ -307,12 +313,24 @@ public class AddXieZiActivity extends BaseActivity  implements UpPhotoCallBack {
                 editLeiXing((TextView) view, "请输入朝向", 6);
                 break;
             case R.id.dizhi2:
+                if(xiaji==null){
+                    toast("请选择省");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 7);
                 break;
             case R.id.dizhi3:
+                if(qu==null){
+                    toast("请选择省");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 8);
                 break;
             case R.id.dizhi4:
+                if(jiedao==null){
+                    toast("请选择省");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 9);
                 break;
             case R.id.back:
@@ -372,6 +390,10 @@ public class AddXieZiActivity extends BaseActivity  implements UpPhotoCallBack {
             case R.id.neitu:
                 break;
             case R.id.fabu:
+                mSearch.geocode(new GeoCodeOption()
+                        .city(dizhi2.getText().toString().trim())
+                        .address(dizhi3.getText().toString().trim()+dizhi4.getText().toString().trim()));
+
                 if (checkEmpty(title, "请输入标题") &&
                         checkEmpty(shoujia, "请输入售价") &&
                         checkEmpty(mianji, "请输入面积") &&
@@ -380,7 +402,9 @@ public class AddXieZiActivity extends BaseActivity  implements UpPhotoCallBack {
                         checkEql(fangjia1, "万元", "请输入房价") &&
                         checkEql(yuegong1, "万元", "请输入物业费") &&
                         checkEmpty(maidian, "请输入具体地址") &&
-                        checkEmpty(xintai, "请输入房源描述") && checkArray(photos, "请上传室内图") &&
+                        checkEmpty(xintai, "请输入房源描述") &&
+                        //checkArray(photos, "请上传室内图") &&
+                        jiaotong.hasPhoto()&&
                         checkEql(dizhi, "请输入省份", "请输入省份") &&
                         checkEql(dizhi2, "请输入市", "请输入市") &&
                         checkEql(dizhi3, "请输入区", "请输入区") &&
@@ -389,6 +413,7 @@ public class AddXieZiActivity extends BaseActivity  implements UpPhotoCallBack {
                         checkEql(dizhi4, "请输入街道", "请输入街道")) {
                     //checkArray(photos,"请上传室内图")&&
                    // handleshiNei();
+
                     jiaotong.upimg(AddXieZiActivity.this, JIAOTONG);
                 }
                 break;
@@ -595,12 +620,42 @@ public class AddXieZiActivity extends BaseActivity  implements UpPhotoCallBack {
 
     }
 
-
+    GeoCoder mSearch;
     @Override
     protected void initData() {
         super.initData();
         CommonApi.getInstance().province(AddXieZiActivity.this, PROVINCE, false);
         jiaotong.REQUESTCODE = 105;
+        mSearch = GeoCoder.newInstance();
+        mSearch.setOnGetGeoCodeResultListener(listener);
+    }
+
+    OnGetGeoCoderResultListener listener = new OnGetGeoCoderResultListener() {
+        public void onGetGeoCodeResult(GeoCodeResult result) {
+
+            if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+                //没有检索到结果
+            }
+            GeoCodeResult result1 = result;
+            Log.i("as",result1.getLocation().longitude+"");
+
+            //获取地理编码结果
+        }
+
+        @Override
+        public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
+            if (result == null || result.error != SearchResult.ERRORNO.NO_ERROR) {
+                //没有找到检索结果
+            }
+
+            //获取反向地理编码结果
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSearch.destroy();
     }
 
     @Override

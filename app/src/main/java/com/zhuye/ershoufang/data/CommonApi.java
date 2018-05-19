@@ -157,6 +157,10 @@ public class CommonApi {
     public void sellhouselists(String token,int page,int cate_id,BaseView baseView, int requestcode){
         sub(service.sellhouselists(token,page,cate_id),baseView,requestcode);
     }
+
+    public void sellhouselists2(String token,int page,int cate_id,BaseView baseView, int requestcode,boolean f){
+        sub(service.sellhouselists2(token,page,cate_id),baseView,requestcode,f);
+    }
     public void sijicity(BaseView baseView, int requestcode){
         sub(service.sijicity(),baseView,requestcode);
     }
@@ -164,8 +168,8 @@ public class CommonApi {
         sub(service.select(cate_id),baseView,requestcode,b);
     }
 
-    public void del_house(String token,int cate_id,BaseView baseView, int requestcode){
-        sub(service.del_house(token,cate_id),baseView,requestcode);
+    public void del_house(String token,int life_id,BaseView baseView, int requestcode){
+        sub(service.del_house(token,life_id),baseView,requestcode);
     }
 
     public void img(String token,List<File> imageFileList,BaseView baseView, int requestcode){

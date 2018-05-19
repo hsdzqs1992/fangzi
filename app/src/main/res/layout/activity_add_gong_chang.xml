@@ -43,7 +43,7 @@
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#999"
+                    android:textColor="#666"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -67,7 +67,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:text="租金"
+                    android:text="售价"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="60dp"
@@ -83,13 +83,13 @@
                     android:background="@null"
                     android:hint="请输入"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:textSize="15sp"
                     android:textColor="#666"
-                    android:text="元/月"
+                    android:text="元"
                     android:layout_alignParentRight="true"
                     android:gravity="center_vertical|end"
                     android:layout_marginRight="18dp"
@@ -112,6 +112,7 @@
 
 
             <RelativeLayout
+                android:visibility="gone"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="45dp">
@@ -169,7 +170,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content" />
                 <EditText
-
+                    android:inputType="number"
                     android:hint="请输入"
                     android:singleLine="true"
                     android:lines="1"
@@ -179,7 +180,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -215,12 +216,13 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="单位房价"
+                    android:text="单位房价"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:inputType="number"
                     android:hint="请输入"
                     android:singleLine="true"
                     android:lines="1"
@@ -230,7 +232,7 @@
                     android:layout_marginLeft="10dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -256,9 +258,10 @@
                     android:layout_height="1dp" />
             </RelativeLayout>
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -368,7 +371,7 @@
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#999"
+                    android:textColor="#666"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -380,9 +383,10 @@
             </View>
 
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -406,7 +410,7 @@
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#999"
+                    android:textColor="#666"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -418,9 +422,10 @@
 
             </View>
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -444,8 +449,8 @@
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#999"
-                    android:layout_width="100dp"
+                    android:textColor="#666"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -457,10 +462,12 @@
             </View>
 
             <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
@@ -482,20 +489,19 @@
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#999"
+                    android:textColor="#666"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
             <View
-                android:layout_marginTop="5dp"
                 android:background="@color/linecolor"
                 android:layout_width="match_parent"
                 android:layout_height="1dp">
-
             </View>
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/diancheliang"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
@@ -527,12 +533,20 @@
             </RelativeLayout>
 
             <android.support.v7.widget.RecyclerView
+                android:visibility="gone"
                 android:id="@+id/neitu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
             </android.support.v7.widget.RecyclerView>
 
+            <com.zhuye.ershoufang.weidtet.MySelectPhotoView
+                app:title = "图片(最多上传6张)"
+                app:addname="添加图片"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jiaotong">
+            </com.zhuye.ershoufang.weidtet.MySelectPhotoView>
             <LinearLayout
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
@@ -540,7 +554,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="30dp">
                 <Button
-                    android:background="@drawable/shape_seek"
+                    android:background="@drawable/shape_search"
                     android:id="@+id/fabu"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
@@ -552,6 +566,7 @@
                     android:textSize="15sp"
                     android:textColor="#fff"/>
                 <Button
+                    android:visibility="gone"
                     android:background="@drawable/shape_seek"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
@@ -563,7 +578,6 @@
                     android:layout_height="35dp"
                     android:textSize="15sp"
                     android:textColor="#fff"/>
-
             </LinearLayout>
 
         </LinearLayout>

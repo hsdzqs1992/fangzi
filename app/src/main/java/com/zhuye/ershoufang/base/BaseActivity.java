@@ -20,6 +20,7 @@ import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.CityBean;
 import com.zhuye.ershoufang.bean.CommonListBean;
 import com.zhuye.ershoufang.data.BaseView;
+import com.zhuye.ershoufang.receiver.NetworkChangeReceiver;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 import com.zhuye.ershoufang.weidtet.CustomProgressDialog;
 
@@ -80,6 +81,7 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
         initView();
         initData();
         initListener();
+        regeist();
     }
 
     protected void requestBefore() {
@@ -346,4 +348,23 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
     //private List<Activity> activities = new ArrayList<Activity>();
     //记录需要一次性关闭的页面
     private static final List<Activity> activitys = new ArrayList<Activity>();
+
+    private void regeist() {
+//        IntentFilter filter = new IntentFilter();
+//        //监听wifi连接（手机与路由器之间的连接）
+//        filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+//        //监听互联网连通性（也就是是否已经可以上网了），当然只是指wifi网络的范畴
+//        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+//        //这个是监听网络状态的，包括了wifi和移动网络。
+//        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+//        receiver= new NetworkChangeReceiver();
+//        registerReceiver(receiver, filter);
+    }
+
+    NetworkChangeReceiver receiver;
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //unregisterReceiver(receiver);
+    }
 }

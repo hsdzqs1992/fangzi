@@ -15,6 +15,7 @@ import com.zhuye.ershoufang.bean.CommonListBean;
 import com.zhuye.ershoufang.bean.CommonObjectBean;
 import com.zhuye.ershoufang.bean.DaiBean;
 import com.zhuye.ershoufang.bean.FaBuListBean;
+import com.zhuye.ershoufang.bean.FaBuListBean2;
 import com.zhuye.ershoufang.bean.FaBuSelectBean;
 import com.zhuye.ershoufang.bean.FanZiDetail;
 import com.zhuye.ershoufang.bean.FangChanBean;
@@ -257,7 +258,10 @@ public interface CommonApiService {
     @POST(NetWorkUrl.SELLHOUSELISTS)
     Observable<FaBuListBean> sellhouselists(@Field("token") String token, @Field("page") int page,
                                             @Field("cate_id") int cate_id);
-
+    @FormUrlEncoded
+    @POST(NetWorkUrl.SELLHOUSELISTS)
+    Observable<CommonListBean<FaBuListBean2>> sellhouselists2(@Field("token") String token, @Field("page") int page,
+                                                              @Field("cate_id") int cate_id);
 
     @GET(NetWorkUrl.SIJICITY)
     Observable<Base> sijicity();
@@ -341,6 +345,7 @@ public interface CommonApiService {
     );
 
 
+    @FormUrlEncoded
     @POST(NetWorkUrl.ESFABU)
     Observable<Base> esfabu(@Field("token") String token,
                             @Field("title") String title,

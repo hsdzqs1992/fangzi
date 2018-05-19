@@ -2,12 +2,16 @@ package com.zhuye.ershoufang;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.support.multidex.MultiDex;
 
 import com.facebook.stetho.Stetho;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
+import com.zhuye.ershoufang.receiver.NetworkChangeReceiver;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 
 /**
@@ -32,6 +36,20 @@ public class Applaion extends Application {
 //        crashHandler.setCrashHandler(getApplicationContext());
         Stetho.initializeWithDefaults(this);
         //
+
+        //regeist();
     }
+
+    private void regeist() {
+        IntentFilter filter = new IntentFilter();
+        //监听wifi连接（手机与路由器之间的连接）
+        filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+        //监听互联网连通性（也就是是否已经可以上网了），当然只是指wifi网络的范畴
+        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        //这个是监听网络状态的，包括了wifi和移动网络。
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(new NetworkChangeReceiver(), filter);
+    }
+
 
 }

@@ -12,7 +12,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadmoreListener;
 import com.zhuye.ershoufang.R;
-import com.zhuye.ershoufang.adapter.me.MaiFangItemAdapter;
+import com.zhuye.ershoufang.adapter.MaiFangItemAdapter2;
 import com.zhuye.ershoufang.base.BaseFragment;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.FaBuListBean;
@@ -44,14 +44,14 @@ public class MeChuZuFragment extends BaseFragment {
     Unbinder unbinder;
 
 
-    MaiFangItemAdapter adapter;
+    MaiFangItemAdapter2 adapter;
     @BindView(R.id.tvv)
     TextView tvv;
     Unbinder unbinder1;
 
     @Override
     protected void initView() {
-        adapter = new MaiFangItemAdapter(R.layout.me_maifang_item);
+        adapter = new MaiFangItemAdapter2(R.layout.me_maifang_item);
         recycle.setAdapter(adapter);
         recycle.setLayoutManager(new LinearLayoutManager(this.getActivity()));
     }

@@ -37,6 +37,8 @@ import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.utils.FilesUtil;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 import com.zhuye.ershoufang.utils.WindowUtils;
+import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
+import com.zhuye.ershoufang.weidtet.UpPhotoCallBack;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -47,13 +49,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.iwf.photopicker.PhotoPicker;
 
-public class AddGongChangActivity extends BaseActivity {
+public class AddGongChangActivity extends BaseActivity implements UpPhotoCallBack {
 
     private static final int XIAJI = 100;
     private static final int QU = 102;
     private static final int JIEDAO = 103;
     private static final int PROVINCE = 101;
     private static final int TIJIAO = 104;
+    private static final int JIAOTONG = 105;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.ttitle)
@@ -118,6 +121,8 @@ public class AddGongChangActivity extends BaseActivity {
     EditText dianhua;
     @BindView(R.id.yafu)
     TextView yafu;
+    @BindView(R.id.jiaotong)
+    MySelectPhotoView jiaotong;
     private ArrayList<String> photos;
 
     @Override
@@ -172,11 +177,11 @@ public class AddGongChangActivity extends BaseActivity {
                     target.setText(mOptionsItems.get(selectIndex));
                     // 是省的类型  且选中状态
                     if (type == 6) {
-                        CommonApi.getInstance().xiaji(getIndex(cityBean, mOptionsItems.get(selectIndex)), AddGongChangActivity.this, XIAJI,false);
+                        CommonApi.getInstance().xiaji(getIndex(cityBean, mOptionsItems.get(selectIndex)), AddGongChangActivity.this, XIAJI, false);
                     } else if (type == 7) {
-                        CommonApi.getInstance().xiaji(getIndex(xiaji, mOptionsItems.get(selectIndex)), AddGongChangActivity.this, QU,false);
+                        CommonApi.getInstance().xiaji(getIndex(xiaji, mOptionsItems.get(selectIndex)), AddGongChangActivity.this, QU, false);
                     } else if (type == 8) {
-                        CommonApi.getInstance().xiaji(getIndex(qu, mOptionsItems.get(selectIndex)), AddGongChangActivity.this, JIEDAO,false);
+                        CommonApi.getInstance().xiaji(getIndex(qu, mOptionsItems.get(selectIndex)), AddGongChangActivity.this, JIEDAO, false);
 
                     }
                 }
@@ -269,9 +274,12 @@ public class AddGongChangActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
-        CommonApi.getInstance().province(AddGongChangActivity.this, PROVINCE,false);
+        CommonApi.getInstance().province(AddGongChangActivity.this, PROVINCE, false);
+        jiaotong.REQUESTCODE = 105;
     }
+
     PopupWindow popupWindow2;
+
     private void editLeiXingin(TextView target, String title, int type) {
         selectIndex = -1;
         popupWindow2 = new PopupWindow(AddGongChangActivity.this);
@@ -291,7 +299,7 @@ public class AddGongChangActivity extends BaseActivity {
         inputquxiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(popupWindow2.isShowing()){
+                if (popupWindow2.isShowing()) {
                     popupWindow2.dismiss();
                 }
             }
@@ -300,8 +308,8 @@ public class AddGongChangActivity extends BaseActivity {
         inputqueding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkEmpty(inputcontent,"请输入内容")){
-                    if(popupWindow2.isShowing()){
+                if (checkEmpty(inputcontent, "请输入内容")) {
+                    if (popupWindow2.isShowing()) {
                         popupWindow2.dismiss();
                         target.setText(getString(inputcontent));
                     }
@@ -319,7 +327,8 @@ public class AddGongChangActivity extends BaseActivity {
             }
         });
     }
-    @OnClick({R.id.yafu,R.id.dizhi, R.id.dizhi2, R.id.dizhi3, R.id.dizhi4, R.id.back, R.id.ttitle, R.id.subtitle, R.id.mingcheng1, R.id.title, R.id.dianhuowu, R.id.zhongliang1, R.id.shoujia, R.id.zhongliangwu, R.id.dianzhongliang, R.id.shifa1, R.id.mianji, R.id.mianjia, R.id.dianshifa, R.id.shifa2, R.id.danweifangjia, R.id.fangjia2, R.id.xiaoqu, R.id.miaoshu, R.id.cheliang1, R.id.cheliang2, R.id.diancheliang, R.id.neitu, R.id.fabu, R.id.weituo})
+
+    @OnClick({R.id.yafu, R.id.dizhi, R.id.dizhi2, R.id.dizhi3, R.id.dizhi4, R.id.back, R.id.ttitle, R.id.subtitle, R.id.mingcheng1, R.id.title, R.id.dianhuowu, R.id.zhongliang1, R.id.shoujia, R.id.zhongliangwu, R.id.dianzhongliang, R.id.shifa1, R.id.mianji, R.id.mianjia, R.id.dianshifa, R.id.shifa2, R.id.danweifangjia, R.id.fangjia2, R.id.xiaoqu, R.id.miaoshu, R.id.cheliang1, R.id.cheliang2, R.id.diancheliang, R.id.neitu, R.id.fabu, R.id.weituo})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.yafu:
@@ -329,12 +338,24 @@ public class AddGongChangActivity extends BaseActivity {
                 editLeiXing((TextView) view, "请输入朝向", 6);
                 break;
             case R.id.dizhi2:
+                if(xiaji==null){
+                    toast("请选择市");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 7);
                 break;
             case R.id.dizhi3:
+                if(qu==null){
+                    toast("请选择区");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 8);
                 break;
             case R.id.dizhi4:
+                if(jiedao==null){
+                    toast("请选择街道");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 9);
                 break;
 
@@ -389,16 +410,20 @@ public class AddGongChangActivity extends BaseActivity {
                         checkEmpty(shoujia, "请输入售价") &&
                         checkEmpty(mianji, "请输入面积") &&
                         checkEmpty(danweifangjia, "请输入单位房价") &&
-                        checkEmpty(miaoshu, "请输入房源描述") &&
-                        checkArray(photos, "请上传室内图") &&
+
+                        //checkArray(photos, "请上传室内图") &&
                         checkEql(dizhi, "请输入省份", "请输入省份") &&
                         checkEql(dizhi2, "请输入市", "请输入市") &&
                         checkEql(dizhi3, "请输入区", "请输入区") &&
+                        checkEql(dizhi4, "请输入街道", "请输入街道")&&
+                        checkEmpty(xiaoqu, "请输入具体地址") &&
                         checkEmpty(lianxiren, "请输入联系人姓名") &&
                         checkEmpty(dianhua, "请输入联系人电话") &&
-                        checkEmpty(xiaoqu, "请输入具体地址") &&
-                        checkEql(dizhi4, "请输入街道", "请输入街道")) {
-                    handleshiNei();
+                        checkEmpty(miaoshu, "请输入房源描述") &&
+                        jiaotong.hasPhoto()
+                       ) {
+                   // handleshiNei();
+                    jiaotong.upimg(AddGongChangActivity.this, JIAOTONG);
                 }
                 break;
             case R.id.weituo:
@@ -419,21 +444,32 @@ public class AddGongChangActivity extends BaseActivity {
 
     private void tijiao() {
         CommonApi.getInstance().fabu(
-                SharedPreferencesUtil.getInstance().getString("token2"), getString(title),
-                8, getIndex(xiaji, dizhi2.getText().toString().trim()),
+                SharedPreferencesUtil.getInstance().getString("token2"),
+                getString(title),
+                8,
+                getIndex(xiaji, dizhi2.getText().toString().trim()),
                 getIndex(qu, dizhi3.getText().toString().trim()),
-                getIndex(jiedao, dizhi4.getText().toString().trim()), getSpData("longitude"),
-                getSpData("latitude"),
+                getIndex(jiedao, dizhi4.getText().toString().trim()),
+                getSpData("longitude"),//
+                getSpData("latitude"),//
                 dizhi.getText().toString().trim() + dizhi2.getText().toString().trim() +
-                        dizhi3.getText().toString().trim() + dizhi4.getText().toString().trim(),
-                getString(xiaoqu),
-                getString(lianxiren), getString(dianhua),
-                "", "", "", "", "",
-                "", "", "",
+                        dizhi3.getText().toString().trim() + dizhi4.getText().toString().trim()+ getString(xiaoqu),
+               "",
+                getString(lianxiren),
+                getString(dianhua),
                 "", "", "", "",
-                "", "", "",
-                "", getString(miaoshu), "",
-                arraytoString(imgBeannei.getData().getPhoto()),
+                getString(shoujia),
+                getString(mianji),
+                getString(danweifangjia),
+                "",
+                "", "",
+                "", "",
+                "", "",
+                "",
+                "",
+                getString(miaoshu),
+                "",
+                jiaotong.getPhoto2(),
                 "",
                 "",
                 AddGongChangActivity.this, TIJIAO);
@@ -541,15 +577,26 @@ public class AddGongChangActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                neituimg.clear();
-                neituimg.addAll(photos);
-                neituimg.add("");
-                adapter.addData(neituimg);
-            }
+//        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
+//            if (data != null) {
+//                photos =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                neituimg.clear();
+//                neituimg.addAll(photos);
+//                neituimg.add("");
+//                adapter.addData(neituimg);
+//            }
+//        }
+
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+        }
+        switch (requestCode) {
+            case 105:
+                jiaotong.setPhoto(photos);
+                break;
         }
     }
 
@@ -583,5 +630,19 @@ public class AddGongChangActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @Override
+    public void success(ImgBean imgBean, int code) {
+        switch (code){
+            case JIAOTONG:
+                tijiao();
+                break;
+        }
+    }
+
+    @Override
+    public void onError(String msg, int code) {
+
     }
 }

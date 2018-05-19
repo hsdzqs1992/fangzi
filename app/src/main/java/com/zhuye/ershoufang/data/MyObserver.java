@@ -29,9 +29,14 @@ public class MyObserver<T extends Base> implements Observer<T>   {
     @Override
     public void onSubscribe(@NonNull Disposable d) {
       //  isShowLoding ? baseView.loding(): "";
+        checkNetWork();
         if(isShowLoding){
             baseView.loding();
         }
+    }
+
+    private void checkNetWork() {
+
     }
 
 

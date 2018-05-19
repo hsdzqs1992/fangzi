@@ -2,7 +2,6 @@ package com.zhuye.ershoufang.ui.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -37,17 +36,19 @@ import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.utils.FilesUtil;
 import com.zhuye.ershoufang.utils.WindowUtils;
+import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
+import com.zhuye.ershoufang.weidtet.MySelectTvView;
+import com.zhuye.ershoufang.weidtet.UpPhotoCallBack;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.iwf.photopicker.PhotoPicker;
 
-public class AddShangPuActivity extends BaseActivity {
+public class AddShangPuActivity extends BaseActivity  implements UpPhotoCallBack {
 
     private static final int XIAJI = 145;
     private static final int QU = 102;
@@ -55,6 +56,7 @@ public class AddShangPuActivity extends BaseActivity {
     private static final int PROVINCE = 101;
     private static final int TIJIAO = 104;
     private static final int SELECT = 108;
+    private static final int JIAOTONG = 109;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.ttitle)
@@ -137,6 +139,12 @@ public class AddShangPuActivity extends BaseActivity {
     EditText jutidizhi;
     @BindView(R.id.miaoshu)
     EditText miaoshu;
+    @BindView(R.id.peizhiba)
+    MySelectTvView peizhiba;
+    @BindView(R.id.renqun)
+    MySelectTvView renqun;
+    @BindView(R.id.jiaotong)
+    MySelectPhotoView jiaotong;
 
     private ArrayList<String> photos;
 
@@ -180,15 +188,26 @@ public class AddShangPuActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                neituimg.clear();
-                neituimg.addAll(photos);
-                neituimg.add("");
-                adapter.addData(neituimg);
-            }
+//        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
+//            if (data != null) {
+//                photos =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                neituimg.clear();
+//                neituimg.addAll(photos);
+//                neituimg.add("");
+//                adapter.addData(neituimg);
+//            }
+//        }
+
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+        }
+        switch (requestCode) {
+            case 105:
+                jiaotong.setPhoto(photos);
+                break;
         }
     }
 
@@ -229,8 +248,9 @@ public class AddShangPuActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
-        CommonApi.getInstance().province(AddShangPuActivity.this, PROVINCE,false);
-        CommonApi.getInstance().select(3, AddShangPuActivity.this, SELECT,false);
+        CommonApi.getInstance().province(AddShangPuActivity.this, PROVINCE, false);
+        CommonApi.getInstance().select(3, AddShangPuActivity.this, SELECT, false);
+        jiaotong.REQUESTCODE = 105;
     }
 
     PopupWindow popupWindow;
@@ -281,11 +301,11 @@ public class AddShangPuActivity extends BaseActivity {
                     target.setText(mOptionsItems.get(selectIndex));
                     // 是省的类型  且选中状态
                     if (type == 6) {
-                        CommonApi.getInstance().xiaji(getIndex(cityBean, mOptionsItems.get(selectIndex)), AddShangPuActivity.this, XIAJI,false);
+                        CommonApi.getInstance().xiaji(getIndex(cityBean, mOptionsItems.get(selectIndex)), AddShangPuActivity.this, XIAJI, false);
                     } else if (type == 7) {
-                        CommonApi.getInstance().xiaji(getIndex(xiaji, mOptionsItems.get(selectIndex)), AddShangPuActivity.this, QU,false);
+                        CommonApi.getInstance().xiaji(getIndex(xiaji, mOptionsItems.get(selectIndex)), AddShangPuActivity.this, QU, false);
                     } else if (type == 8) {
-                        CommonApi.getInstance().xiaji(getIndex(qu, mOptionsItems.get(selectIndex)), AddShangPuActivity.this, JIEDAO,false);
+                        CommonApi.getInstance().xiaji(getIndex(qu, mOptionsItems.get(selectIndex)), AddShangPuActivity.this, JIEDAO, false);
 
                     }
                 }
@@ -306,14 +326,14 @@ public class AddShangPuActivity extends BaseActivity {
 //                }
                 break;
             case 3:
-//                for (int i = 0; i < faBuSelectBean.getData().get年代().size(); i++) {
-//                    data.add(faBuSelectBean.getData().get年代().get(i).getAttr_name());
-//                }
+                for (int i = 0; i < faBuSelectBean.getData().get年代().size(); i++) {
+                    data.add(faBuSelectBean.getData().get年代().get(i).getAttr_name());
+                }
                 break;
             case 4:
-//                for (int i = 0; i < faBuSelectBean.getData().get朝向().size(); i++) {
-//                    data.add(faBuSelectBean.getData().get朝向().get(i).getAttr_name());
-//                }
+                for (int i = 0; i < faBuSelectBean.getData().get朝向().size(); i++) {
+                    data.add(faBuSelectBean.getData().get朝向().get(i).getAttr_name());
+                }
                 break;
             case 6:
                 for (int i = 0; i < cityBean.getData().size(); i++) {
@@ -500,13 +520,10 @@ public class AddShangPuActivity extends BaseActivity {
 
     FaBuSelectBean faBuSelectBean;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
+
+
     PopupWindow popupWindow2;
+
     private void editLeiXingin(TextView target, String title, int type) {
         selectIndex = -1;
         popupWindow2 = new PopupWindow(AddShangPuActivity.this);
@@ -526,7 +543,7 @@ public class AddShangPuActivity extends BaseActivity {
         inputquxiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(popupWindow2.isShowing()){
+                if (popupWindow2.isShowing()) {
                     popupWindow2.dismiss();
                 }
             }
@@ -535,8 +552,8 @@ public class AddShangPuActivity extends BaseActivity {
         inputqueding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkEmpty(inputcontent,"请输入内容")){
-                    if(popupWindow2.isShowing()){
+                if (checkEmpty(inputcontent, "请输入内容")) {
+                    if (popupWindow2.isShowing()) {
                         popupWindow2.dismiss();
                         target.setText(getString(inputcontent));
                     }
@@ -554,19 +571,22 @@ public class AddShangPuActivity extends BaseActivity {
             }
         });
     }
-    @OnClick({R.id.zhuangtai,R.id.yafu,R.id.back, R.id.jiceng, R.id.gong, R.id.fangjia1, R.id.fangjia, R.id.wuyefei, R.id.dizhi, R.id.dizhi2, R.id.dizhi3, R.id.dizhi4, R.id.lianxiren, R.id.dianhua, R.id.shineitu, R.id.fabu})
+
+    @OnClick({R.id.zhuangtai, R.id.yafu, R.id.back, R.id.jiceng, R.id.gong, R.id.fangjia1, R.id.fangjia, R.id.wuyefei, R.id.dizhi, R.id.dizhi2, R.id.dizhi3, R.id.dizhi4, R.id.lianxiren, R.id.dianhua, R.id.shineitu, R.id.fabu})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.zhuangtai:
-               // editLeiXing((TextView) view, "请输入朝向", 4);
-                editLeiXingin((TextView) view, "请输入状态", 2);
+                // editLeiXing((TextView) view, "请输入朝向", 4);
+                //editLeiXingin((TextView) view, "请输入状态", 2);
+                editLeiXing((TextView) view, "请输入年代", 3);
                 break;
             case R.id.back:
                 finish();
                 break;
             case R.id.yafu:
-               // editLeiXing((TextView) view, "请输入朝向", 4);
-                editLeiXingin((TextView) view, "请输入押付", 2);
+                // editLeiXing((TextView) view, "请输入朝向", 4);
+                //editLeiXingin((TextView) view, "请输入押付", 2);
+                editLeiXing((TextView) view, "请输入朝向", 4);
                 break;
             case R.id.jiceng:
                 break;
@@ -582,12 +602,24 @@ public class AddShangPuActivity extends BaseActivity {
                 editLeiXing((TextView) view, "请输入朝向", 6);
                 break;
             case R.id.dizhi2:
+                if(xiaji==null){
+                    toast("请选择市");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 7);
                 break;
             case R.id.dizhi3:
+                if(qu==null){
+                    toast("请选择区");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 8);
                 break;
             case R.id.dizhi4:
+                if(jiedao==null){
+                    toast("请选择街道");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 9);
                 break;
             case R.id.lianxiren:
@@ -597,55 +629,65 @@ public class AddShangPuActivity extends BaseActivity {
             case R.id.shineitu:
                 break;
             case R.id.fabu:
+                // mvvm 格式
                 if (checkEmpty(title, "请输入标题") &&
-                        checkEmpty(shoujia, "请输入租金") &&
+                        checkEmpty(shoujia, "请输入售价") &&
                         checkEmpty(mianji, "请输入面积") &&
-                        checkEmpty(miankuan, "请输入面宽") &&
+                       // checkEmpty(miankuan, "请输入面宽") &&
+                        peizhiba.hasPhoto()&&
+                        renqun.hasPhoto()&&
+                        checkEql(zhuangtai, "年代", "请输入年代") &&
+                        checkEql(yafu, "朝向", "请输入朝向") &&
 
-                        checkEql(zhuangtai, "状态", "请输入状态") &&
-                        checkEql(yafu, "押付", "请输入押付金额") &&
-                        checkEmpty(mingcheng, "请输入单位房价") &&
+                        checkEmpty(mingcheng, "请输入楼盘名称") &&
+
+
                         checkEmpty(jiceng, "请输入楼层") &&
                         checkEmpty(gong, "请输入楼层") &&
-                        checkEmpty(cenggao, "请输入层高") &&
+
+                        checkEmpty(cenggao, "请输入单位房价") &&
                         checkEmpty(wuyefei, "请输入物业费") &&
-
-
-                        checkEmpty(miaoshu, "请输入房源描述") &&
-                        checkArray(photos, "请上传室内图") &&
                         checkEql(dizhi, "请输入省份", "请输入省份") &&
                         checkEql(dizhi2, "请输入市", "请输入市") &&
                         checkEql(dizhi3, "请输入区", "请输入区") &&
-                        checkEmpty(lianxiren, "请输入联系人姓名") &&
-                        checkEmpty(dianhua, "请输入联系人电话") &&
+                        checkEql(dizhi4, "请输入街道", "请输入街道")&&
                         checkEmpty(jutidizhi, "请输入具体地址") &&
-                        checkEql(dizhi4, "请输入街道", "请输入街道")) {
-                    handleshiNei();
+//                        checkArray(photos, "请上传室内图") &&
+                        checkEmpty(lianxiren, "请输入联系人姓名") &&
+                        checkEmpty(dianhua, "请输入联系人电话")&&
+                          checkEmpty(miaoshu, "请输入房源描述") &&
+                        jiaotong.hasPhoto()
+                        ) {
+                    //handleshiNei();
+                    jiaotong.upimg(AddShangPuActivity.this, JIAOTONG);
                 }
                 break;
         }
     }
+
     ImgBean imgBeannei;
+
     private void handleshiNei() {
-        if(photos!=null && photos.size()>0){
+        if (photos != null && photos.size() > 0) {
             List<File> data = new ArrayList<>();
-            for (String item : photos){
-                data.add(FilesUtil.getSmallBitmap(AddShangPuActivity.this,item));
+            for (String item : photos) {
+                data.add(FilesUtil.getSmallBitmap(AddShangPuActivity.this, item));
             }
             // CommonApi.getInstance().img(getToken(),neituimg,AddErShouActivity.this,NEITUIMG);
 
-            OkGo.<String>post(NetWorkUrl.BASE+NetWorkUrl.IMG).params("token2",getToken())
-                    .addFileParams("file[]",data).execute(new StringCallback() {
+            OkGo.<String>post(NetWorkUrl.BASE + NetWorkUrl.IMG).params("token2", getToken())
+                    .addFileParams("file[]", data).execute(new StringCallback() {
                 @Override
                 public void onSuccess(Response<String> response) {
-                    Log.i("ad",response.body());
+                    Log.i("ad", response.body());
                     try {
-                        imgBeannei =  new Gson().fromJson(response.body(),ImgBean.class);
-                      submit();
+                        imgBeannei = new Gson().fromJson(response.body(), ImgBean.class);
+                        submit();
                     } catch (JsonSyntaxException e) {
                         e.printStackTrace();
                     }
                 }
+
                 @Override
                 public void onError(Response<String> response) {
                     super.onError(response);
@@ -655,35 +697,66 @@ public class AddShangPuActivity extends BaseActivity {
         }
     }
 
+
+
+
     private void submit() {
         CommonApi.getInstance().fabu(
-                getToken(), getString(title),
-                7, getIndex(xiaji, dizhi2.getText().toString().trim()),
+                getToken(),
+                getString(title),
+                7,
+                getIndex(xiaji, dizhi2.getText().toString().trim()),
                 getIndex(qu, dizhi3.getText().toString().trim()),
-                getIndex(jiedao, dizhi4.getText().toString().trim()), getSpData("longitude"),
+                getIndex(jiedao, dizhi4.getText().toString().trim()),
+                getSpData("longitude"),
                 getSpData("latitude"),
                 dizhi.getText().toString().trim() + dizhi2.getText().toString().trim() +
                         dizhi3.getText().toString().trim() + dizhi4.getText().toString().trim(),
                 "",
-                getString(lianxiren), getString(dianhua),
-                "", "", "", "", "",
-                "", "", "",
-                "", "", "", "",
-                "", "", "",
-                "", "", "",
-                arraytoString(imgBeannei.getData().getPhoto()),
+                getString(lianxiren),
+                getString(dianhua),
+                getString(cenggao),
+                getString(wuyefei),
+                "", "",
+                getString(shoujia),
+                getString(mianji),
+                "", "",
                 "",
-               "",
+                getString(jiceng),
+                "", "",
+                peizhiba.getPhoto(),
+                renqun.getPhoto(),
+                "",
+                "",
+                getString(miaoshu),
+                "",
+                jiaotong.getPhoto2(),
+                "",
+                "",
                 AddShangPuActivity.this, TIJIAO);
     }
 
     private String arraytoString(List<String> photo) {
         StringBuilder buffer = new StringBuilder();
-        for(int i = 0; i< photo.size()-1;i++){
+        for (int i = 0; i < photo.size() - 1; i++) {
             buffer.append(photo.get(i));
             buffer.append(",");
         }
-        buffer.append(photo.get(photo.size()-1));
+        buffer.append(photo.get(photo.size() - 1));
         return buffer.toString();
+    }
+
+    @Override
+    public void success(ImgBean imgBean, int code) {
+        switch (code){
+            case JIAOTONG:
+                submit();
+                break;
+        }
+    }
+
+    @Override
+    public void onError(String msg, int code) {
+
     }
 }

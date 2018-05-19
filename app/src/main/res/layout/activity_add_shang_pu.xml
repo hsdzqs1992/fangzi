@@ -28,10 +28,9 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="标题"
+                    android:text="标题"
                     android:textSize="15sp"
                     android:textColor="#666"
-                    android:textColorHint="#666"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content" />
                 <EditText
@@ -45,7 +44,7 @@
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#999"
+                    android:textColor="#666"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content" />
 
@@ -70,7 +69,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="租金"
+                    android:text="售价"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="60dp"
@@ -86,13 +85,13 @@
                     android:background="@null"
                     android:hint="请输入"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:textSize="15sp"
                     android:textColor="#666"
-                    android:text="元/月"
+                    android:text="元"
                     android:layout_alignParentRight="true"
                     android:gravity="center_vertical|end"
                     android:layout_marginRight="18dp"
@@ -122,13 +121,13 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="面积"
+                    android:text="面积"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content" />
                 <EditText
-android:inputType="number"
+                    android:inputType="number"
                     android:hint="请输入"
                     android:singleLine="true"
                     android:lines="1"
@@ -138,7 +137,7 @@ android:inputType="number"
                     android:layout_marginLeft="10dp"
                     android:background="@null"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -168,7 +167,7 @@ android:inputType="number"
 
 
             <RelativeLayout
-
+                android:visibility="gone"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="45dp">
@@ -177,7 +176,7 @@ android:inputType="number"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="面宽"
+                    android:text="面宽"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="60dp"
@@ -207,17 +206,7 @@ android:inputType="number"
                     android:layout_height="wrap_content" />
 
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <View
 
-                    android:background="#ddd"
-                    android:layout_centerInParent="true"
-                    android:drawableLeft="@drawable/me"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp" />
-            </RelativeLayout>
 
 
 
@@ -237,6 +226,7 @@ android:inputType="number"
 
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/dianmudi"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
@@ -268,11 +258,9 @@ android:inputType="number"
 
             </RelativeLayout>
 
-            <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/diancheliang"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
@@ -302,17 +290,22 @@ android:inputType="number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
-
-            <android.support.v7.widget.RecyclerView
+            <com.zhuye.ershoufang.weidtet.MySelectTvView
+                android:id="@+id/peizhiba"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title="配置"
+                app:addname="添加配置"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-            </android.support.v7.widget.RecyclerView>
-
-
-
-
-
+            </com.zhuye.ershoufang.weidtet.MySelectTvView>
+            <com.zhuye.ershoufang.weidtet.MySelectTvView
+                android:id="@+id/renqun"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title="人群"
+                app:addname="添加人群"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.zhuye.ershoufang.weidtet.MySelectTvView>
 
             <RelativeLayout
                 android:gravity="center_vertical"
@@ -322,16 +315,21 @@ android:inputType="number"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="状态"
+                    android:text="年代"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
                 <TextView
-                    android:background="@drawable/shape_tv"
+                    android:drawableRight="@drawable/sanjiao"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:background="@drawable/shape_ju"
                     android:id="@+id/zhuangtai"
                     android:layout_marginRight="@dimen/dp_15"
-                    android:text="状态"
+                    android:text="年代"
                     android:singleLine="true"
                     android:lines="1"
                     android:gravity="center_vertical"
@@ -359,16 +357,21 @@ android:inputType="number"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="押付"
+                    android:text="朝向"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
                 <TextView
-                    android:background="@drawable/shape_tv"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:paddingTop="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:drawableRight="@drawable/sanjiao"
+                    android:background="@drawable/shape_ju"
                     android:id="@+id/yafu"
                     android:layout_marginRight="@dimen/dp_15"
-                    android:text="押付"
+                    android:text="朝向"
                     android:singleLine="true"
                     android:lines="1"
                     android:gravity="center_vertical"
@@ -470,7 +473,8 @@ android:inputType="number"
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -497,6 +501,7 @@ android:inputType="number"
                     android:hint="请输入楼盘名称"
                     android:lines="1"
                     android:singleLine="true"
+                    android:textColor="#666"
                     android:textColorHint="#999"
                     android:textSize="14sp" />
 
@@ -516,9 +521,9 @@ android:inputType="number"
                 android:layout_height="45dp">
                 <TextView
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:background="@null"
-                    android:hint="楼层"
+                    android:text="楼层"
                     android:textSize="15sp"
                     android:textColor="#666"
                     android:layout_width="60dp"
@@ -532,6 +537,7 @@ android:inputType="number"
 
 
                     <EditText
+                        android:textColor="#666"
                         android:inputType="number"
                         android:singleLine="true"
                         android:lines="1"
@@ -555,6 +561,7 @@ android:inputType="number"
                         android:layout_height="wrap_content" />
 
                     <EditText
+                        android:textColor="#666"
                         android:inputType="number"
                         android:singleLine="true"
                         android:lines="1"
@@ -658,14 +665,15 @@ android:inputType="number"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="层高"
+                    android:text="单位房价"
                     android:textSize="15sp"
                     android:textColor="#666"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent" />
 
 
                  <EditText
+                     android:textColor="#666"
                      android:layout_marginTop="13dp"
                     android:hint="请输入"
                     android:singleLine="true"
@@ -682,7 +690,7 @@ android:inputType="number"
                 <TextView
                     android:id="@+id/fangjia1"
                     android:layout_marginRight="@dimen/dp_15"
-                    android:text="m"
+                    android:text="万元"
                     android:singleLine="true"
                     android:lines="1"
                     android:gravity="center_vertical"
@@ -691,7 +699,7 @@ android:inputType="number"
                     android:clickable="false"
                     android:focusable="false"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
                 <View
@@ -710,15 +718,15 @@ android:inputType="number"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
-                    android:hint="物业费"
+                    android:text="物业费"
                     android:textSize="15sp"
                     android:textColor="#666"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:id="@+id/wuyefaa"
                     android:layout_height="match_parent" />
 
                 <EditText
-
+                    android:textColor="#666"
                     android:hint="请输入"
                     android:singleLine="true"
                     android:lines="1"
@@ -733,7 +741,6 @@ android:inputType="number"
                     android:layout_height="wrap_content" />
 
                 <TextView
-
                     android:layout_marginRight="@dimen/dp_15"
                     android:text="万元"
                     android:singleLine="true"
@@ -744,7 +751,7 @@ android:inputType="number"
                     android:clickable="false"
                     android:focusable="false"
                     android:textSize="14sp"
-                    android:textColorHint="#ccc"
+                    android:textColor="#666"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
                 <View
@@ -756,9 +763,10 @@ android:inputType="number"
             </RelativeLayout>
 
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -844,13 +852,13 @@ android:inputType="number"
             </View>
 
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
@@ -861,6 +869,7 @@ android:inputType="number"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:textColor="#666"
                     android:id="@+id/jutidizhi"
                     android:layout_marginTop="10dp"
                     android:hint="请输入具体地址"
@@ -872,7 +881,7 @@ android:inputType="number"
                     android:background="@null"
                     android:textSize="14sp"
                     android:textColorHint="#999"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -888,9 +897,10 @@ android:inputType="number"
                     android:layout_height="1dp" />
             </RelativeLayout>
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -904,6 +914,7 @@ android:inputType="number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:textColor="#666"
                     android:id="@+id/lianxiren"
                     android:layout_marginTop="10dp"
                     android:hint="请输入联系人姓名"
@@ -925,9 +936,10 @@ android:inputType="number"
 
             </View>
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -941,6 +953,7 @@ android:inputType="number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:textColor="#666"
                     android:id="@+id/dianhua"
                     android:layout_marginTop="10dp"
                     android:hint="请输入联系人电话"
@@ -952,7 +965,7 @@ android:inputType="number"
                     android:background="@null"
                     android:textSize="14sp"
                     android:textColorHint="#999"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -965,6 +978,7 @@ android:inputType="number"
 
 
             <LinearLayout
+                android:layout_marginBottom="@dimen/dp_10"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
                 android:layout_marginTop="10dp"
@@ -981,18 +995,19 @@ android:inputType="number"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:textColor="#666"
                     android:id="@+id/miaoshu"
                     android:layout_marginTop="10dp"
                     android:hint="请输入房源描述"
                     android:singleLine="true"
-                    android:lines="1"
+                    android:maxLines="3"
                     android:layout_toRightOf="@+id/mingcheng1"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:background="@null"
                     android:textSize="14sp"
                     android:textColorHint="#999"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -1009,6 +1024,7 @@ android:inputType="number"
             </RelativeLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:orientation="vertical"
                 android:gravity="center_vertical"
                 android:layout_marginTop="18dp"
@@ -1026,10 +1042,20 @@ android:inputType="number"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <android.support.v7.widget.RecyclerView
+                android:visibility="gone"
                 android:id="@+id/shineitu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </android.support.v7.widget.RecyclerView>
+
+
+            <com.zhuye.ershoufang.weidtet.MySelectPhotoView
+                app:title = "室内图(最多上传6张)"
+                app:addname="添加图片"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jiaotong">
+            </com.zhuye.ershoufang.weidtet.MySelectPhotoView>
 
             <LinearLayout
                 android:gravity="center_horizontal"
@@ -1038,10 +1064,10 @@ android:inputType="number"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="30dp">
                 <Button
-                    android:background="@drawable/shape_seek"
+                    android:id="@+id/fabu"
+                    android:background="@drawable/shape_search"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="30dp"
                     android:layout_marginTop="43dp"
                     android:text="立即发布"
                     android:layout_width="335dp"
@@ -1049,12 +1075,12 @@ android:inputType="number"
                     android:textSize="15sp"
                     android:textColor="#fff"/>
                 <Button
-                    android:background="@drawable/shape_seek"
+                    android:visibility="gone"
+                    android:background="@drawable/shape_search"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="30dp"
-                    android:layout_marginTop="43dp"
-                    android:id="@+id/fabu"
+                    android:layout_marginTop="10dp"
                     android:text="立即委托"
                     android:layout_width="335dp"
                     android:layout_height="35dp"

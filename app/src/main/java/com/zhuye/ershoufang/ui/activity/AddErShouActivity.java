@@ -39,6 +39,11 @@ import com.zhuye.ershoufang.bean.XiaoQuBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.utils.FilesUtil;
+import com.zhuye.ershoufang.weidtet.MyInputView;
+import com.zhuye.ershoufang.weidtet.MyLinTv2View;
+import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
+import com.zhuye.ershoufang.weidtet.MySelectTvView;
+import com.zhuye.ershoufang.weidtet.UpPhotoCallBack;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -49,7 +54,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.iwf.photopicker.PhotoPicker;
 
-public class AddErShouActivity extends BaseActivity {
+public class AddErShouActivity extends BaseActivity implements UpPhotoCallBack {
 
     private static final int TIJIAO = 200;
     private static final int SELECT = 201;
@@ -61,6 +66,9 @@ public class AddErShouActivity extends BaseActivity {
     private static final int SELECTADAPTER = 207;
     private static final int SELECTADAPTER3 = 208;
     private static final int XIAOQU = 2046;
+    private static final int JIAOTONG = 2055;
+    private static final int HUXINGTUT = 2056;
+    private static final int HUANJINGTU = 2057;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.ttitle)
@@ -159,6 +167,26 @@ public class AddErShouActivity extends BaseActivity {
     Button fabu;
     @BindView(R.id.weituo)
     Button weituo;
+    @BindView(R.id.shoufut)
+    MyInputView shoufut;
+    @BindView(R.id.danweifangjiat)
+    MyInputView danweifangjiat;
+    @BindView(R.id.yuegongt)
+    MyInputView yuegongt;
+//    @BindView(R.id.fangyuanyoushi)
+//    MySelectTvView fangyuanyoushi;
+    @BindView(R.id.hexinmaidt)
+    MyLinTv2View hexinmaidt;
+    @BindView(R.id.yezhuxintait)
+    MyLinTv2View yezhuxintait;
+    @BindView(R.id.shineitut)
+    MySelectPhotoView shineitut;
+    @BindView(R.id.huxingtut)
+    MySelectPhotoView huxingtut;
+    @BindView(R.id.huanjingtu)
+    MySelectPhotoView huanjingtu;
+    @BindView(R.id.fangyuanyoushia)
+    MySelectTvView fangyuanyoushia;
 
 
     @Override
@@ -261,34 +289,50 @@ public class AddErShouActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                neituimg.clear();
-                neituimg.addAll(photos);
-                neituimg.add("");
-                adapter.addData(neituimg);
-            }
-        } else if (resultCode == RESULT_OK && requestCode == SELECTADAPTER) {
-            if (data != null) {
-                photos2 =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                huxingtuimg.clear();
-                huxingtuimg.addAll(photos2);
-                huxingtuimg.add("");
-                adapter2.addData(huxingtuimg);
-            }
-        } else if (resultCode == RESULT_OK && requestCode == SELECTADAPTER3) {
-            if (data != null) {
-                photos3 =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                huanjingimg.clear();
-                huanjingimg.addAll(photos3);
-                huanjingimg.add("");
-                adapter3.addData(huanjingimg);
-
-            }
+//        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
+//            if (data != null) {
+//                photos =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                neituimg.clear();
+//                neituimg.addAll(photos);
+//                neituimg.add("");
+//                adapter.addData(neituimg);
+//            }
+//        } else if (resultCode == RESULT_OK && requestCode == SELECTADAPTER) {
+//            if (data != null) {
+//                photos2 =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                huxingtuimg.clear();
+//                huxingtuimg.addAll(photos2);
+//                huxingtuimg.add("");
+//                adapter2.addData(huxingtuimg);
+//            }
+//        } else if (resultCode == RESULT_OK && requestCode == SELECTADAPTER3) {
+//            if (data != null) {
+//                photos3 =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                huanjingimg.clear();
+//                huanjingimg.addAll(photos3);
+//                huanjingimg.add("");
+//                adapter3.addData(huanjingimg);
+//
+//            }
+//        }
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+        }
+        switch (requestCode) {
+            case 1000:
+                shineitut.setPhoto(photos);
+                break;
+            case 1001:
+                huxingtut.setPhoto(photos);
+                break;
+            case 1002:
+                huanjingtu.setPhoto(photos);
+                break;
         }
     }
 
@@ -302,17 +346,33 @@ public class AddErShouActivity extends BaseActivity {
             case R.id.xiaoqumingc:
                 editLeiXing((TextView) view, "请输入朝向", 11);
                 break;
-            case R.id.dizhi4:
-                editLeiXing((TextView) view, "请输入朝向", 9);
-                break;
             case R.id.dizhi:
+                if(cityBean==null){
+                    CommonApi.getInstance().province(AddErShouActivity.this, PROVINCE, false);
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 6);
                 break;
             case R.id.dizhi2:
+                if (xiaji == null) {
+                    toast("请选择市");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 7);
                 break;
             case R.id.dizhi3:
+                if (qu == null) {
+                    toast("请选择区");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 8);
+                break;
+            case R.id.dizhi4:
+                if (jiedao == null) {
+                    toast("请选择街道");
+                    return;
+                }
+                editLeiXing((TextView) view, "请输入朝向", 9);
                 break;
             case R.id.chaoxiang1:
                 editLeiXing((TextView) view, "请输入朝向", 4);
@@ -352,32 +412,45 @@ public class AddErShouActivity extends BaseActivity {
             case R.id.xintai:
                 break;
             case R.id.fabu:
+
+//                       String a=  getString(xiaoqu);
+//                        String b =  getIndex(xiaoquadata, dizhi3.getText().toString().trim());
+
                 //  handleshiNei();
                 if (checkEmpty(title, "请输入标题") &&
                         checkEmpty(shoujia, "请输入价格") &&
                         checkEmpty(mianji, "请输入面积") &&
-                        checkEmpty(xiaoqu, "请输入小区名称") &&
+                        checkEql(xiaoqumingc, "小区名称", "请输入小区名称") &&
                         checkEql(fangwuleixing, "房屋类型", "请输入房屋类型") &&
                         checkEql(zhuangxiuleixing, "装修类型", "请输入装修类型") &&
                         checkEql(niamdai, "年代", "请输入年代") &&
                         checkEql(chaoxiang1, "朝向", "请输入朝向") &&
-                        checkEql(shoufu2, "万元", "请输入首付价格") &&
-                        checkEql(fangjia1, "万元", "请输入单位价格") &&
-                        checkEql(yuegong1, "万元", "请输入月供金额") &&
-                        checkEmpty(lianxiren, "请输入联系人姓名") &&
                         checkEmpty(jiceng, "请输入楼层") &&
                         checkEmpty(gong, "请输入总楼层") &&
-                        //checkEmpty(dianhua, "请输入联系人电话") &&
-                        checkEmpty(maidian, "请输入卖点") &&
-                        checkEmpty(xintai, "请输入业主心态") &&
-                        checkArray(photos, "请上传室内图") &&
-                        checkArray(photos2, "请上传户型图") &&
-                        checkArray(photos3, "请上传环境图") &&
+                        shoufut.getString() &&
+                        danweifangjiat.getString() &&
+                        yuegongt.getString() &&
+
                         checkEql(dizhi, "请输入省份", "请输入省份") &&
                         checkEql(dizhi2, "请输入市", "请输入市") &&
                         checkEql(dizhi3, "请输入区", "请输入区") &&
-                        checkEql(dizhi4, "请输入街道", "请输入街道")) {
-                    handleshiNei();
+                        checkEql(dizhi4, "请输入街道", "请输入街道") &&
+                        checkEmpty(xiaoqu, "请输入详细地址") &&
+                        fangyuanyoushia.hasPhoto() &&
+                        hexinmaidt.getString() &&
+                        yezhuxintait.getString() &&
+                        checkEmpty(lianxiren, "请输入联系人姓名") &&
+                        checkEmpty(dianhua, "请输入联系人电话") &&
+
+//                        checkEql(shoufu2, "万元", "请输入首付价格") &&
+//                        checkEql(fangjia1, "万元", "请输入单位价格") &&
+//                        checkEql(yuegong1, "万元", "请输入月供金额") &&
+                        shineitut.hasPhoto() &&
+                        huxingtut.hasPhoto() &&
+                        huanjingtu.hasPhoto()
+                        ) {
+                    //   handleshiNei();
+                    shineitut.upimg(AddErShouActivity.this, JIAOTONG);
                 }
                 break;
             case R.id.weituo:
@@ -558,28 +631,29 @@ public class AddErShouActivity extends BaseActivity {
                 getToken(),
                 getString(title),
                 getString(xiaoqu),
-                getIndex(xiaoqua, dizhi3.getText().toString().trim()),
+                getIndex(xiaoquadata, xiaoqumingc.getText().toString().trim()),
                 getString(lianxiren)
                 , getString(dianhua),
-                getString(fangjia1),
+                danweifangjiat.getContent(),
                 getString(jiceng)
                 , getString(gong),
                 "",
                 getString(shoujia),
                 getString(mianji),
-                getString(shoufu2),
-                getString(yuegong1),
+                shoufut.getContent(),
+                yuegongt.getContent(),
+
                 getIndex(faBuSelectBean, 1, getString(fangwuleixing)),
                 getIndex(faBuSelectBean, 2, getString(chaoxiang1)),
                 getIndex(faBuSelectBean, 3, getString(zhuangxiuleixing)),
-
                 getIndex(faBuSelectBean, 4, getString(niamdai)),
-                "", "",
+
+                fangyuanyoushia.getPhoto(), "",
                 getString(maidian),
                 getString(xintai),
-                arraytoString(imgBeannei.getData().getPhoto()),
-                arraytoString(imgBeanhuxing.getData().getPhoto()),
-                arraytoString(imgBeanhuanjing.getData().getPhoto()),
+                shineitut.getPhoto2(),
+                huxingtut.getPhoto2(),
+                huanjingtu.getPhoto2(),
                 AddErShouActivity.this, TIJIAO);
     }
 
@@ -748,8 +822,8 @@ public class AddErShouActivity extends BaseActivity {
                 break;
 
             case 11:
-                for (int i = 0; i < xiaoqua.getData().size(); i++) {
-                    data.add(xiaoqua.getData().get(i).getXiaoqu());
+                for (int i = 0; i < xiaoquadata.getData().size(); i++) {
+                    data.add(xiaoquadata.getData().get(i).getXiaoqu());
                 }
                 break;
             case 6:
@@ -959,22 +1033,45 @@ public class AddErShouActivity extends BaseActivity {
                 break;
 
             case XIAOQU:
-                xiaoqua = (CommonListBean<XiaoQuBean>) base;
+                xiaoquadata = (CommonListBean<XiaoQuBean>) base;
 
                 break;
         }
     }
 
-    CommonListBean<XiaoQuBean> xiaoqua;
+    CommonListBean<XiaoQuBean> xiaoquadata;
 
     @Override
     protected void initData() {
         super.initData();
         CommonApi.getInstance().select(3, AddErShouActivity.this, SELECT, false);
-        //CommonApi.getInstance().province(AddErShouActivity.this, PROVINCE, false);
+        CommonApi.getInstance().province(AddErShouActivity.this, PROVINCE, false);
         CommonApi.getInstance().xiaoqu(AddErShouActivity.this, XIAOQU, false);
+        shineitut.REQUESTCODE = 1000;
+        huxingtut.REQUESTCODE = 1001;
+        huanjingtu.REQUESTCODE = 1002;
     }
 
+
+    @Override
+    public void success(ImgBean imgBean, int code) {
+        switch (code) {
+            case JIAOTONG:
+                huxingtut.upimg(AddErShouActivity.this, HUXINGTUT);
+                break;
+            case HUXINGTUT:
+                huanjingtu.upimg(AddErShouActivity.this, HUANJINGTU);
+                break;
+            case HUANJINGTU:
+                submit();
+                break;
+        }
+    }
+
+    @Override
+    public void onError(String msg, int code) {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
