@@ -12,7 +12,6 @@ import com.zhuye.ershoufang.adapter.Common2Adapter;
 import com.zhuye.ershoufang.bean.CommonBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.ui.activity.common.Common2Activity;
-import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -48,7 +47,7 @@ public class GangXuActivity extends Common2Activity<CommonBean> {
     @Override
     protected void initData() {
         super.initData();
-        CommonApi.getInstance().activity(SharedPreferencesUtil.getInstance().getString("qu_id"),
+        CommonApi.getInstance().activity(getQuId(),
                 2,page,GangXuActivity.this
          ,LIST);
     }
@@ -70,14 +69,14 @@ public class GangXuActivity extends Common2Activity<CommonBean> {
 
     @Override
     protected void onLoadmore() {
-        CommonApi.getInstance().activity(SharedPreferencesUtil.getInstance().getString("qu_id"),
+        CommonApi.getInstance().activity(getQuId(),
                 2,++page,GangXuActivity.this
                 ,LOADMOREBASE);
     }
 
     @Override
     protected void onRefresh() {
-        CommonApi.getInstance().activity(SharedPreferencesUtil.getInstance().getString("qu_id"),
+        CommonApi.getInstance().activity(getQuId(),
                 2,1,GangXuActivity.this
                 ,REFRESHBASE);
     }

@@ -230,4 +230,11 @@ public abstract class BaseFragment<T> extends Fragment implements BaseView {
     public void setText(TextView tv,String content){
         tv.setText(content);
     }
+
+    public String getQuId(){
+        return "12743";
+    }
+//    public String getQuId(){
+//        return SharedPreferencesUtil.getInstance().getString("qu_id");
+//    }
 }

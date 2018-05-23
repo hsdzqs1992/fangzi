@@ -14,6 +14,7 @@
         android:layout_height="40dp">
 
         <LinearLayout
+            android:id="@+id/quyu"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -31,6 +32,7 @@
                 android:src="@drawable/sanjiao"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/jiage"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -48,6 +50,7 @@
                 android:src="@drawable/sanjiao"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/jinjiren"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"

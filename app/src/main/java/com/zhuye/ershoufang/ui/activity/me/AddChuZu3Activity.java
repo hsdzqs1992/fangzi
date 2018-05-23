@@ -34,7 +34,6 @@ import com.zhuye.ershoufang.bean.FaBuSelectBean;
 import com.zhuye.ershoufang.bean.ImgBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
-import com.zhuye.ershoufang.ui.activity.AddShangPuActivity;
 import com.zhuye.ershoufang.utils.FilesUtil;
 import com.zhuye.ershoufang.utils.WindowUtils;
 import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
@@ -190,15 +189,26 @@ public class AddChuZu3Activity extends BaseActivity implements UpPhotoCallBack {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                neituimg.clear();
-                neituimg.addAll(photos);
-                neituimg.add("");
-                adapter.addData(neituimg);
-            }
+//        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
+//            if (data != null) {
+//                photos =
+//                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+//                neituimg.clear();
+//                neituimg.addAll(photos);
+//                neituimg.add("");
+//                adapter.addData(neituimg);
+//            }
+//        }
+
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+        }
+        switch (requestCode) {
+            case 105:
+                jiaotong.setPhoto(photos);
+                break;
         }
     }
 
@@ -611,25 +621,25 @@ public class AddChuZu3Activity extends BaseActivity implements UpPhotoCallBack {
                         checkEmpty(shoujia, "请输入租金") &&
                         checkEmpty(mianji, "请输入面积") &&
                         checkEmpty(miankuan, "请输入面宽") &&
+                        peizhiba.hasPhoto()&&
+                        renqun.hasPhoto()&&
                         checkEql(zhuangtai, "状态", "请输入状态") &&
                         checkEql(yafu, "押付", "请输入押付金额") &&
-                        checkEmpty(mingcheng, "请输入单位房价") &&
+                        checkEmpty(mingcheng, "请输入楼盘名称") &&
                         checkEmpty(jiceng, "请输入楼层") &&
                         checkEmpty(gong, "请输入楼层") &&
                         checkEmpty(cenggao, "请输入层高") &&
                         checkEmpty(wuyefei, "请输入物业费") &&
-                        peizhiba.hasPhoto()&&
-                        renqun.hasPhoto()&&
-                        checkEmpty(miaoshu, "请输入房源描述") &&
-//                        checkArray(photos, "请上传室内图") &&
-
                         checkEql(dizhi, "请输入省份", "请输入省份") &&
                         checkEql(dizhi2, "请输入市", "请输入市") &&
                         checkEql(dizhi3, "请输入区", "请输入区") &&
+                        checkEql(dizhi4, "请输入街道", "请输入街道") &&
+                        checkEmpty(jutidizhi, "请输入具体地址")&&
+//                        checkArray(photos, "请上传室内图") &&
                         checkEmpty(lianxiren, "请输入联系人姓名") &&
                         checkEmpty(dianhua, "请输入联系人电话") &&
-                        checkEmpty(jutidizhi, "请输入具体地址") &&
-                        checkEql(dizhi4, "请输入街道", "请输入街道")) {
+                        checkEmpty(miaoshu, "请输入房源描述")
+                        ) {
                     //handleshiNei();
                     jiaotong.upimg(AddChuZu3Activity.this, JIAOTONG);
                 }
@@ -670,25 +680,56 @@ public class AddChuZu3Activity extends BaseActivity implements UpPhotoCallBack {
     }
 
     private void submit() {
-        CommonApi.getInstance().fabu(
-                getToken(), getString(title),
-                7, getIndex(xiaji, dizhi2.getText().toString().trim()),
-                getIndex(qu, dizhi3.getText().toString().trim()),
-                getIndex(jiedao, dizhi4.getText().toString().trim()), getSpData("longitude"),
+        CommonApi.getInstance().chuzufabu(getToken(),"",getString(title),13,
+                               getIndex(xiaji, dizhi2.getText().toString().trim()),
+                 getIndex(qu, dizhi3.getText().toString().trim()),
+                 getIndex(jiedao, dizhi4.getText().toString().trim()),
+                getSpData("longitude"),//
                 getSpData("latitude"),
-                dizhi.getText().toString().trim() + dizhi2.getText().toString().trim() +
-                        dizhi3.getText().toString().trim() + dizhi4.getText().toString().trim(),
+                getString(jutidizhi),"",
+                getString(lianxiren),getString(dianhua),getString(jiceng),getString(gong),
+                getString(mingcheng),
+                getString(miankuan),
                 "",
-                getString(lianxiren), getString(dianhua),
-                "", "", "", "", "",
-                "", "", "",
-                "", "", "", "",
-                "", "", "",
-                "", "", "",
-                arraytoString(imgBeannei.getData().getPhoto()),
+                getString(mianji),
+                getString(yafu),
                 "",
                 "",
-                AddChuZu3Activity.this, TIJIAO);
+                getString(zhuangtai),
+                "",
+                "",
+                peizhiba.getPhoto(),
+                renqun.getPhoto(),
+                "",
+                "",
+                getString(miaoshu),
+                "",
+                jiaotong.getPhoto2(),
+                "",
+                AddChuZu3Activity.this, TIJIAO
+        );
+
+//        CommonApi.getInstance().chuzufabu(
+//                getToken(),
+//                getString(title),
+//                7,
+//               getIndex(xiaji, dizhi2.getText().toString().trim()),
+//                 getIndex(qu, dizhi3.getText().toString().trim()),
+//                 getIndex(jiedao, dizhi4.getText().toString().trim()), getSpData("longitude"),
+//                getSpData("latitude"),
+//                dizhi.getText().toString().trim() + dizhi2.getText().toString().trim() +
+//                        dizhi3.getText().toString().trim() + dizhi4.getText().toString().trim(),
+//                "",
+//                getString(lianxiren), getString(dianhua),
+//                "", "", "", "", "",
+//                "", "", "",
+//                "", "", "", "",
+//                "", "", "",
+//                "", "", "",
+//                arraytoString(imgBeannei.getData().getPhoto()),
+//                "",
+//                "",
+//                AddChuZu3Activity.this, TIJIAO);
     }
 
     private String arraytoString(List<String> photo) {

@@ -8,8 +8,8 @@ import java.util.List;
 
 public class HomeBean {
     private List<String> adv;
-    private List<NewhouseBean> newhouse;
-    private List<SellBean> sell;
+    private List<Common5Bean> newhouse;
+    private List<Common3Bean> sell;
     private List<AgentBean> agent;
     private List<RentingBean> renting;
     private List<LoveBean> love;
@@ -22,19 +22,19 @@ public class HomeBean {
         this.adv = adv;
     }
 
-    public List<NewhouseBean> getNewhouse() {
+    public List<Common5Bean> getNewhouse() {
         return newhouse;
     }
 
-    public void setNewhouse(List<NewhouseBean> newhouse) {
+    public void setNewhouse(List<Common5Bean> newhouse) {
         this.newhouse = newhouse;
     }
 
-    public List<SellBean> getSell() {
+    public List<Common3Bean> getSell() {
         return sell;
     }
 
-    public void setSell(List<SellBean> sell) {
+    public void setSell(List<Common3Bean> sell) {
         this.sell = sell;
     }
 

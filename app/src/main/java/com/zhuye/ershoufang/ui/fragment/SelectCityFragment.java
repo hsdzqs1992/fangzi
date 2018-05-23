@@ -18,6 +18,7 @@ import com.zhuye.ershoufang.base.BaseFragment;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.CityBean;
 import com.zhuye.ershoufang.data.CommonApi;
+import com.zhuye.ershoufang.utils.DensityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -220,7 +221,7 @@ public abstract class SelectCityFragment extends BaseFragment {
         selectIndex = -1;
         popupWindow2 = new PopupWindow(getActivity());
         popupWindow2.setContentView(input);
-        popupWindow2.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        popupWindow2.setWidth(DensityUtil.dip2px(getActivity(),300));
         popupWindow2.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow2.setBackgroundDrawable(new ColorDrawable(0x00000000));
         popupWindow2.setOutsideTouchable(true);

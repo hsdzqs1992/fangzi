@@ -247,6 +247,11 @@ public class AddLouPanActivity extends SelectCityActivity implements UpPhotoCall
 //                System.out.print(data.size());
 //                toast(data.size()+"");
 //                huxingrv.isTian();
+
+//                Log.i("asd", getIndex(xiaji, dizhi2.getText().toString().trim())+"ss"+
+//                        getIndex(qu, dizhi3.getText().toString().trim())+"ss"+
+//                        getIndex(jiedao, dizhi4.getText().toString().trim()));
+
                 if (fangyuanleixing.isChange() &&
                         fangyuanzhong.isChange()&&
                         title.getString()&&
@@ -437,8 +442,11 @@ public class AddLouPanActivity extends SelectCityActivity implements UpPhotoCall
     private void tijiao() {
         CommonApi.getInstance().newhousefabu(getToken(),
                 getIndex(xiaji, dizhi2.getText().toString().trim()),
-                getIndex(qu, dizhi3.getText().toString().trim()), getIndex(jiedao, dizhi4.getText().toString().trim()),
-                fangyuanzhong.getId() + "", danjia.getContent(),
+                getIndex(qu, dizhi3.getText().toString().trim()),
+                getIndex(jiedao, dizhi4.getText().toString().trim()),
+
+                fangyuanzhong.getId() + "",
+                danjia.getContent(),
                 fangyuanleixing.getId() + "", youhui.getContent(), youhishijian.getTime(),
                 youhiendtime.getTime(), xianxidizhi.getContent(), jiaofangshijian.getTime(),
                 kaipanshijian.getTime(),

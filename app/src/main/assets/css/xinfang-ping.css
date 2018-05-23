@@ -88,3 +88,7 @@ input:-ms-input-placeholder {
 	/* Internet Explorer 10-11 */
 	font-size: 0.32rem;
 }
+
+.yuanjiao{
+	border-radius: 25px;
+}

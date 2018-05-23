@@ -4,6 +4,7 @@ package com.zhuye.ershoufang.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
@@ -47,11 +48,10 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
     protected CommonBaseQuickAdapter adapter2;
     protected LinearLayoutManager layoutManager = new LinearLayoutManager(this) ;
 
+    protected Handler mHandler = new Handler();
     public int page = 1;
 
-    public String getQuId(){
-        return SharedPreferencesUtil.getInstance().getString("qu_id");
-    }
+
 
     public String getIndex(CityBean bean, String value) {
         String id = "";
@@ -367,4 +367,11 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
         super.onDestroy();
         //unregisterReceiver(receiver);
     }
+
+    public String getQuId(){
+        return "12743";
+    }
+//    public String getQuId(){
+//        return SharedPreferencesUtil.getInstance().getString("qu_id");
+//    }
 }

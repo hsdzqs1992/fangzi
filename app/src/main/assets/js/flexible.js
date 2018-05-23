@@ -4,10 +4,12 @@
   // set 1rem = viewWidth / 10
   function setRemUnit () {
     var rem = docEl.clientWidth / 10;
+    console.log(rem)
     docEl.style.fontSize = rem + 'px';
 
     //解决rem失效问题,zgf添加
     var oBody = document.createElement('body');
+
     var oDiv = document.createElement('div');
     oDiv.style.width = '10rem';
     oBody.appendChild(oDiv);
@@ -16,7 +18,9 @@
     docEl.removeChild(oBody);
     if(remWidth != docEl.clientWidth){
       docEl.style.fontSize = rem/remWidth*rem*10 + 'px';
+
     }
+
   }
   setRemUnit()
 

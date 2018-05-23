@@ -666,36 +666,36 @@
 			}
 
 
-			$(function () {
-				$.ajax({
-					url:"http://192.168.1.9/a.php",
-                    type:"post",
-                    datatype:"json",
-					success: function (data) {
-
-					    // php js json
-                         alert(data)
-
-						//var da = parseJSON(data)
-						//alert()
-						//console.log(data.code)
-
-						// var json = eval(data)
-						// console.log(typeof json)
-						// console.log(json)
-                        var json = eval('(' + data + ')');
-
-
-                        // var str = '{name:"jack"}'; name没有用引号引起来，使用JSON.parse所有浏览器中均抛异常
-                       // var json = JSON.parse(data)
-						console.log(json.data)
-						console.log(typeof json)
-                    },
-					error:function () {
-                        alert("提交失败！");
-                    }
-				})
-            });
+            // $(function () {
+				// $.ajax({
+				// 	url:"http://192.168.1.9/a.php",
+            //         type:"post",
+            //         datatype:"json",
+				// 	success: function (data) {
+            //
+				// 	    // php js json
+            //              alert(data)
+            //
+				// 		//var da = parseJSON(data)
+				// 		//alert()
+				// 		//console.log(data.code)
+            //
+				// 		// var json = eval(data)
+				// 		// console.log(typeof json)
+				// 		// console.log(json)
+            //             var json = eval('(' + data + ')');
+            //
+            //
+            //             // var str = '{name:"jack"}'; name没有用引号引起来，使用JSON.parse所有浏览器中均抛异常
+            //            // var json = JSON.parse(data)
+				// 		console.log(json.data)
+				// 		console.log(typeof json)
+            //         },
+				// 	error:function () {
+            //             alert("提交失败！");
+            //         }
+				// })
+            // });
 
 		</script>
 	</body>

@@ -17,7 +17,7 @@ public class NetWorkUrl {
 
 
     public static final String BASE =
-            "http://192.168.1.21/jdhouse/";
+            "http://192.168.1.10/jdhouse/";
 
     public static final String LOGIN = "";
     public static final String REGEIST = "index.php/App/passport/register";
@@ -74,7 +74,8 @@ public class NetWorkUrl {
     // 发布（二手房、商铺、工厂、写字楼）
     public static final String ESFABU = "index.php/app/sellhouse/esfabu";
 
-
+    // 发布（租房）
+    public static final String CZFABU = "index.php/app/lease/czfabu";
 
 
 
@@ -197,7 +198,8 @@ public class NetWorkUrl {
     //首页 首页--经纪人列表
     public static final String AGENT_LIST= "index.php/app/agent/agent_list";
 
-
+    //首页 首页--经纪人列表
+    public static final String NEWHOUSE_DETAIL= "index.php/app/indexnewhouse/newhouse_detail";
 
 
     //首页 装修--列表
@@ -219,6 +221,10 @@ public class NetWorkUrl {
     public static final String VIEW_BM= "index.php/app/indexnewhouse/view_bm";
     //首页 新房-列表
     public static final String VIEW_DETAIL= "index.php/app/indexnewhouse/view_detail";
+
+    //首页 找小区
+    public static final String FIND_XIAOQU= "index.php/app/index/find_xiaoqu";
+
 
 
     //个人中心  家具商  设置编辑--提交
@@ -259,4 +265,7 @@ public class NetWorkUrl {
 
     //个人中心 置顶卷--列表
     public static final String JUAN= "index.php/app/home/juan";
+
+    //个人中心 置顶卷--列表
+    public static final String COLLECT= "index.php/app/index/collect";
 }

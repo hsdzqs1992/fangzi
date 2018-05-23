@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
+    android:layout_marginBottom="@dimen/dp_10"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_20"
+    android:layout_marginLeft="@dimen/dp_20"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="115dp">
 
-</android.support.constraint.ConstraintLayout>
+
+    <com.zhuye.ershoufang.weidtet.RoundedCornerImageView
+        android:id="@+id/tou"
+        android:scaleType="centerCrop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/iphone"/>
+
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/tou">
+
+        <TextView
+            android:id="@+id/name"
+            android:text="支付宝"
+            android:textSize="15sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/shi_xin"/>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/shi_xin"/>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/shi_xin"/>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/shi_xin"/>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/shi_xin"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/title"
+            android:text="支付宝"
+            android:textSize="15sp"
+            android:textColor="#666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/youshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+    <TextView
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:id="@+id/chat"
+        android:text="微聊"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_width="50dp"
+        android:layout_height="25dp" />
+
+
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color"></View>
+
+</RelativeLayout>

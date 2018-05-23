@@ -1,11 +1,8 @@
 package com.zhuye.ershoufang.ui.fragment.fabu;
 
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,9 +15,9 @@ import com.zhuye.ershoufang.adapter.ImageAdapter;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.ui.fragment.SelectCityFragment;
+import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import me.iwf.photopicker.PhotoPicker;
@@ -91,6 +88,8 @@ public class ChuZuFragment extends SelectCityFragment {
     EditText dianhua;
     @BindView(R.id.xiangxi)
     EditText xiangxi;
+    @BindView(R.id.huanjingtu)
+    MySelectPhotoView huanjingtu;
 
     @Override
     public void success(int requestcode, Base o) {
@@ -191,21 +190,17 @@ public class ChuZuFragment extends SelectCityFragment {
                     , getString(shi), getString(ceng), getString(wei), "", getString(jiceng), getString(gong),
                     getString(chuzu), getString(zhuangxiu), getString(fukuan), getIndex(xiaji, dizhi2.getText().toString().trim()),
                     getIndex(qu, dizhi3.getText().toString().trim()), getIndex(jiedao, dizhi4.getText().toString().trim()),
-                    getString(lianxiren), getString(dianhua), audit, "3", "",getString(xiangxi),ChuZuFragment.this, FABU,true);
+                    getString(lianxiren), getString(dianhua), audit, "3", "", getString(xiangxi), ChuZuFragment.this, FABU, true);
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder1 = ButterKnife.bind(this, rootView);
-        return rootView;
+    protected void initData() {
+        super.initData();
+        huanjingtu.REQUESTCODE=1000;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder1.unbind();
+    public MySelectPhotoView getMySelectPhotoView(){
+        return huanjingtu;
     }
 }

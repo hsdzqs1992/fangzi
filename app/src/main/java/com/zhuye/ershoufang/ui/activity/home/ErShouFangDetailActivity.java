@@ -1,15 +1,43 @@
 package com.zhuye.ershoufang.ui.activity.home;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.webkit.JavascriptInterface;
 
-import com.zhuye.ershoufang.R;
+import com.zhuye.ershoufang.ui.activity.WebActivity;
 
-public class ErShouFangDetailActivity extends AppCompatActivity {
+public class ErShouFangDetailActivity extends WebActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_er_shou_fang_detail);
+    public String getUrlName() {
+        return "ershou-detail";
+    }
+    String id ="";
+    @Override
+    protected void initData() {
+        super.initData();
+        id = getIntent().getStringExtra("id");
+        webview.addJavascriptInterface(new AndroidBridge(), "java");
+    }
+
+    protected class AndroidBridge {
+        @JavascriptInterface
+        public String getId() {
+            return id;
+        }
+
+        @JavascriptInterface
+        public String getToken(){
+            return getToken();
+        }
+
+        @JavascriptInterface
+        public void callAndroid222(final String arg,final  String arg2) {
+//            handler.post(new Runnable(){
+//                public void run()
+//                {
+//                    Log.d("zwzw", "callAndroid222("+arg+","+arg2+")");
+//                    textView5.setText(arg);
+//                }
+//          });
+        }
     }
 }

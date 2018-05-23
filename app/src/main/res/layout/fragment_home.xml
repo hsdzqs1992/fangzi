@@ -1,59 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:scrollbars="none"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <ImageView
+            android:layout_marginTop="4dp"
+            android:id="@+id/ditu"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ditu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/search"
+            android:background="@drawable/shape_search"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toLeftOf="@+id/message"
+            android:layout_toRightOf="@+id/ditu"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableLeft="@drawable/search"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_centerInParent="true"
+                android:text="搜索"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/message"
+            android:src="@drawable/message2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+<ScrollView android:scrollbars="none"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <RelativeLayout
-            android:gravity="center_vertical"
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="45dp">
-            <ImageView
-                android:layout_marginTop="4dp"
-                android:id="@+id/ditu"
-                android:layout_marginLeft="15dp"
-                android:src="@drawable/ditu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
-            <RelativeLayout
-                android:id="@+id/search"
-                android:background="@drawable/shape_search"
-                android:layout_marginRight="@dimen/dp_20"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:layout_toLeftOf="@+id/message"
-                android:layout_toRightOf="@+id/ditu"
-                android:layout_width="match_parent"
-                android:layout_height="30dp">
-                <TextView
-                    android:drawablePadding="@dimen/dp_10"
-                    android:drawableLeft="@drawable/search"
-                    android:paddingBottom="3dp"
-                    android:paddingTop="3dp"
-                    android:layout_centerInParent="true"
-                    android:text="搜索"
-                    android:textColor="#fff"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"/>
-            </RelativeLayout>
-
-            <ImageView
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="15dp"
-                android:layout_alignParentRight="true"
-                android:id="@+id/message"
-                android:src="@drawable/message2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
-        </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
             android:layout_marginRight="10dp"
@@ -250,11 +258,23 @@
         </LinearLayout>
 
 
-        <RelativeLayout
+        <!--<RelativeLayout-->
+            <!--android:layout_marginTop="@dimen/dp_10"-->
+            <!--android:id="@+id/banner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="130dp"></RelativeLayout>-->
+
+        <cn.bingoogolapple.bgabanner.BGABanner
             android:layout_marginTop="@dimen/dp_10"
-            android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="130dp"></RelativeLayout>
+            android:layout_height="130dp"
+            android:id="@+id/banner"
+            app:banner_pageChangeDuration="1000"
+            app:banner_pointAutoPlayAble="false"
+            app:banner_pointContainerBackground="@android:color/transparent"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+            app:banner_pointTopBottomMargin="5dp"
+            app:banner_transitionEffect="alpha" />
 
         <RelativeLayout
             android:layout_marginLeft="15dp"
@@ -262,56 +282,60 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
+
                 android:src="@drawable/guess"
                 android:layout_width="16dp"
                 android:layout_height="20dp" />
 
             <TextView
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#999"
                 android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="推荐新房"/>
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#ccc"></View>
+
         </RelativeLayout>
+
+        <View
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"></View>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/tuijianxinfang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#f5f5f5"></View>
         <RelativeLayout
             android:layout_marginLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
                 android:src="@drawable/er"
                 android:layout_width="16dp"
                 android:layout_height="20dp" />
 
             <TextView
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#999"
                 android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="推荐二手房"/>
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#ccc"></View>
+
         </RelativeLayout>
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/tuijianershoufang"
@@ -319,21 +343,28 @@
             android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
 
-
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"></View>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#f5f5f5"></View>
         <RelativeLayout
             android:layout_marginLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
                 android:src="@drawable/hing"
                 android:layout_width="16dp"
                 android:layout_height="20dp" />
 
             <TextView
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#999"
                 android:textSize="12sp"
                 android:layout_width="match_parent"
@@ -341,8 +372,9 @@
                 android:text="优秀经纪人"/>
 
             <TextView
+                android:id="@+id/jinjikanmore"
                 android:layout_toLeftOf="@+id/jingjiren_go"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#999"
                 android:textSize="12sp"
                 android:layout_width="wrap_content"
@@ -351,7 +383,7 @@
 
             <ImageView
                 android:layout_marginTop="12dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="25dp"
                 android:layout_alignParentRight="true"
                 android:id="@+id/jingjiren_go"
                 android:layout_marginLeft="15dp"
@@ -359,13 +391,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#ccc"></View>
+
 
         </RelativeLayout>
+
+        <View
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"></View>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/jingjiren"
@@ -373,6 +408,10 @@
             android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#f5f5f5"></View>
 
         <RelativeLayout
             android:layout_marginLeft="15dp"
@@ -380,25 +419,27 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
                 android:src="@drawable/zu"
                 android:layout_width="16dp"
                 android:layout_height="20dp" />
 
             <TextView
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#999"
                 android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="推荐租房"/>
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#ccc"></View>
+
         </RelativeLayout>
+
+        <View
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"></View>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/tuijianzufang"
@@ -407,31 +448,36 @@
         </android.support.v7.widget.RecyclerView>
 
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#f5f5f5"></View>
         <RelativeLayout
             android:layout_marginLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
                 android:src="@drawable/guess"
                 android:layout_width="16dp"
                 android:layout_height="20dp" />
 
             <TextView
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#999"
                 android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="猜你喜欢"/>
-            <View
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#ccc"></View>
         </RelativeLayout>
+
+        <View
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"></View>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/cainixihuan"
@@ -441,3 +487,5 @@
 
     </LinearLayout>
 </ScrollView>
+
+    </LinearLayout>

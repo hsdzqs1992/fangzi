@@ -3,6 +3,7 @@ package com.zhuye.ershoufang;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -273,6 +274,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initListener() {
         super.initListener();
+
+
+
         homeFragmenttabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String s) {
@@ -297,14 +301,38 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos   = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-//                neituimg.clear();
-//                neituimg.addAll(photos);
-//                neituimg.add("");
-//                adapter.addData(neituimg);
-            }
+//        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
+//            if (data != null) {
+//                photos   = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+////                neituimg.clear();
+////                neituimg.addAll(photos);
+////                neituimg.add("");
+////                adapter.addData(neituimg);
+//            }
+//        }
+
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
         }
+        switch (requestCode) {
+            case 1000:
+                //shineitut.setPhoto(photos);
+               // FabuFragment fabuFragment =  tabfragment.get(2);
+                List<Fragment>  fragments =  getSupportFragmentManager().getFragments();
+               // toast(fragments.size()+"");
+                FabuFragment fabuFragment = (FabuFragment) fragments.get(0);
+                fabuFragment.getChuZuFragment().getMySelectPhotoView().setPhoto(photos);
+                break;
+
+        }
+    }
+
+
+
+
+    public void setPhotos(){
+
     }
 }

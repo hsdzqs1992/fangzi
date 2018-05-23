@@ -18,6 +18,7 @@
             android:orientation="horizontal">
             
             <TextView
+                android:id="@+id/xinfang"
                 android:background="@drawable/shape_tuijian"
                 android:gravity="center"
                 android:textColor="@color/colorPrimary"
@@ -25,6 +26,8 @@
                 android:layout_width="75dp"
                 android:layout_height="30dp" />
             <TextView
+                android:id="@+id/ershoufang"
+                android:layout_marginLeft="-1dp"
                 android:background="@drawable/shape_tuijian2"
                 android:gravity="center"
                 android:textColor="#fff"
@@ -32,6 +35,8 @@
                 android:layout_width="75dp"
                 android:layout_height="30dp" />
             <TextView
+                android:id="@+id/zufang"
+                android:layout_marginLeft="-1dp"
                 android:background="@drawable/shape_tuijian2"
                 android:gravity="center"
                 android:textColor="#fff"
@@ -46,6 +51,7 @@
         android:layout_height="40dp">
 
         <LinearLayout
+            android:id="@+id/quyu"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -63,6 +69,7 @@
                 android:src="@drawable/sanjiao"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/jiage"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -80,6 +87,7 @@
                 android:src="@drawable/sanjiao"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/huxing"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -97,6 +105,7 @@
                 android:src="@drawable/sanjiao"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/video"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -115,5 +124,9 @@
         </LinearLayout>
     </LinearLayout>
 
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager"></android.support.v4.view.ViewPager>
 
 </LinearLayout>

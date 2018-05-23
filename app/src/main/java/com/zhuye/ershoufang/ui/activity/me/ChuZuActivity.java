@@ -13,10 +13,6 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.me.ChuZuAdapter;
 import com.zhuye.ershoufang.base.BaseActivity;
-import com.zhuye.ershoufang.ui.activity.AddErShouActivity;
-import com.zhuye.ershoufang.ui.activity.AddGongChangActivity;
-import com.zhuye.ershoufang.ui.activity.AddShangPuActivity;
-import com.zhuye.ershoufang.ui.activity.AddXieZiActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -84,7 +80,7 @@ public class ChuZuActivity extends BaseActivity {
                     popupWindow.dismiss();
                 }
                 //title.setText("收入记录");
-                start(AddErShouActivity.class);
+                start(AddChuZ1Activity.class);
                 type = 0;
 
             }
@@ -96,7 +92,7 @@ public class ChuZuActivity extends BaseActivity {
                     popupWindow.dismiss();
                 }
                 //title.setText("收入记录");
-                start(AddXieZiActivity.class);
+                start(AddChuZu2Activity.class);
                 type = 0;
 
             }
@@ -110,7 +106,7 @@ public class ChuZuActivity extends BaseActivity {
                 }
                 //title.setText("收入记录");
                 type = 0;
-                start(AddShangPuActivity.class);
+                start(AddChuZu3Activity.class);
             }
         });
 
@@ -120,7 +116,7 @@ public class ChuZuActivity extends BaseActivity {
                 if (popupWindow.isShowing()) {
                     popupWindow.dismiss();
                 }
-                start(AddGongChangActivity.class);
+                start(AddChuZu4Activity.class);
             }
         });
         //popupWindow.showAtLocation(vie, Gravity.BOTTOM, 0, 0);

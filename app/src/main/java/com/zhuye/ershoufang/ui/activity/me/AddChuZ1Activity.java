@@ -2,7 +2,6 @@ package com.zhuye.ershoufang.ui.activity.me;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -39,17 +38,36 @@ import com.zhuye.ershoufang.bean.XiaoQuBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.utils.FilesUtil;
+import com.zhuye.ershoufang.weidtet.MyLinTv2View;
+import com.zhuye.ershoufang.weidtet.MySelectPhotoView;
+import com.zhuye.ershoufang.weidtet.MySelectTvView;
+import com.zhuye.ershoufang.weidtet.UpPhotoCallBack;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.iwf.photopicker.PhotoPicker;
 
-public class AddChuZ1Activity extends BaseActivity {
+public class AddChuZ1Activity extends BaseActivity implements UpPhotoCallBack {
+
+    private static final int SHINEITU = 1024;
+    @BindView(R.id.haoba)
+    TextView haoba;
+    @BindView(R.id.zujin)
+    TextView zujin;
+    @BindView(R.id.zulinfangshi)
+    TextView zulinfangshi;
+    @BindView(R.id.peizhixin)
+    MySelectTvView peizhixin;
+    @BindView(R.id.yaoqiu)
+    MyLinTv2View yaoqiu;
+    @BindView(R.id.fangwuyoushi)
+    MyLinTv2View fangwuyoushi;
+    @BindView(R.id.shineitu)
+    MySelectPhotoView shineitu;
 
     @Override
     protected int getResId() {
@@ -166,7 +184,6 @@ public class AddChuZ1Activity extends BaseActivity {
     @BindView(R.id.weituo)
     Button weituo;
 
-    
 
     View vie;
     ImageAdapter adapter;
@@ -263,34 +280,15 @@ public class AddChuZ1Activity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PhotoPicker.REQUEST_CODE) {
-            if (data != null) {
-                photos =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                neituimg.clear();
-                neituimg.addAll(photos);
-                neituimg.add("");
-                adapter.addData(neituimg);
-            }
-        } else if (resultCode == RESULT_OK && requestCode == SELECTADAPTER) {
-            if (data != null) {
-                photos2 =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                huxingtuimg.clear();
-                huxingtuimg.addAll(photos2);
-                huxingtuimg.add("");
-                adapter2.addData(huxingtuimg);
-            }
-        } else if (resultCode == RESULT_OK && requestCode == SELECTADAPTER3) {
-            if (data != null) {
-                photos3 =
-                        data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                huanjingimg.clear();
-                huanjingimg.addAll(photos3);
-                huanjingimg.add("");
-                adapter3.addData(huanjingimg);
-
-            }
+        ArrayList<String> photos = new ArrayList<>();
+        if (data != null) {
+            photos =
+                    data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+        }
+        switch (requestCode) {
+            case 1000:
+                shineitu.setPhoto(photos);
+                break;
         }
     }
 
@@ -356,30 +354,40 @@ public class AddChuZ1Activity extends BaseActivity {
             case R.id.fabu:
                 //  handleshiNei();
                 if (checkEmpty(title, "请输入标题") &&
-                        checkEmpty(shoujia, "请输入价格") &&
+                        checkEmpty(shoujia, "请输入租金") &&
                         checkEmpty(mianji, "请输入面积") &&
-                        checkEmpty(xiaoqu, "请输入小区名称") &&
+                       // checkEmpty(xiaoqu, "请输入小区名称") &&
+                        checkEql(xiaoqumingc, "小区名称", "请输入小区名称") &&
                         checkEql(fangwuleixing, "房屋类型", "请输入房屋类型") &&
                         checkEql(zhuangxiuleixing, "装修类型", "请输入装修类型") &&
-                        checkEql(niamdai, "年代", "请输入年代") &&
                         checkEql(chaoxiang1, "朝向", "请输入朝向") &&
-                        checkEql(shoufu2, "万元", "请输入首付价格") &&
-                        checkEql(fangjia1, "万元", "请输入单位价格") &&
-                        checkEql(yuegong1, "万元", "请输入月供金额") &&
-                        checkEmpty(lianxiren, "请输入联系人姓名") &&
+                        checkEql(niamdai, "年代", "请输入年代") &&
                         checkEmpty(jiceng, "请输入楼层") &&
                         checkEmpty(gong, "请输入总楼层") &&
-                        //checkEmpty(dianhua, "请输入联系人电话") &&
-                        checkEmpty(maidian, "请输入卖点") &&
-                        checkEmpty(xintai, "请输入业主心态") &&
-                        checkArray(photos, "请上传室内图") &&
-                        checkArray(photos2, "请上传户型图") &&
-                        checkArray(photos3, "请上传环境图") &&
+                        checkEql(zujin, "租金押付", "请输入租金押付") &&
+                        checkEql(zulinfangshi, "租赁方式", "请输入租赁方式") &&
                         checkEql(dizhi, "请输入省份", "请输入省份") &&
                         checkEql(dizhi2, "请输入市", "请输入市") &&
                         checkEql(dizhi3, "请输入区", "请输入区") &&
-                        checkEql(dizhi4, "请输入街道", "请输入街道")) {
-                    handleshiNei();
+                        checkEql(dizhi4, "请输入街道", "请输入街道")&&
+                        checkEmpty(xiaoqu, "请输入详细地址") &&
+                        checkEmpty(lianxiren, "请输入联系人姓名") &&
+                        checkEmpty(dianhua, "请输入联系人电话") &&
+                        yaoqiu.getString()&&
+                        fangwuyoushi.getString()&&
+                        shineitu.hasPhoto()
+//                        checkEql(shoufu2, "万元", "请输入首付价格") &&
+//                        checkEql(fangjia1, "万元", "请输入单位价格") &&
+//                        checkEql(yuegong1, "万元", "请输入月供金额") &&
+                    //checkEmpty(dianhua, "请输入联系人电话") &&
+//                        checkEmpty(maidian, "请输入卖点") &&
+//                        checkEmpty(xintai, "请输入业主心态") &&
+//                        checkArray(photos, "请上传室内图") &&
+//                        checkArray(photos2, "请上传户型图") &&
+//                        checkArray(photos3, "请上传环境图")
+                       ) {
+                   // handleshiNei();
+                    shineitu.upimg(AddChuZ1Activity.this,SHINEITU);
                 }
                 break;
             case R.id.weituo:
@@ -471,6 +479,8 @@ public class AddChuZ1Activity extends BaseActivity {
     }
 
     private void submit() {
+
+
 //        String token,  String title,
 //        int cate_id,  String city_id,
 //                String area_id,  String business_id,
@@ -556,33 +566,45 @@ public class AddChuZ1Activity extends BaseActivity {
 //                arraytoString(imgBeanhuanjing.getData().getPhoto()),
 //                AddChuZ1Activity.this, TIJIAO);
 //
-        CommonApi.getInstance().esfabu(
-                getToken(),
-                getString(title),
-                getString(xiaoqu),
-                getIndex(xiaoqua, dizhi3.getText().toString().trim()),
-                getString(lianxiren)
-                , getString(dianhua),
-                getString(fangjia1),
-                getString(jiceng)
-                , getString(gong),
-                "",
-                getString(shoujia),
-                getString(mianji),
-                getString(shoufu2),
-                getString(yuegong1),
+//        CommonApi.getInstance().esfabu(
+//                getToken(),
+//                getString(title),
+//                getString(xiaoqu),
+//                getIndex(xiaoqua, dizhi3.getText().toString().trim()),
+//                getString(lianxiren)
+//                , getString(dianhua),
+//                getString(fangjia1),
+//                getString(jiceng)
+//                , getString(gong),
+//                "",
+//                getString(shoujia),
+//                getString(mianji),
+//                getString(shoufu2),
+//                getString(yuegong1),
+//                getIndex(faBuSelectBean, 1, getString(fangwuleixing)),
+//                getIndex(faBuSelectBean, 2, getString(chaoxiang1)),
+//                getIndex(faBuSelectBean, 3, getString(zhuangxiuleixing)),
+//
+//                getIndex(faBuSelectBean, 4, getString(niamdai)),
+//                "", "",
+//                getString(maidian),
+//                getString(xintai),
+//                arraytoString(imgBeannei.getData().getPhoto()),
+//                arraytoString(imgBeanhuxing.getData().getPhoto()),
+//                arraytoString(imgBeanhuanjing.getData().getPhoto()),
+//                AddChuZ1Activity.this, TIJIAO);
+        CommonApi.getInstance().czfabu(getToken(),getString(title),
+                getString(xiaoqu),"",
+                getString(lianxiren),
+                getString(dianhua),
+                getString(jiceng),
+                getString(gong),"",""
+                ,getString(shoujia),getString(mianji),"","",
                 getIndex(faBuSelectBean, 1, getString(fangwuleixing)),
-                getIndex(faBuSelectBean, 2, getString(chaoxiang1)),
-                getIndex(faBuSelectBean, 3, getString(zhuangxiuleixing)),
-
-                getIndex(faBuSelectBean, 4, getString(niamdai)),
-                "", "",
-                getString(maidian),
-                getString(xintai),
-                arraytoString(imgBeannei.getData().getPhoto()),
-                arraytoString(imgBeanhuxing.getData().getPhoto()),
-                arraytoString(imgBeanhuanjing.getData().getPhoto()),
-                AddChuZ1Activity.this, TIJIAO);
+                getIndex(faBuSelectBean, 3, getString(zhuangxiuleixing))
+        ,"","",peizhixin.getPhoto(),"",
+                fangwuyoushi.getContent(),shineitu.getPhoto2(),yaoqiu.getContent()
+        ,AddChuZ1Activity.this, TIJIAO);
     }
 
     public String getIndex(FaBuSelectBean bean, int pos, String value) {
@@ -935,7 +957,6 @@ public class AddChuZ1Activity extends BaseActivity {
             case TIJIAO:
                 toast(base.getMessage());
                 break;
-
             case SELECT:
                 faBuSelectBean = (FaBuSelectBean) base;
                 break;
@@ -975,13 +996,21 @@ public class AddChuZ1Activity extends BaseActivity {
         CommonApi.getInstance().select(3, AddChuZ1Activity.this, SELECT, false);
         //CommonApi.getInstance().province(AddChuZ1Activity.this, PROVINCE, false);
         CommonApi.getInstance().xiaoqu(AddChuZ1Activity.this, XIAOQU, false);
+        shineitu.REQUESTCODE=1000;
     }
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    public void success(ImgBean imgBean, int code) {
+        switch (code){
+            case SHINEITU:
+                submit();
+                break;
+        }
+    }
+
+    @Override
+    public void onError(String msg, int code) {
+
     }
 }

@@ -35,10 +35,10 @@
         app:stl_defaultTabTextColor="#999"
         app:stl_defaultTabTextSize="14sp"
         app:stl_defaultTabTextHorizontalPadding="0dp"
-        app:stl_defaultTabTextMinWidth="135dp"
+        app:stl_defaultTabTextMinWidth="175dp"
         app:stl_distributeEvenly="false"
         app:stl_clickable="true"
-        app:stl_titleOffset="100dp"
+        app:stl_titleOffset="150dp"
         app:stl_drawDecorationAfterTab="false"
         />
     <android.support.v4.view.ViewPager

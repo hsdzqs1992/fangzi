@@ -271,9 +271,9 @@ public class CommonApi {
 
 
 
-    public void chuzufabu( String life_id,  String title,
-                      int cate_id,  int city_id,
-                      int area_id,  int business_id,
+    public void chuzufabu(  String token,String life_id,  String title,
+                      int cate_id,  String city_id,
+                           String area_id,  String business_id,
                       String lng,  String lat,
                       String addr,  String xiaoqu,
                       String contact, String mobile,
@@ -288,7 +288,7 @@ public class CommonApi {
                       String detail,  String dd,
                       String photo,  String yaoqiu
                      , BaseView baseView, int requestcode){
-        sub(service.chuzufabu(life_id,title,cate_id,city_id
+        sub(service.chuzufabu(token,life_id,title,cate_id,city_id
                 ,area_id,business_id,lng,lat
                 ,addr,xiaoqu,contact,mobile,text1,text2,text3,text4,num1,num2,num3,num4,select1,select2,select3,select4,select5,select6,fj_select5,fj_select6
                 ,detail,dd,photo,yaoqiu),baseView,requestcode);
@@ -897,6 +897,9 @@ public class CommonApi {
         sub(service.homeindex(area_id),baseView,requestcode);
     }
 
+    public void newhouse_detail(String id,BaseView baseView,int requestcode){
+        sub(service.newhouse_detail(id),baseView,requestcode);
+    }
 
     public void view_loupan(String token,BaseView baseView,int requestcode){
         sub(service.view_loupan(token),baseView,requestcode);
@@ -927,10 +930,18 @@ public class CommonApi {
      */
     public void indexnewhouse( String area_id,
                               String business_id,
-                              int price1,
-                              int price2,
+                              String price1,
+                               String price2,
                               int select,int page,BaseView baseView,int requestcode){
         sub(service.indexnewhouse( area_id,business_id, price1, price2, select,page),baseView,requestcode);
+    }
+
+    public void indexnewhouse2( String area_id,
+                               String business_id,
+                               String price1,
+                               String price2,
+                               int select,int page,BaseView baseView,int requestcode){
+        sub(service.indexnewhouse2( area_id,business_id, price1, price2, select,page),baseView,requestcode);
     }
 
     public void newhouse_edit(String token,String id,BaseView baseView,int requestcode){
@@ -1064,5 +1075,62 @@ public class CommonApi {
     public void new_mobile(String token, String mobile,
                                String code,BaseView baseView,int requestcode){
         sub(service.new_mobile(token,mobile,code),baseView,requestcode);
+    }
+
+
+    public void czfabu( String token,
+                       String title,
+                         String addr,
+                         String xiaoqu_id,
+                       String contact,
+                         String mobile,
+                         String text1, String text2,
+
+                       String text3,String text4,//
+                        String num1, String num2,
+
+                        String num3, String num4,//
+
+                         String select1, String select2,
+                       String select3,String select4,
+                        String select5,
+
+
+                        String fj_select5,
+                        String detail,
+
+                       String photo,
+                         String yaoqiu,BaseView baseView, int requestcode){
+        sub(service.czfabu( token,
+                 title,
+                 addr,
+                 xiaoqu_id,
+                 contact,
+                 mobile,
+                 text1,  text2,
+                text3, text4,//
+                 num1,  num2,
+                num3,  num4,//
+                select1,  select2,
+                 select3, select4,
+                 select5,
+                fj_select5,
+                 detail,
+                photo,
+                 yaoqiu),baseView,requestcode);
+    }
+
+
+    public void collect(  String token,
+                             String type,
+                             String life_id,BaseView baseView,int requestcode){
+        sub(service.collect(token,type,life_id),baseView,requestcode);
+    }
+
+    public void find_xiaoqu(  String area_id,
+                              String business_id,
+                              String price,
+                               int page,BaseView baseView,int requestcode){
+        sub(service.find_xiaoqu(area_id,business_id,price,page),baseView,requestcode);
     }
 }

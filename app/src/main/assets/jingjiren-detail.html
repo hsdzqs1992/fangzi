@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/jingjiren-detail.css" />
 	</head>
 
-	<body>
+	<body id="app">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
 			<h1 class="mui-title">经纪人主页</h1>
@@ -24,7 +24,8 @@
 			</div>
 			<div class="lists_lefts f-l">
 				<div class="lists_left_user">
-					<p>石小勇</p>
+					<!--<p>{{userInfo.true_name}}</p>-->
+					<p class="name">经纪人</p>
 				</div>
 				<div class="lists_left_star clear">
 					<div class="star_lists_shi f-l">
@@ -44,7 +45,7 @@
 					</div>
 				</div>
 				<div class="lists_left_referral">
-					<p>电厂路 我爱我家中介</p>
+					<p>电厂路 <span class="intro">我爱我家中介</span></p>
 				</div>
 			</div>
 			<div class="lists_rights f-r">
@@ -55,7 +56,7 @@
 		<!--经纪人服务-->
 		<div class="detail_type clear b-f">
 			<div class="detail_type_left f-l">
-				<p>1-3年</p>
+				<p class="year">1-3年</p>
 				<p>服务年限</p>
 			</div>
 			<div class="detail_type_right f-l">
@@ -67,7 +68,7 @@
 		<div class="detail_referral b-f">
 			<div class="detail_referral_top clear">
 				<div class="f-l detail_referral_top_range">
-					<span>主营范围 ：</span>
+					<span class="fanwei">主营范围 ：</span>
 				</div>
 				<div class="f-l detail_referral_top_ranges">
 					<span>金水区-cbd</span>
@@ -116,5 +117,97 @@
 		</div>
 	</body>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script type="text/javascript" src="js/vue.min.js"></script>-->
+	<!--<script type="text/javascript" src="js/axios.min.js"></script>-->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	<script type="text/javascript" >
+
+
+        // $.post(url,{
+        //     user_id:user_ida
+        // },function (data) {
+			// console.log(data)
+        // })
+
+		// new Vue({
+		// 	el:'#app',
+		// 	data:{
+		// 	    userInfo:null
+		// 	},
+        //
+		// 	created(){
+         //        // axios({
+		// 			// method:'post',
+		// 			// url:url,
+		// 			// data:{
+		// 			//     user_id:user_ida
+		// 			// },
+         //        //     responseType:'json'
+         //        // }).then(function (data) {
+		// 			// console.log(data)
+         //        // }).catch(function (error) {
+         //        //     console.log(error);
+         //        // });
+        //
+		// 		var that = this
+        //
+         //        $.ajax({
+         //        	url:url,
+         //           type:"post",
+         //        	timeout:2000,
+         //           data:{
+         //               "user_id":user_ida
+         //           },
+         //           datatype:"json",
+         //        	success:function (data) {
+         //               //console.log(data)
+         //        		var result = JSON.parse(data)
+         //        		if(result.code ==200){
+         //        		    let tudata = result.data;
+        //
+		// 					that.userInfo = result.data;
+         //                    console.log(that.userInfo)
+         //        		}
+         //           },
+         //        	error:function () {
+         //        		console.log('shiba')
+         //           }
+         //        })
+		// 	}
+		// })
+
+		$(function () {
+            var baseurl = 'http://192.168.1.10/jdhouse/'
+            var url = baseurl+'index.php/app/agent/agent_detail'
+            var user_ida = 107
+		    $.ajax({
+                url:url,
+                type:"post",
+                timeout:2000,
+                data:{
+                    "user_id":user_ida
+                },
+                datatype:"json",
+                success:function (data) {
+                    //console.log(data)
+                    var result = JSON.parse(data)
+                    if(result.code ==200){
+                        let tudata = result.data;
+                        console.log(tudata)
+
+						$('.name').text(tudata.true_name)
+                        $('.year').text(tudata.year)
+						$('.intro').text(tudata.intro)
+						$('.fanwei').text(tudata.fanwei)
+                    }
+                },
+                error:function () {
+                    console.log('shiba')
+                }
+            })
+		})
+
+	</script>
 
 </html>

@@ -1,5 +1,7 @@
 .banner {
 	position: relative;
+	width: 100%;
+	height: 5.333333333rem;
 }
 
 .swiper-wrapper img {

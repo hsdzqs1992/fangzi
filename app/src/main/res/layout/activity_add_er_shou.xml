@@ -634,7 +634,7 @@
                 android:layout_height="wrap_content"
                 app:hint="请输入单位房价"
                 app:tx1="单位房价"
-                app:tx2="万元²"
+                app:tx2="万元"
                 >
             </com.zhuye.ershoufang.weidtet.MyInputView>
 

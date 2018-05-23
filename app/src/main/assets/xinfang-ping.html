@@ -15,54 +15,235 @@
 			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
 			<h1 class="mui-title">用户评论</h1>
 		</header>
-		<div class="center mui-content b-f">
-			<div class="lists">
-				<div class="lists_top clear">
-					<img src="images/45.png"class="f-l"/>
-					<span class="f-l">石小勇</span>
-					<span class="f-r">2018-03-03</span>
-				</div>
-				<div class="lists_bom">
-					<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
-				</div>
-			</div>
-			<div class="lists">
-				<div class="lists_top clear">
-					<img src="images/45.png"class="f-l"/>
-					<span class="f-l">石小勇</span>
-					<span class="f-r">2018-03-03</span>
-				</div>
-				<div class="lists_bom">
-					<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
-				</div>
-			</div>
-			<div class="lists">
-				<div class="lists_top clear">
-					<img src="images/45.png"class="f-l"/>
-					<span class="f-l">石小勇</span>
-					<span class="f-r">2018-03-03</span>
-				</div>
-				<div class="lists_bom">
-					<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
-				</div>
-			</div>
-			<div class="lists">
-				<div class="lists_top clear">
-					<img src="images/45.png"class="f-l"/>
-					<span class="f-l">石小勇</span>
-					<span class="f-r">2018-03-03</span>
-				</div>
-				<div class="lists_bom">
-					<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>
-				</div>
-			</div>
+		<div class="center mui-content b-f comment">
+			<!--<div class="lists ">-->
+				<!--<div class="lists_top clear">-->
+					<!--<img src="images/toupiao.png"class="f-l yuanjiao"/>-->
+					<!--<span class="f-l">石小勇</span>-->
+					<!--<span class="f-r">2018-03-03</span>-->
+				<!--</div>-->
+				<!--<div class="lists_bom">-->
+					<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="lists">-->
+				<!--<div class="lists_top clear">-->
+					<!--<img src="images/45.png"class="f-l"/>-->
+					<!--<span class="f-l">石小勇</span>-->
+					<!--<span class="f-r">2018-03-03</span>-->
+				<!--</div>-->
+				<!--<div class="lists_bom">-->
+					<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="lists">-->
+				<!--<div class="lists_top clear">-->
+					<!--<img src="images/45.png"class="f-l"/>-->
+					<!--<span class="f-l">石小勇</span>-->
+					<!--<span class="f-r">2018-03-03</span>-->
+				<!--</div>-->
+				<!--<div class="lists_bom">-->
+					<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="lists">-->
+				<!--<div class="lists_top clear">-->
+					<!--<img src="images/45.png"class="f-l"/>-->
+					<!--<span class="f-l">石小勇</span>-->
+					<!--<span class="f-r">2018-03-03</span>-->
+				<!--</div>-->
+				<!--<div class="lists_bom">-->
+					<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p>-->
+				<!--</div>-->
+			<!--</div>-->
 		</div>
 		<!--底部评论-->
 		<div class="input_btn clear">
-			<input type="text"placeholder="多行输入" class="f-l"/>
-			<button class="f-r">发送</button>
+			<input type="text"placeholder="多行输入"  class="f-l neirong"/>
+			<button class="f-r fabiao">发送</button>
 		</div>
 	</body>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(function () {
+
+			    var token = java.getToken1()
+				var base = 'http://192.168.1.10/jdhouse/'
+
+               // var token = "asdf";
+                function GetRequest() {
+                    var url = location.search; //获取url中"?"符后的字串
+                    var theRequest = new Object();
+                    if (url.indexOf("?") != -1) {
+                        var str = url.substr(1);
+                        strs = str.split("&");
+                        for (var i = 0; i < strs.length; i++) {
+                            theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                        }
+                    }
+                    return theRequest;
+                }
+
+
+				// var newhouse_id = GetRequest('id')
+				var ur = GetRequest();
+                var newhouse_id = ur['id']
+				var page = 1
+
+
+
+				// function getFirstComment(){
+				// 	$.post("http://192.168.1.18/jdhouse/index.php/app/indexnewhouse/comment", {
+                 //        "newhouse_id":newhouse_id,
+                 //        "page":page
+				// 		},function (data) {
+                //
+                 //        }
+				// 	)
+				// }
+
+				function shuaxin(page) {
+                    $.post(base+"index.php/app/indexnewhouse/comment", {
+                            "newhouse_id":21,
+                            "page":page
+                        },function (data) {
+                        console.log(data)
+
+                        var dat = JSON.parse(data).data
+                        console.log(dat.length)
+                        var pingitem = ''
+                        for (var i = 0; i < dat.length; i++){
+                            //console.log(dat[i])
+                           // console.log(typeof dat[i])
+                            pingitem+='<div class="lists ">' +
+                                '<div class="lists_top clear">' +
+                                '<img src="'+dat[i].face+'"class="f-l"/>' + //==null?'images/45.png':'dat[i].face'
+                                '<span class="f-l">'+dat[i].nickname+'</span>' +
+                                '<span class="f-r">'+dat[i].create_time+'</span>' +
+                                '</div>' +
+                                '<div class="lists_bom">' +
+                                '<p>'+dat[i].comment+'</p>' +
+                                '</div>' +
+                                '</div>'
+                        }
+
+
+                        $(".comment").html(pingitem)
+                        }
+                    )
+                }
+
+                shuaxin(1)
+
+				function fabiao(token,neiron,new_id){
+                    $.ajax({
+                        url:base+"index.php/app/indexnewhouse/add_comment",
+                        type:"post",
+                        data:{
+                            "token":token,
+                            "comment":neiron,
+                            "newhouse_id":new_id
+                        },
+                        datatype:"json",
+                        success:function (data) {
+                            // console.log(typeof data)
+                            // console.log(JSON.parse(data).code)
+                            // console.log(data.code)
+                            // mui.toast("data")
+                            var da = JSON.parse(data)
+                            if(da.code == 200){
+                                mui.toast("发表成功")
+                                shuaxin(1);
+                            }else {
+                                mui.toast("发表失败")
+                            }
+
+                        },
+
+                        error:function () {
+                            mui.toast("发表失败")
+
+                        }
+                    })
+                }
+
+
+				// $.ajax({
+                 //    url:"http://192.168.1.18/jdhouse/index.php/app/indexnewhouse/comment",
+                 //    type:"post",
+                 //    data:{
+                 //        "newhouse_id":newhouse_id,
+				// 		"page":page
+                 //    },
+                 //    datatype:"json",
+				// 	success:function (data) {
+                 //        var json = eval('(' + data + ')');
+                 //        var datas = json.data;
+                 //        var commenlist = ''
+				// 		for(var i = 0;i<datas.length;i++){
+                 //            commenlist+='<div class="lists"> <div class="lists_top clear"> <img src="images/45.png"class="f-l"/> ' +
+                 //                '<span class="f-l">石小勇</span> ' +
+                 //                '<span class="f-r">2018-03-03</span> </div>' +
+                 //                ' <div class="lists_bom"> ' +
+                 //                '<p>如果你无法简洁的表达你的想法，那只说明你还不够了解它。</p> </div>' +
+                 //                ' </div>'
+				// 		}
+                //
+				// 		$(".comment").appendChild(commenlist)
+                 //    },
+                 //    error:function () {
+                 //        alert("提交失败！");
+                 //    }
+				// })
+
+				$(".fabiao").click(function () {
+					var neirong =  $(".neirong").val()
+					//mui.toast(neirong)
+					if(neirong==""){
+						mui.toast("请输入内容")
+					}else {
+					    //mui.toast(token+neirong+newhouse_id)
+
+                        fabiao(token,neirong,newhouse_id)
+                       //  $.ajax({
+                       //      "url":"http://192.168.1.18/jdhouse/index.php/app/indexnewhouse/add_comment",
+                       //      "type":"post",
+                       //
+                       //  })
+                       //
+                       //
+                       // $.post("http://192.168.1.18/jdhouse/index.php/app/indexnewhouse/add_comment",{
+					    //    "token":token,
+						//    "comment":neirong,
+						//    "newhouse_id":newhouse_id
+                       // },function (data) {
+                       //     mui.toast('发表成功')
+						//    var json = eval('(' + data + ')');
+                       //     var datas = json.data;
+						//    if(json.code==200){
+                       //         mui.toast("发表成功")
+						//    }else {
+                       //         mui.toast("发表失败")
+						//    }
+                       //
+                       //     if(datas.code==200){
+                       //         mui.toast("发表成功1")
+						// 	   getFirstComment()
+                       //     }else {
+                       //         mui.toast("发表失败1")
+                       //     }
+                       //    // mui.toast("发表失败!!!")
+                       //     // mui.toast("发表成功")
+                       //     // mui.message("132")
+                       //     // //mui.toast("请输入内容")
+                       // },"json")
+					}
+                })
+            })
+
+
+
+		</script>
 </html>

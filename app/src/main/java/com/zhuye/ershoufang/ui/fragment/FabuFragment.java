@@ -9,6 +9,7 @@ import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.fabu.FaBuAdapter;
 import com.zhuye.ershoufang.base.BaseFragment;
 import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.ui.fragment.fabu.ChuZuFragment;
 
 import butterknife.BindView;
 import butterknife.Unbinder;
@@ -34,10 +35,10 @@ public class FabuFragment extends BaseFragment {
     public void success(int requestcode, Base o) {
 
     }
-
+    FaBuAdapter angAdapter;
     @Override
     protected void initView() {
-        FaBuAdapter angAdapter = new FaBuAdapter(getChildFragmentManager(),getActivity());
+        angAdapter= new FaBuAdapter(getChildFragmentManager(),getActivity());
         messageViewpager.setAdapter(angAdapter);
         viewpagertab.setViewPager(messageViewpager);
         hide(subtitle);
@@ -51,6 +52,8 @@ public class FabuFragment extends BaseFragment {
     }
 
 
-
+    public ChuZuFragment getChuZuFragment(){
+         return  (ChuZuFragment) angAdapter.getItem(2);
+    }
 
 }

@@ -10,6 +10,8 @@ import com.zhuye.ershoufang.bean.ChanPinBean;
 import com.zhuye.ershoufang.bean.ChuZuListBean;
 import com.zhuye.ershoufang.bean.CityBean;
 import com.zhuye.ershoufang.bean.Common2Bean;
+import com.zhuye.ershoufang.bean.Common3Bean;
+import com.zhuye.ershoufang.bean.Common5Bean;
 import com.zhuye.ershoufang.bean.CommonBean;
 import com.zhuye.ershoufang.bean.CommonListBean;
 import com.zhuye.ershoufang.bean.CommonObjectBean;
@@ -47,7 +49,9 @@ import com.zhuye.ershoufang.bean.UploadImgBean;
 import com.zhuye.ershoufang.bean.WenDaBean;
 import com.zhuye.ershoufang.bean.WenDadetailBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean;
+import com.zhuye.ershoufang.bean.XiaoQuBean2;
 import com.zhuye.ershoufang.bean.XinFangBean;
+import com.zhuye.ershoufang.bean.XinFangDetailBean;
 import com.zhuye.ershoufang.bean.ZhiDingBean;
 import com.zhuye.ershoufang.bean.ZhuangxiuJiaJuBean;
 import com.zhuye.ershoufang.bean.ZiLiaoBean;
@@ -366,6 +370,40 @@ public interface CommonApiService {
                           @Field("pph") String pph);
 
 
+
+
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.CZFABU)
+    Observable<Base> czfabu(@Field("token") String token,
+                            @Field("title") String title,
+                            @Field("addr") String addr,
+                            @Field("xiaoqu_id") String xiaoqu_id,
+                            @Field("contact") String contact,
+                            @Field("mobile") String mobile,
+                            @Field("text1") String text1,@Field("text2") String text2,
+
+                            @Field("text3") String text3,@Field("text4") String text4,//
+                            @Field("num1") String num1,@Field("num2") String num2,
+
+                            @Field("num3") String num3,@Field("num4") String num4,//
+
+                            @Field("select1") String select1,@Field("select2") String select2,
+                            @Field("select3") String select3,@Field("select4") String select4,
+                            @Field("select5") String select5,
+
+
+                            @Field("fj_select5") String fj_select5,
+                            @Field("detail") String detail,
+
+                            @Field("photo") String photo,
+                            @Field("yaoqiu") String yaoqiu
+                            );
+
+
+
+
+
     @FormUrlEncoded
     @POST(NetWorkUrl.EDIT)
     Observable<Base> edit(@Field("life_id") String life_id, @Field("title") String title,
@@ -390,20 +428,29 @@ public interface CommonApiService {
 
     @FormUrlEncoded
     @POST(NetWorkUrl.CHUZUFABU)
-    Observable<Base> chuzufabu(@Field("life_id") String life_id, @Field("title") String title,
-                          @Field("cate_id") int cate_id,@Field("city_id") int city_id,
-                          @Field("area_id") int area_id,@Field("business_id") int business_id,
+    Observable<Base> chuzufabu( @Field("token") String token,@Field("life_id") String life_id, @Field("title") String title,
+                          @Field("cate_id") int cate_id,
+                               @Field("city_id") String city_id,
+                                @Field("area_id") String area_id,
+                               @Field("business_id") String business_id,
                           @Field("lng") String lng,@Field("lat") String lat,
+
                           @Field("addr") String addr,@Field("xiaoqu") String xiaoqu,
+
                           @Field("contact") String contact,@Field("mobile") String mobile,
+
                           @Field("text1") String text1,@Field("text2") String text2,
                           @Field("text3") String text3,@Field("text4") String text4,
+
                           @Field("num1") String num1,@Field("num2") String num2,
                           @Field("num3") String num3,@Field("num4") String num4,
+
                           @Field("select1") String select1,@Field("select2") String select2,
                           @Field("select3") String select3,@Field("select4") String select4,
                           @Field("select5") String select5,@Field("select6") String select6,
+
                           @Field("fj_select5") String fj_select5,@Field("fj_select6") String fj_select6,
+
                           @Field("detail") String detail,@Field("dd") String dd,
                           @Field("photo") String photo,@Field("yaoqiu") String yaoqiu);
 
@@ -960,7 +1007,7 @@ public interface CommonApiService {
 
     @FormUrlEncoded
     @POST(NetWorkUrl.INDEX)
-    Observable<Base> index(
+    Observable<CommonListBean<Common3Bean>> index(
             @Field("cate_id") String cate_id,@Field("area_id") String area_id,
             @Field("page") int page,@Field("business_id") String business_id,
             @Field("price1") String price1,@Field("price2") String price2,
@@ -1159,6 +1206,11 @@ public interface CommonApiService {
     );
 
     @FormUrlEncoded
+    @POST(NetWorkUrl.NEWHOUSE_DETAIL)
+    Observable<CommonObjectBean<XinFangDetailBean>> newhouse_detail(@Field("id") String id
+    );
+
+    @FormUrlEncoded
     @POST(NetWorkUrl.VIEW_LOUPAN)
     Observable<CommonListBean<LouPanBeans>> view_loupan(@Field("token") String token
     );
@@ -1174,8 +1226,20 @@ public interface CommonApiService {
     Observable<CommonListBean<Common2Bean>>
     indexnewhouse(@Field("area_id") String area_id,
                   @Field("business_id") String business_id,
-                   @Field("price1") int price1,
-                  @Field("price2") int price2,
+                   @Field("price1") String price1,
+                  @Field("price2") String price2,
+                  @Field("select") int select,
+                  @Field("page") int page
+    );
+
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.INDEXNEWHOUSE)
+    Observable<CommonListBean<Common5Bean>>
+    indexnewhouse2(@Field("area_id") String area_id,
+                  @Field("business_id") String business_id,
+                  @Field("price1") String price1,
+                  @Field("price2") String price2,
                   @Field("select") int select,
                   @Field("page") int page
     );
@@ -1283,4 +1347,19 @@ public interface CommonApiService {
                               @Field("yjbi") String yjbi,
                               @Field("jingli") String jingli
     );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.COLLECT)
+    Observable<Base> collect(
+            @Field("token") String token,
+            @Field("type") String type,
+            @Field("life_id") String life_id);
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.FIND_XIAOQU)
+    Observable<CommonListBean<XiaoQuBean2>> find_xiaoqu(
+            @Field("area_id") String area_id,
+            @Field("business_id") String business_id,
+            @Field("price") String price,
+            @Field("page") int page);
 }

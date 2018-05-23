@@ -3,9 +3,12 @@ package com.zhuye.ershoufang.ui.activity.common;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -36,15 +39,21 @@ public abstract class Common2Activity<T> extends BaseActivity<T> {
             case LIST:
                 listData = (CommonListBean)o;
                 list = listData.data;
+                if(listData.getData().size()==0){
+                    toast("数据为空");
+                }
                 if(list!=null && list.size()>0){
                     getAdapter().addData(list);
+                }
+                if(getSmartRefreshLayout().isRefreshing()){
+                    getSmartRefreshLayout().finishRefresh();
                 }
                 break;
 
             case REFRESHBASE:
                 listData = (CommonListBean)o;
                 // TODO: 2018/5/9 0009 反复试youbug
-                if(list!=null && list.size()>0){
+                if(list!=null && list.size()>=0){
                     list.clear();
                     list.addAll(listData.data);
                     getAdapter().replaceData(list);
@@ -55,7 +64,7 @@ public abstract class Common2Activity<T> extends BaseActivity<T> {
                 listData = (CommonListBean)o;
                 if(listData.data!=null && listData.data.size()>0){
                     list.addAll(listData.data);
-                    if(list!=null && list.size()>0){
+                    if(list!=null && list.size()>=0){
                         getAdapter().replaceData(list);
                     }
                 }
@@ -97,6 +106,56 @@ public abstract class Common2Activity<T> extends BaseActivity<T> {
     protected PopupWindow popupWindow;
     protected RecyclerView recyclerView;
     AlertAdapter alertAdapter;
+    protected PopupWindow popupWindow2;
+
+    protected void alertjiageWindow(View view,int rescode) {
+        View vie = View.inflate(this, R.layout.jiage, null);
+        popupWindow2 = new PopupWindow(this);
+        popupWindow2.setContentView(vie);
+        popupWindow2.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        popupWindow2.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        popupWindow2.setBackgroundDrawable(new ColorDrawable(0x00000000));
+        popupWindow2.setOutsideTouchable(true);
+        popupWindow2.setFocusable(true);
+        TextView tv1 = vie.findViewById(R.id.queding);
+        TextView tv2 = vie.findViewById(R.id.quxiao);
+        EditText et1 = vie.findViewById(R.id.dijia);
+        EditText et2 = vie.findViewById(R.id.gaojia);
+
+        tv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TextUtils.isEmpty(getString(et1))&&TextUtils.isEmpty(getString(et2))){
+                    toast("请输入低价");
+                }else {
+                    if(popupWindow2!=null && popupWindow2.isShowing()){
+                        popupWindow2.dismiss();
+                    }
+                    getClickPrice(getString(et1),getString(et2));
+                }
+            }
+        });
+
+
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(popupWindow2!=null && popupWindow2.isShowing()){
+                    popupWindow2.dismiss();
+                }
+            }
+        });
+        // 背景的处理
+        setBackgroundAlpha(0.5f);//设置屏幕透明度
+        popupWindow2.showAsDropDown(view,0,15 );
+        popupWindow2.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                // popupWindow隐藏时恢复屏幕正常透明度
+                setBackgroundAlpha(1.0f);
+            }
+        });
+    }
 
 
     protected void alertWindow(View view,List<String> da,int rescode) {
@@ -187,6 +246,9 @@ public abstract class Common2Activity<T> extends BaseActivity<T> {
     protected void  onItemClick(View view, int position, int rescode){
     }
 
+    public void getClickPrice(String price1,String price2){
+
+    }
     public void addData(List<String> da){
         alertAdapter.replaceData(da);
     }
@@ -196,6 +258,12 @@ public abstract class Common2Activity<T> extends BaseActivity<T> {
     protected void onResume() {
         super.onResume();
         if(getSmartRefreshLayout()!=null)
-        getSmartRefreshLayout().autoRefresh();
+        //getSmartRefreshLayout().autoRefresh();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getSmartRefreshLayout().finishRefresh();
+            }
+        },500);
     }
 }

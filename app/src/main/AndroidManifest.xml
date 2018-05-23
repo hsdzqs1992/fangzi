@@ -202,7 +202,13 @@
         <activity android:name=".ui.activity.me.MeFangChanCenterActivity" />
         <activity android:name=".ui.activity.WenDaDetailActivity" />
         <activity android:name=".ui.activity.AnswerActivity" />
-        <activity android:name=".ui.activity.me.AddChuZ1Activity"></activity>
+        <activity android:name=".ui.activity.me.AddChuZ1Activity" />
+        <activity android:name=".ui.activity.WebActivity" />
+        <activity android:name=".ui.activity.home.CommonHomeActivity" />
+        <activity android:name=".ui.activity.home.JingJiRenDetailActivity" />
+        <activity android:name=".ui.activity.home.LookXiaoQuDetailActivity" />
+        <activity android:name=".ui.activity.common.MutiCommon2Activity" />
+        <activity android:name=".ui.activity.home.CommonHome2Activity"></activity>
     </application>
 
 </manifest>

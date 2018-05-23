@@ -20,7 +20,7 @@ public class CustomLinearLayoutManager extends LinearLayoutManager {
     public CustomLinearLayoutManager(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
-    private boolean isScrollEnabled = true;
+    private boolean isScrollEnabled = false;
 
     public void setScrollEnabled(boolean flag) {
         this.isScrollEnabled = flag;

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="95dp">
+
+    <ImageView
+        android:src="@drawable/z"
+        android:scaleType="centerCrop"
+        android:id="@+id/pics"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="100dp"
+        android:layout_height="75dp" />
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/pics"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/title"
+                android:text="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#333"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dizhi"
+            android:layout_marginTop="9dp"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#999"/>
+        <TextView
+            android:id="@+id/mianji"
+            android:layout_marginTop="5dp"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#999"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tese"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/price"
+        android:gravity="end"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="48dp"
+        android:layout_alignParentRight="true"
+        android:text="置顶"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#7fd600"/>
+    <TextView
+        android:layout_marginTop="38dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:text="元/m²"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#999"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ccc"
+        ></View>
+</RelativeLayout>
