@@ -74,13 +74,15 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
 
     @Override
     protected void onLoadmore() {
-        CommonApi.getInstance().index("3",qu_id,++page,business_id,prices1,prices2,select1,yonghu,
+        CommonApi.getInstance().index(
+                "3",qu_id,++page,
+                business_id,prices1,prices2,select1,yonghu,"",
                 ErShouFangActivity.this,LOADMOREBASE);
     }
 
     @Override
     protected void onRefresh() {
-        CommonApi.getInstance().index("3",qu_id,1,business_id,prices1,prices2,select1,yonghu,
+        CommonApi.getInstance().index("3",qu_id,1,business_id,prices1,prices2,select1,yonghu,"",
                 ErShouFangActivity.this,REFRESHBASE);
     }
 
@@ -122,7 +124,7 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
         super.initData();
         qu_id = getQuId();
         CommonApi.getInstance().xiaji(qu_id,ErShouFangActivity.this,GETDATA,false);
-        CommonApi.getInstance().index("3",qu_id,page,business_id,prices1,prices2,select1,yonghu,
+        CommonApi.getInstance().index("3",qu_id,page,business_id,prices1,prices2,select1,yonghu,"",
                 ErShouFangActivity.this,LIST);
     }
     String qu_id;
@@ -175,7 +177,7 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
 
 
     public void selecechoose(int code){
-        CommonApi.getInstance().index("3",qu_id,page,business_id,prices1,prices2,select1,yonghu,
+        CommonApi.getInstance().index("3",qu_id,page,business_id,prices1,prices2,select1,yonghu,"",
                 ErShouFangActivity.this,code);
     }
 }

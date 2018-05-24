@@ -23,6 +23,25 @@ public class Common3Bean{
      * fj_select5 : null
      */
 
+    private String area_name;
+
+    public String getArea_name() {
+        return area_name;
+    }
+
+    public void setArea_name(String area_name) {
+        this.area_name = area_name;
+    }
+
+    public String getBusiness_name() {
+        return business_name;
+    }
+
+    public void setBusiness_name(String business_name) {
+        this.business_name = business_name;
+    }
+
+    private String business_name;
     private String life_id;
     private String title;
     private String cate_id;

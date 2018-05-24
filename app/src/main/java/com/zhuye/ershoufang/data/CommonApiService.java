@@ -50,6 +50,7 @@ import com.zhuye.ershoufang.bean.WenDaBean;
 import com.zhuye.ershoufang.bean.WenDadetailBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean2;
+import com.zhuye.ershoufang.bean.XiaoXiBean;
 import com.zhuye.ershoufang.bean.XinFangBean;
 import com.zhuye.ershoufang.bean.XinFangDetailBean;
 import com.zhuye.ershoufang.bean.ZhiDingBean;
@@ -1011,7 +1012,10 @@ public interface CommonApiService {
             @Field("cate_id") String cate_id,@Field("area_id") String area_id,
             @Field("page") int page,@Field("business_id") String business_id,
             @Field("price1") String price1,@Field("price2") String price2,
-            @Field("select1") String select1,@Field("yonghu") String yonghu);
+            @Field("select1") String select1,@Field("yonghu") String yonghu,
+            @Field("key") String key);
+
+
     @FormUrlEncoded
     @POST(NetWorkUrl.BIDDER_LIST)
     Observable<Base> bidder_list(
@@ -1241,7 +1245,8 @@ public interface CommonApiService {
                   @Field("price1") String price1,
                   @Field("price2") String price2,
                   @Field("select") int select,
-                  @Field("page") int page
+                  @Field("page") int page,
+                   @Field("key") String key
     );
 
     @FormUrlEncoded
@@ -1362,4 +1367,25 @@ public interface CommonApiService {
             @Field("business_id") String business_id,
             @Field("price") String price,
             @Field("page") int page);
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.GUJI)
+    Observable<Base> guji(
+            @Field("mianji") String mianji,
+            @Field("mobile") String mobile
+           );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.XIAOXI)
+    Observable<CommonListBean<XiaoXiBean>> xiaoxi(
+            @Field("token") String token,
+            @Field("page") int page
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.XX_DETAIL)
+    Observable<CommonObjectBean<XiaoXiBean>> xx_detail(
+            @Field("xiaoxi_id") String xiaoxi_id
+
+    );
 }

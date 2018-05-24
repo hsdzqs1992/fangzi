@@ -23,6 +23,8 @@
 		var width = clientWidth;
 		fz = 16 * width / 375;
 		docEl.style.fontSize = fz + 'px';
+        // docEl.style.fontSize = 37.5 + 'px';
+        // console.log(fz)
 	};
 
 	if(!doc.addEventListener) return;

@@ -120,6 +120,10 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
         return getSpData("token2");
     }
 
+    public String getrongyun(){
+        return getSpData("rongyun");
+    }
+
     public String getSpData(String key){
         return SharedPreferencesUtil.getInstance().getString(key);
     }

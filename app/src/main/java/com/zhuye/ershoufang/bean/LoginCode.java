@@ -31,6 +31,15 @@ public class LoginCode extends Base {
         private String token;
         private String type;
         private String data;
+        private String rongyun;
+
+        public String getRongyun() {
+            return rongyun;
+        }
+
+        public void setRongyun(String rongyun) {
+            this.rongyun = rongyun;
+        }
 
         public String getData() {
             return data;

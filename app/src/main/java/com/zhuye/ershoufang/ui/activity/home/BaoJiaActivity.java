@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.base.BaseActivity;
+import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.data.CommonApi;
+import com.zhuye.ershoufang.utils.CheckUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -14,6 +17,7 @@ import butterknife.OnClick;
 public class BaoJiaActivity extends BaseActivity {
 
 
+    private static final int GETDATA = 1000;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.ttitle)
@@ -31,8 +35,6 @@ public class BaoJiaActivity extends BaseActivity {
     protected int getResId() {
         return R.layout.activity_bao_jia;
     }
-
-
     @Override
     protected void initView() {
         super.initView();
@@ -48,6 +50,20 @@ public class BaoJiaActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.gujia:
+                if(checkEmpty(mianji,"请输入面积")&& CheckUtil.isMobile(BaoJiaActivity.this,getString(shouji))){
+                    CommonApi.getInstance().guji(getString(mianji),getString(shouji),BaoJiaActivity.this,GETDATA);
+                }
+                break;
+        }
+    }
+
+
+    @Override
+    public void success(int requestcode, Base base) {
+        super.success(requestcode, base);
+        switch (requestcode){
+            case GETDATA:
+                toast(base.getMessage());
                 start(BaoJia2Activity.class);
                 break;
         }

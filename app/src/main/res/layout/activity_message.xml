@@ -8,14 +8,5 @@
     tools:context="com.zhuye.ershoufang.ui.activity.MessageActivity">
 
     <include layout="@layout/header"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <WebView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/webview"></WebView>
-    </RelativeLayout>
     <include layout="@layout/body"/>
 </LinearLayout>

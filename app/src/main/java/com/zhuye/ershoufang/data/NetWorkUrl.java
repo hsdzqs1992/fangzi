@@ -268,4 +268,22 @@ public class NetWorkUrl {
 
     //个人中心 置顶卷--列表
     public static final String COLLECT= "index.php/app/index/collect";
+
+    //个人中心 估价
+    public static final String GUJI= "index.php/app/home/guji";
+
+    //个人中心 消息--列表
+    public static final String XIAOXI= "index.php/app/user/xiaoxi";
+    //个人中心 消息--详情
+    public static final String XX_DETAIL= "index.php/app/user/xx_detail";
+
+
+
+
+
+
+
+//    public static final int
+
+
 }

@@ -32,7 +32,7 @@ import com.zhuye.ershoufang.bean.HomeBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.one.MyMultipleItem;
-import com.zhuye.ershoufang.one.XinFangAdapter3;
+import com.zhuye.ershoufang.one.XinFangAdapter4;
 import com.zhuye.ershoufang.ui.activity.MessageActivity;
 import com.zhuye.ershoufang.ui.activity.SearchActivity;
 import com.zhuye.ershoufang.ui.activity.home.ErShouFangActivity;
@@ -125,7 +125,7 @@ public class HomeFragment extends BaseFragment {
     TextView jinjikanmore;
     private RecyclerView fenleirv;
 
-    XinFangAdapter3 adapter3;
+    XinFangAdapter4 adapter3;
     ErFangAdapter erFangAdapter;
     HomeJingJiAdapter2 homeJingJiAdapter2;
     ZuFangAdapter2 adapter2;
@@ -252,7 +252,7 @@ public class HomeFragment extends BaseFragment {
 
         this.fenleirv = rootView.findViewById(R.id.fenleirv);
 
-        adapter3 = new XinFangAdapter3(null);
+        adapter3 = new XinFangAdapter4(null);
         tuijianxinfang.setAdapter(adapter3);
         tuijianxinfang.setLayoutManager(new CustomLinearLayoutManager(getActivity()));
 

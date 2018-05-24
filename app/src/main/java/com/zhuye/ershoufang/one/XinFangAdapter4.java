@@ -1,5 +1,6 @@
 package com.zhuye.ershoufang.one;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
@@ -7,6 +8,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zhuye.ershoufang.R;
+import com.zhuye.ershoufang.adapter.TvAdapter;
 import com.zhuye.ershoufang.bean.Common5Bean;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 
@@ -26,7 +28,7 @@ public class XinFangAdapter4 extends BaseMultiItemQuickAdapter<MyMultipleItem<Co
      */
     public XinFangAdapter4(List<MyMultipleItem<Common5Bean>> data) {
         super(data);
-        addItemType(MyMultipleItem.FIRST_TYPE, R.layout.home_xinfang_item);
+        addItemType(MyMultipleItem.FIRST_TYPE, R.layout.home_xinfang_item3);
         addItemType(MyMultipleItem.SECOND_TYPE, R.layout.home_xinfang_item2);
     }
 
@@ -39,7 +41,18 @@ public class XinFangAdapter4 extends BaseMultiItemQuickAdapter<MyMultipleItem<Co
 
         switch (item.getItemType()){
             case MyMultipleItem.FIRST_TYPE:
+                ImageView imageVi = helper.getView(R.id.pics);
+                Glide.with(mContext).load(NetWorkUrl.IMAGEURL+item.getData().getPhoto().get(0)).into(imageVi);
+                helper.setText(R.id.title,item.getData().getTitle()).
+                        setText(R.id.dizhi,item.getData().getArea_name()+"-"+item.getData().getBusiness_name())
+                        .setText(R.id.price,item.getData().getPrice())
+                        .setText(R.id.mianji,"总建面 "+item.getData().getMianji()+" m²");
+                RecyclerView tesea = helper.getView(R.id.tese);
 
+                TvAdapter adapter = new TvAdapter(R.layout.tv2);
+                tesea.setAdapter(adapter);
+                tesea.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false));
+//                adapter.addData(item.getData().);
                 break;
             case MyMultipleItem.SECOND_TYPE:
                 helper.setText(R.id.name,item.getData().getTitle()).setText(R.id.dizhi2,item.getData().getBusiness_id())
@@ -54,7 +67,9 @@ public class XinFangAdapter4 extends BaseMultiItemQuickAdapter<MyMultipleItem<Co
                 Glide.with(mContext).load(NetWorkUrl.IMAGEURL+item.getData().getPhoto().get(2)).into(imageView2);
 
                 RecyclerView tese = helper.getView(R.id.tese);
-
+                TvAdapter adapter1 = new TvAdapter(R.layout.tv2);
+                tese.setAdapter(adapter1);
+                tese.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false));
 
                 break;
         }

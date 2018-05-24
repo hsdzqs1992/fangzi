@@ -3,10 +3,10 @@ package com.zhuye.ershoufang.bean;
 import java.util.List;
 
 /**
- * Created by Administrator on 2018/5/21 0021.
+ * Created by Administrator on 2018/5/24 0024.
  */
 
-public class Common5Bean {
+public class CommonFangBean {
 
     private String id;
     /**
@@ -43,7 +43,9 @@ public class Common5Bean {
     private String title;
     private String area_id;
     private String business_id;
+
     private String price;
+
     private String mianji;
     private String select;
     private String is_onsale;
@@ -120,5 +122,4 @@ public class Common5Bean {
     public void setPhoto(List<String> photo) {
         this.photo = photo;
     }
-
 }

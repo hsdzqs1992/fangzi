@@ -259,6 +259,7 @@ public class LoginActivity extends BaseActivity {
                         //toast("登录成功");
                         SharedPreferencesUtil.getInstance().putString("type",code.getData().getType());
                         SharedPreferencesUtil.getInstance().putString("token2",code.getData().getToken());
+                        SharedPreferencesUtil.getInstance().putString("rongyun",code.getData().getRongyun());
                         start(MainActivity.class,true);
                     }
                 }

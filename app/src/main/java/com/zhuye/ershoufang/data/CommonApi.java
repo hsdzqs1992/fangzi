@@ -613,8 +613,8 @@ public class CommonApi {
     public void index( String cate_id,  String area_id,
                       int page,  String business_id,
                      String price1,  String price2,
-                    String select1, String yonghu, BaseView baseView, int requestcode){
-        sub(service.index( cate_id,  area_id, page, business_id, price1,   price2, select1,  yonghu),baseView,requestcode);
+                    String select1, String yonghu,String key, BaseView baseView, int requestcode){
+        sub(service.index( cate_id,  area_id, page, business_id, price1, price2, select1, yonghu,key),baseView,requestcode);
     }
 
     public void bidder_list( String cate_id,  String area_id,
@@ -940,8 +940,8 @@ public class CommonApi {
                                String business_id,
                                String price1,
                                String price2,
-                               int select,int page,BaseView baseView,int requestcode){
-        sub(service.indexnewhouse2( area_id,business_id, price1, price2, select,page),baseView,requestcode);
+                               int select,int page,String key,BaseView baseView,int requestcode){
+        sub(service.indexnewhouse2( area_id,business_id, price1, price2, select,page,key),baseView,requestcode);
     }
 
     public void newhouse_edit(String token,String id,BaseView baseView,int requestcode){
@@ -1121,16 +1121,33 @@ public class CommonApi {
     }
 
 
-    public void collect(  String token,
-                             String type,
-                             String life_id,BaseView baseView,int requestcode){
-        sub(service.collect(token,type,life_id),baseView,requestcode);
+
+    public void guji(String mianji,
+                      String mobile, BaseView baseView, int requestcode){
+        sub(service.guji(mianji,mobile),baseView,requestcode);
     }
 
+
+    public void collect(  String token,
+                          String type,
+                          String life_id,BaseView baseView,int requestcode){
+        sub(service.collect(token,type,life_id),baseView,requestcode);
+    }
     public void find_xiaoqu(  String area_id,
                               String business_id,
                               String price,
                                int page,BaseView baseView,int requestcode){
         sub(service.find_xiaoqu(area_id,business_id,price,page),baseView,requestcode);
+    }
+
+    public void xiaoxi(String token,
+                     int page, BaseView baseView, int requestcode){
+        sub(service.xiaoxi(token,page),baseView,requestcode);
+    }
+
+
+    public void xx_detail(String xiaoxi_id
+                       , BaseView baseView, int requestcode){
+        sub(service.xx_detail(xiaoxi_id),baseView,requestcode);
     }
 }

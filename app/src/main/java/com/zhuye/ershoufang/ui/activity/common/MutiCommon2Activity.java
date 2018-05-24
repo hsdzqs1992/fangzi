@@ -49,7 +49,8 @@ public abstract class MutiCommon2Activity<T> extends BaseActivity<T> {
                     toast("数据为空");
                 }
                 if(list!=null && list.size()>0){
-                    //getAdapter().addData(datas);
+                   getAdapter().replaceData(datas);
+                 //  getAdapter().addData(datas);
                 }
                 if(getSmartRefreshLayout().isRefreshing()){
                     getSmartRefreshLayout().finishRefresh();
