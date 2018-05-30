@@ -28,7 +28,7 @@
         app:stl_defaultTabTextColor="#999"
         app:stl_defaultTabTextSize="14sp"
         app:stl_defaultTabTextHorizontalPadding="0dp"
-        app:stl_defaultTabTextMinWidth="55dp"
+        app:stl_defaultTabTextMinWidth="85dp"
         app:stl_distributeEvenly="false"
         app:stl_clickable="true"
         app:stl_titleOffset="100dp"

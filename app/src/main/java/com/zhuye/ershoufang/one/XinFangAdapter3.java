@@ -42,9 +42,12 @@ public class XinFangAdapter3 extends BaseMultiItemQuickAdapter<MyMultipleItem<Co
         switch (item.getItemType()){
             case MyMultipleItem.FIRST_TYPE:
                 ImageView imageVi = helper.getView(R.id.pics);
-                Glide.with(mContext).load(NetWorkUrl.IMAGEURL+item.getData().getPhoto().get(0)).into(imageVi);
+//                if(item.getData().getPhoto()==null&&item.getData().getPhoto().size()>1) {
+//                    Glide.with(mContext).load(NetWorkUrl.IMAGEURL + item.getData().getPhoto().get(0)).into(imageVi);
+//                }
+                Glide.with(mContext).load(NetWorkUrl.IMAGEURL + item.getData().getPhoto().get(0)).into(imageVi);
                 helper.setText(R.id.title,item.getData().getTitle()).
-                        setText(R.id.dizhi,item.getData().getArea_name()+"-"+item.getData().getBusiness_name())
+                        setText(R.id.dizhi,item.getData().getArea()+"-"+item.getData().getBusiness())
                         .setText(R.id.price,item.getData().getPrice())
                         .setText(R.id.mianji,"总建面 "+item.getData().getMianji()+" m²");
                 RecyclerView tesea = helper.getView(R.id.tese);
@@ -54,7 +57,8 @@ public class XinFangAdapter3 extends BaseMultiItemQuickAdapter<MyMultipleItem<Co
               //  adapter.addData(item.getData().get);
                 break;
             case MyMultipleItem.SECOND_TYPE:
-                helper.setText(R.id.name,item.getData().getTitle()).setText(R.id.dizhi2,item.getData().getBusiness_id())
+                helper.setText(R.id.name,item.getData().getTitle()).
+                        setText(R.id.dizhi2,item.getData().getArea()+"-"+item.getData().getBusiness())
                         .setText(R.id.jiage,item.getData().getPrice())
                         .setText(R.id.mianji2,"总建面 "+item.getData().getMianji()+" m²");
 
@@ -66,7 +70,6 @@ public class XinFangAdapter3 extends BaseMultiItemQuickAdapter<MyMultipleItem<Co
                 Glide.with(mContext).load(NetWorkUrl.IMAGEURL+item.getData().getPhoto().get(2)).into(imageView2);
 
                 RecyclerView tese = helper.getView(R.id.tese);
-
 
                 break;
         }

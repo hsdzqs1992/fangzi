@@ -31,6 +31,15 @@ public class LoginCodeBean extends Base {
 
         private String token;
         private int type;
+        private String rongyun;
+
+        public String getRongyun() {
+            return rongyun;
+        }
+
+        public void setRongyun(String rongyun) {
+            this.rongyun = rongyun;
+        }
 
         public String getToken() {
             return token;

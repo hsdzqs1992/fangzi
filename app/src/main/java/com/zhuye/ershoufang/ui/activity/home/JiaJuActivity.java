@@ -52,7 +52,6 @@ public class JiaJuActivity extends Common2Activity<ZhuangxiuJiaJuBean> {
     @Override
     public void success(int requestcode, Base o) {
         super.success(requestcode, o);
-
     }
 
     @OnClick(R.id.back)

@@ -28,6 +28,8 @@ public class SettingActivity extends BaseActivity {
     RelativeLayout guanyu;
     @BindView(R.id.tuichu)
     RelativeLayout tuichu;
+    @BindView(R.id.opens)
+    ImageView opens;
 
     @Override
     protected int getResId() {
@@ -38,10 +40,13 @@ public class SettingActivity extends BaseActivity {
     @Override
     protected void initView() {
         super.initView();
-        setText(ttitle,"设置");
+        setText(ttitle, "设置");
         hide(subtitle);
 
     }
+
+
+    private Boolean open = true;
 
     @OnClick({R.id.back, R.id.lianxi, R.id.editpass, R.id.guanyu, R.id.tuichu})
     public void onViewClicked(View view) {
@@ -50,7 +55,14 @@ public class SettingActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.lianxi:
-
+                if(open){
+                    opens.setImageResource(R.drawable.off);
+                    open();
+                }else {
+                    opens.setImageResource(R.drawable.on);
+                    close();
+                }
+                open = !open;
                 break;
             case R.id.editpass:
                 start(EditPassActivity.class);
@@ -59,9 +71,18 @@ public class SettingActivity extends BaseActivity {
 
                 break;
             case R.id.tuichu:
-                SharedPreferencesUtil.getInstance().putString("token2","");
-                start(LoginActivity.class,true);
+                SharedPreferencesUtil.getInstance().putString("token2", "");
+                start(LoginActivity.class, true);
                 break;
         }
     }
+
+    private void close() {
+
+    }
+
+    private void open() {
+
+    }
+
 }

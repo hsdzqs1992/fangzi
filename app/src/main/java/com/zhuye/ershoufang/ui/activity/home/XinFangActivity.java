@@ -217,7 +217,7 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
                 break;
             case 11:
                 // toast(dat.get(position));
-                // CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,page,XinFangActivity.this,REFRESHBASE);
+                 CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,position+1,page,"",XinFangActivity.this,REFRESHBASE);
                 break;
         }
     }

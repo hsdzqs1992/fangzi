@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.zhuye.ershoufang.R;
-import com.zhuye.ershoufang.adapter.me.MePaiMaiAdapter;
+import com.zhuye.ershoufang.adapter.me.MyPaiMai2Adapter;
 import com.zhuye.ershoufang.adapter.me.MyPaiMaiActivity;
 import com.zhuye.ershoufang.base.BaseActivity;
 
@@ -42,14 +42,15 @@ public class WeiTuoMaiActivity extends BaseActivity {
     protected int getResId() {
         return R.layout.activity_wei_tuo_mai;
     }
-    MePaiMaiAdapter adapter;
+    MyPaiMai2Adapter adapter;
     @Override
     protected void initView() {
          super.initView();
         setText(ttitle,"其他委托");
-       // setText(subtitle,"我的拍卖");
-        hide(subtitle);
-        adapter = new MePaiMaiAdapter(getSupportFragmentManager(),this);
+       setText(subtitle,"我的拍卖");
+//        hide(subtitle);
+       // adapter = new MePaiMaiAdapter(getSupportFragmentManager(),this);
+        adapter = new MyPaiMai2Adapter(getSupportFragmentManager(),this);
         viewpager.setAdapter(adapter);
         tablayout.setViewPager(viewpager);
     }

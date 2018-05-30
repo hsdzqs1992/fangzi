@@ -20,6 +20,8 @@ public class KanFangBean {
      * count : 报名人数
      */
 
+
+
     private String id;
     private String title;
     private String addr;

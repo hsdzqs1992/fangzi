@@ -29,6 +29,7 @@ import com.zhuye.ershoufang.bean.Common5Bean;
 import com.zhuye.ershoufang.bean.CommonObjectBean;
 import com.zhuye.ershoufang.bean.FenLeiBean;
 import com.zhuye.ershoufang.bean.HomeBean;
+import com.zhuye.ershoufang.city.ChooseAddressActivity;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.one.MyMultipleItem;
@@ -123,6 +124,8 @@ public class HomeFragment extends BaseFragment {
     Unbinder unbinder2;
     @BindView(R.id.jinjikanmore)
     TextView jinjikanmore;
+    @BindView(R.id.dizhi)
+    TextView dizhi;
     private RecyclerView fenleirv;
 
     XinFangAdapter4 adapter3;
@@ -311,6 +314,13 @@ public class HomeFragment extends BaseFragment {
         fenleirv.setLayoutManager(new GridLayoutManager(getActivity(), 5));
         String qu_id = getQuId();
         if (qu_id != null && !TextUtils.isEmpty(qu_id)) {
+//            CommonApi.getInstance().homeindex(qu_id, HomeFragment.this, INDEX)
+//            .map(new Function() {
+//                @Override
+//                public Object apply(Object o) throws Exception {
+//                    return o;
+//                }
+//            });
             CommonApi.getInstance().homeindex(qu_id, HomeFragment.this, INDEX);
         }
 
@@ -381,6 +391,8 @@ public class HomeFragment extends BaseFragment {
                         break;
                 }
                 startActivity(intent);
+//                asdafsdfsdafhhhhhhhasdf
+//                sdfasdfasdfasdfs
             }
         });
     }
@@ -392,9 +404,12 @@ public class HomeFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.jinjikanmore,R.id.jingjiren_go,R.id.search, R.id.ditu, R.id.message, R.id.message_go, R.id.home_youhui, R.id.home_jingji, R.id.home_gangxu, R.id.home_zhaoxiaoqu, R.id.wenda, R.id.jisuan, R.id.qushi, R.id.gujia})
+    @OnClick({R.id.dizhi,R.id.jinjikanmore, R.id.jingjiren_go, R.id.search, R.id.ditu, R.id.message, R.id.message_go, R.id.home_youhui, R.id.home_jingji, R.id.home_gangxu, R.id.home_zhaoxiaoqu, R.id.wenda, R.id.jisuan, R.id.qushi, R.id.gujia})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.dizhi:
+                startActivity(new Intent(getActivity(),ChooseAddressActivity.class));
+                break;
             case R.id.jinjikanmore:
             case R.id.jingjiren_go:
                 start(JingJiRenActivity.class);
@@ -406,7 +421,9 @@ public class HomeFragment extends BaseFragment {
                 start(MapZhaoFangActivity.class);
                 break;
             case R.id.message:
-                start(MessageActivity.class);
+                //start(VuActivity.class);
+               start(MessageActivity.class);
+                // start(ConversationListActivity.class);
                 break;
             case R.id.message_go:
                 start(MessageActivity.class);

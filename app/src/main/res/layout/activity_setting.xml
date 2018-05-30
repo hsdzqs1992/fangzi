@@ -24,6 +24,7 @@
             android:textSize="@dimen/sp_15"/>
 
         <ImageView
+            android:id="@+id/opens"
             android:layout_marginTop="13dp"
             android:layout_marginRight="@dimen/dp_20"
             android:layout_alignParentRight="true"

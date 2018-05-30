@@ -5,6 +5,9 @@ import android.webkit.JavascriptInterface;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.ui.activity.WebActivity;
 
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
+
 public class XinFangDetailActivity extends WebActivity {
 
     private static final int SHOUCANG = 888;
@@ -69,9 +72,21 @@ public class XinFangDetailActivity extends WebActivity {
 //                });
 //            }
         }
+
+        @JavascriptInterface
+        public void chat(String id){
+            toast(id+"");
+            RongIM.getInstance().startConversation(XinFangDetailActivity.this
+            , Conversation.ConversationType.PRIVATE,"93","");
+        }
+
         @JavascriptInterface
         public void chat(){
+           // toast(totoken);
             toast("chat");
+//            RongIM.getInstance().startConversation(XinFangDetailActivity.this
+//            ,Conversation.ConversationType.PRIVATE,totoken,"sadfasdf");
+
 //            if(Thread.currentThread()== Looper.getMainLooper().getThread()){
 //                Toast.makeText(XinFangDetailActivity.this,"手长",Toast.LENGTH_SHORT).show();
 //            }else {

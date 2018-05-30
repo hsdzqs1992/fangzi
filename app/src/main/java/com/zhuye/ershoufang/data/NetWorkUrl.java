@@ -17,8 +17,10 @@ public class NetWorkUrl {
 
 
     public static final String BASE =
-            "http://192.168.1.10/jdhouse/";
+            "http://192.168.1.29/jdhouse/";
 
+//    public static final String BASE =
+//            "http://jd.yhsm525.com/";
     public static final String LOGIN = "";
     public static final String REGEIST = "index.php/App/passport/register";
     public static final String GET_CODE = "index.php/App/passport/code";
@@ -272,16 +274,50 @@ public class NetWorkUrl {
     //个人中心 估价
     public static final String GUJI= "index.php/app/home/guji";
 
+    //个人中心 收藏--新房
+    public static final String NEWHOUSE_COLLECT= "index.php/app/user/newhouse_collect";
+
+    //个人中心 我的收藏--二手房|租房
+    public static final String LIFE_CANG= "index.php/app/user/life_cang";
+
+
+    //个人中心 我的收藏--商铺写字楼
+    public static final String BUILDING= "index.php/app/user/building";
+
+    //个人中心 我的收藏--家居|装修
+    public static final String SHOP_COLLECT= "index.php/app/user/shop_collect";
+
+
+    //个人中心 取消收藏
+    public static final String DEL_COLLECT= "index.php/app/user/del_collect";
+
+    //个人中心 我的收藏--工业厂房
+    public static final String PLANT_COLLECT= "index.php/app/user/plant_collect";
+
+
+    //个人中心 免费看房
+    public static final String MYBM= "index.php/app/user/mybm";
+
+
+    //个人中心 免费看房
+    public static final String QHCITY= "index.php/app/index/qhcity";
+
+
     //个人中心 消息--列表
     public static final String XIAOXI= "index.php/app/user/xiaoxi";
     //个人中心 消息--详情
     public static final String XX_DETAIL= "index.php/app/user/xx_detail";
 
 
+    //首页 工业厂房--列表
+    public static final String PLANT_LIST= "index.php/app/house/plant_list";
+
+    //首页 热门搜索词语
+    public static final String CIYU= "index.php/app/index/ciyu";
 
 
-
-
+    //首页 热门搜索词语
+    public static final String DISCOUNT= "index.php/app/indexnewhouse/discount";
 
 //    public static final int
 

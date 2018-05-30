@@ -20,11 +20,17 @@ public class HttpUtils {
     public static OkHttpClient getOkhttp(){
 
         HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
-        logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        logInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
+
+        LogRul logRul =  new LogRul();
+
+        logRul.open = true;
+
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(25, TimeUnit.SECONDS)
                 .addInterceptor(logInterceptor)
+                .addInterceptor(logRul)
                 .addNetworkInterceptor(new StethoInterceptor())
                 .build();
         return okHttpClient;

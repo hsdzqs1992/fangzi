@@ -40,9 +40,9 @@ public class PageUtils<T> {
      * @param refresh
      */
     public static void handleData(BaseActivity baseActivity , int requestcode, Base base, CommonBaseQuickAdapter adapter, SmartRefreshLayout refresh) {
-        tempData = (CommonListBean) base;
         switch (requestcode){
             case FIRST:
+                tempData = (CommonListBean) base;
                 if (tempData.getData()!=null && tempData.getData().size()>0){
                     adapter.addData(tempData.getData());
                     totalData.setData(tempData.getData());
@@ -50,6 +50,7 @@ public class PageUtils<T> {
 
                 break;
             case REFRESH:
+                tempData = (CommonListBean) base;
                 adapter.clear();
                 if (tempData.getData()!=null && tempData.getData().size()>0){
                     adapter.addData(tempData.getData());
@@ -59,6 +60,7 @@ public class PageUtils<T> {
                 refresh.finishRefresh();
                 break;
             case LOADMORE:
+                tempData = (CommonListBean) base;
                  ++requestPage;
                 // 最后一页  没有数据的处理
                 if(tempData.getData()==null || tempData.getData().size()==0){

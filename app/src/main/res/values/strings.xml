@@ -138,6 +138,17 @@
         <item>贷款</item>
     </string-array>
 
+
+    <string-array name="me_shoucang">
+        <item>新房</item>
+        <item>二手房</item>
+        <item>租房</item>
+        <item>商铺写字楼</item>
+        <item>工业厂房</item>
+        <item>家居</item>
+        <item>装修</item>
+    </string-array>
+
     <string-array name="home_xuqiudating">
         <item>买房</item>
         <item>卖房</item>

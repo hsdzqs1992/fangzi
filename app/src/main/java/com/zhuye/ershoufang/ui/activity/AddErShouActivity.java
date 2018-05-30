@@ -18,6 +18,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.baidu.mapapi.search.geocode.GeoCodeOption;
 import com.bigkoo.pickerview.adapter.ArrayWheelAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.contrarywind.listener.OnItemSelectedListener;
@@ -29,7 +30,6 @@ import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.ImageAdapter;
-import com.zhuye.ershoufang.base.BaseActivity;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.CityBean;
 import com.zhuye.ershoufang.bean.CommonListBean;
@@ -38,6 +38,7 @@ import com.zhuye.ershoufang.bean.ImgBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
+import com.zhuye.ershoufang.ui.activity.common.CommonAddActivity;
 import com.zhuye.ershoufang.utils.FilesUtil;
 import com.zhuye.ershoufang.weidtet.MyInputView;
 import com.zhuye.ershoufang.weidtet.MyLinTv2View;
@@ -54,7 +55,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.iwf.photopicker.PhotoPicker;
 
-public class AddErShouActivity extends BaseActivity implements UpPhotoCallBack {
+public class AddErShouActivity extends CommonAddActivity implements UpPhotoCallBack {
 
     private static final int TIJIAO = 200;
     private static final int SELECT = 201;
@@ -413,6 +414,9 @@ public class AddErShouActivity extends BaseActivity implements UpPhotoCallBack {
                 break;
             case R.id.fabu:
 
+                mSearch.geocode(new GeoCodeOption()
+                        .city(dizhi2.getText().toString())
+                        .address(dizhi2.getText().toString()+dizhi3.getText().toString()+dizhi4.getText().toString()));
 //                       String a=  getString(xiaoqu);
 //                        String b =  getIndex(xiaoquadata, dizhi3.getText().toString().trim());
 

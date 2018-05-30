@@ -30,6 +30,7 @@ import com.zhuye.ershoufang.adapter.ImageAdapter;
 import com.zhuye.ershoufang.base.BaseActivity;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.CityBean;
+import com.zhuye.ershoufang.bean.CommonListBean;
 import com.zhuye.ershoufang.bean.IdNameBean;
 import com.zhuye.ershoufang.bean.ImgBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean;
@@ -150,7 +151,7 @@ public class AddPaiMaiActivity extends BaseActivity {
         super.success(requestcode, base);
         switch (requestcode) {
             case XIAOQU:
-                XiaoQuBean bean = (XiaoQuBean) base;
+                CommonListBean<XiaoQuBean> bean = (CommonListBean<XiaoQuBean>) base;
                 break;
             case ADD:
                 toast(base.getMessage());

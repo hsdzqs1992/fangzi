@@ -1,6 +1,7 @@
 package com.zhuye.ershoufang.data;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -34,6 +35,7 @@ public class MyGsonResponseBodyConverter<T extends Base> implements Converter<Re
 
     @Override public T convert(ResponseBody value) throws IOException {
         String json = value.string();
+        Log.i("LogRul",json);
         JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
         // 解析code
         JsonPrimitive jsonPrimitive = jsonObject.getAsJsonPrimitive("code");

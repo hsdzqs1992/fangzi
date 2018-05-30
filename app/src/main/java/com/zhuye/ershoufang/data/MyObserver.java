@@ -42,6 +42,9 @@ public class MyObserver<T extends Base> implements Observer<T>   {
 
     @Override
     public void onError(@NonNull Throwable e) {
+        
+        
+        // // TODO: 2018/5/25 0025  错图提示
         //baseView.error();
         if(isShowLoding)
         baseView.finishLoding();

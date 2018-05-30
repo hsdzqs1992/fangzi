@@ -268,6 +268,7 @@ public class LoginActivity extends BaseActivity {
                 LoginCodeBean qqcode = (LoginCodeBean) o;
                 SharedPreferencesUtil.getInstance().putString("type",0+"");
                 SharedPreferencesUtil.getInstance().putString("token2",qqcode.getData().getToken());
+                SharedPreferencesUtil.getInstance().putString("rongyun",qqcode.getData().getRongyun());
                 start(MainActivity.class,true);
                 break;
         }

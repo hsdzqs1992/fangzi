@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,7 +21,6 @@
             android:textSize="@dimen/sp_15"
             android:paddingRight="@dimen/dp_10"
             android:drawableRight="@drawable/sanjiao"
-            android:paddingLeft="@dimen/dp_10"
             android:id="@+id/xinfang"
             android:background="@drawable/shape_tuijian8"
             android:gravity="start|center_vertical"
@@ -52,7 +52,7 @@
             android:textSize="@dimen/sp_15"
             android:id="@+id/quxiao"
             android:textColor="@color/white"
-            android:text="取消"
+            android:text="确定"
             android:layout_width="50dp"
             android:layout_height="30dp" />
     </LinearLayout>
@@ -69,7 +69,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp">
-
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/id_flowlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+        </com.zhy.view.flowlayout.TagFlowLayout>
     </RelativeLayout>
 
 

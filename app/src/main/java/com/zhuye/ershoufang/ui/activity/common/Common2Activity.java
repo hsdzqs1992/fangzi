@@ -39,7 +39,7 @@ public abstract class Common2Activity<T> extends BaseActivity<T> {
             case LIST:
                 listData = (CommonListBean)o;
                 list = listData.data;
-                if(listData.getData().size()==0){
+                if(listData.getData()!=null&&listData.getData().size()==0){
                     toast("数据为空");
                 }
                 if(list!=null && list.size()>0){

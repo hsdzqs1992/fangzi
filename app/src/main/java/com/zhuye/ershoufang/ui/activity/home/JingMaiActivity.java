@@ -40,11 +40,11 @@ public class JingMaiActivity extends BaseActivity {
 
 //        tablayout.setMinimumWidth(DensityUtil.dip2px(this,50));
     }
-
+    JingMaiAdapter adapter1;
     @Override
     protected void initData() {
         super.initData();
-        JingMaiAdapter adapter1 = new JingMaiAdapter(getSupportFragmentManager(), this, R.array.home_jingmai);
+        adapter1= new JingMaiAdapter(getSupportFragmentManager(), this, R.array.home_jingmai);
         viewpager.setAdapter(adapter1);
         tablayout.setViewPager(viewpager);
 
@@ -52,5 +52,27 @@ public class JingMaiActivity extends BaseActivity {
     @OnClick(R.id.back)
     public void onViewClicked() {
         finish();
+    }
+
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                adapter1.getFragment(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 }

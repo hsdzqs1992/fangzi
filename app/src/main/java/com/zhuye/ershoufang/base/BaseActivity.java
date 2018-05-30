@@ -2,12 +2,14 @@ package com.zhuye.ershoufang.base;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
+import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.CommonBaseQuickAdapter;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.CityBean;
@@ -31,7 +34,11 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseActivity<T> extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity<T> extends FragmentActivity implements BaseView {
+
+    protected View lodingview;
+    protected View emptyview;
+    protected View rootview;
     protected Integer type;
     private CustomProgressDialog dialog;
     protected static final int LIST = 200;
@@ -70,6 +77,7 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
         getWindow().setAttributes(lp);
     }
 
+    private View errorview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +86,9 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
         unbinder=  ButterKnife.bind(this);
         dialog = new CustomProgressDialog(this, "加载中");
         dialog.setCanceledOnTouchOutside(false);
+        lodingview = View.inflate(this, R.layout.loding,null);
+        errorview = LayoutInflater.from(this).inflate(R.layout.error,null);
+        emptyview = LayoutInflater.from(this).inflate(R.layout.empty,null);
         initView();
         initData();
         initListener();
@@ -378,4 +389,12 @@ public abstract class BaseActivity<T> extends AppCompatActivity implements BaseV
 //    public String getQuId(){
 //        return SharedPreferencesUtil.getInstance().getString("qu_id");
 //    }
+
+    public Context getAppContent(){
+        return getApplicationContext();
+    }
+
+    public Context getActiviContent(){
+        return getApplicationContext();
+    }
 }

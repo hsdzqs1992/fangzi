@@ -71,6 +71,12 @@
             <!--android:layout_height="match_parent">-->
         <!--</com.baidu.mapapi.map.MapView>-->
 
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true" />
+
         <RelativeLayout
             android:paddingTop="@dimen/dp_10"
             android:paddingRight="@dimen/dp_20"

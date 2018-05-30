@@ -87,6 +87,14 @@ public class CommonApi {
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new MyObserver<Base>(baseView,requestcode));
     }
 
+    private Observable sub2(Observable observable, BaseView baseView, int requestcode){
+      MyObserver myObserver =new MyObserver<Base>(baseView,requestcode);
+        Observable observable1 =   observable.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread()).doOnEach(myObserver);
+                // .subscribe(myObserver);
+         return observable;
+    }
+
     private  void sub(Observable observable,BaseView baseView, int requestcode,Boolean isShowLoding){
         observable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new MyObserver<Base>(baseView,requestcode,isShowLoding));
@@ -343,6 +351,11 @@ public class CommonApi {
     public void xiaoqu(BaseView baseView,int requestcode,Boolean b){
         sub(service.xiaoqu(),baseView,requestcode,b);
     }
+
+    public void qhcity(BaseView baseView,int requestcode,Boolean b){
+        sub(service.qhcity(),baseView,requestcode,b);
+    }
+
     public void bidder_bond(String token,int page,BaseView baseView,int requestcode){
         sub(service.bidder_bond(token,page),baseView,requestcode);
     }
@@ -894,7 +907,7 @@ public class CommonApi {
     }
 
     public void homeindex(String area_id,BaseView baseView,int requestcode){
-        sub(service.homeindex(area_id),baseView,requestcode);
+         sub(service.homeindex(area_id),baseView,requestcode);
     }
 
     public void newhouse_detail(String id,BaseView baseView,int requestcode){
@@ -1149,5 +1162,55 @@ public class CommonApi {
     public void xx_detail(String xiaoxi_id
                        , BaseView baseView, int requestcode){
         sub(service.xx_detail(xiaoxi_id),baseView,requestcode);
+    }
+
+
+    public void plant_list( String cate_id,  String area_id,
+                            int page,
+                            String key, BaseView baseView, int requestcode){
+        sub(service.plant_list(cate_id,area_id,page,key),baseView,requestcode);
+    }
+
+    public void ciyu(BaseView baseView, int requestcode){
+         sub(service.ciyu(),baseView,requestcode);
+    }
+
+    public Observable discount(String token, String newhouse_id,
+                               String mobile,BaseView baseView, int requestcode){
+        return sub2(service.discount(token,newhouse_id,mobile),baseView,requestcode);
+    }
+
+
+    public void newhouse_collect(String token, int page,BaseView baseView,int requestcode){
+        sub(service.newhouse_collect(token,page),baseView,requestcode);
+    }
+
+    public void life_cang(String token, int page,int type,BaseView baseView,int requestcode){
+        sub(service.life_cang(token,page,type),baseView,requestcode);
+    }
+
+    public void building(String token, int page,BaseView baseView,int requestcode){
+        sub(service.building(token,page),baseView,requestcode);
+    }
+
+    public void plant_collect(String token, int page,BaseView baseView,int requestcode){
+        sub(service.plant_collect(token,page),baseView,requestcode);
+    }
+
+
+    public void shop_collect(String token, int page,int type,BaseView baseView,int requestcode){
+        sub(service.shop_collect(token,page,type),baseView,requestcode);
+    }
+
+    public void del_collect(String token, int type,int life_id,BaseView baseView,int requestcode){
+        sub(service.del_collect(token,type,life_id),baseView,requestcode);
+    }
+
+    public void getUserInfo(String senderUserId, BaseView globalListener, int i) {
+        sub(service.getUserInfo(senderUserId),globalListener,i);
+    }
+
+    public void mybm(String token,int page, BaseView globalListener, int i) {
+        sub(service.mybm(token,page),globalListener,i);
     }
 }

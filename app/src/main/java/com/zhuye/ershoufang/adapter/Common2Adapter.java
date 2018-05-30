@@ -26,8 +26,10 @@ public class Common2Adapter extends BaseQuickAdapter<CommonBean,BaseViewHolder> 
     protected void convert(BaseViewHolder helper, CommonBean item) {
        ImageView imageView =  helper.getView(R.id.photo);
         Glide.with(mContext).load(NetWorkUrl.IMAGEURL+item.getPhoto()).into(imageView);
-        helper.setText(R.id.tuijian,"推荐理由"+item.getRecommand()).setText(R.id.price,item.getPrice()+"元/m²")
-                .setText(R.id.dizhi,item.getArea_name()+"-"+item.getBusiness_name());
+        helper.setText(R.id.tuijian,"推荐理由"+item.getRecommand())//.setText(R.id.price,item.getPrice()+"元/m²")
+                //.setText(R.id.dizhi,item.getArea_name()+"-"+item.getBusiness_name())
+                .setText(R.id.dizhi,item.getCount()+"人已报名")
+                .addOnClickListener(R.id.price);
 
         String state = item.getIs_onsale();
         TextView  textView =helper.getView(R.id.state);

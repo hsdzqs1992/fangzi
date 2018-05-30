@@ -57,4 +57,6 @@ public class ChatFragment extends BaseFragment {
         return R.layout.common;
     }
 
+
+
 }

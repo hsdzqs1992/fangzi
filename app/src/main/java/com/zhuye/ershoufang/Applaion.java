@@ -1,5 +1,6 @@
 package com.zhuye.ershoufang;
 
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.IntentFilter;
@@ -7,12 +8,15 @@ import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.support.multidex.MultiDex;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.facebook.stetho.Stetho;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.zhuye.ershoufang.receiver.NetworkChangeReceiver;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
+
+import io.rong.imkit.RongIM;
 
 /**
  * Created by Administrator on 2018/3/20 0020.
@@ -35,9 +39,18 @@ public class Applaion extends Application {
 //        CrashHandler crashHandler = CrashHandler.getInstance();
 //        crashHandler.setCrashHandler(getApplicationContext());
         Stetho.initializeWithDefaults(this);
+        SDKInitializer.initialize(getApplicationContext());
         //
 
         //regeist();
+//        App Key k51hidwqkco5b
+//        App Secret x5hqBniaFvt0
+
+        RongIM.init(this,"c9kqb3rdcov6j");
+
+      //  RongIM.getInstance()
+
+
     }
 
     private void regeist() {
@@ -49,6 +62,18 @@ public class Applaion extends Application {
         //这个是监听网络状态的，包括了wifi和移动网络。
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(new NetworkChangeReceiver(), filter);
+    }
+
+
+    public static String getCurProcessName(Context context) {
+        int pid = android.os.Process.myPid();
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo appProcess : activityManager.getRunningAppProcesses()) {
+            if (appProcess.pid == pid) {
+                return appProcess.processName;
+            }
+        }
+        return null;
     }
 
 

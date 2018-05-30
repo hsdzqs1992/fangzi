@@ -2,6 +2,7 @@ package com.zhuye.ershoufang.ui.activity.home;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -82,5 +83,20 @@ public class YouHuiActivity extends Common2Activity<CommonBean> {
         CommonApi.getInstance().activity(getQuId(),
                 1,1,YouHuiActivity.this
                 ,REFRESHBASE);
+    }
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()){
+                    case R.id.price:
+
+                        break;
+                }
+            }
+        });
     }
 }

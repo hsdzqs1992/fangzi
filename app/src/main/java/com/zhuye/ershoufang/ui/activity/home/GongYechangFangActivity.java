@@ -1,5 +1,6 @@
 package com.zhuye.ershoufang.ui.activity.home;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,12 +12,15 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.home.ChangFangAdapter2;
-import com.zhuye.ershoufang.bean.CommonBean;
+import com.zhuye.ershoufang.bean.Common3Bean;
+import com.zhuye.ershoufang.data.CommonApi;
+import com.zhuye.ershoufang.one.MyMultipleItem;
+import com.zhuye.ershoufang.ui.activity.CommonHome5Activity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class GongYechangFangActivity extends CommonHomeActivity<CommonBean> {
+public class GongYechangFangActivity extends CommonHome5Activity<Common3Bean> {
 
     @BindView(R.id.back)
     ImageView back;
@@ -54,7 +58,18 @@ public class GongYechangFangActivity extends CommonHomeActivity<CommonBean> {
 
     @Override
     protected void doList() {
-
+        datas.clear();
+        for (int i = 0;i<list.size();i++){
+            if(list.size()>2){
+                if(i==1){
+                    datas.add(new MyMultipleItem(MyMultipleItem.SECOND_TYPE,list.get(i)));
+                }else {
+                    datas.add(new MyMultipleItem(MyMultipleItem.FIRST_TYPE,list.get(i)));
+                }
+            }else {
+                datas.add(new MyMultipleItem(MyMultipleItem.FIRST_TYPE,list.get(i)));
+            }
+        }
     }
 
     @Override
@@ -69,12 +84,14 @@ public class GongYechangFangActivity extends CommonHomeActivity<CommonBean> {
 
     @Override
     protected void onLoadmore() {
-
+        CommonApi.getInstance().plant_list(cate_id,getQuId(),++page,key,GongYechangFangActivity.this
+                ,LOADMOREBASE);
     }
 
     @Override
     protected void onRefresh() {
-
+        CommonApi.getInstance().plant_list(cate_id,getQuId(),1,key,GongYechangFangActivity.this
+                ,REFRESHBASE);
     }
 
 
@@ -88,9 +105,22 @@ public class GongYechangFangActivity extends CommonHomeActivity<CommonBean> {
                 clickJieDao(view);
                 break;
             case R.id.ll2:
-                alertjiageWindow(view,100);
+                dat.clear();
+              //  alertjiageWindow(view,100);
+                dat.add("出售");
+                dat.add("出租");
+                alertWindow(view, dat, 11);
                 break;
         }
+    }
+
+    String cate_id = "8";
+    String key ;
+    @Override
+    protected void initData() {
+        super.initData();
+        CommonApi.getInstance().plant_list(cate_id,getQuId(),page,key,GongYechangFangActivity.this
+        ,LIST);
     }
 
     @Override
@@ -102,9 +132,32 @@ public class GongYechangFangActivity extends CommonHomeActivity<CommonBean> {
     protected void onItemClick(View view, int position, int rescode) {
         super.onItemClick(view, position, rescode);
         switch (rescode){
-            case 9:
-
+            case 11:
+                switch (position){
+                    case 0:
+                        cate_id = "8";
+                        break;
+                    case 1 :
+                        cate_id = "10";
+                        break;
+                }
+                CommonApi.getInstance().plant_list(cate_id,getQuId(),1,key,GongYechangFangActivity.this
+                        ,REFRESHBASE);
                 break;
+
         }
+    }
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(GongYechangFangActivity.this, GongYeDetailActivity.class);
+                intent.putExtra("id",list.get(position).getLife_id());
+                startActivity(intent);
+            }
+        });
     }
 }

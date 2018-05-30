@@ -18,6 +18,9 @@ import com.zhuye.ershoufang.data.CommonApi;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
+
 //HomeWindowActivity
 public class JingJiRenActivity extends CommonHome2Activity<HomeJinBean> {
 
@@ -160,6 +163,22 @@ public class JingJiRenActivity extends CommonHome2Activity<HomeJinBean> {
                 Intent intent = new Intent(JingJiRenActivity.this,JingJiRenDetailActivity.class);
                 intent.putExtra("id",list.get(position).getUser_id());
                 startActivity(intent);
+            }
+        });
+
+
+        jiAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (view.getId()){
+                    case R.id.chat:
+                        RongIM.getInstance().startConversation(
+                                JingJiRenActivity.this,
+                                Conversation.ConversationType.PRIVATE,
+                                list.get(position).getUser_id(),
+                                "");
+                        break;
+                }
             }
         });
     }

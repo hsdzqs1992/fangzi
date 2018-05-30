@@ -2,6 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhuye.ershoufang">
 
+    <!-- //获取设备网络状态，禁用后无法获取网络状态 -->
+
+
+    <!-- //网络权限，当禁用后，无法进行检索等相关业务 -->
+
+
+    <!-- //读取设备硬件信息，统计数据 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- //读取系统信息，包含系统版本等信息，用作统计 -->
+
+
+    <!-- //获取设备的网络状态，鉴权所需网络代理 -->
+
+
+    <!-- //允许sd卡写权限，需写入地图数据，禁用后无法显示地图 -->
+
+
+    <!-- //获取统计数据 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- //鉴权所需该权限获取进程列表 -->
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -209,7 +230,73 @@
         <activity android:name=".ui.activity.home.LookXiaoQuDetailActivity" />
         <activity android:name=".ui.activity.common.MutiCommon2Activity" />
         <activity android:name=".ui.activity.home.CommonHome2Activity" />
-        <activity android:name=".ui.activity.MessageDetailActivity"></activity>
+        <activity android:name=".ui.activity.MessageDetailActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.zhuye.ershoufang.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".ui.activity.ChatActivity" />
+        <activity
+            android:name=".chat.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.zhuye.ershoufang"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".chat.ConversationListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.zhuye.ershoufang"
+                    android:pathPrefix="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.CommonHome5Activity" />
+        <activity android:name=".ui.activity.home.GongYeDetailActivity" />
+        <activity android:name=".ui.activity.VuActivity" />
+        <activity android:name=".ui.activity.home.ZuFangDetailActivity" />
+        <activity android:name=".ui.activity.home.XinPanActivity" />
+        <activity android:name=".ui.activity.home.ChuShouActivity" />
+        <activity android:name=".ui.activity.TestActivity" />
+        <activity android:name=".ui.activity.home.JingMaiDetailActivity2" />
+        <activity android:name=".ui.activity.AboutActivity" />
+
+        <receiver
+            android:name=".chat.SealNotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.THIRD_PARTY_PUSH_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.activity.common.CommonAddActivity"></activity>
+        <activity android:name=".city.ChooseAddressActivity"></activity>
+
+
+
     </application>
 
 </manifest>

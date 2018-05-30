@@ -18,113 +18,118 @@
 			<h1 class="mui-title">竞卖详情</h1>
 		</header>
 		<!--banner-->
-		<div class="banner mui-content">
-			<div class="bann-s swiper-container">
-				<div class="swiper-wrapper mui-content-padded m-0">
-					<a class="swiper-slide" href="javascript:;">
-						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
-					</a>
-					<a class="swiper-slide" href="javascript:;">
-						<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
-					</a>
-					<a class="swiper-slide" href="javascript:;">
-						<img src="images/chanping.png" data-preview-src="" data-preview-group="1">
-					</a>
-				</div>
-				<span class="fenye c-f font-15"><span class="slide-active">1</span>/<span class="slide-num">4</span></span>
-			</div>
-		</div>
-		<!--竞买内容-->
-		<div class="auction_mess b-f">
-			<div class="auction_mess_top">
-				<p>郑州市中原区 电厂路 大学科技园 10号楼705</p>
-				<p class="auction_mess_top_money">当前价<em>¥</em><em>1,908,200</em></p>
-				<p class="auction_mess_top_pep"><em>1人报名</em><em>5人设置提醒</em><em>91次围观</em></p>
-			</div>
-			<div class="auction_mess_bom">
-				<span>保证金<em>¥10,000</em></span>
-				<span>加价幅度<em>¥1,000</em></span>
-				<span>评估价<em>¥30,000</em></span>
-			</div>
-		</div>
-		<!--竞买记录-->
-		<div class="auction_record b-f" onclick="window.location.href='jingmai-record.html'">
-			<div class="auction_record_title clear">
-				<span class="f-l">竞买记录</span>
-				<span class="mui-icon mui-icon-arrowright f-r"></span>
-				<span class="f-r">全部</span>
-			</div>
-			<div class="auction_record_wrap clear">
-				<div class="auction_record_lists f-l">
-					<div class="auction_record_lists_top clear">
-						<span class="f-l auction_record_lists_color">领先</span>
-						<span class="f-r">Z00007</span>
-					</div>
-					<div class="auction_record_lists_bom clear">
-						<span class="f-r auction_record_lists_color">¥1,000</span>
-					</div>
-				</div>
-				<div class="auction_record_lists f-l">
-					<div class="auction_record_lists_top clear">
-						<span class="f-l">领先</span>
-						<span class="f-r">Z00007</span>
-					</div>
-					<div class="auction_record_lists_bom clear">
-						<span class="f-r">Z00007</span>
-					</div>
-				</div>
-				<div class="auction_record_lists f-l">
-					<div class="auction_record_lists_top clear">
-						<span class="f-l">领先</span>
-						<span class="f-r">Z00007</span>
-					</div>
-					<div class="auction_record_lists_bom clear">
-						<span class="f-r">Z00007</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--起拍价-->
-		<div class="auction_money b-f">
-			<p class="auction_money_qi">起拍价<em>¥300,000</em></p>
-			<p>竞拍周期<em>1天</em></p>
-			<p>延时周期<em>5分钟</em></p>
-			<p>房屋面积<em>150m²</em></p>
-			<p>竞价规则<em>至少一人报名且出价不低于起拍价，方可成交</em></p>
-		</div>
-		<!--竞买须知-->
-		<div class="auction_notice b-f clear"onclick="window.location.href='jingmai-xuzhi.html'">
-			<span class="f-l">竞买须知</span>
-			<span class="mui-icon mui-icon-arrowright f-r"></span>
-		</div>
-		<!--标的物介绍-->
-		<div class="auction_images clear b-f">
-			<div class="auction_images_title">
-				<p>标的物介绍</p>
-			</div>
-			<div class="auction_images_lists">
-				<img src="images/chanping.png" data-preview-src="" data-preview-group="2" class="f-l" />
-				<img src="images/jiaju.png" data-preview-src="" data-preview-group="2" class="f-l" />
-				<img src="images/jiaju.png" data-preview-src="" data-preview-group="2" class="f-l" />
-				<img src="images/jiaju.png" data-preview-src="" data-preview-group="2" class="f-l" />
-			</div>
-		</div>
-		<!--所在地点-->
-		<div class="auction_address b-f">
-			<div class="auction_images_title">
-				<p>所在地</p>
-				<p>郑州市中原区 电厂路</p>
-			</div>
-			<div id="baiduMap">
 
+		<div id="app">
+			<div class="banner mui-content">
+				<div class="bann-s swiper-container">
+					<div class="swiper-wrapper mui-content-padded m-0">
+						<a class="swiper-slide" href="javascript:;">
+							<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+						</a>
+						<a class="swiper-slide" href="javascript:;">
+							<img src="images/jiaju.png" data-preview-src="" data-preview-group="1">
+						</a>
+						<a class="swiper-slide" href="javascript:;">
+							<img src="images/chanping.png" data-preview-src="" data-preview-group="1">
+						</a>
+					</div>
+					<span class="fenye c-f font-15"><span class="slide-active">1</span>/<span class="slide-num">4</span></span>
+				</div>
+			</div>
+			<!--竞买内容-->
+			<div class="auction_mess b-f">
+				<div class="auction_mess_top">
+					<p>{{dat.addr}}</p>
+					<p class="auction_mess_top_money">当前价<em>¥</em><em>{{dat.dq_money}}</em></p>
+					<p class="auction_mess_top_pep"><em>{{}1人报名</em><em>5人设置提醒</em><em>91次围观</em></p>
+				</div>
+				<div class="auction_mess_bom">
+					<span>保证金<em>¥{{dat.bz_money}}</em></span>
+					<span>加价幅度<em>¥{{dat.jia_money}}</em></span>
+					<span>评估价<em>¥{{dat.pg_money}}</em></span>
+				</div>
+			</div>
+			<!--竞买记录-->
+			<!--onclick="window.location.href='jingmai-record.html'"-->
+			<div class="auction_record b-f" @click="jilu" >
+				<div class="auction_record_title clear">
+					<span class="f-l">竞买记录</span>
+					<span class="mui-icon mui-icon-arrowright f-r"></span>
+					<span class="f-r">全部</span>
+				</div>
+				<div class="auction_record_wrap clear">
+					<div class="auction_record_lists f-l">
+						<div class="auction_record_lists_top clear">
+							<span class="f-l auction_record_lists_color">领先</span>
+							<span class="f-r">Z00007</span>
+						</div>
+						<div class="auction_record_lists_bom clear">
+							<span class="f-r auction_record_lists_color">¥1,000</span>
+						</div>
+					</div>
+					<div class="auction_record_lists f-l">
+						<div class="auction_record_lists_top clear">
+							<span class="f-l">领先</span>
+							<span class="f-r">Z00007</span>
+						</div>
+						<div class="auction_record_lists_bom clear">
+							<span class="f-r">Z00007</span>
+						</div>
+					</div>
+					<div class="auction_record_lists f-l">
+						<div class="auction_record_lists_top clear">
+							<span class="f-l">领先</span>
+							<span class="f-r">Z00007</span>
+						</div>
+						<div class="auction_record_lists_bom clear">
+							<span class="f-r">Z00007</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--起拍价-->
+			<div class="auction_money b-f">
+				<p class="auction_money_qi">起拍价<em>¥{{dat.qp_money}}</em></p>
+				<p>竞拍周期<em>{{dat.jp_time}}天</em></p>
+				<p>延时周期<em>{{dat.ys_time}}分钟</em></p>
+				<p>房屋面积<em>150m²</em></p>
+				<p>竞价规则<em>至少一人报名且出价不低于起拍价，方可成交</em></p>
+			</div>
+			<!--竞买须知-->
+			<div class="auction_notice b-f clear"onclick="window.location.href='jingmai-xuzhi.html'">
+				<span class="f-l">竞买须知</span>
+				<span class="mui-icon mui-icon-arrowright f-r"></span>
+			</div>
+			<!--标的物介绍-->
+			<div class="auction_images clear b-f">
+				<div class="auction_images_title">
+					<p>标的物介绍</p>
+				</div>
+				<div class="auction_images_lists">
+					<img src="images/chanping.png" data-preview-src="" data-preview-group="2" class="f-l" />
+					<img src="images/jiaju.png" data-preview-src="" data-preview-group="2" class="f-l" />
+					<img src="images/jiaju.png" data-preview-src="" data-preview-group="2" class="f-l" />
+					<img src="images/jiaju.png" data-preview-src="" data-preview-group="2" class="f-l" />
+				</div>
+			</div>
+			<!--所在地点-->
+			<div class="auction_address b-f">
+				<div class="auction_images_title">
+					<p>所在地</p>
+					<p>郑州市中原区 电厂路</p>
+				</div>
+				<div id="baiduMap">
+
+				</div>
+			</div>
+			<button class="new_btn"onclick="window.location.href='jingmai-apply.html'">报名交保证金</button>
+			<!--提醒-->
+			<div class="dianhua" data_id="1" @click="tixing">
+				<img :src="dat.tixing==0 ? 'images/tixing.png' :'images/tixing.png'"/>
+				<span>设置提醒</span>
 			</div>
 		</div>
-		<button class="new_btn"onclick="window.location.href='jingmai-apply.html'">报名交保证金</button>
-		<!--提醒-->
-		<div class="dianhua" data_id="1">
-			<img src="images/tixing.png"/>
-			<span>设置提醒</span>
-		</div>
+
 	</body>
 	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
@@ -132,6 +137,10 @@
 	<script src="js/mui.previewimage.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=HkIGBQ5L4PGikBSPXhnq5ELdSg4WsYWK"></script>
+
+	<script src="js/vue.min.js" type="text/javascript"></script>
+	<script src="js/utils.js" type="text/javascript"></script>
+
 	<script type="text/javascript">
 		var swiper = new Swiper('.bann-s', {
 			pagination: '.bann-s .swiper-pagination',
@@ -165,6 +174,146 @@
 				$(this).attr("data_id","1");
 			}
 		})
+
+
+
+        new Vue({
+            el:"#app",
+            data:{
+                //index.php/app/house/cf_detail
+                url:'http://192.168.1.12/jdhouse/index.php/app/bidder/bidder_detail',
+                img:'http://192.168.1.12/jdhouse/attachs/',
+				tixin:'http://192.168.1.12/jdhouse/index.php/app/bidder/remind',
+                dat:Object,
+                loupan:Object,
+                id:1,
+                ju:'http://192.168.1.12/jdhouse/index.php/app/index/report',
+                token:'aaa'
+
+            },
+
+
+
+            filters:{
+
+                // df:function (value,ss) {
+                // console.log(value,ss)
+                // }
+            },
+
+
+            methods:{
+
+                tixing:function(){
+                   console.log('tixing')
+
+					var m = new Map()
+					m.put("aa",'ss')
+                    m.put("aa",'ss')
+                    m.put("aa",'ss')
+                    m.put("aa",'ss')
+                    m.put("aa",'ss')
+					console.log(m)
+
+				},
+
+                jilu:function(){
+                    window.location.href='jingmai-record.html'
+				},
+
+                chat:function(){
+                    java.chat()
+                },
+
+
+                phone:function(){
+                    java.phone()
+                },
+
+                shoucang:function(){
+                    java.shoucang()
+                },
+
+                share:function(){
+                    java.share()
+                },
+
+                jubao:function(){
+                    var that = this
+                    $.ajax({
+                        url:that.url,
+                        type:'post',
+                        data:{
+                            "life_id": that.id,
+                            "token":that.token
+                        },
+                        datatype:'json',
+                        success:function (data) {
+                            console.log(data)
+                            if(check(data))	{
+                                console.log('ok')
+                            }
+
+                        },
+
+                        error:function () {
+
+                        }
+                    })
+
+                },
+
+                getData:function (id) {
+                    console.log(id)
+                    var that = this
+                    $.ajax({
+                        url: that.url,
+                        type: "post",
+                        data: {
+                            "id": id,
+                            "token":"sdfasd"
+                        },
+                        datatype: "json",
+                        success: function (data) {
+                            console.log(data)
+							console.log(that.url)
+
+
+                            var temp = JSON.parse(data)
+                            console.log(temp.data)
+                            that.dat = temp.data
+                            // var time = new Date()
+                            //
+                            // //console.log(time.getMilliseconds())
+                            // // console.log(time.getMinutes())
+                            // // console.log(time.getSeconds())
+                            // // console.log(time.getTime())
+                            // //this.cur = time.getMilliseconds()
+                            // //console.log(time.getMilliseconds())
+                            // //console.log(typeof temp.data)
+                            // console.log(data)
+
+                        },
+                        error: function () {
+                            console.log("shiba")
+                        }
+                    })
+                }
+            },
+
+
+            created:function () {
+                // var id = java.getId();
+                var id ='13'
+                this.getData(id)
+            },
+
+
+            monthed:function () {
+
+            }
+        })
+
 	</script>
 
 </html>

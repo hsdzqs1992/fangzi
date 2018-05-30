@@ -54,7 +54,7 @@
 			<div class="fanhui clear">
 				<img src="images/jiantou.png" class="f-l mui-action-back" />
 				<img src="images/bg-fenxiang.png" class="f-r share" />
-				<img src="images/bg-shou.png" class="f-r shoucang" />
+				<img src="images/bg-shou.png"  class="f-r shoucang" />
 			</div>
 		</div>
 		<!--详情内容-->
@@ -145,12 +145,12 @@
 			<p class="house_title">主力户型(11)</p>
 			<div class="swiper-container building">
 				<div class="swiper-wrapper buil_wrap huxingdiv">
-					<!--<div class="swiper-slide buil_wrap_slide">-->
-						<!--<img src="images/42.png" />-->
-						<!--<p>高层A1户型</p>-->
-						<!--<p>3室2厅1卫<em>88m²</em></p>-->
-						<!--<p>约135万元</p>-->
-					<!--</div>-->
+					<!-- <div class="swiper-slide buil_wrap_slide">
+						<img src="images/42.png" />
+						<p>高层A1户型</p>
+						<p>3室2厅1卫<em>88m²</em></p>
+						<p>约135万元</p>
+					</div> -->
 					<!--<div class="swiper-slide buil_wrap_slide">-->
 						<!--<img src="images/42.png" />-->
 						<!--<p>高层A1户型</p>-->
@@ -243,11 +243,7 @@
 	<script type="text/javascript">
 
 		//列表轮播
-		var swiper = new Swiper('.building', {
-			pagination: '.building .swiper-pagination',
-			slidesPerView: 3.2,
-			spaceBetween: 15,
-		});
+		
 		mui.previewImage();
 		//点击查看更多
 		$(".detail_mess_more").click(function() {
@@ -278,7 +274,7 @@
            // mui.toast('知道了')
             $(".detail_mess_money > span > em").text('sadfasdf')
         }
-
+        var tempdata = null ;
 
         // 数据处理
         $(function () {
@@ -286,10 +282,14 @@
             var baseurl=''
 
 			//alert(java.getId())
-			var id = java.getId()
-           // var id = 21
+			//var id = java.getId()
+          
+		  
+		  	var id = 1
 			var base = 'http://192.168.1.10/jdhouse/'
 			var baseimg = base +'attachs/'
+
+
 
             $.ajax({
                 url: base+"index.php/app/indexnewhouse/newhouse_detail",
@@ -305,6 +305,7 @@
                     var paths = baseimg;
                     console.log(json.data);
                     console.log(datas.id);
+					tempdata = datas
                     var lists = '';
                     for(var i = 0;i<images.length;i++) {
                         lists += '<a class="swiper-slide" href="javascript:;"><img src="' + paths + '' + images[i].img + '" data-preview-src="" data-preview-group="1"></a>';
@@ -337,6 +338,14 @@
                             break;
 					}
 
+
+					// let shoucang =  $('.shoucang')
+					// shoucang.src = 'images/bg-fenxiang.png'
+
+					//datas.cang = 1
+					if(datas.cang == 1){
+                        $('.shoucang').attr('src','images/shouf9.png')
+					}
 					// 价格
 					$(".detail_mess_money > span > em").text(datas.price)
 
@@ -354,14 +363,23 @@
                     for(var i = 0;i<huxinga.length;i++) {
                         //lists += '<a class="swiper-slide" href="javascript:;"><img src="' + paths + '' + images[i].img + '" data-preview-src="" data-preview-group="1"></a>';
 						huxingitem += ' <div class="swiper-slide buil_wrap_slide">' +
-                            '                        <img src="'+huxinga[i].img+'" />' +
-                            '                        <p>+huxinga[i].miaoshu+</p>' +
-                            '                        <p>+huxinga[i].huxing+<em>+huxinga[i].hx_area+m²</em></p>' +
+                            '                        <img  src="'+baseimg+ huxinga[i].img+'" />' +
+                            '                        <p>'+huxinga[i].miaoshu+'</p>' +
+                            '                        <p>'+huxinga[i].huxing+'<em>'+huxinga[i].hx_area+'m²</em></p>' +
                             '                    <p>约135万元</p>' +
                             '                    </div>';
                     }
 
                     $(".huxingdiv").append(huxingitem)
+
+
+					var swiper = new Swiper('.building', {
+						pagination: '.building .swiper-pagination',
+						slidesPerView: 3.2,
+						spaceBetween: 15,
+					});
+
+
                     // <div class="swiper-slide buil_wrap_slide">
                     //     <img src="images/42.png" />
                     //     <p>高层A1户型</p>
@@ -371,8 +389,18 @@
 
 					//$(".user_title").text('用户点评()')
 
-                    $(".user_title").text('用户点评(' + datas.pinglun_count=='0'?'':datas.pinglun_count +')')
 
+                    //$(".user_title").text('用户点评(' + datas.pinglun_count=='0'?'':datas.pinglun_count +')')
+
+					var text1 = "";
+                    datas.pinglun_count = datas.pinglun_count
+					if(datas.pinglun_count=="0"){
+                        text1='用户点评';
+					}else{
+						text1='用户点评('+datas.pinglun_count+')';
+					}
+
+                    $(".user_title").text(text1);
 
                     var pinglun = datas.pinglun;
                     var pinglunitem  = '';
@@ -406,7 +434,15 @@
 				java.share()
             })
             $(".detail_wei").click(function () {
-                java.chat()
+                // console.log(tempdata.fb_rongyun)
+				//console.log(tempdata)
+                //java.chat(tempdata.fb_rongyun)
+				//console.log(tempdata.fb_rongyun)
+				//java.chat(tempdata.fb_rongyun)
+                //java.chat(tempdata.fb_rongyun+"")
+
+				console.log(tempdata.uid)
+				java.chat(tempdata.uid)
             })
             $(".detail_shou").click(function () {
 				java.callphone()

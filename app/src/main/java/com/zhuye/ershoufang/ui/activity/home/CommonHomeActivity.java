@@ -55,4 +55,5 @@ public abstract class CommonHomeActivity<T> extends MutiCommon2Activity<T> {
     protected String business_id;
 
 
+
 }

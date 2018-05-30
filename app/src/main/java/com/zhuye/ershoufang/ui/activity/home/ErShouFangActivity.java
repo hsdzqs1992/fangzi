@@ -11,17 +11,16 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.home.ErFangAdapter2;
-import com.zhuye.ershoufang.bean.Base;
-import com.zhuye.ershoufang.bean.CityBean;
 import com.zhuye.ershoufang.bean.Common3Bean;
-import com.zhuye.ershoufang.data.CommonApi;
+import com.zhuye.ershoufang.one.MyMultipleItem;
+import com.zhuye.ershoufang.ui.activity.CommonHome5Activity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
+public class ErShouFangActivity extends CommonHome5Activity<Common3Bean> {
 
-    private static final int GETDATA = 555;
+
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.ttitle)
@@ -74,33 +73,36 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
 
     @Override
     protected void onLoadmore() {
-        CommonApi.getInstance().index(
-                "3",qu_id,++page,
-                business_id,prices1,prices2,select1,yonghu,"",
-                ErShouFangActivity.this,LOADMOREBASE);
+        selecechoose("3",LOADMOREBASE);
+//        CommonApi.getInstance().index(
+//                "3",qu_id,++page,
+//                business_id,prices1,prices2,select1,yonghu,"",
+//                ErShouFangActivity.this,LOADMOREBASE);
     }
 
     @Override
     protected void onRefresh() {
-        CommonApi.getInstance().index("3",qu_id,1,business_id,prices1,prices2,select1,yonghu,"",
-                ErShouFangActivity.this,REFRESHBASE);
+//        CommonApi.getInstance().index("3",qu_id,1,business_id,prices1,prices2,select1,yonghu,"",
+//                ErShouFangActivity.this,REFRESHBASE);
+
+        selecechoose("3",REFRESHBASE);
     }
 
-
-    CityBean jiadao;
-    @Override
-    public void success(int requestcode, Base o) {
-        super.success(requestcode, o);
-        switch (requestcode){
-            case GETDATA:
-                jiadao = (CityBean) o;
-                break;
-        }
-    }
 
     @Override
     protected void doList() {
-
+        datas.clear();
+        for (int i = 0;i<list.size();i++){
+            if(list.size()>2){
+                if(i==1){
+                    datas.add(new MyMultipleItem(MyMultipleItem.SECOND_TYPE,list.get(i)));
+                }else {
+                    datas.add(new MyMultipleItem(MyMultipleItem.FIRST_TYPE,list.get(i)));
+                }
+            }else {
+                datas.add(new MyMultipleItem(MyMultipleItem.FIRST_TYPE,list.get(i)));
+            }
+        }
     }
 
     @Override
@@ -114,20 +116,13 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
     }
 
 
-    String business_id = null;
-    String prices1;
-    String prices2;
-    String select1;
-    String yonghu;
+
     @Override
     protected void initData() {
         super.initData();
-        qu_id = getQuId();
-        CommonApi.getInstance().xiaji(qu_id,ErShouFangActivity.this,GETDATA,false);
-        CommonApi.getInstance().index("3",qu_id,page,business_id,prices1,prices2,select1,yonghu,"",
-                ErShouFangActivity.this,LIST);
+       getData("3");
     }
-    String qu_id;
+
     @OnClick({R.id.back, R.id.quyu, R.id.jiage, R.id.huxing, R.id.video})
     public void onViewClicked(View view) {
         dat.clear();
@@ -157,7 +152,7 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
         super.onItemClick(view, position, rescode);
         switch (rescode){
             case 11:
-                selecechoose(REFRESHBASE);
+                selecechoose("3",REFRESHBASE);
                 break;
             case 12:
 
@@ -165,19 +160,16 @@ public class ErShouFangActivity extends CommonHomeActivity<Common3Bean> {
 
         }
     }
+//
+//    @Override
+//    public void getClickPrice(String price1, String price2) {
+//        super.getClickPrice(price1, price2);
+//        prices2 = price2;
+//        prices1 = price1;
+//        selecechoose("3",REFRESHBASE);
+//    }
 
-    @Override
-    public void getClickPrice(String price1, String price2) {
-        super.getClickPrice(price1, price2);
-        prices2 = price2;
-        prices1 = price1;
-        selecechoose(REFRESHBASE);
-    }
 
 
 
-    public void selecechoose(int code){
-        CommonApi.getInstance().index("3",qu_id,page,business_id,prices1,prices2,select1,yonghu,"",
-                ErShouFangActivity.this,code);
-    }
 }

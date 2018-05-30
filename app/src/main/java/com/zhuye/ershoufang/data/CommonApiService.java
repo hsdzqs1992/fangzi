@@ -8,7 +8,9 @@ import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.BidderDetailBean;
 import com.zhuye.ershoufang.bean.ChanPinBean;
 import com.zhuye.ershoufang.bean.ChuZuListBean;
+import com.zhuye.ershoufang.bean.CiYuBean;
 import com.zhuye.ershoufang.bean.CityBean;
+import com.zhuye.ershoufang.bean.CitysBean;
 import com.zhuye.ershoufang.bean.Common2Bean;
 import com.zhuye.ershoufang.bean.Common3Bean;
 import com.zhuye.ershoufang.bean.Common5Bean;
@@ -27,6 +29,7 @@ import com.zhuye.ershoufang.bean.HomeJinBean;
 import com.zhuye.ershoufang.bean.JiaJuDetailBean;
 import com.zhuye.ershoufang.bean.JingJiRSettingBean;
 import com.zhuye.ershoufang.bean.JingJiRenBean;
+import com.zhuye.ershoufang.bean.JingMaiBean;
 import com.zhuye.ershoufang.bean.KanFangBean;
 import com.zhuye.ershoufang.bean.KanFangDetailBean;
 import com.zhuye.ershoufang.bean.LiuPaiBean;
@@ -38,6 +41,7 @@ import com.zhuye.ershoufang.bean.LouPanBeans;
 import com.zhuye.ershoufang.bean.MaiChuBean;
 import com.zhuye.ershoufang.bean.MeKanFangBean;
 import com.zhuye.ershoufang.bean.MianBean;
+import com.zhuye.ershoufang.bean.MianKanBean;
 import com.zhuye.ershoufang.bean.MybidderBean;
 import com.zhuye.ershoufang.bean.PaiMaiBean;
 import com.zhuye.ershoufang.bean.PersonBean;
@@ -46,6 +50,7 @@ import com.zhuye.ershoufang.bean.QiJianDianBean;
 import com.zhuye.ershoufang.bean.QiTeBean;
 import com.zhuye.ershoufang.bean.QuBean;
 import com.zhuye.ershoufang.bean.UploadImgBean;
+import com.zhuye.ershoufang.bean.UserBean;
 import com.zhuye.ershoufang.bean.WenDaBean;
 import com.zhuye.ershoufang.bean.WenDadetailBean;
 import com.zhuye.ershoufang.bean.XiaoQuBean;
@@ -277,6 +282,9 @@ public interface CommonApiService {
 
     @GET(NetWorkUrl.XIAOQU)
     Observable<CommonListBean<XiaoQuBean>> xiaoqu();
+
+    @GET(NetWorkUrl.QHCITY)
+    Observable<CitysBean> qhcity();
 
     @FormUrlEncoded
     @POST(NetWorkUrl.XIAJI)
@@ -1018,7 +1026,7 @@ public interface CommonApiService {
 
     @FormUrlEncoded
     @POST(NetWorkUrl.BIDDER_LIST)
-    Observable<Base> bidder_list(
+    Observable<CommonListBean<JingMaiBean>> bidder_list(
             @Field("cate_id") String cate_id,@Field("area_id") String area_id,
             @Field("page") int page);
 
@@ -1387,5 +1395,89 @@ public interface CommonApiService {
     Observable<CommonObjectBean<XiaoXiBean>> xx_detail(
             @Field("xiaoxi_id") String xiaoxi_id
 
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.PLANT_LIST)
+    Observable<CommonListBean<Common3Bean>> plant_list(
+            @Field("cate_id") String cate_id,@Field("area_id") String area_id,
+            @Field("page") int page,
+            @Field("key") String key
+
+    );
+
+    @GET(NetWorkUrl.CIYU)
+    Observable<CommonListBean<CiYuBean>> ciyu();
+
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.DISCOUNT)
+    Observable<Base> discount(
+            @Field("token") String token,@Field("newhouse_id") String newhouse_id,
+            @Field("mobile") String mobile
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.NEWHOUSE_COLLECT)
+    Observable<CommonListBean<Common5Bean>> newhouse_collect(
+            @Field("token") String token,@Field("page") int page
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.LIFE_CANG)
+    Observable<CommonListBean<Common3Bean>> life_cang(
+            @Field("token") String token,@Field("page") int page
+            ,@Field("type") int type
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.BUILDING)
+    Observable<CommonListBean<Common3Bean>> building(
+            @Field("token") String token,@Field("page") int page
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.PLANT_COLLECT)
+    Observable<CommonListBean<Common3Bean>> plant_collect(
+            @Field("token") String token,@Field("page") int page
+    );
+
+    /**
+     *
+     * @param token
+     * @param page
+     * @param type 2表示家具商 3表示装修公司
+     * @return
+     */
+    @FormUrlEncoded
+    @POST(NetWorkUrl.SHOP_COLLECT)
+    Observable<CommonListBean<ZhuangxiuJiaJuBean>> shop_collect(
+            @Field("token") String token,@Field("page") int page,@Field("type") int type
+    );
+
+    /**
+     *
+     * @param token
+     * @param type  0表示二手房|租房|商铺写字楼|工业厂房 1表示新房 2表示家具商 3表示装修公司
+     * @param life_id  type=0时表示房源id type=1时表示新房id type=2时表示家具商id type=3时表示装修商id
+     * @return
+     */
+    @FormUrlEncoded
+    @POST(NetWorkUrl.DEL_COLLECT)
+    Observable<Base> del_collect(
+            @Field("token") String token,@Field("type") int type,
+            @Field("life_id") int life_id
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.DEL_COLLECT)
+    Observable<CommonObjectBean<UserBean>> getUserInfo(
+            @Field("senderUserId") String senderUserId
+    );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.MYBM)
+    Observable<CommonListBean<MianKanBean>> mybm(
+            @Field("token") String token,@Field("page") int page
     );
 }

@@ -21,6 +21,25 @@ public class Common5Bean {
      * photo : ["2017/05/23/thumb_59241f31df65f.png","2017/05/23/thumb_59241f39514cf.png","2017/05/23/thumb_59241f4099c7a.png"]
      */
 
+    private String area;
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(String business) {
+        this.business = business;
+    }
+
+    private String business;
     private String area_name;
     private String business_name;
 

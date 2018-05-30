@@ -41,6 +41,8 @@ public abstract class BaseFragment<T> extends Fragment implements BaseView {
     protected CommonListBean<T> listData;
     protected  List<T> list = new ArrayList<>();
 
+
+
     private CustomProgressDialog dialog;
     public View rootView;
     Unbinder unbinder;
@@ -56,18 +58,28 @@ public abstract class BaseFragment<T> extends Fragment implements BaseView {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = View.inflate(getActivity(),getResId(),null);
-        //initView();
-        unbinder = ButterKnife.bind(this, view);
-        rootView = view;
+        if(requestBefore()){
+
+        }else{
+            View view = View.inflate(getActivity(),getResId(),null);
+            //initView();
+            unbinder = ButterKnife.bind(this, view);
+            rootView = view;
+        };
+
         initView();
         dialog = new CustomProgressDialog(getActivity(), "加载中");
         dialog.setCanceledOnTouchOutside(false);
         lodingview = View.inflate(getActivity(), R.layout.loding,null);
         errorview = LayoutInflater.from(getActivity()).inflate(R.layout.error,null);
 
-        return view;
+        return rootView;
     }
+
+    protected Boolean requestBefore() {
+        return false;
+    }
+
     public Boolean isEmpty(EditText et){
         if(TextUtils.isEmpty(et.getText().toString().trim())){
             return true;

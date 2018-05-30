@@ -1,11 +1,14 @@
 package com.zhuye.ershoufang.ui.activity.home;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.home.HomefenleiAdapter;
@@ -74,5 +77,45 @@ public class XieZiLouActivity extends BaseActivity {
     }
 
 
-
+    @Override
+    protected void initListener() {
+        super.initListener();
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                switch (position){
+                    case 0:
+                        Intent intent  = new Intent(XieZiLouActivity.this,XinPanActivity.class);
+                        intent.putExtra("cate_id",2+"");
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        Intent intent1  = new Intent(XieZiLouActivity.this,ChuShouActivity.class);
+                        intent1.putExtra("cate_id",13+"");
+                        startActivity(intent1);
+                        break;
+                    case 2:
+                        Intent intent2  = new Intent(XieZiLouActivity.this,ChuShouActivity.class);
+                        intent2.putExtra("cate_id",7+"");
+                        startActivity(intent2);
+                        break;
+                    case 3:
+                        Intent intent3  = new Intent(XieZiLouActivity.this,XinPanActivity.class);
+                        intent3.putExtra("cate_id",3+"");
+                        startActivity(intent3);
+                        break;
+                    case 4:
+                        Intent intent4  = new Intent(XieZiLouActivity.this,ChuShouActivity.class);
+                        intent4.putExtra("cate_id",12+"");
+                        startActivity(intent4);
+                        break;
+                    case 5:
+                        Intent intent5  = new Intent(XieZiLouActivity.this,ChuShouActivity.class);
+                        intent5.putExtra("cate_id",6+"");
+                        startActivity(intent5);
+                        break;
+                }
+            }
+        });
+    }
 }

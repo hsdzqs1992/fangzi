@@ -1,6 +1,8 @@
 package com.zhuye.ershoufang.ui.activity.common;
 
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -59,11 +61,11 @@ public abstract class MutiCommon2Activity<T> extends BaseActivity<T> {
 
             case REFRESHBASE:
                 listData = (CommonListBean)o;
-                doList();
                 // TODO: 2018/5/9 0009 反复试youbug
                 if(list!=null && list.size()>=0){
                     list.clear();
                     list.addAll(listData.data);
+                    doList();
                     getAdapter().replaceData(datas);
                 }
                 getSmartRefreshLayout().finishRefresh();
@@ -172,6 +174,7 @@ public abstract class MutiCommon2Activity<T> extends BaseActivity<T> {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     protected void alertWindow(View view, List<String> da, int rescode) {
         View vie = View.inflate(this, R.layout.rv, null);
         popupWindow = new PopupWindow(this);
