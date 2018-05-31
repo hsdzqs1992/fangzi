@@ -220,8 +220,8 @@ public class CommonApi {
     }
 
     public void questionindex(int type,
-                           int page,BaseView baseView, int requestcode){
-        sub(service.questionindex(type,page),baseView,requestcode);
+                           int page,BaseView baseView, int requestcode,Boolean b){
+        sub(service.questionindex(type,page),baseView,requestcode,b);
     }
 
 
@@ -1175,9 +1175,9 @@ public class CommonApi {
          sub(service.ciyu(),baseView,requestcode);
     }
 
-    public Observable discount(String token, String newhouse_id,
+    public void discount(String token, String newhouse_id,
                                String mobile,BaseView baseView, int requestcode){
-        return sub2(service.discount(token,newhouse_id,mobile),baseView,requestcode);
+         sub(service.discount(token,newhouse_id,mobile),baseView,requestcode);
     }
 
 

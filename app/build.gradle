@@ -115,8 +115,12 @@ dependencies {
     implementation project(':IMLib')
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
     implementation project(':ui')
-
-    compile 'com.tapadoo.android:alerter:2.0.5'
+//
+//    compile 'com.tapadoo.android:alerter:2.0.5'
+//    compile 'com.umeng.sdk:share-core:latest.integration'
+//    compile 'com.umeng.sdk:share-qq:latest.integration'
+//    compile 'com.umeng.sdk:share-wechat:latest.integration'
+//    compile 'com.umeng.sdk:shareboard-widget:latest.integration'
 }
 repositories {
     mavenCentral()

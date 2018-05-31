@@ -274,6 +274,7 @@
            // mui.toast('知道了')
             $(".detail_mess_money > span > em").text('sadfasdf')
         }
+		
         var tempdata = null ;
 
         // 数据处理
@@ -285,11 +286,17 @@
 			//var id = java.getId()
           
 		  
-		  	var id = 1
-			var base = 'http://192.168.1.10/jdhouse/'
-			var baseimg = base +'attachs/'
+		  	//var id = 1
+			// var base = 'http://192.168.1.10/jdhouse/'
+			// var baseimg = base +'attachs/'
 
+            // var id = java.getId()
+            // var base = java.getBase()
+            // var baseimg = base +'attachs/'
 
+            var id = 1
+            var base = 'adsf'
+            var baseimg = base +'attachs/'
 
             $.ajax({
                 url: base+"index.php/app/indexnewhouse/newhouse_detail",
@@ -433,6 +440,19 @@
             $(".share").click(function () {
 				java.share()
             })
+
+
+            $(".pay1_btn").click(function () {
+                var number = $(".phone").val()
+				//alert()
+				// if(number=='123'){
+				//
+				// }
+
+				java.youhui(number)
+
+            })
+
             $(".detail_wei").click(function () {
                 // console.log(tempdata.fb_rongyun)
 				//console.log(tempdata)

@@ -110,14 +110,15 @@ public class SearchActivity extends CommonHome2Activity<SearchBean> {
 //                        return tv;
 //                    }
 //                });
-
+                bean = (CommonListBean<CiYuBean>) o;
                 idFlowlayout.setAdapter(new TagAdapter<CiYuBean>(bean.getData())
                 {
                     @Override
                     public View getView(FlowLayout parent, int position, CiYuBean ciYuBean) {
-                        TextView tv = (TextView) getLayoutInflater().inflate(R.layout.tv,
+                        View tv = getLayoutInflater().inflate(R.layout.tv,
                                 idFlowlayout, false);
-                        tv.setText(ciYuBean.getMessage());
+                        TextView tvvs = tv.findViewById(R.id.tvvs);
+                        tvvs.setText(ciYuBean.getMessage());
                         return tv;
                     }
 

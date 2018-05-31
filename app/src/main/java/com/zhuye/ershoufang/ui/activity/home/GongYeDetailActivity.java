@@ -12,6 +12,11 @@ public class GongYeDetailActivity extends WebActivity {
         return "xiezi-detail";
     }
 
+    @Override
+    protected void javashoucang() {
+
+    }
+
     String id ="";
     @Override
     protected void initData() {

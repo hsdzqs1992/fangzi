@@ -65,4 +65,9 @@ public class HomeWendaAdapter extends FragmentPagerAdapter {
 //        return fragments.get(index);
         return null;
     }
+
+
+    public void setData(int po){
+        fragments.get(po).getData(po+1);
+    }
 }

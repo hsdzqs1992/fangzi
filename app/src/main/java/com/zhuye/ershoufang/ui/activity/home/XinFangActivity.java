@@ -209,6 +209,7 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
         switch (rescode){
             case 9:
                 business_id = jiadao.getData().get(position).getId();
+                CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,position+1,page,"",XinFangActivity.this,REFRESHBASE);
                 //CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,page,XinFangActivity.this,REFRESHBASE);
                 break;
             case 10:

@@ -10,6 +10,12 @@ public class ErShouFangDetailActivity extends WebActivity {
     public String getUrlName() {
         return "ershou-detail";
     }
+
+    @Override
+    protected void javashoucang() {
+
+    }
+
     String id ="";
     @Override
     protected void initData() {

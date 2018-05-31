@@ -9,4 +9,9 @@ public class LookXiaoQuDetailActivity extends WebActivity {
     public String getUrlName() {
         return "";
     }
+
+    @Override
+    protected void javashoucang() {
+
+    }
 }

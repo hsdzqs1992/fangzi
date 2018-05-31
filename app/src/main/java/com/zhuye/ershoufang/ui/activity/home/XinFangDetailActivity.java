@@ -1,12 +1,7 @@
 package com.zhuye.ershoufang.ui.activity.home;
 
-import android.webkit.JavascriptInterface;
-
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.ui.activity.WebActivity;
-
-import io.rong.imkit.RongIM;
-import io.rong.imlib.model.Conversation;
 
 public class XinFangDetailActivity extends WebActivity {
 
@@ -15,6 +10,11 @@ public class XinFangDetailActivity extends WebActivity {
     @Override
     public String getUrlName() {
         return "xinfang-detail";
+    }
+
+    @Override
+    protected void javashoucang() {
+
     }
 
     String id ="";
@@ -27,95 +27,12 @@ public class XinFangDetailActivity extends WebActivity {
         webview.addJavascriptInterface(new AndroidBridge(), "java");
     }
 
-    protected class AndroidBridge //这个类中提供各种js可调用的方法。
-    {
-        @JavascriptInterface
-        public String getId()
-        {
-            return id;
-//            handler.post(new Runnable(){
-//                public void run()
-//                {
-//                    Log.d("ZW", "calAndroid("+arg+")");
-//                    textView5.setText(arg);
-//                }
-//            });
-        }
 
-        @JavascriptInterface
-        public String getToken1(){
-            return getToken();
-        }
-        @JavascriptInterface
-        public void toas(String content){
-            toast(content);
-        }
 
-        @JavascriptInterface
-        public void shoucang(){
-           toast("shoucang");
-            //CommonApi.getInstance().collect(getToken(),"1",id,XinFangDetailActivity.this,SHOUCANG);
-            //// TODO: 2018/5/23 0023  
-            webview.loadUrl("javascript:yishoucang()");
-        }
-        @JavascriptInterface
-        public void share(){
-            toast("share");
-//            if(Thread.currentThread()== Looper.getMainLooper().getThread()){
-//                Toast.makeText(XinFangDetailActivity.this,"手长",Toast.LENGTH_SHORT).show();
-//            }else {
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(XinFangDetailActivity.this,"手长",Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//            }
-        }
-
-        @JavascriptInterface
-        public void chat(String id){
-            toast(id+"");
-            RongIM.getInstance().startConversation(XinFangDetailActivity.this
-            , Conversation.ConversationType.PRIVATE,"93","");
-        }
-
-        @JavascriptInterface
-        public void chat(){
-           // toast(totoken);
-            toast("chat");
-//            RongIM.getInstance().startConversation(XinFangDetailActivity.this
-//            ,Conversation.ConversationType.PRIVATE,totoken,"sadfasdf");
-
-//            if(Thread.currentThread()== Looper.getMainLooper().getThread()){
-//                Toast.makeText(XinFangDetailActivity.this,"手长",Toast.LENGTH_SHORT).show();
-//            }else {
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(XinFangDetailActivity.this,"手长",Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//            }
-        }
-        @JavascriptInterface
-        public void callphone(){
-           toast("callphone");
-        }
-
-        @JavascriptInterface
-        public void callAndroid222(final String arg,final  String arg2)
-        {
-//            handler.post(new Runnable(){
-//                public void run()
-//                {
-//                    Log.d("zwzw", "callAndroid222("+arg+","+arg2+")");
-//                    textView5.setText(arg);
-//                }
-//            });
-        }
+    @Override
+    protected String getZiId() {
+        return id;
     }
-
 
     @Override
     public void success(int requestcode, Base base) {

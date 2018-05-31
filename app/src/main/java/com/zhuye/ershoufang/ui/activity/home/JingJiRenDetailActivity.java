@@ -10,5 +10,10 @@ public class JingJiRenDetailActivity extends WebActivity {
         return "jingjiren-detail";
     }
 
+    @Override
+    protected void javashoucang() {
+
+    }
+
 
 }

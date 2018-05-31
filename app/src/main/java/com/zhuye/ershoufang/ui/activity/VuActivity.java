@@ -6,6 +6,12 @@ public class VuActivity extends WebActivity {
     public String getUrlName() {
         return "vue/elm/index";
     }
+
+    @Override
+    protected void javashoucang() {
+
+    }
+
     String id ="";
 
 

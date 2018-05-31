@@ -9,6 +9,11 @@ public class JingMaiDetailActivity2 extends WebActivity {
         return "jingmai-detail";
     }
 
+    @Override
+    protected void javashoucang() {
+
+    }
+
     String  id ;
 
     @Override

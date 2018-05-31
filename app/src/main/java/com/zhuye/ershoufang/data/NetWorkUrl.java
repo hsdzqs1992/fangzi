@@ -17,7 +17,7 @@ public class NetWorkUrl {
 
 
     public static final String BASE =
-            "http://192.168.1.29/jdhouse/";
+            "http://192.168.1.38/jdhouse/";
 
 //    public static final String BASE =
 //            "http://jd.yhsm525.com/";
@@ -316,7 +316,7 @@ public class NetWorkUrl {
     public static final String CIYU= "index.php/app/index/ciyu";
 
 
-    //首页 热门搜索词语
+    //首页 新房--优惠领取
     public static final String DISCOUNT= "index.php/app/indexnewhouse/discount";
 
 //    public static final int

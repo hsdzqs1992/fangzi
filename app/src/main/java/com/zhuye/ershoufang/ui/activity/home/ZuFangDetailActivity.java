@@ -10,6 +10,12 @@ public class ZuFangDetailActivity extends WebActivity {
     public String getUrlName() {
         return "zufang-detail";
     }
+
+    @Override
+    protected void javashoucang() {
+
+    }
+
     String id ="";
     @Override
     protected void initData() {

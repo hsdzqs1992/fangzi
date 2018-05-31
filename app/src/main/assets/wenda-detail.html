@@ -17,129 +17,308 @@
 			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
 			<h1 class="mui-title">问题详情</h1>
 		</header>
-		<div class="center mui-content">
-			<div class="mess_text b-f">
-				<p>交了定金，发现没有购房资格，定金还能退么？发现没有购房资格</p>
-				<div class="mess_text_date">
-					<span>2017-02-02</span>
-				</div>
-			</div>
-			<div class="mess_huifu b-f">
-				<div class="mess_huifu_title">
-					<span>全部回答</span>
-				</div>
-				<div class="mess_huifu_wrap">
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
-					<div class="mess_huifu_lists">
-						<div class="mess_huifu_lists_top clear">
-							<div class="mess_huifu_lists_user clear f-l">
-								<img src="images/45.png" class="f-l" />
-								<span class="f-l">石小勇</span>
-								<span class="f-l">热心网友</span>
-							</div>
-							<div class="mess_huifu_lists_date f-r">
-								<span>2017-12-02</span>
-							</div>
-						</div>
-						<div class="mess_huifu_lists_bom">
-							<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>
-						</div>
-					</div>
 
+		<div id="app">
+			<div class="center mui-content">
+				<div class="mess_text b-f" style="margin-top: 1.35rem">
+					<p>{{dat.question}} {{dat.intro}}</p>
+					<div class="mess_text_date">
+						<span>{{dat.create_time}}</span>
+					</div>
+				</div>
+				<div class="mess_huifu b-f">
+					<div class="mess_huifu_title">
+						<span>全部回答</span>
+					</div>
+					<div class="mess_huifu_wrap">
+						<div class="mess_huifu_lists" v-for="item in listdata">
+							<div class="mess_huifu_lists_top clear">
+								<div class="mess_huifu_lists_user clear f-l">
+									<img :src="imgurl + item.face" class="f-l" />
+									<span class="f-l">{{item.nickname}}</span>
+									<span class="f-l">热心网友</span>
+								</div>
+								<div class="mess_huifu_lists_date f-r">
+									<span>{{item.create_time}}</span>
+								</div>
+							</div>
+							<div class="mess_huifu_lists_bom">
+								<p>{{item.content}}</p>
+							</div>
+						</div>
+						<!--<div class="mess_huifu_lists">-->
+							<!--<div class="mess_huifu_lists_top clear">-->
+								<!--<div class="mess_huifu_lists_user clear f-l">-->
+									<!--<img src="images/45.png" class="f-l" />-->
+									<!--<span class="f-l">石小勇</span>-->
+									<!--<span class="f-l">热心网友</span>-->
+								<!--</div>-->
+								<!--<div class="mess_huifu_lists_date f-r">-->
+									<!--<span>2017-12-02</span>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="mess_huifu_lists_bom">-->
+								<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="mess_huifu_lists">-->
+							<!--<div class="mess_huifu_lists_top clear">-->
+								<!--<div class="mess_huifu_lists_user clear f-l">-->
+									<!--<img src="images/45.png" class="f-l" />-->
+									<!--<span class="f-l">石小勇</span>-->
+									<!--<span class="f-l">热心网友</span>-->
+								<!--</div>-->
+								<!--<div class="mess_huifu_lists_date f-r">-->
+									<!--<span>2017-12-02</span>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="mess_huifu_lists_bom">-->
+								<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="mess_huifu_lists">-->
+							<!--<div class="mess_huifu_lists_top clear">-->
+								<!--<div class="mess_huifu_lists_user clear f-l">-->
+									<!--<img src="images/45.png" class="f-l" />-->
+									<!--<span class="f-l">石小勇</span>-->
+									<!--<span class="f-l">热心网友</span>-->
+								<!--</div>-->
+								<!--<div class="mess_huifu_lists_date f-r">-->
+									<!--<span>2017-12-02</span>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="mess_huifu_lists_bom">-->
+								<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="mess_huifu_lists">-->
+							<!--<div class="mess_huifu_lists_top clear">-->
+								<!--<div class="mess_huifu_lists_user clear f-l">-->
+									<!--<img src="images/45.png" class="f-l" />-->
+									<!--<span class="f-l">石小勇</span>-->
+									<!--<span class="f-l">热心网友</span>-->
+								<!--</div>-->
+								<!--<div class="mess_huifu_lists_date f-r">-->
+									<!--<span>2017-12-02</span>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="mess_huifu_lists_bom">-->
+								<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="mess_huifu_lists">-->
+							<!--<div class="mess_huifu_lists_top clear">-->
+								<!--<div class="mess_huifu_lists_user clear f-l">-->
+									<!--<img src="images/45.png" class="f-l" />-->
+									<!--<span class="f-l">石小勇</span>-->
+									<!--<span class="f-l">热心网友</span>-->
+								<!--</div>-->
+								<!--<div class="mess_huifu_lists_date f-r">-->
+									<!--<span>2017-12-02</span>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="mess_huifu_lists_bom">-->
+								<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="mess_huifu_lists">-->
+							<!--<div class="mess_huifu_lists_top clear">-->
+								<!--<div class="mess_huifu_lists_user clear f-l">-->
+									<!--<img src="images/45.png" class="f-l" />-->
+									<!--<span class="f-l">石小勇</span>-->
+									<!--<span class="f-l">热心网友</span>-->
+								<!--</div>-->
+								<!--<div class="mess_huifu_lists_date f-r">-->
+									<!--<span>2017-12-02</span>-->
+								<!--</div>-->
+							<!--</div>-->
+							<!--<div class="mess_huifu_lists_bom">-->
+								<!--<p>如果你无法简洁的表达你的想法，那只说明你还不够了 解它。</p>-->
+							<!--</div>-->
+						<!--</div>-->
+
+					</div>
 				</div>
 			</div>
+			<!--onclick="window.location.href='wenda-huifu.html'-->
+			<button class="new_btn" @click="answer" >我来回答</button>
+
 		</div>
-		<button class="new_btn" onclick="window.location.href='wenda-huifu.html'">我来回答</button>
 	</body>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/vue.min.js" type="text/javascript"></script>
+	<script src="js/utils.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+        new Vue({
+            el:"#app",
+            data:{
+                //index.php/app/house/cf_detail
+                url:'',
+				listurl:'',
+                img:'http://192.168.1.12/jdhouse/attachs/',
+                dat:Object,
+                loupan:Object,
+                id:1,
+                ju:'http://192.168.1.12/jdhouse/index.php/app/index/report',
+                token:'aaa',
+				listdata:Object,
+				page:1,
+                imgurl:''
+
+            },
+
+
+
+            filters:{
+
+                // df:function (value,ss) {
+                // console.log(value,ss)
+                // }
+            },
+
+
+            methods:{
+                chat:function(){
+                    java.chat()
+                },
+
+
+                phone:function(){
+                    java.phone()
+                },
+
+                shoucang:function(){
+                    java.shoucang()
+                },
+
+                share:function(){
+                    java.share()
+                },
+
+                jubao:function(){
+                    var that = this
+                    $.ajax({
+                        url:that.url,
+                        type:'post',
+                        data:{
+                            "life_id": that.id,
+                            "token":that.token
+                        },
+                        datatype:'json',
+                        success:function (data) {
+                            console.log(data)
+                            if(check(data))	{
+                                console.log('ok')
+                            }
+
+                        },
+
+                        error:function () {
+
+                        }
+                    })
+
+                },
+
+
+				answer:function(){
+                    window.location.href='wenda-huifu.html?id='+100
+				},
+
+                getList:function(id){
+					var that = this
+                    $.ajax({
+                        url: that.listurl,
+                        type: "post",
+                        data: {
+                            "question_id": id,
+							"page":that.page
+                        },
+                        datatype: "json",
+                        success: function (data) {
+                            console.log(that.url)
+
+							var temp = JSON.parse(data)
+                            console.log(temp.data)
+                            that.dat = temp.data
+                            // var time = new Date()
+                            //
+                            // //console.log(time.getMilliseconds())
+                            // // console.log(time.getMinutes())
+                            // // console.log(time.getSeconds())
+                            // // console.log(time.getTime())
+                            // //this.cur = time.getMilliseconds()
+                            // //console.log(time.getMilliseconds())
+                            // //console.log(typeof temp.data)
+                            // console.log(data)
+
+                        },
+                        error: function () {
+                            console.log("shiba")
+                        }
+                    })
+				},
+
+
+                getData:function (id) {
+                    console.log(id)
+                    var that = this
+                    $.ajax({
+                        url: that.url,
+                        type: "post",
+                        data: {
+                            "question_id": id,
+                        },
+                        datatype: "json",
+                        success: function (data) {
+                           // console.log(that.url)
+
+
+                            var temp = JSON.parse(data)
+                            //console.log(temp.data)
+                            that.dat = temp.data
+                            // var time = new Date()
+                            //
+                            // //console.log(time.getMilliseconds())
+                            // // console.log(time.getMinutes())
+                            // // console.log(time.getSeconds())
+                            // // console.log(time.getTime())
+                            // //this.cur = time.getMilliseconds()
+                            // //console.log(time.getMilliseconds())
+                            // //console.log(typeof temp.data)
+                            // console.log(data)
+
+                        },
+                        error: function () {
+                            console.log("shiba")
+                        }
+                    })
+                }
+            },
+
+
+            created:function () {
+				var id = java.getId();
+                //var id =37
+				var base = java.getBase()
+                //var base = 'http://192.168.1.29/jdhouse/'
+				this.url = base + 'index.php/app/question/detail'
+				this.imgurl = base +''
+				this.listurl = base +'index.php/app/question/answer'
+                this.getData(id)
+				this.getList(id)
+				// console.log('created')
+            },
+
+			mounted:function () {
+				// console.log('monthed')
+            }
+        })
+	</script>
 
 </html>

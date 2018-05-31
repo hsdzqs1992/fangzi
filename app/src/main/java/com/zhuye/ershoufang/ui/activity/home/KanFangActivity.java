@@ -35,6 +35,11 @@ public class KanFangActivity extends WebActivity {
     }
 
     @Override
+    protected void javashoucang() {
+
+    }
+
+    @Override
     protected void initData() {
         super.initData();
 

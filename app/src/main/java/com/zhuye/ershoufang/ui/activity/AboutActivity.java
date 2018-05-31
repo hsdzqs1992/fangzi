@@ -12,4 +12,9 @@ public class AboutActivity extends WebActivity {
         String  url = getIntent().getStringExtra("url");
         return url;
     }
+
+    @Override
+    protected void javashoucang() {
+
+    }
 }

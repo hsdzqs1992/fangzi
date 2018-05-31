@@ -33,16 +33,38 @@ public class HomeWenDaActivity extends BaseActivity {
         return R.layout.activity_home_wen_da;
     }
 
-
+    HomeWendaAdapter adapter;
     @Override
     protected void initView() {
         super.initView();
-        HomeWendaAdapter adapter = new HomeWendaAdapter(getSupportFragmentManager(),this);
+        adapter = new HomeWendaAdapter(getSupportFragmentManager(),this);
         viewpager.setAdapter(adapter);
         tablayout.setViewPager(viewpager);
 
         hide(subtitle);
         hide(ttitle);
+    }
+
+
+    @Override
+    protected void initListener() {
+        super.initListener();
+        tablayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                adapter.setData(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @OnClick(R.id.back)

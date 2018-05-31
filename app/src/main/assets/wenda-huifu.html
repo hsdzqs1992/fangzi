@@ -40,16 +40,92 @@
 				<p>交了定金，发现没有购房资格，定金还能退么？</p>
 			</div>
 			<div class="article_huifu">
-				<textarea name="" rows="" cols=""placeholder="添加回答"></textarea>
+				<textarea name="" rows=""   id="textan" cols=""placeholder="添加回答"></textarea>
 			</div>
 		</div>
 		<button class="new_btn">提交</button>
 	</body>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
+
 	<script type="text/javascript">
+
+
+
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            console.log(url)
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+
+        var base = 'http://192.168.1.29/jdhouse/'
+        url = base + 'index.php/app/question/sub_answer'
+        //var token = java.getToken1()
+		var u = GetRequest()
+		console.log(u)
+        var  question_id  = u['id']
+
+        console.log(question_id)
+
+
+        // var textan = document.getElementById("textan");
+
+
+        var content	=$('#textan').text();
 		$(".new_btn").click(function(){
-			window.history.back();
+
+            //var base = java.getBase()
+
+            $.ajax({
+                url: url,
+                type: "post",
+                data: {
+                    "question_id": question_id,
+					"content":content,
+					"token":token
+                },
+                datatype: "json",
+                success: function (data) {
+                    // console.log(that.url)
+					if(check(data)){
+                        mui.toast('提交成功')
+                        window.history.back();
+					}
+
+                    // var temp = JSON.parse(data)
+                    // //console.log(temp.data)
+                    // that.dat = temp.data
+                    //
+                    // var time = new Date()
+                    //
+                    // //console.log(time.getMilliseconds())
+                    // // console.log(time.getMinutes())
+                    // // console.log(time.getSeconds())
+                    // // console.log(time.getTime())
+                    // //this.cur = time.getMilliseconds()
+                    // //console.log(time.getMilliseconds())
+                    // //console.log(typeof temp.data)
+                    // console.log(data)
+
+                },
+                error: function () {
+                   mui.toast('提交失败')
+                }
+            })
+
+
 		})
+
+
 	</script>
 </html>
