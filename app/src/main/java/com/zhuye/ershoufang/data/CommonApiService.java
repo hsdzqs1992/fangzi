@@ -597,7 +597,7 @@ public interface CommonApiService {
 
     @FormUrlEncoded
     @POST(NetWorkUrl.MY_WTBIDDER)
-    Observable<PaiMaiBean> my_wtbidder(@Field("token") String token
+    Observable<CommonListBean<PaiMaiBean>> my_wtbidder(@Field("token") String token
             , @Field("page") int page);
 
     @FormUrlEncoded
@@ -617,7 +617,7 @@ public interface CommonApiService {
 
     @FormUrlEncoded
     @POST(NetWorkUrl.BIDDER_BOND)
-    Observable<PaiMaiBean> bidder_bond(@Field("token") String token
+    Observable<CommonListBean<PaiMaiBean>> bidder_bond(@Field("token") String token
             , @Field("page") int page);
 
     @FormUrlEncoded
@@ -627,7 +627,7 @@ public interface CommonApiService {
 
     @FormUrlEncoded
     @POST(NetWorkUrl.MY_MALLBIDDER)
-    Observable<PaiMaiBean> my_mallbidder(@Field("token") String token
+    Observable<CommonListBean<PaiMaiBean>> my_mallbidder(@Field("token") String token
             , @Field("page") int page);
 //
 //

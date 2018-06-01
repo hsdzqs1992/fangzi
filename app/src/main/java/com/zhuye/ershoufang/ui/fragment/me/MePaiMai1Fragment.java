@@ -1,7 +1,6 @@
 package com.zhuye.ershoufang.ui.fragment.me;
 
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -10,7 +9,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.zhuye.ershoufang.R;
-import com.zhuye.ershoufang.adapter.me.MyPaiMaiItemAdapter;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.MybidderBean;
 import com.zhuye.ershoufang.data.CommonApi;
@@ -24,29 +22,24 @@ import butterknife.Unbinder;
  * Created by Administrator on 2018/3/12 0012.
  */
 
-public abstract class MePaiMai2Fragment<T> extends CommonFragment<T> {
+public abstract class MePaiMai1Fragment<T> extends CommonFragment<T> {
     private static final int DELETE = 201;
     private static final int GETDATA = 300;
     @BindView(R.id.header)
     ClassicsHeader header;
     @BindView(R.id.recycle)
-    RecyclerView recycle;
+   protected RecyclerView recycle;
     @BindView(R.id.refresh)
     SmartRefreshLayout refresh;
     Unbinder unbinder;
 
 
-   // MyPaiMaiItemAdapter adapter;
+
     @BindView(R.id.tvv)
     TextView tvv;
     Unbinder unbinder1;
 
-    @Override
-    protected void initView() {
-        adapte = new MyPaiMaiItemAdapter(R.layout.me_paimai_item);
-        recycle.setAdapter(adapte);
-        recycle.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-    }
+
 
     @Override
     protected int getResId() {
@@ -85,11 +78,11 @@ public abstract class MePaiMai2Fragment<T> extends CommonFragment<T> {
 ////        });
 //    }
 
-//    @Override
-//    protected void initData() {
-//        super.initData();
-//        CommonApi.getInstance().my_bidder(getToken(),page,getType(),MePaiMai2Fragment.this,LIST);
-//    }
+    @Override
+    protected void initData() {
+        super.initData();
+        CommonApi.getInstance().my_bidder(getToken(),page,getType(),MePaiMai1Fragment.this,LIST);
+    }
 
     protected abstract int getType();
 
@@ -137,7 +130,7 @@ public abstract class MePaiMai2Fragment<T> extends CommonFragment<T> {
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 switch (view.getId()){
                     case R.id.delete:
-                        CommonApi.getInstance().del_house(getToken(),cate_id,MePaiMai2Fragment.this,DELETE);
+                        CommonApi.getInstance().del_house(getToken(),cate_id,MePaiMai1Fragment.this,DELETE);
                         break;
                     case R.id.edit:
 //                        start(EditErShouActivity.class);
@@ -152,13 +145,13 @@ public abstract class MePaiMai2Fragment<T> extends CommonFragment<T> {
         });
     }
 
-    @Override
-    protected void onLoadmore() {
-        CommonApi.getInstance().my_bidder(getToken(),++page,type,MePaiMai2Fragment.this,LOADMOREBASE);
-    }
-
-    @Override
-    protected void onRefresh() {
-        CommonApi.getInstance().my_bidder(getToken(),1,type,MePaiMai2Fragment.this,REFRESHBASE);
-    }
+//    @Override
+//    protected void onLoadmore() {
+//        CommonApi.getInstance().my_bidder(getToken(),++page,type,MePaiMai1Fragment.this,LOADMOREBASE);
+//    }
+//
+//    @Override
+//    protected void onRefresh() {
+//        CommonApi.getInstance().my_bidder(getToken(),1,type,MePaiMai1Fragment.this,REFRESHBASE);
+//    }
 }

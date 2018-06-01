@@ -7,11 +7,11 @@
  import android.support.v4.app.FragmentPagerAdapter;
 
  import com.zhuye.ershoufang.R;
- import com.zhuye.ershoufang.ui.fragment.me.MePaiMai2Fragment;
- import com.zhuye.ershoufang.ui.fragment.me.MePaiMai2Fragment1;
- import com.zhuye.ershoufang.ui.fragment.me.MePaiMai2Fragment2;
- import com.zhuye.ershoufang.ui.fragment.me.MePaiMai2Fragment3;
- import com.zhuye.ershoufang.ui.fragment.me.MePaiMai2Fragment4;
+ import com.zhuye.ershoufang.ui.fragment.MePaiMai1Fragment1;
+ import com.zhuye.ershoufang.ui.fragment.me.MePaiMai1Fragment;
+ import com.zhuye.ershoufang.ui.fragment.me.MePaiMai1Fragment2;
+ import com.zhuye.ershoufang.ui.fragment.me.MePaiMai1Fragment3;
+ import com.zhuye.ershoufang.ui.fragment.me.MePaiMai1Fragment4;
 
  import java.util.ArrayList;
  import java.util.List;
@@ -20,23 +20,23 @@
   * Created by Administrator on 2018/3/12 0012.
   */
 
- public class MyPaiMai2Adapter extends FragmentPagerAdapter {
+ public class MyPaiMai1Adapter extends FragmentPagerAdapter {
 
      Context mContext;
      String[] titles;
-     List<MePaiMai2Fragment> fragments = new ArrayList<>();
-     public MyPaiMai2Adapter(FragmentManager fm, Context context) {
+     List<MePaiMai1Fragment> fragments = new ArrayList<>();
+     public MyPaiMai1Adapter(FragmentManager fm, Context context) {
          super(fm);
          mContext = context;
-         titles = context.getResources().getStringArray(R.array.me_paimai2);
+         titles = context.getResources().getStringArray(R.array.me_paimai);
 //         for(int i=0;i<titles.length;i++){
 //             MePaiMai2Fragment fragment = new MePaiMai2Fragment();
 //             fragments.add(fragment);
 //         }
-         fragments.add(new MePaiMai2Fragment1());
-         fragments.add(new MePaiMai2Fragment2());
-         fragments.add(new MePaiMai2Fragment3());
-         fragments.add(new MePaiMai2Fragment4());
+         fragments.add(new MePaiMai1Fragment1());
+         fragments.add(new MePaiMai1Fragment2());
+         fragments.add(new MePaiMai1Fragment3());
+         fragments.add(new MePaiMai1Fragment4());
      }
      @Override
      public Fragment getItem(int position) {

@@ -35,7 +35,7 @@
                 android:layout_marginRight="@dimen/dp_15"
                 android:layout_alignParentRight="true"
                 android:id="@+id/state"
-                android:textColor="#333"
+                android:textColor="@color/jusecolor"
                 android:textSize="13sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
@@ -87,6 +87,29 @@
                 android:text="@string/app_name"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/leixingmianji1"
+                android:textColor="#666"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="成交价格"/>
+            <TextView
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_toRightOf="@+id/leixingmianji1"
+                android:id="@+id/cjjiage"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/jusecolor"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"/>
+        </RelativeLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -96,11 +119,12 @@
                 android:id="@+id/zhiding"
                 android:textColor="#999"
                 android:textSize="10sp"
-                android:text="开始时间"
+                android:text="结束时间"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
             <TextView
+
                 android:gravity="start|center_vertical"
                 android:id="@+id/edit"
                 android:textColor="#999"
@@ -108,8 +132,9 @@
                 android:text="编辑"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="2"/>
             <TextView
+                android:visibility="gone"
                 android:gravity="start|center_vertical"
                 android:id="@+id/delete"
                 android:textColor="#999"

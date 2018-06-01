@@ -1,7 +1,6 @@
 package com.zhuye.ershoufang.ui.fragment.me;
 
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -15,12 +14,8 @@ import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.adapter.me.paimai.MePaiMai1Adapter;
 import com.zhuye.ershoufang.base.BaseFragment;
 import com.zhuye.ershoufang.bean.Base;
-import com.zhuye.ershoufang.bean.PaiMaiBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.ui.activity.me.EditErShouActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.Unbinder;
@@ -35,7 +30,7 @@ public class MePaiMaiFragment extends BaseFragment {
     protected static final int REFRESH = 300;
     protected static final int LOADMORE = 301;
 
-    protected List<PaiMaiBean.DataBean>  data = new ArrayList<>();
+//    protected List<PaiMaiBean.DataBean>  data = new ArrayList<>();
 
     @BindView(R.id.header)
     ClassicsHeader header;
@@ -53,9 +48,9 @@ public class MePaiMaiFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        adapter = new MePaiMai1Adapter(R.layout.me_maifang_item);
-        recycle.setAdapter(adapter);
-        recycle.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+//        adapter = new MePaiMai1Adapter(R.layout.me_maifang_item);
+//        recycle.setAdapter(adapter);
+//        recycle.setLayoutManager(new LinearLayoutManager(this.getActivity()));
        // refresh.setL
     }
 
@@ -115,7 +110,7 @@ public class MePaiMaiFragment extends BaseFragment {
     @Override
     protected void initListener() {
         super.initListener();
-        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        adapte.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 switch (view.getId()){

@@ -1,12 +1,10 @@
 package com.zhuye.ershoufang.bean;
 
-import java.util.List;
-
 /**
  * Created by Administrator on 2018/5/2 0002.
  */
 
-public class PaiMaiBean extends Base{
+public class PaiMaiBean{
     /**
      * data : [{"bidder_id":"竞拍id","money":"我出的价格","photo":"图片","city_name":"城市","area_name":"区","business_name":"街道","addr":"详细地址","end_time":"结束时间","qp_money":"拍卖价格","cj_money":"成交价格"}]
      * message :
@@ -14,17 +12,6 @@ public class PaiMaiBean extends Base{
      */
 
 
-    private List<DataBean> data;
-
-    public List<DataBean> getData() {
-        return data;
-    }
-
-    public void setData(List<DataBean> data) {
-        this.data = data;
-    }
-
-    public static class DataBean {
         /**
          * bidder_id : 竞拍id
          * money : 我出的价格
@@ -38,6 +25,34 @@ public class PaiMaiBean extends Base{
          * cj_money : 成交价格
          */
 
+        private int type;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getStart_time() {
+        return start_time;
+    }
+
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getBond() {
+        return bond;
+    }
+
+    public void setBond(String bond) {
+        this.bond = bond;
+    }
+
+    private String start_time;
+        private String bond;
         private String bidder_id;
         private String money;
         private String photo;
@@ -128,5 +143,5 @@ public class PaiMaiBean extends Base{
         public void setCj_money(String cj_money) {
             this.cj_money = cj_money;
         }
-    }
+
 }

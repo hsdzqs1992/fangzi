@@ -50,7 +50,7 @@ public class MyPaiMaiActivity extends BaseActivity {
         tablayout.setViewPager(viewpager);
 
         tiwen = findViewById(R.id.tiwen);
-        adapter.getCurrentItem(0).setData();
+        //adapter.getCurrentItem(0).setData();
     }
 
     @OnClick(R.id.back)
@@ -76,7 +76,7 @@ public class MyPaiMaiActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                adapter.getCurrentItem(position).setData();
+               // adapter.getCurrentItem(position).setData();
 
             }
 
