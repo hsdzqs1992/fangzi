@@ -25,6 +25,7 @@ import com.zhuye.ershoufang.bean.CityBean;
 import com.zhuye.ershoufang.bean.CommonListBean;
 import com.zhuye.ershoufang.data.BaseView;
 import com.zhuye.ershoufang.receiver.NetworkChangeReceiver;
+import com.zhuye.ershoufang.utils.LogUtils;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 import com.zhuye.ershoufang.weidtet.CustomProgressDialog;
 
@@ -257,7 +258,8 @@ public abstract class BaseActivity<T> extends FragmentActivity implements BaseVi
 
     @Override
     public void empty() {
-
+//        toast();
+        LogUtils.i("empty");
     }
 
     protected void hide(View view){

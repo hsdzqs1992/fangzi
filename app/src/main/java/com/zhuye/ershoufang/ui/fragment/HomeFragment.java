@@ -397,6 +397,9 @@ public class HomeFragment extends BaseFragment {
         });
     }
 
+    public void setCity(String city){
+        dizhi.setText(city);
+    }
 
     @Override
     protected int getResId() {
@@ -408,7 +411,7 @@ public class HomeFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.dizhi:
-                startActivity(new Intent(getActivity(),ChooseAddressActivity.class));
+                startActivityForResult(new Intent(getActivity(),ChooseAddressActivity.class),963);
                 break;
             case R.id.jinjikanmore:
             case R.id.jingjiren_go:

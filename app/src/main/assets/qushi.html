@@ -45,15 +45,15 @@
 			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left c-f"></a>
 			<h1 class="mui-title">房价趋势</h1>
 		</header>
-		<div class="mui-content b-f">
+		<div class="mui-content b-f" id="app1">
 			<div class="title clear">
 				<div class="title_left f-l">
-					<p>郑州</p>
-					<p>最新更新 : <em>2017-03-03</em></p>
+					<p>{{dat.city_name}}</p>
+					<p>最新更新 : <em>{{time}}</em></p>
 				</div>
 				<div class="title_right f-r">
 					<p>最新均价</p>
-					<p>1230<em>元m/²</em></p>
+					<p>{{dat.house_price}}<em>元m/²</em></p>
 				</div>
 			</div>
 			<div id="container">
@@ -64,49 +64,208 @@
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/highcharts.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/vue.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		var chart = Highcharts.chart('container', {
-			chart: {
-				type: 'line'
+
+
+        new Vue({
+            el:"#app1",
+            data:{
+                //index.php/app/house/cf_detail
+                base:'',
+                url:'http://192.168.1.12/jdhouse/index.php/app/house/cf_detail',
+                img:'http://192.168.1.12/jdhouse/attachs/',
+                dat:Object,
+                loupan:Object,
+                id:1,
+                ju:'http://192.168.1.12/jdhouse/index.php/app/index/report',
+                token:'aaa',
+				time:"",
+                chart:Object
+            },
+
+			filters:{
+
+                // df:function (value,ss) {
+                // console.log(value,ss)
+                // }
+            },
+
+
+            methods:{
+                chat:function(){
+                    java.chat(dat.user_id)
+                },
+
+
+                close:function(){
+                    $(".report_cover").hide();
+
+                },
+
+
+                phone:function(){
+                    java.callphone(dat.mobile)
+                },
+
+
+                shoucang:function(){
+                    java.shoucang()
+                },
+
+                share:function(){
+                    java.share()
+                },
+
+                jubao:function(){
+                    $(".report_cover").show();
+
+                    $(".report_lists > p").click(function () {
+                        //alert($(this).text())
+                        $(this).first().attr("color","red")
+                        //console.log($(this))
+
+                        jubao(base,token,id,$(this).text())
+                    })
+
+
+                    //jubao
+
+
+                    //java.jubao()
+
+                    // var that = this
+                    // $.ajax({
+                    // 	url:that.url,
+                    // 	type:'post',
+                    // 	data:{
+                    //        "life_id": that.id,
+                    //        "token":that.token
+                    // 	},
+                    // 	datatype:'json',
+                    // 	success:function (data) {
+                    // 		console.log(data)
+                    // 	    if(check(data))	{
+                    // 		    console.log('ok')
+                    // 		}
+                    //
+                    //    },
+                    //
+                    // 	error:function () {
+                    //
+                    //    }
+                    // })
+
+                },
+
+                getData:function (id) {
+                    // console.log(id)
+                    var that = this
+                    $.ajax({
+                        url: that.base + 'index.php/app/index/zoushi',
+                        type: "post",
+                        data: {
+                            "area_id": id
+                        },
+                        datatype: "json",
+                        success: function (data) {
+                            console.log(that.url)
+
+
+                            var temp = JSON.parse(data)
+                            console.log(temp.data)
+                            that.dat = temp.data
+                            // var time = new Date()
+                            //
+                            // //console.log(time.getMilliseconds())
+                            // // console.log(time.getMinutes())
+                            // // console.log(time.getSeconds())
+                            // // console.log(time.getTime())
+                            // //this.cur = time.getMilliseconds()
+                            // //console.log(time.getMilliseconds())
+                            // //console.log(typeof temp.data)
+                            // console.log(data)
+
+
+							//console.log(that.chart)
+
+
+							//that.chart.xAxis[0].categories = ['一月', '二月', '三月', '四月', '五月']
+							var xdata = that.dat.month
+                            var ydata = that.dat.price
+                            that.chart = Highcharts.chart('container', {
+                                chart: {
+                                    type: 'line'
+                                },
+                                title: {
+                                    text: null
+                                },
+                                subtitle: {
+                                    text: null
+                                },
+                                xAxis: {
+                                    // categories: ['一月', '二月', '三月', '四月', '五月']
+                                    categories: xdata
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: '价格(元)'
+                                    }
+                                },
+                                plotOptions: {
+                                    line: {
+                                        dataLabels: {
+                                            enabled: true // 开启数据标签
+                                        },
+                                        enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                                    },
+                                    series: {
+                                        events: {
+                                            legendItemClick: function(e) {
+                                                return false; // 直接 return false 即可禁用图例点击事件
+                                            }
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    name: '东京',
+                                    data: ydata,
+                                    showInLegend: false
+                                }],
+                                credits: {
+                                    enabled: false // 禁用版权信息
+                                }
+                            });
+                        },
+                        error: function () {
+                            console.log("shiba")
+                        }
+                    })
+                }
+            },
+
+            created:function () {
+                console.log("cre")
+                this.id = java.getQuI();
+                this.base = java.getBase()
+				// id = '12743'
+				// this.base = 'http://192.168.1.42/jdhouse/'
+               // token = java.getToken1()
+                //
+                // var id ='89'
+
+				var dd = new Date()
+				this.time = dd.getFullYear() + '-' +(dd.getMonth()+1) + '-' +(dd.getDay()+1)
 			},
-			title: {
-				text: null
-			},
-			subtitle: {
-				text: null
-			},
-			xAxis: {
-				categories: ['一月', '二月', '三月', '四月', '五月']
-			},
-			yAxis: {
-				title: {
-					text: '千(平)'
-				}
-			},
-			plotOptions: {
-				line: {
-					dataLabels: {
-						enabled: true // 开启数据标签
-					},
-					enableMouseTracking: false // 关闭鼠标跟踪，对应的提示框、点击事件会失效
-				},
-				series: {
-					events: {
-						legendItemClick: function(e) {
-							return false; // 直接 return false 即可禁用图例点击事件
-						}
-					}
-				}
-			},
-			series: [{
-				name: '东京',
-				data: [0.8, 6.9, 9.5,11,9.0],
-				showInLegend: false
-			}],
-			credits: {
-				enabled: false // 禁用版权信息
-			}
-		});
+
+			mounted:function () {
+                this.getData(this.id)
+            }
+
+        })
+
+
 	</script>
 
 </html>

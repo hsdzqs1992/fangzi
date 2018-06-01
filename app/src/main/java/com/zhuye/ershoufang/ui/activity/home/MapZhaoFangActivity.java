@@ -6,10 +6,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.SearchResult;
 import com.baidu.mapapi.search.geocode.GeoCodeOption;
@@ -20,13 +23,23 @@ import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.zhuye.ershoufang.Event.MapEventListener;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.base.BaseActivity;
+import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.bean.CommonListBean;
+import com.zhuye.ershoufang.bean.JingWeiBean;
+import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MapZhaoFangActivity extends BaseActivity {
 
+    private static final int ERSHOUFANGI = 912;
+    private static final int XINFANGI = 913;
+    private static final int ZUFANGI = 914;
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.xinfang)
@@ -63,6 +76,69 @@ public class MapZhaoFangActivity extends BaseActivity {
         textView2.setBackground(pramybg);
     }
 
+
+    String cate_id;
+    String area_id;
+    String business_id;
+    String price1;
+    String price2;
+    String select1;
+
+    CommonListBean<JingWeiBean> xinbena;
+    CommonListBean<JingWeiBean> erbean;
+    CommonListBean<JingWeiBean> zubean;
+    @Override
+    public void success(int requestcode, Base base) {
+        super.success(requestcode, base);
+        switch (requestcode){
+            case XINFANGI:
+                xinbena = (CommonListBean<JingWeiBean>) base;
+
+                List<OverlayOptions> options = new ArrayList<OverlayOptions>();
+                if(xinbena .getData() ==null || xinbena.getData().size()==0){
+                    return;
+                }
+                for(JingWeiBean bean :xinbena.getData()){
+                    if(bean.getLat().equals("")||bean.getLng().equals("")){
+                        break;
+                    }
+                    LatLng point1 = new LatLng(Double.parseDouble(bean.getLat()),
+                            Double.parseDouble(bean.getLng()));
+
+                    OverlayOptions option1 =  new MarkerOptions()
+                            .position(point1)
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.tuoyuan));
+                    options.add(option1);
+                }
+                mBaiduMap.addOverlays(options);
+                break;
+            case ERSHOUFANGI:
+                erbean = (CommonListBean<JingWeiBean>) base;
+                if(erbean .getData() ==null || erbean.getData().size()==0){
+                    return;
+                }
+
+                break;
+            case ZUFANGI:
+                zubean  = (CommonListBean<JingWeiBean>) base;
+                if(xinbena .getData() ==null || xinbena.getData().size()==0){
+                    return;
+                }
+
+                break;
+
+        }
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+//        CommonApi.getInstance().house_map("3",getQuId(),business_id,price1,price2,select1,MapZhaoFangActivity.this
+//        ,ERSHOUFANGI,false);
+        CommonApi.getInstance().map_newhouse(getQuId(),business_id,price1,price2,select1,MapZhaoFangActivity.this,XINFANGI,true);
+//        CommonApi.getInstance().house_map("4",getQuId(),business_id,price1,price2,select1,MapZhaoFangActivity.this
+//                ,ZUFANGI,false);
+    }
 
     @OnClick({R.id.back, R.id.xinfang, R.id.ershoufang, R.id.zufang, R.id.quyu, R.id.jiage, R.id.huxing})
     public void onViewClicked(View view) {

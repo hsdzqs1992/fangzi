@@ -6,7 +6,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.zhuye.ershoufang.base.BaseFragment;
-import com.zhuye.ershoufang.ui.fragment.TuiJianViewFragment;
+import com.zhuye.ershoufang.ui.fragment.tuijian.TuiJianViewFragment1;
+import com.zhuye.ershoufang.ui.fragment.tuijian.TuiJianViewFragment2;
+import com.zhuye.ershoufang.ui.fragment.tuijian.TuiJianViewFragment3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +27,9 @@ public  class TuiJianFragmentPagerAdapter extends FragmentPagerAdapter {
     public TuiJianFragmentPagerAdapter(FragmentManager fm, Context context, Integer resId) {
         super(fm);
         mContext = context;
-        fragments.add(new TuiJianViewFragment());
-        fragments.add(new TuiJianViewFragment());
-        fragments.add(new TuiJianViewFragment());
+        fragments.add(new TuiJianViewFragment1());
+        fragments.add(new TuiJianViewFragment2());
+        fragments.add(new TuiJianViewFragment3());
 //        titles = context.getResources().getStringArray(resId);
 //        for(int i=0;i<titles.length;i++){
 //            MeMaiFAgnFragment fragment = new MeMaiFAgnFragment();

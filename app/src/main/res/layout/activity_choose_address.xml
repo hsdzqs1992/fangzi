@@ -64,7 +64,7 @@
             android:layout_gravity="center"
             android:textSize="30.0dip"
             android:visibility="invisible" />
-        <com.zhuye.huochebangsiji.city.SideBar
+        <com.zhuye.ershoufang.city.SideBar
             android:id="@+id/sidrbar"
             android:layout_width="30.0dip"
             android:layout_gravity="right"

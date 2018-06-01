@@ -110,7 +110,7 @@
 
 				function shuaxin(page) {
                     $.post(base+"index.php/app/indexnewhouse/comment", {
-                            "newhouse_id":21,
+                            "newhouse_id":newhouse_id,
                             "page":page
                         },function (data) {
                         console.log(data)
@@ -134,7 +134,7 @@
                         }
 
 
-                        var map = new Map();
+                     	 //var map = new Map();
 
                         $(".comment").html(pingitem)
                         }

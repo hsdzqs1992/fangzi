@@ -52,7 +52,7 @@
 				<span class="fenye c-f font-15"><span class="slide-active">1</span>/<span class="slide-num">4</span></span>
 			</div>
 			<div class="fanhui clear">
-				<img src="images/jiantou.png" class="f-l mui-action-back" />
+				<img src="images/jiantou.png" class="f-l mui-action-back finish" />
 				<img src="images/bg-fenxiang.png" class="f-r share" />
 				<img src="images/bg-shou.png"  class="f-r shoucang" />
 			</div>
@@ -135,8 +135,9 @@
 				<p class="dianhua">400-800-6565</p>
 				<p>最新政策，更多优惠详情，请致电售楼处</p>
 			</div>
-			<div class="detail_phone_right f-r" onclick="window.location.href='tel:10086'">
-				<img src="images/dianhua.png" />
+			<!--onclick="window.location.href='tel:10086'"-->
+			<div class="detail_phone_right f-r calltwo" >
+				<img src="images/dianhua.png " />
 			</div>
 		</div>
 		<!--列表轮播-->
@@ -202,7 +203,7 @@
 			</div>
 			</div>
 		<!--//onclick="window.location.href='xinfang-ping.html'"-->
-			<button class="ping_btn" style="margin-bottom: 150px">我要点评</button>
+			<button class="ping_btn" style="margin-bottom: 80px">我要点评</button>
 		</div>
 		<!--底部按钮-->
 		<div class="detail_bottom">
@@ -213,7 +214,7 @@
 				<img src="images/weiliao.png" />
 				<span>微聊</span>
 			</div>
-			<div class="detail_shou f-l" data_id="1" onclick="window.location.href='tel:10086'">
+			<div class="detail_shou f-l" data_id="1">
 				<img src="images/dianhua2.png" />
 				<span>免费通话</span>
 			</div>
@@ -240,6 +241,7 @@
 	<script src="js/mui.previewimage.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common.js" type="text/javascript"></script>
 	<script type="text/javascript">
 
 		//列表轮播
@@ -270,15 +272,24 @@
 			$(".pay_wrap").hide();
 		});
 
-        function yishoucang() {
-           // mui.toast('知道了')
-            $(".detail_mess_money > span > em").text('sadfasdf')
-        }
-		
+
+		mui.init()
+
+
         var tempdata = null ;
+
+        function yishoucang() {
+            mui.toast('已收藏')
+            //$(".detail_mess_money > span > em").text('sadfasdf')
+        }
+
+
+
+
 
         // 数据处理
         $(function () {
+
 
             var baseurl=''
 
@@ -290,13 +301,53 @@
 			// var base = 'http://192.168.1.10/jdhouse/'
 			// var baseimg = base +'attachs/'
 
+            var id = java.getId()
+            var base = java.getBase()
+            var baseimg = base +'attachs/'
+			var token = java.getToken1()
+
+			var scurl = base +'index.php/app/index/collect'
+
+           // function shouwcang(url,type) {
+                $(".shoucang").click(function () {
+                    //java.shoucang()
+                    mui.toast(scurl+1+id+token)
+                    console.log("shoucang")
+                    $.ajax({
+                        url:scurl,
+                        type:'post',
+                        data:{
+                            "type":1,
+                            "life_id":id,
+                            "token":token
+                        },
+                        datatype:'json',
+                        success:function (data) {
+                            console.log(data)
+							var da =  JSON.parse(data);
+                            mui.toast(da.message)
+                            if(check(data))	{
+                                mui.toast("收藏成功")
+                                $(".shoucang").attr("src","images/shouf9.png")
+
+                            }else {
+                                mui.toast("收藏失败")
+							}
+						},
+                        error:function () {
+                            mui.toast("收藏失败")
+                            //console.log('失败')
+                        }
+                    })
+                })
+         //   }
+
+            //shouwcang(scurl,1)
             // var id = java.getId()
-            // var base = java.getBase()
+            // var base = 'adsf'
             // var baseimg = base +'attachs/'
 
-            var id = 1
-            var base = 'adsf'
-            var baseimg = base +'attachs/'
+			var xinfang = Object
 
             $.ajax({
                 url: base+"index.php/app/indexnewhouse/newhouse_detail",
@@ -313,6 +364,7 @@
                     console.log(json.data);
                     console.log(datas.id);
 					tempdata = datas
+
                     var lists = '';
                     for(var i = 0;i<images.length;i++) {
                         lists += '<a class="swiper-slide" href="javascript:;"><img src="' + paths + '' + images[i].img + '" data-preview-src="" data-preview-group="1"></a>';
@@ -350,7 +402,7 @@
 					// shoucang.src = 'images/bg-fenxiang.png'
 
 					//datas.cang = 1
-					if(datas.cang == 1){
+					if(datas.cang == "1"){
                         $('.shoucang').attr('src','images/shouf9.png')
 					}
 					// 价格
@@ -433,12 +485,11 @@
                 window.location.href='xinfang-ping.html?id='+id
             })
 
-			$(".shoucang").click(function () {
-				java.shoucang()
-            })
+
 
             $(".share").click(function () {
 				java.share()
+
             })
 
 
@@ -465,7 +516,17 @@
 				java.chat(tempdata.uid)
             })
             $(".detail_shou").click(function () {
-				java.callphone()
+				java.callphone(tempdata.mobile)
+            })
+
+            $(".calltwo").click(function () {
+                java.callphone(tempdata.mobile)
+            })
+
+
+
+			$(".finish").click(function () {
+                java.finis()
             })
         });
 

@@ -83,8 +83,6 @@ public class MyGsonResponseBodyConverter<T extends Base> implements Converter<Re
             // 按标准格式解析
             return gson.fromJson(json, type);
         }
-
         return t;
-
     }
 }

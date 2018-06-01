@@ -69,7 +69,7 @@ public class XinPanActivity extends Common2Activity<Common3Bean> {
         super.initData();
 //        CommonApi.getInstance().indexnewhouse2(cate_id,getQuId(),page,business_id,prices1,prices2,select1,yonghu,"",
 //                XinPanActivity.this,LIST);
-        CommonApi.getInstance().indexnewhouse2(getQuId(),business_id,prices1,prices2,1,page,"",
+        CommonApi.getInstance().indexnewhouse2(getQuId(),business_id,prices1,prices2,1,page,"",is_recommand,
                 XinPanActivity.this,LIST);
     }
 
@@ -82,16 +82,16 @@ public class XinPanActivity extends Common2Activity<Common3Bean> {
     public SmartRefreshLayout getSmartRefreshLayout() {
         return refresh;
     }
-
+   String is_recommand;
     @Override
     protected void onLoadmore() {
-        CommonApi.getInstance().indexnewhouse2(getQuId(),business_id,prices1,prices2,1,++page,"",
+        CommonApi.getInstance().indexnewhouse2(getQuId(),business_id,prices1,prices2,1,++page,"",is_recommand,
                 XinPanActivity.this,LOADMOREBASE);
     }
 
     @Override
     protected void onRefresh() {
-        CommonApi.getInstance().indexnewhouse2(getQuId(),business_id,prices1,prices2,1,1,"",
+        CommonApi.getInstance().indexnewhouse2(getQuId(),business_id,prices1,prices2,1,1,"",is_recommand,
                 XinPanActivity.this,REFRESHBASE);
     }
 

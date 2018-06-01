@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.zhuye.ershoufang.R;
+import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.Common5Bean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.one.MyMultipleItem;
@@ -24,6 +25,12 @@ public class MeShouCangFragment extends MutiCommonFragment<Common5Bean> {
     @BindView(R.id.refresh)
     SmartRefreshLayout refresh;
     Unbinder unbinder;
+
+
+    @Override
+    public void success(int requestcode, Base o) {
+        super.success(requestcode, o);
+    }
 
     @Override
     protected void doList() {

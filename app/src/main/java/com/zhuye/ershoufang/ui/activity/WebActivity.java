@@ -2,6 +2,7 @@ package com.zhuye.ershoufang.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +20,13 @@ import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.base.BaseActivity;
 import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.bean.CommonObjectBean;
+import com.zhuye.ershoufang.bean.ShareBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.data.NetWorkUrl;
 import com.zhuye.ershoufang.utils.LogUtils;
@@ -32,8 +37,9 @@ import io.rong.imkit.RongIM;
 import io.rong.imlib.model.Conversation;
 
 public abstract class WebActivity extends BaseActivity {
-
+    protected static final int COLLECT = 9456;
     private static final int YOUHUI = 988;
+    protected static final int SHARE = 956;
     @BindView(R.id.webview)
     protected WebView webview;
     @BindView(R.id.back)
@@ -59,10 +65,7 @@ public abstract class WebActivity extends BaseActivity {
         settings.setJavaScriptEnabled(true);
 
 //        webview.loadUrl("file:///android_asset/index.html");
-
         webview.setWebViewClient(new ExampleWebViewClient());
-
-
         if(getFromLocal()){
             webview.loadUrl("file:///android_asset/" + getUrlName() + ".html");
         }else {
@@ -175,6 +178,11 @@ public abstract class WebActivity extends BaseActivity {
         public String getToken1(){
             return getToken();
         }
+
+        @JavascriptInterface
+        public String getQuI(){
+            return getQuId();
+        }
         @JavascriptInterface
         public void toas(String content){
             toast(content);
@@ -182,20 +190,17 @@ public abstract class WebActivity extends BaseActivity {
 
         @JavascriptInterface
         public void shoucang(){
-            toast("shoucang");
+          //  toast("shoucang");
             //CommonApi.getInstance().collect(getToken(),"1",id,XinFangDetailActivity.this,SHOUCANG);
             //// TODO: 2018/5/23 0023
             
-            javashoucang();
+            //javashoucang();
             webview.loadUrl("javascript:yishoucang()");
         }
         @JavascriptInterface
         public void share(){
-            toast("share");
+            getShareData();
 
-            new ShareAction(WebActivity.this).withText("hello")
-                    .setDisplayList(SHARE_MEDIA.QZONE,SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE)
-                    .setCallback(umShareListener).open();
 
 //            if(Thread.currentThread()== Looper.getMainLooper().getThread()){
 //                Toast.makeText(XinFangDetailActivity.this,"手长",Toast.LENGTH_SHORT).show();
@@ -239,8 +244,17 @@ public abstract class WebActivity extends BaseActivity {
 //            }
         }
         @JavascriptInterface
-        public void callphone(){
-            toast("callphone");
+        public void callphone(String mobile){
+            //toast("callphone");
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+mobile));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
+
+        @JavascriptInterface
+        public void finis(){
+            finish();
         }
 
         @JavascriptInterface
@@ -261,6 +275,10 @@ public abstract class WebActivity extends BaseActivity {
         }
     }
 
+    protected void getShareData() {
+
+    }
+
     protected abstract void javashoucang();
 
 
@@ -275,6 +293,21 @@ public abstract class WebActivity extends BaseActivity {
         switch (requestcode){
             case YOUHUI:
                 toast(base.getMessage());
+                break;
+            case COLLECT:
+                toast(base.getMessage());
+                break;
+
+            case SHARE:
+                CommonObjectBean<ShareBean> bean = (CommonObjectBean<ShareBean>) base;
+                UMImage image = new UMImage(WebActivity.this, NetWorkUrl.IMAGEURL+bean.getData().getPhoto());//网络图片
+                UMWeb web = new UMWeb(bean.getData().getUrl());
+                web.setTitle(bean.getData().getTitle());//标题
+                web.setThumb(image);  //缩略图
+               // web.setDescription(bean.getData().get);//描述
+                new ShareAction(WebActivity.this).withMedia(web)
+                        .setDisplayList(SHARE_MEDIA.QZONE,SHARE_MEDIA.QQ,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE)
+                        .setCallback(umShareListener).open();
                 break;
         }
     }

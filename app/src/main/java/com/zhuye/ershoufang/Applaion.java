@@ -17,6 +17,7 @@ import com.zhuye.ershoufang.receiver.NetworkChangeReceiver;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 
 import io.rong.imkit.RongIM;
+import io.rong.push.RongPushClient;
 
 /**
  * Created by Administrator on 2018/3/20 0020.
@@ -31,7 +32,11 @@ public class Applaion extends Application {
         super.onCreate();
         CrashReport.initCrashReport(getApplicationContext(), "1b0fa0055c", true);
         SharedPreferencesUtil.init(this,"fz", Context.MODE_PRIVATE);
-        PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
+//        微信支付app信息
+//        Appid:wxcc535962638755d5
+//        Appscret：98f1bc28a37829bc09491603096efca5
+//        PlatformConfig.setWeixin();
+        PlatformConfig.setWeixin("wxcc535962638755d5", "98f1bc28a37829bc09491603096efca5");
         PlatformConfig.setQQZone("1106731617", "3nrVbGMOblDDfhJN");
         umShareAPI =  UMShareAPI.get(this);
         MultiDex.install(this);
@@ -47,6 +52,9 @@ public class Applaion extends Application {
 //        App Secret x5hqBniaFvt0
 
         RongIM.init(this,"c9kqb3rdcov6j");
+
+        RongPushClient.init(this, "c9kqb3rdcov6j");
+       // RongCloudEvent.init(this);
 
       //  RongIM.getInstance()
 

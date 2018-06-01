@@ -1,11 +1,13 @@
 package com.zhuye.ershoufang.ui.activity.home;
 
 import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.ui.activity.WebActivity;
 
 public class XinFangDetailActivity extends WebActivity {
 
     private static final int SHOUCANG = 888;
+
 
     @Override
     public String getUrlName() {
@@ -14,7 +16,7 @@ public class XinFangDetailActivity extends WebActivity {
 
     @Override
     protected void javashoucang() {
-
+        CommonApi.getInstance().collect(getToken(),"1",id,XinFangDetailActivity.this,COLLECT);
     }
 
     String id ="";
@@ -28,6 +30,11 @@ public class XinFangDetailActivity extends WebActivity {
     }
 
 
+    @Override
+    protected void getShareData() {
+        super.getShareData();
+        CommonApi.getInstance().share(id,"2",XinFangDetailActivity.this,SHARE,false);
+    }
 
     @Override
     protected String getZiId() {

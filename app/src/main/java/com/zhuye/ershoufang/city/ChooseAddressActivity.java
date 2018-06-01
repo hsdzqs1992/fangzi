@@ -1,7 +1,6 @@
 package com.zhuye.ershoufang.city;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -20,7 +19,8 @@ import com.zhuye.ershoufang.base.BaseActivity;
 import com.zhuye.ershoufang.base.BaseHolder;
 import com.zhuye.ershoufang.bean.Base;
 import com.zhuye.ershoufang.bean.CityBean;
-import com.zhuye.ershoufang.bean.CitysBean;
+import com.zhuye.ershoufang.bean.CityBean2;
+import com.zhuye.ershoufang.bean.CommonListBean;
 import com.zhuye.ershoufang.data.CommonApi;
 import com.zhuye.ershoufang.utils.SharedPreferencesUtil;
 import com.zhuye.ershoufang.weidtet.RoundedCornerImageView;
@@ -88,19 +88,31 @@ public class ChooseAddressActivity extends BaseActivity {
     }
 
     CityBean bean;
-    CitysBean data;
+//    CitysBean data;
 
+    CommonListBean<CityBean2> data;
     @Override
     public void success(int requestcode, Base o) {
         super.success(requestcode, o);
         //ListSortAdapter
-        data = (CitysBean) o;
-        Map<String, String> map = new HashMap<String, String>();
-        for (int i = 0; i < data.getData().size(); i++) {
-            for (int j = 0; j < data.getData().get(i).getCity().size(); j++) {
-                map.put(data.getData().get(i).getCity().get(j).getName(), data.getData().get(i).getCity().get(j).getCity_id());
-            }
+        data = (CommonListBean<CityBean2>) o;
+        if(data ==null || data.getData().size()==0){
+            return;
         }
+        Map<String, String> map = new HashMap<String, String>();
+//        for (int i = 0; i < data.getData().size(); i++) {
+//            for (int j = 0; j < data.getData().get(i).getCity().size(); j++) {
+//                map.put(data.getData().get(i).getCity().get(j).getName(), data.getData().get(i).getCity().get(j).getCity_id());
+//            }
+//        }
+
+        for (int i = 0; i < data.getData().size(); i++) {
+//            for (int j = 0; j < data.getData().get(i).getCity().size(); j++) {
+//                map.put(data.getData().get(i).getCity().get(j).getName(), data.getData().get(i).getCity().get(j).getCity_id());
+//            }
+            map.put(data.getData().get(i).getName(),data.getData().get(i).getId());
+        }
+
         SourceDateList = filledData(map);
         //根据a-z进行排序源数据
         Collections.sort(SourceDateList, pinyinComparator);
@@ -325,8 +337,11 @@ public class ChooseAddressActivity extends BaseActivity {
                                     int position, long id) {
                 if (position > 0) {
                     //Toast.makeText(getApplication(), ((SortModel2) adapter.getItem(position - 1)).getCitycode(), Toast.LENGTH_SHORT).show();
-                    SharedPreferences sp = getSharedPreferences("data", MODE_PRIVATE);
-                    sp.edit().putString("Location", ((SortModel2) adapter.getItem(position - 1)).getCitycode()).commit();
+//                    SharedPreferences sp = getSharedPreferences("data", MODE_PRIVATE);
+//                    sp.edit().putString("Location", ((SortModel2) adapter.getItem(position - 1)).getCitycode()).commit();
+
+                    setSpData("curcity", ((SortModel2) adapter.getItem(position - 1)).getName());
+                    setSpData("id", ((SortModel2) adapter.getItem(position - 1)).getCitycode());
                     Intent in = new Intent();
                     in.putExtra("city", ((SortModel2) adapter.getItem(position - 1)).getName());
                     in.putExtra("citycode", ((SortModel2) adapter.getItem(position - 1)).getCitycode());

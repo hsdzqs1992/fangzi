@@ -630,6 +630,13 @@ public class CommonApi {
         sub(service.index( cate_id,  area_id, page, business_id, price1, price2, select1, yonghu,key),baseView,requestcode);
     }
 
+    public void index(String cate_id, String area_id,
+                       int page, String business_id,
+                       String price1, String price2,
+                       String select1,String yonghu,String key,String is_top, BaseView baseView, int requestcode,Boolean b){
+        sub(service.index(cate_id,area_id,page,business_id,price1,price2,select1,yonghu,key,is_top),baseView,requestcode,b);
+    }
+
     public void bidder_list( String cate_id,  String area_id,
                        int page, BaseView baseView, int requestcode){
         sub(service.bidder_list( cate_id,  area_id, page),baseView,requestcode);
@@ -953,8 +960,8 @@ public class CommonApi {
                                String business_id,
                                String price1,
                                String price2,
-                               int select,int page,String key,BaseView baseView,int requestcode){
-        sub(service.indexnewhouse2( area_id,business_id, price1, price2, select,page,key),baseView,requestcode);
+                               int select,int page,String key,String is_recommand,BaseView baseView,int requestcode){
+        sub(service.indexnewhouse2( area_id,business_id, price1, price2, select,page,key,is_recommand),baseView,requestcode);
     }
 
     public void newhouse_edit(String token,String id,BaseView baseView,int requestcode){
@@ -1212,5 +1219,37 @@ public class CommonApi {
 
     public void mybm(String token,int page, BaseView globalListener, int i) {
         sub(service.mybm(token,page),globalListener,i);
+    }
+
+    public void msg(String user_id, BaseView globalListener, int i,Boolean b) {
+        sub(service.msg(user_id),globalListener,i,b);
+    }
+
+    public void share(String life_id, String type, BaseView globalListener, int i,Boolean b) {
+        sub(service.share(life_id,type),globalListener,i,b);
+    }
+
+    public void house_map(String cate_id,  String area_id,
+                          String business_id,
+                        String price1, String price2,
+                          String select1, BaseView globalListener, int i, Boolean b) {
+        sub(service.house_map(cate_id,area_id,business_id,price1,price2,select1),globalListener,i,b);
+    }
+
+    public void maphouse(String cate_id, String lng,
+                          String lat, BaseView globalListener, int i, Boolean b) {
+        sub(service.maphouse(cate_id,lng,lat),globalListener,i,b);
+    }
+
+    public void map_newhouse( String area_id,
+                          String business_id,
+                          String price1, String price2,
+                          String select, BaseView globalListener, int i, Boolean b) {
+        sub(service.map_newhouse(area_id,business_id,price1,price2,select),globalListener,i,b);
+    }
+
+    public void mapnewhouse( String lng,
+                         String lat, BaseView globalListener, int i, Boolean b) {
+        sub(service.mapnewhouse(lng,lat),globalListener,i,b);
     }
 }

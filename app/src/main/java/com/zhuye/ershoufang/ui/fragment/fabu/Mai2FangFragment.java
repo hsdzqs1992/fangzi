@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.zhuye.ershoufang.R;
 import com.zhuye.ershoufang.bean.Base;
+import com.zhuye.ershoufang.data.CommonApi;
+import com.zhuye.ershoufang.ui.activity.AddErShouActivity;
 import com.zhuye.ershoufang.ui.fragment.SelectCityFragment;
 
 import butterknife.BindView;
@@ -78,17 +80,33 @@ public class Mai2FangFragment extends SelectCityFragment {
     @OnClick({R.id.dizhi, R.id.dizhi2, R.id.dizhi3, R.id.dizhi4, R.id.next})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.dizhi4:
-                editLeiXing((TextView) view, "请输入朝向", 9);
-                break;
             case R.id.dizhi:
+                if(cityBean==null){
+                    CommonApi.getInstance().province(Mai2FangFragment.this, PROVINCE, false);
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 6);
                 break;
             case R.id.dizhi2:
+                if (xiaji == null) {
+                    toast("请选择市");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 7);
                 break;
             case R.id.dizhi3:
+                if (qu == null) {
+                    toast("请选择区");
+                    return;
+                }
                 editLeiXing((TextView) view, "请输入朝向", 8);
+                break;
+            case R.id.dizhi4:
+                if (jiedao == null) {
+                    toast("请选择街道");
+                    return;
+                }
+                editLeiXing((TextView) view, "请输入朝向", 9);
                 break;
             case R.id.next:
                 if (

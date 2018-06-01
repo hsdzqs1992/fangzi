@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
@@ -337,6 +338,17 @@ public class MainActivity extends BaseActivity {
                 fabuFragment.getChuZuFragment().getMySelectPhotoView().setPhoto(photos);
                 break;
 
+
+        }
+
+        switch (resultCode){
+            case 100:
+                String city =  data.getStringExtra("city");
+                List<Fragment>  fragmen =  getSupportFragmentManager().getFragments();
+                HomeFragment hm= (HomeFragment) fragmen.get(0);
+                //hm.getChuZuFragment().getMySelectPhotoView().setPhoto(photos);
+                hm.setCity(city);
+                break;
         }
     }
 
@@ -361,7 +373,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private void connectRongYun() {
-
         String token = getrongyun();
         if (getApplicationInfo().packageName.equals(Applaion.getCurProcessName(getApplicationContext()))) {
             RongIM.connect(token, new RongIMClient.ConnectCallback() {
@@ -389,17 +400,7 @@ public class MainActivity extends BaseActivity {
                     //GlobalListener.init(MainActivity.this);
 
 
-                    RongIM.getInstance().getConversationList(new RongIMClient.ResultCallback<List<Conversation>>() {
-                        @Override
-                        public void onSuccess(List<Conversation> conversations) {
-                            Log.i("as",conversations.toString());
-                        }
 
-                        @Override
-                        public void onError(RongIMClient.ErrorCode errorCode) {
-                         //   Log.i("as",errorCode+"");
-                        }
-                    });
                 }
 
                 /**
@@ -465,5 +466,18 @@ public class MainActivity extends BaseActivity {
         } else {
             return mConversationListFragment;
         }
+    }
+    protected Long exitTime = 0l;
+    @Override
+    public void onBackPressed() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+            System.exit(0);
+        }
+
     }
 }

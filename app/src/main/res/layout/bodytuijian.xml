@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="40dp">
+
+<LinearLayout
+    android:id="@+id/quyu"
+    android:gravity="center"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="#999"
+        android:textSize="@dimen/sp_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="区域"/>
+    <ImageView
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sanjiao"/>
+</LinearLayout>
+<LinearLayout
+    android:id="@+id/jiage"
+    android:gravity="center"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="#999"
+        android:textSize="@dimen/sp_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="价格"/>
+    <ImageView
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sanjiao"/>
+</LinearLayout>
+<LinearLayout
+    android:id="@+id/huxing"
+    android:gravity="center"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="#999"
+        android:textSize="@dimen/sp_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="户型"/>
+    <ImageView
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sanjiao"/>
+</LinearLayout>
+<LinearLayout
+    android:id="@+id/video"
+    android:gravity="center"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="#999"
+        android:textSize="@dimen/sp_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="视频"/>
+    <ImageView
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sanjiao"/>
+</LinearLayout>
+</LinearLayout>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></com.scwang.smartrefresh.layout.header.ClassicsHeader>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+    <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.scwang.smartrefresh.layout.footer.ClassicsFooter>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

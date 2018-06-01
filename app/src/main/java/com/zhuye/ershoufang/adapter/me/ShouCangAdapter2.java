@@ -9,13 +9,13 @@
  import com.zhuye.ershoufang.R;
  import com.zhuye.ershoufang.base.BaseFragment;
  import com.zhuye.ershoufang.ui.fragment.me.MeChuZuFragment;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment2;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment3;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment4;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment5;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment6;
- import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment7;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment11;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment22;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment33;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment44;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment55;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment66;
+ import com.zhuye.ershoufang.ui.fragment.me.MeShouCangFragment77;
 
  import java.util.ArrayList;
  import java.util.List;
@@ -37,13 +37,13 @@
 //             MePaiMaiFragment fragment = new MePaiMaiFragment();
 //             fragments.add(fragment);
 //         }
-         fragments.add(new MeShouCangFragment());
-         fragments.add(new MeShouCangFragment2());
-         fragments.add(new MeShouCangFragment3());
-         fragments.add(new MeShouCangFragment4());
-         fragments.add(new MeShouCangFragment5());
-         fragments.add(new MeShouCangFragment6());
-         fragments.add(new MeShouCangFragment7());
+         fragments.add(new MeShouCangFragment11());
+         fragments.add(new MeShouCangFragment22());
+         fragments.add(new MeShouCangFragment33());
+         fragments.add(new MeShouCangFragment44());
+         fragments.add(new MeShouCangFragment55());
+         fragments.add(new MeShouCangFragment66());
+         fragments.add(new MeShouCangFragment77());
      }
      @Override
      public Fragment getItem(int position) {

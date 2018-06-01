@@ -171,7 +171,7 @@ public class SearchActivity extends CommonHome2Activity<SearchBean> {
 //                });
         //  getData(LIST);
     }
-
+    String is_recommand;
     private void getData(int code, String key) {
         switch (type) {
             case XINFANG:
@@ -179,20 +179,20 @@ public class SearchActivity extends CommonHome2Activity<SearchBean> {
                     case LIST:
                         CommonApi.getInstance().indexnewhouse2(getQuId(),
                                 "", "",
-                                "", 1, 1, key
+                                "", 1, 1, key,is_recommand
                                 , SearchActivity.this, LIST);
                         break;
                     case REFRESHBASE:
                         CommonApi.getInstance().indexnewhouse2(getQuId(),
                                 "", "",
-                                "", 1, 1, key
+                                "", 1, 1, key,is_recommand
                                 , SearchActivity.this, REFRESHBASE);
                         break;
                     case LOADMOREBASE:
                         CommonApi.getInstance().indexnewhouse2(getQuId(),
                                 "", "",
                                 "", 1, ++page,
-                                key,
+                                key,is_recommand,
                                 SearchActivity.this
                                 , LOADMOREBASE);
                         break;

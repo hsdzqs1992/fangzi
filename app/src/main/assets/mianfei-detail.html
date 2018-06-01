@@ -158,11 +158,12 @@
 
 	<script type="text/javascript">
 
+		//http://jd.yhsm525.com/index.php/app/house/cf_detail/life_id/77/token/6af8e945746b2f835793b56d48f9a57c
 
 		new Vue({
 			el:'#apps',
 			data:{
-			    url:'http://192.168.1.12/jdhouse/index.php/app/indexnewhouse/view_detail',
+			    url:'http://jd.yhsm525.com/index.php/app/indexnewhouse/view_detail',
 				data:Object,
                 loupan:Object
 			},
@@ -190,15 +191,14 @@
               },
 
 				getpic: function (value) {
-                    var base = 'http://192.168.1.12/jdhouse/'
+                    var base = 'http://jd.yhsm525.com/'
                     var baseimg = base +'attachs/'
 			      return  baseimg +value
                 }
 			},
 
 			methods:{
-
-			    call:function(){
+				call:function(){
 			      console.log('call')
 				},
 
@@ -234,8 +234,13 @@
 			created:function () {
                 //var id = GetRequest()['id']
                 //console.log(id)
-				var id = 5
-				this.getData(id)
+
+            },
+
+            mounted:function () {
+                var id = GetRequest()['id']
+               // var id = 5
+                this.getData(id)
             }
 		})
 

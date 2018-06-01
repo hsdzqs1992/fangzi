@@ -27,7 +27,7 @@ public abstract class CommonFragment<T> extends BaseFragment<T> {
                 listData = (CommonListBean)o;
                 list = listData.data;
                 if(list!=null && list.size()>0){
-                    adapte.addData(list);
+                    adapte.replaceData(list);
                 }
                 break;
 

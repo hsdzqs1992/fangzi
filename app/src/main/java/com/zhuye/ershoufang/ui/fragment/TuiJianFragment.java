@@ -3,7 +3,6 @@ package com.zhuye.ershoufang.ui.fragment;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhuye.ershoufang.R;
@@ -27,14 +26,6 @@ public class TuiJianFragment extends BaseFragment {
     TextView ershoufang;
     @BindView(R.id.zufang)
     TextView zufang;
-    @BindView(R.id.quyu)
-    LinearLayout quyu;
-    @BindView(R.id.jiage)
-    LinearLayout jiage;
-    @BindView(R.id.huxing)
-    LinearLayout huxing;
-    @BindView(R.id.video)
-    LinearLayout video;
     @BindView(R.id.viewpager)
     ViewPager viewpager;
     Unbinder unbinder;
@@ -88,7 +79,6 @@ public class TuiJianFragment extends BaseFragment {
                         break;
                 }
             }
-
             @Override
             public void onPageScrollStateChanged(int state) {
 
@@ -96,7 +86,7 @@ public class TuiJianFragment extends BaseFragment {
         });
     }
 
-    @OnClick({R.id.xinfang, R.id.ershoufang, R.id.zufang, R.id.quyu, R.id.jiage, R.id.huxing, R.id.video})
+    @OnClick({R.id.xinfang, R.id.ershoufang, R.id.zufang})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.xinfang:
@@ -110,14 +100,6 @@ public class TuiJianFragment extends BaseFragment {
             case R.id.zufang:
                 choose(zufang,ershoufang,xinfang);
                 viewpager.setCurrentItem(2);
-                break;
-            case R.id.quyu:
-                break;
-            case R.id.jiage:
-                break;
-            case R.id.huxing:
-                break;
-            case R.id.video:
                 break;
         }
     }

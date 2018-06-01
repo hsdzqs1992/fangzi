@@ -34,7 +34,7 @@
 					<span class="fenye c-f font-15"><span class="slide-active">1</span>/<span class="slide-num">4</span></span>
 				</div>
 				<div class="fanhui clear">
-					<img src="images/jiantou.png" class="f-l mui-action-back" />
+					<img src="images/jiantou.png" class="f-l mui-action-back" @click="finish"/>
 					<img src="images/bg-fenxiang.png" class="f-r" @click="share" />
 					<img src="images/bg-shou.png" class="f-r"  @click="shoucang"/>
 				</div>
@@ -155,7 +155,7 @@
 				<div class="report_wrap">
 					<div class="report_title clear">
 						<p class="">请选择举报类型(信息隐私保护)</p>
-						<img src="images/cuohao.png" alt="" class="mui-pull-right close" />
+						<img src="images/cuohao.png" alt="" class="mui-pull-right close" @click="close"/>
 					</div>
 					<div class="report_lists">
 						<p class="">房源无法带看</p>
@@ -179,6 +179,7 @@
 	<script src="js/vue.min.js" type="text/javascript"></script>
 
 	<script src="js/utils.js" type="text/javascript"></script>
+	<script src="js/common.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 		var swiper = new Swiper('.bann-s', {
@@ -196,9 +197,11 @@
 		$(".detail_name_right").click(function() {
 			$(".report_cover").show();
 		});
+
 		$(".close").click(function() {
 			$(".report_cover").hide();
 		})
+
 		$(".report_lists p").click(function() {
 			$(this).addClass("report_lists_color").siblings().removeClass("report_lists_color")
 		});
@@ -214,6 +217,7 @@
 			el:"#app1",
 			data:{
                 //index.php/app/house/cf_detail
+				base:'',
                 url:'http://192.168.1.12/jdhouse/index.php/app/house/cf_detail',
 				img:'http://192.168.1.12/jdhouse/attachs/',
                 dat:Object,
@@ -221,7 +225,6 @@
 				id:1,
 				ju:'http://192.168.1.12/jdhouse/index.php/app/index/report',
 				token:'aaa'
-
 			},
 
 
@@ -235,18 +238,58 @@
 
 
 			methods:{
+				chat:function(){
+			        java.chat(this.dat.user_id)
+				},
 
-			    chat:function(){
-			        java.chat()
+
+				close:function(){
+                    $(".report_cover").hide();
+
+				},
+
+                finish:function(){
+				    java.finis()
 				},
 
 
 				phone:function(){
-                    java.phone()
+                    java.callphone(this.dat.mobile)
 				},
 
+
 			    shoucang:function(){
-                    java.shoucang()
+                    //java.shoucang()
+                    var scurl  = this.base +'index.php/app/index/collect'
+					var thst =this;
+					$.ajax({
+                        url:scurl,
+                        type:'post',
+                        data:{
+                            "type":0,
+                            "life_id":thst.id,
+                            "token":thst.token
+                        },
+                        datatype:'json',
+                        success:function (data) {
+                            console.log(data)
+                            var da =  JSON.parse(data);
+                            mui.toast(da.message)
+                            if(check(data))	{
+                                mui.toast("收藏成功")
+                                $(".shoucang").attr("src","images/shouf9.png")
+
+                            }else {
+                                mui.toast("收藏失败")
+                            }
+                        },
+                        error:function () {
+                            mui.toast("收藏失败")
+                            //console.log('失败')
+                        }
+                    })
+
+
 				},
 
 				share:function(){
@@ -254,47 +297,62 @@
 				},
 
 				jubao:function(){
-                    var that = this
-					$.ajax({
-						url:that.url,
-						type:'post',
-						data:{
-                            "life_id": that.id,
-                            "token":that.token
-						},
-						datatype:'json',
-						success:function (data) {
-							console.log(data)
-						    if(check(data))	{
-							    console.log('ok')
-							}
+                    $(".report_cover").show();
 
-                        },
+					$(".report_lists > p").click(function () {
+						//alert($(this).text())
+						$(this).first().attr("color","red")
+						//console.log($(this))
 
-						error:function () {
+						jubao(base,token,id,$(this).text())
+                    })
 
-                        }
-					})
+
+                    //jubao
+
+
+					//java.jubao()
+
+                    // var that = this
+					// $.ajax({
+					// 	url:that.url,
+					// 	type:'post',
+					// 	data:{
+                     //        "life_id": that.id,
+                     //        "token":that.token
+					// 	},
+					// 	datatype:'json',
+					// 	success:function (data) {
+					// 		console.log(data)
+					// 	    if(check(data))	{
+					// 		    console.log('ok')
+					// 		}
+                    //
+                     //    },
+                    //
+					// 	error:function () {
+                    //
+                     //    }
+					// })
 
 				},
 
 				getData:function (id) {
-				    console.log(id)
+				    //console.log(id)
 				    var that = this
+					//mui.toast("cheng")
                     $.ajax({
                         url: that.url,
                         type: "post",
                         data: {
                             "life_id": id,
-							"token":"sdfasd"
+							"token":that.token
                         },
                         datatype: "json",
                         success: function (data) {
-							console.log(that.url)
-
-
-                            var temp = JSON.parse(data)
-                            console.log(temp.data)
+							//console.log(that.url)
+							var temp = JSON.parse(data)
+                            //console.log(temp.data)
                             that.dat = temp.data
                             // var time = new Date()
                             //
@@ -306,25 +364,61 @@
                             // //console.log(time.getMilliseconds())
                             // //console.log(typeof temp.data)
                             // console.log(data)
+                            //mui.toast("成功")
 
+                            var images = that.dat
+
+							var cang = parseInt(that.dat.cang)
+
+							mui.toast(cang)
+
+                            if(cang == 1){
+                                $('.shoucang').attr('src','images/shouf9.png')
+                            }
+
+                            // var lists = '';
+                            // for(var i = 0;i<images.length;i++) {
+                            //     lists += '<a class="swiper-slide" href="javascript:;"><img src="' + that.img + '' + images[i].img + '" data-preview-src="" data-preview-group="1"></a>';
+                            //
+                            // }
+                            // $(".banner_images").append(lists);
+                            //
+                            // var swiper = new Swiper('.bann-s', {
+                            //     pagination: '.bann-s .swiper-pagination',
+                            //     paginationClickable: true,
+                            //     onInit: function(swiper) {
+                            //         $(".slide-num").html(swiper.slides.length);
+                            //     },
+                            //     onSlideChangeEnd: function(swiper) {
+                            //         $(".slide-active").html(swiper.activeIndex + 1);
+                            //     },
+                            // });
                         },
                         error: function () {
-                            console.log("shiba")
+                           // console.log("shiba")
+                           // mui.toast("失败")
                         }
                     })
                 }
 			},
 
 			created:function () {
-				// var id = java.getId();
-				var id ='89'
-				this.getData(id)
+
             },
 
-
+			mounted:function () {
+			    //java.getId()
+			    console.log("sdf")
+                this.id = java.getId();
+                this.base = 'http://jd.yhsm525.com/'
+				this.url = this.base+'index.php/app/house/cf_detail'
+				this.img = this.base +'attachs/'
+                this.token = java.getToken1()
+                //
+                // var id ='89'
+                this.getData(this.id)
+            }
 		})
-
-
 
 
 

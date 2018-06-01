@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2018/5/21 0021.
  */
 
-public class Common5Bean {
+public class Common5Bean{
 
     private String id;
     /**

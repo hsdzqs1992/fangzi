@@ -12,12 +12,13 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:id="@+id/xinfang"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/xinfang"
                 android:background="@drawable/shape_lan"
                 android:textColor="@color/qianse"
                 android:gravity="center"
@@ -27,24 +28,25 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/ershou"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/ershou"
                 android:gravity="center"
                 android:text="二手"
                 android:layout_width="100dp"
                 android:layout_height="30dp" />
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/zulin"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/zulin"
                 android:gravity="center"
                 android:text="租赁"
                 android:layout_width="100dp"
@@ -59,13 +61,14 @@
 
         <RelativeLayout
 
-            android:id="@+id/di1"
+
             android:layout_marginLeft="@dimen/dp_20"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/di1"
                 android:background="@drawable/shape_lan"
                 android:textColor="@color/qianse"
                 android:gravity="center"
@@ -75,13 +78,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/di2"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
-
+                android:id="@+id/di2"
                 android:gravity="center"
                 android:text="金水"
                 android:layout_width="80dp"
@@ -89,24 +92,26 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/di3"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/di3"
                 android:gravity="center"
                 android:text="二手"
                 android:layout_width="80dp"
                 android:layout_height="30dp" />
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/di4"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/di4"
                 android:gravity="center"
                 android:text="租赁"
                 android:layout_width="80dp"
@@ -121,10 +126,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <ImageView
+                android:layout_marginTop="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/pull_down"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:src="@drawable/xia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
     </LinearLayout>
     <LinearLayout
@@ -134,13 +140,14 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:id="@+id/jia1"
+
             android:layout_marginLeft="@dimen/dp_20"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/jia1"
                 android:background="@drawable/shape_lan"
                 android:textColor="@color/qianse"
                 android:gravity="center"
@@ -150,13 +157,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/jia2"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
-
+                android:id="@+id/jia2"
                 android:gravity="center"
                 android:text="6-8千"
                 android:layout_width="80dp"
@@ -164,12 +171,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/jia3"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/jia3"
                 android:gravity="center"
                 android:text="8千-1万"
                 android:layout_width="80dp"
@@ -177,12 +185,13 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_marginRight="@dimen/dp_20"
-            android:id="@+id/jia4"
+
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/jia4"
                 android:gravity="center"
                 android:text="1万以上"
                 android:layout_width="80dp"

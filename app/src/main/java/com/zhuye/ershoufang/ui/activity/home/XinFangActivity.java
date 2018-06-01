@@ -131,14 +131,16 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
         });
     }
 
+    String is_recommand;
+
     @Override
     protected void onLoadmore() {
-        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,++page,"",XinFangActivity.this,LOADMOREBASE);
+        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,++page,"",is_recommand,XinFangActivity.this,LOADMOREBASE);
     }
 
     @Override
     protected void onRefresh() {
-        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,1,"",XinFangActivity.this,REFRESHBASE);
+        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,1,"",is_recommand,XinFangActivity.this,REFRESHBASE);
     }
 
 
@@ -158,7 +160,7 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
     protected void initData() {
         super.initData();
         //qu_id = SharedPreferencesUtil.getInstance().getString("qu_id");
-        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,page,"",XinFangActivity.this,LIST);
+        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,page,"",is_recommand,XinFangActivity.this,LIST);
         //CommonApi.getInstance().xiaji(qu_id,XinFangActivity.this,GETDATA,false);
     }
 
@@ -200,7 +202,7 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
         super.getClickPrice(price1, price2);
         prce2 = price2;
         prce1 = price1;
-        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,selet,page,"",XinFangActivity.this,REFRESHBASE);
+        CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,selet,page,"",is_recommand,XinFangActivity.this,REFRESHBASE);
     }
 
     @Override
@@ -209,7 +211,7 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
         switch (rescode){
             case 9:
                 business_id = jiadao.getData().get(position).getId();
-                CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,position+1,page,"",XinFangActivity.this,REFRESHBASE);
+                CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,position+1,page,"",is_recommand,XinFangActivity.this,REFRESHBASE);
                 //CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,1,page,XinFangActivity.this,REFRESHBASE);
                 break;
             case 10:
@@ -218,7 +220,7 @@ public class XinFangActivity extends CommonHomeActivity<Common5Bean> {
                 break;
             case 11:
                 // toast(dat.get(position));
-                 CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,position+1,page,"",XinFangActivity.this,REFRESHBASE);
+                 CommonApi.getInstance().indexnewhouse2(qu_id,business_id,prce1,prce2,position+1,page,"",is_recommand,XinFangActivity.this,REFRESHBASE);
                 break;
         }
     }

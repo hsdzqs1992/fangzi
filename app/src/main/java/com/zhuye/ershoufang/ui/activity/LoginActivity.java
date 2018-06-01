@@ -36,6 +36,7 @@ public class LoginActivity extends BaseActivity {
 
     private static final int LOGINA = 100;
     private static final int QQIOFO = 101;
+    private static final int WEIXINIOFO = 102;
     @BindView(R.id.loginname)
     EditText loginname;
     @BindView(R.id.ll1)
@@ -119,7 +120,7 @@ public class LoginActivity extends BaseActivity {
 //                CommonApi.getInstance().third_logint(2,data.get("openid"),
 //                        data.get());
                 ((Applaion)getApplication()).umShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, authListener1);
-            }else if(platform.getName().equals(SHARE_MEDIA.WEIXIN)){
+            }else if(platform.getName().equalsIgnoreCase("weixin")){///SHARE_MEDIA.WEIXIN
                 ((Applaion)getApplication()).umShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, authListener1);
             }
            // Log.i("asdf",platform.getName()+ data.toString());
@@ -192,7 +193,8 @@ public class LoginActivity extends BaseActivity {
 //                        });
 //                ((Applaion)getApplication()).umShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, authListener1);
             }else if(platform.getName().equals(SHARE_MEDIA.WEIXIN)){
-
+                CommonApi.getInstance().third_logint(1,data.get("openid"),
+                        data.get("name"),data.get("profile_image_url"),LoginActivity.this,WEIXINIOFO);
             }
            // Log.i("asdf",platform.getName()+ data.toString());
         }
@@ -269,6 +271,14 @@ public class LoginActivity extends BaseActivity {
                 SharedPreferencesUtil.getInstance().putString("type",0+"");
                 SharedPreferencesUtil.getInstance().putString("token2",qqcode.getData().getToken());
                 SharedPreferencesUtil.getInstance().putString("rongyun",qqcode.getData().getRongyun());
+                start(MainActivity.class,true);
+                break;
+
+            case WEIXINIOFO:
+                LoginCodeBean weixin = (LoginCodeBean) o;
+                SharedPreferencesUtil.getInstance().putString("type",0+"");
+                SharedPreferencesUtil.getInstance().putString("token2",weixin.getData().getToken());
+                SharedPreferencesUtil.getInstance().putString("rongyun",weixin.getData().getRongyun());
                 start(MainActivity.class,true);
                 break;
         }

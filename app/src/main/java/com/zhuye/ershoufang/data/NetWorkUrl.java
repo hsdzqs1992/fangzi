@@ -16,11 +16,11 @@ public class NetWorkUrl {
 //    public static final String ERROR = "202";
 
 
-    public static final String BASE =
-            "http://192.168.1.38/jdhouse/";
-
 //    public static final String BASE =
-//            "http://jd.yhsm525.com/";
+//            "http://192.168.1.42/jdhouse/";
+//
+    public static final String BASE =
+            "http://jd.yhsm525.com/";
     public static final String LOGIN = "";
     public static final String REGEIST = "index.php/App/passport/register";
     public static final String GET_CODE = "index.php/App/passport/code";
@@ -319,6 +319,25 @@ public class NetWorkUrl {
     //首页 新房--优惠领取
     public static final String DISCOUNT= "index.php/app/indexnewhouse/discount";
 
+
+    //首页 聊天--根据用户id获取昵称|头像
+    public static final String MSG= "index.php/app/index/msg";
+
+    //首页 分享
+    public static final String SHARE= "index.php/app/map/share";
+
+    //首页 地图--二手房|租房
+    public static final String HOUSE_MAP= "index.php/app/map/house_map";
+
+    //首页 地图找房--二手房|租房 根据经纬度获取房源
+    public static final String MAPHOUSE= "index.php/app/map/maphouse";
+
+
+    //首页 地图--获取新房
+    public static final String MAP_NEWHOUSE= "index.php/app/map/map_newhouse";
+
+    //首页 地图找房--根据经纬度获取新房列表
+    public static final String MAPNEWHOUSE= "index.php/app/map/mapnewhouse";
 //    public static final int
 
 

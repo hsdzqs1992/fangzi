@@ -10,7 +10,7 @@ import com.zhuye.ershoufang.bean.ChanPinBean;
 import com.zhuye.ershoufang.bean.ChuZuListBean;
 import com.zhuye.ershoufang.bean.CiYuBean;
 import com.zhuye.ershoufang.bean.CityBean;
-import com.zhuye.ershoufang.bean.CitysBean;
+import com.zhuye.ershoufang.bean.CityBean2;
 import com.zhuye.ershoufang.bean.Common2Bean;
 import com.zhuye.ershoufang.bean.Common3Bean;
 import com.zhuye.ershoufang.bean.Common5Bean;
@@ -30,6 +30,7 @@ import com.zhuye.ershoufang.bean.JiaJuDetailBean;
 import com.zhuye.ershoufang.bean.JingJiRSettingBean;
 import com.zhuye.ershoufang.bean.JingJiRenBean;
 import com.zhuye.ershoufang.bean.JingMaiBean;
+import com.zhuye.ershoufang.bean.JingWeiBean;
 import com.zhuye.ershoufang.bean.KanFangBean;
 import com.zhuye.ershoufang.bean.KanFangDetailBean;
 import com.zhuye.ershoufang.bean.LiuPaiBean;
@@ -49,6 +50,8 @@ import com.zhuye.ershoufang.bean.PersonInfoBean;
 import com.zhuye.ershoufang.bean.QiJianDianBean;
 import com.zhuye.ershoufang.bean.QiTeBean;
 import com.zhuye.ershoufang.bean.QuBean;
+import com.zhuye.ershoufang.bean.ShareBean;
+import com.zhuye.ershoufang.bean.UBean;
 import com.zhuye.ershoufang.bean.UploadImgBean;
 import com.zhuye.ershoufang.bean.UserBean;
 import com.zhuye.ershoufang.bean.WenDaBean;
@@ -284,7 +287,7 @@ public interface CommonApiService {
     Observable<CommonListBean<XiaoQuBean>> xiaoqu();
 
     @GET(NetWorkUrl.QHCITY)
-    Observable<CitysBean> qhcity();
+    Observable<CommonListBean<CityBean2>> qhcity();
 
     @FormUrlEncoded
     @POST(NetWorkUrl.XIAJI)
@@ -1023,6 +1026,15 @@ public interface CommonApiService {
             @Field("select1") String select1,@Field("yonghu") String yonghu,
             @Field("key") String key);
 
+    @FormUrlEncoded
+    @POST(NetWorkUrl.INDEX)
+    Observable<CommonListBean<Common3Bean>> index(
+            @Field("cate_id") String cate_id,@Field("area_id") String area_id,
+            @Field("page") int page,@Field("business_id") String business_id,
+            @Field("price1") String price1,@Field("price2") String price2,
+            @Field("select1") String select1,@Field("yonghu") String yonghu,
+            @Field("key") String key, @Field("is_top") String is_top);
+
 
     @FormUrlEncoded
     @POST(NetWorkUrl.BIDDER_LIST)
@@ -1254,7 +1266,8 @@ public interface CommonApiService {
                   @Field("price2") String price2,
                   @Field("select") int select,
                   @Field("page") int page,
-                   @Field("key") String key
+                   @Field("key") String key,
+                   @Field("is_recommand") String is_recommand
     );
 
     @FormUrlEncoded
@@ -1480,4 +1493,49 @@ public interface CommonApiService {
     Observable<CommonListBean<MianKanBean>> mybm(
             @Field("token") String token,@Field("page") int page
     );
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.MSG)
+    Observable<CommonObjectBean<UBean>> msg(
+            @Field("user_id") String user_id
+    );
+
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.SHARE)
+    Observable<CommonObjectBean<ShareBean>> share(
+            @Field("life_id") String life_id,@Field("type") String type
+    );
+
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.HOUSE_MAP)
+    Observable<CommonListBean<JingWeiBean>> house_map(
+            @Field("cate_id") String cate_id,@Field("area_id") String area_id,
+         @Field("business_id") String business_id,
+            @Field("price1") String price1,@Field("price2") String price2,
+            @Field("select1") String select1);
+
+
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.MAPHOUSE)
+    Observable<CommonListBean<Common3Bean>> maphouse(
+            @Field("cate_id") String cate_id,@Field("lng") String lng,
+            @Field("lat") String lat);
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.MAP_NEWHOUSE)
+    Observable<CommonListBean<JingWeiBean>> map_newhouse(
+            @Field("area_id") String area_id,
+            @Field("business_id") String business_id,
+            @Field("price1") String price1,@Field("price2") String price2,
+            @Field("select") String select);
+
+    @FormUrlEncoded
+    @POST(NetWorkUrl.MAPNEWHOUSE)
+    Observable<CommonListBean<Common5Bean>> mapnewhouse(
+            @Field("lng") String lng,
+            @Field("lat") String lat);
+
 }

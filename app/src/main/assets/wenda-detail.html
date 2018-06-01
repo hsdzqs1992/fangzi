@@ -266,7 +266,7 @@
 
 
                 getData:function (id) {
-                    console.log(id)
+                   // console.log(id)
                     var that = this
                     $.ajax({
                         url: that.url,
@@ -278,8 +278,7 @@
                         success: function (data) {
                            // console.log(that.url)
 
-
-                            var temp = JSON.parse(data)
+							var temp = JSON.parse(data)
                             //console.log(temp.data)
                             that.dat = temp.data
                             // var time = new Date()
@@ -292,10 +291,11 @@
                             // //console.log(time.getMilliseconds())
                             // //console.log(typeof temp.data)
                             // console.log(data)
-
+                            mui.toast("成功")
                         },
                         error: function () {
                             console.log("shiba")
+							mui.toast("失败")
                         }
                     })
                 }
@@ -303,20 +303,20 @@
 
 
             created:function () {
-				var id = java.getId();
-                //var id =37
-				var base = java.getBase()
-                //var base = 'http://192.168.1.29/jdhouse/'
-				this.url = base + 'index.php/app/question/detail'
-				this.imgurl = base +''
-				this.listurl = base +'index.php/app/question/answer'
-                this.getData(id)
-				this.getList(id)
 				// console.log('created')
             },
 
 			mounted:function () {
+                var id = java.getId();
+                //var id =37
+                var base = java.getBase()
+                //var base = 'http://192.168.1.29/jdhouse/'
+                this.url = base + 'index.php/app/question/detail'
+                this.imgurl = base +''
+                this.listurl = base +'index.php/app/question/answer'
 				// console.log('monthed')
+                this.getData(id)
+                this.getList(id)
             }
         })
 	</script>
